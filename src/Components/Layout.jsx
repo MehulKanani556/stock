@@ -11,7 +11,7 @@ const Layout = () => {
     return (
         <div className="flex h-screen">
             {/* Sidebar - 30% width */}
-            <div className={`${offToggle ? 'w-16' : 'w-[18%]'} transition-all duration-300 bg-black text-white p-5`}>
+            <div className={`${offToggle ? 'w-16' : ''} md:w-[25%] lg:w-[20%] transition-all duration-300 bg-d_color text-white `}>
                 <Sidebar offToggle={offToggle} setOffToggle={setOffToggle} />
             </div>
 

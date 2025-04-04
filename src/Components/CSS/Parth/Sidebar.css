@@ -1,0 +1,7 @@
+.V_pading_icon{
+    padding-left: 50px;
+}
+
+.V_filter{
+    filter: invert(80%) sepia(4%) saturate(2941%) hue-rotate(161deg) brightness(92%) contrast(85%);
+}
