@@ -1,12 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Login from './Components/Pages/Login.jsx'
 
 function App() {
   return (
-    <div className="App">
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+  <div>
+   <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/layout">
+           
+        </Route>
+      </Routes>
     </div>
   );
 }
