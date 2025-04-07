@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../CSS/Dhruvin/Login.css'
+// import '../CSS/Dhruvin/Login.css'
 import laptop from '../Images/Dhruvin/laptop.png'
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";

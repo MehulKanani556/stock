@@ -1,7 +1,283 @@
-.V_pading_icon{
-    padding-left: 50px;
+.V_pading_icon {
+    padding-left: 40px;
 }
 
-.V_filter{
+.V_filter {
     filter: invert(80%) sepia(4%) saturate(2941%) hue-rotate(161deg) brightness(92%) contrast(85%);
+}
+
+.V_circle_dot {
+    position: relative;
+    padding-left: 100px;
+
+}
+
+.V_circle_dot::before {
+    content: '•';
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    padding-left: 70px;
+    left: 0;
+    top: 8px;
+}
+
+
+.V_icon_size {
+    width: 22px;
+    height: 22px;
+}
+
+.V_text_size {
+    font-size: 17px;
+}
+
+.V_logo {
+    position: relative;
+    z-index: 1;
+}
+
+.V_logo_line {
+    position: absolute;
+    top: 30%;
+    right: -5%;
+}
+
+.V_logo_line2 {
+    position: absolute;
+    top: 30%;
+    right: -20%;
+}
+
+.V_arow {
+    position: absolute;
+    top: 13%;
+    right: 13%;
+    height: 30px;
+    width: 30px;
+}
+
+.V_logo_img {
+    width: 40px;
+    height: 40px;
+}
+
+
+@media (min-width: 1920px) {}
+
+@media (max-width: 1919px) and (min-width: 1650px) {
+    .V_logo_line {
+        right: -6%;
+    }
+
+    .V_logo_line2 {
+        right: -25%;
+    }
+}
+
+@media (max-width: 1649px) and (min-width: 1440px) {
+    .V_pading_icon {
+        padding-left: 40px;
+    }
+
+    .V_circle_dot {
+        padding-left: 80px;
+    }
+
+    .V_circle_dot::before {
+        padding-left: 60px;
+    }
+
+    .V_logo_line {
+        right: -7%;
+    }
+
+    .V_logo_line2 {
+        right: -25%;
+    }
+}
+
+@media (max-width: 1439px) and (min-width: 1200px) {
+    .V_pading_icon {
+        padding-left: 30px;
+    }
+
+    .V_circle_dot {
+        padding-left: 70px;
+    }
+
+    .V_circle_dot::before {
+        padding-left: 50px;
+    }
+
+    .V_text_size {
+        font-size: 16px;
+    }
+
+    .V_logo_line {
+        right: -7%;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .V_pading_icon {
+        padding-left: 10px;
+    }
+
+    .V_circle_dot {
+        padding-left: 50px;
+    }
+
+    .V_circle_dot::before {
+        padding-left: 30px;
+    }
+
+    .V_text_size {
+        font-size: 16px;
+    }
+
+    .V_logo_line {
+        right: -8%;
+    }
+
+    .V_logo_line2 {
+        right: -25%;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .V_pading_icon {
+        padding-left: 5px;
+    }
+
+    .V_circle_dot {
+        padding-left: 40px;
+    }
+
+    .V_circle_dot::before {
+        padding-left: 20px;
+    }
+
+    .V_text_size {
+        font-size: 16px;
+    }
+
+    .V_logo_line {
+        right: -8%;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 577px) {
+    .V_pading_icon {
+        padding-left: 0;
+    }
+
+    .V_circle_dot {
+        padding-left: 30px;
+    }
+
+    .V_circle_dot::before {
+        padding-left: 10px;
+    }
+
+    .V_text_size {
+        font-size: 14px;
+    }
+
+    .V_logo_line {
+        right: -8%;
+    }
+
+    .V_logo_line2 {
+        right: -30%;
+    }
+
+    .V_logo_img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .V_arow {
+        top: 20%;
+        right: 20%;
+        height: 20px;
+        width: 20px;
+    }
+
+}
+
+@media (max-width: 576px) and (min-width: 481px) {
+    .V_pading_icon {
+        padding-left: 0;
+    }
+
+    .V_circle_dot {
+        padding-left: 30px;
+    }
+
+    .V_circle_dot::before {
+        padding-left: 10px;
+    }
+
+    .V_text_size {
+        font-size: 14px;
+    }
+
+    .V_logo_img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .V_logo_line {
+        right: -7%;
+    }
+
+    .V_logo_line2 {
+        right: -30%;
+    }
+
+    .V_arow {
+        top: 20%;
+        right: 20%;
+        height: 20px;
+        width: 20px;
+    }
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+    .V_pading_icon {
+        padding-left: 0;
+    }
+
+    .V_circle_dot {
+        padding-left: 30px;
+    }
+
+    .V_circle_dot::before {
+        padding-left: 10px;
+    }
+
+    .V_text_size {
+        font-size: 14px;
+    }
+
+    .V_logo_img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .V_logo_line {
+        right: -7%;
+    }
+
+    .V_logo_line2 {
+        right: -30%;
+    }
+
+    .V_arow {
+        top: 20%;
+        right: 20%;
+        height: 20px;
+        width: 20px;
+    }
 }
