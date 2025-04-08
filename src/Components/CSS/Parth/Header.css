@@ -1,0 +1,473 @@
+.V_search_container {
+    width: 30%;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid #36454F;
+}
+
+.V_header_container {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.V_search_icon {
+    font-size: 1.5rem;
+    color: #36454F;
+    margin: 0px 10px;
+}
+
+.V_search_input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    color: #36454F;
+    background-color: transparent;
+}
+
+.V_user_image {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.V_user_name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #36454F;
+}
+
+.V_notification_back_image {
+    width: 45px;
+    height: 45px;
+}
+
+.V_notification_icon {
+    position: absolute;
+    top: 25%;
+    left: 28%;
+    width: 20px;
+}
+
+.V_notification_number_image {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 18px;
+}
+
+.V_notification_number_text {
+    position: absolute;
+    top: -10%;
+    right: 2%;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.V_dropdown_text{
+    font-size: 16px;
+    font-weight: 400;
+    color: #36454F;
+}
+
+
+.V_height_scroll{
+    height: calc(100vh - 88px);
+}
+.V_height_scroll_min{
+    height: calc(100vh - 68px);
+}
+
+
+/* =================== OFFCANVAS ==================== */
+
+.V_offcanvas_btn{
+    border: 1px solid #36454F;
+    border-radius: 10%;
+    padding: 5px;
+    height: 35px;
+    width: 35px;
+}
+.V_ofcanvas_icon{
+    font-size: 1.5rem;
+    color: #36454F;
+}
+
+
+
+
+
+@media (min-width: 1920px) {}
+
+@media (max-width: 1919px) and (min-width: 1650px) {}
+
+@media (max-width: 1649px) and (min-width: 1440px) {}
+
+@media (max-width: 1439px) and (min-width: 1200px) {
+    .V_search_container {
+        width: 30%;
+        height: 40px;
+    }
+    
+    .V_header_container {
+        padding: 20px 25px;
+    }
+    
+    .V_search_icon {
+        font-size: 1.2rem;
+        margin: 0px 10px;
+    }
+    
+    .V_search_input {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .V_user_image {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .V_user_name {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    .V_notification_back_image {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .V_notification_icon {
+        top: 28%;
+        left: 28%;
+        width: 15px;
+    }
+    
+    .V_notification_number_image {
+        position: absolute;
+        top: -10%;
+        right: -10%;
+        width: 18px;
+    }
+    
+    .V_notification_number_text {
+        position: absolute;
+        top: -11%;
+        right: 5%;
+        font-size: 12px;
+    }
+    .V_dropdown_text{
+        font-size: 16px;
+        font-weight: 400;
+        color: #36454F;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .V_search_container {
+        width: 30%;
+        height: 40px;
+    }
+    
+    .V_header_container {
+        padding: 20px 25px;
+    }
+    
+    .V_search_icon {
+        font-size: 1.2rem;
+        margin: 0px 10px;
+    }
+    
+    .V_search_input {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .V_user_image {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .V_user_name {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    .V_notification_back_image {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .V_notification_icon {
+        top: 28%;
+        left: 28%;
+        width: 15px;
+    }
+    
+    .V_notification_number_image {
+        position: absolute;
+        top: -10%;
+        right: -10%;
+        width: 18px;
+    }
+    
+    .V_notification_number_text {
+        position: absolute;
+        top: -11%;
+        right: 5%;
+        font-size: 12px;
+    }
+    .V_dropdown_text{
+        font-size: 16px;
+        font-weight: 400;
+        color: #36454F;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .V_search_container {
+        width: 40%;
+        height: 40px;
+    }
+    
+    .V_header_container {
+        padding: 20px 25px;
+    }
+    
+    .V_search_icon {
+        font-size: 1.2rem;
+        margin: 0px 10px;
+    }
+    
+    .V_search_input {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .V_user_image {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .V_user_name {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    .V_notification_back_image {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .V_notification_icon {
+        top: 28%;
+        left: 28%;
+        width: 15px;
+    }
+    
+    .V_notification_number_image {
+        position: absolute;
+        top: -10%;
+        right: -10%;
+        width: 18px;
+    }
+    
+    .V_notification_number_text {
+        position: absolute;
+        top: -11%;
+        right: 5%;
+        font-size: 12px;
+    }
+    .V_dropdown_text{
+        font-size: 16px;
+        font-weight: 400;
+        color: #36454F;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 577px) {
+    .V_search_container {
+        width: 40%;
+        height: 35px;
+    }
+    
+    .V_header_container {
+        padding: 10px 15px;
+    }
+    
+    .V_search_icon {
+        font-size: 1.2rem;
+        margin: 0px 8px;
+    }
+    
+    .V_search_input {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .V_user_image {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .V_user_name {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .V_notification_back_image {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .V_notification_icon {
+        top: 30%;
+        left: 30%;
+        width: 12px;
+    }
+    
+    .V_notification_number_image {
+        position: absolute;
+        top: -6%;
+        right: -6%;
+        width: 15px;
+    }
+    
+    .V_notification_number_text {
+        position: absolute;
+        top: -7%;
+        right: 6%;
+        font-size: 10px;
+    }
+    .V_dropdown_text{
+        font-size: 14px;
+        font-weight: 400;
+        color: #36454F;
+    }
+}
+
+@media (max-width: 576px) and (min-width: 481px) {
+    .V_search_container {
+        width: 35%;
+        height: 35px;
+    }
+    
+    .V_header_container {
+        padding: 10px 15px;
+    }
+    
+    .V_search_icon {
+        font-size: 1.2rem;
+        margin: 0px 8px;
+    }
+    
+    .V_search_input {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .V_user_image {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .V_user_name {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .V_notification_back_image {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .V_notification_icon {
+        top: 30%;
+        left: 30%;
+        width: 12px;
+    }
+    
+    .V_notification_number_image {
+        position: absolute;
+        top: -6%;
+        right: -6%;
+        width: 15px;
+    }
+    
+    .V_notification_number_text {
+        position: absolute;
+        top: -7%;
+        right: 6%;
+        font-size: 10px;
+    }
+    .V_dropdown_text{
+        font-size: 14px;
+        font-weight: 400;
+        color: #36454F;
+    }
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+    .V_search_container {
+        width: 45%;
+        height: 35px;
+    }
+    
+    .V_header_container {
+        padding: 10px 10px;
+    }
+    
+    .V_search_icon {
+        font-size: 1.2rem;
+        margin: 0px 8px;
+    }
+    
+    .V_search_input {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .V_user_image {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .V_user_name {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .V_notification_back_image {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .V_notification_icon {
+        top: 30%;
+        left: 30%;
+        width: 12px;
+    }
+    
+    .V_notification_number_image {
+        position: absolute;
+        top: -6%;
+        right: -6%;
+        width: 15px;
+    }
+    
+    .V_notification_number_text {
+        position: absolute;
+        top: -7%;
+        right: 6%;
+        font-size: 10px;
+    }
+    .V_dropdown_text{
+        font-size: 14px;
+        font-weight: 400;
+        color: #36454F;
+    }
+}

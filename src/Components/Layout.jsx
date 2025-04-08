@@ -27,7 +27,7 @@ const Layout = () => {
     return (
         <div className="flex">
             {/* Sidebar - width changes based on collapse state */}
-            <div className={`${isCollapsed ? 'w-[15%]sm:w-[8%] xl:w-[5%]' : 'sm:w-[35%] md:w-[30%] lg:w-[22%] xl:w-[18%]'} transition-all duration-300 bg-d_color text-white h-full`}>
+            <div className={`${isCollapsed ? 'hidden md:block w-[15%] sm:w-[8%] xl:w-[5%]' : 'hidden md:block sm:w-[35%] md:w-[30%] lg:w-[22%] xl:w-[18%]'} transition-all duration-300 bg-d_color text-white h-full`}>
                 <Sidebar 
                     offToggle={offToggle} 
                     setOffToggle={setOffToggle} 
@@ -37,7 +37,7 @@ const Layout = () => {
             </div>
 
             {/* Main Content - width adjusts based on sidebar state */}
-            <div className={`${isCollapsed ? 'w-[85%] sm:w-[92%] xl:w-[95%]' : 'sm:w-[65%] md:w-[70%] lg:w-[78%] xl:w-[82%]'} flex flex-col transition-all duration-300`}>
+            <div className={`${isCollapsed ? 'w-full md:w-[92%] sm:w-[100%] xl:w-[95%]' : 'w-full md:w-[70%] md:w-[70%] lg:w-[78%] xl:w-[82%]'} flex flex-col transition-all duration-300`}>
                 <Header setOffToggle={setOffToggle} />
                 <div className="flex-1 overflow-auto">
                     <Outlet />
