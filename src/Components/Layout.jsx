@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // import Header from './Header'
 import Sidebar from './Sidebar'
 import { Outlet } from 'react-router-dom'
@@ -7,6 +7,22 @@ import Header from './Header'
 const Layout = () => {
     const [offToggle, setOffToggle] = useState(false)
     const [isCollapsed, setIsCollapsed] = useState(false)
+
+    useEffect(() => {
+        // Set initial state based on screen width
+        const handleResize = () => {
+            setIsCollapsed(window.innerWidth < 768);
+        };
+
+        // Set initial state
+        handleResize();
+
+        // Add event listener
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <div className="flex">
