@@ -8,11 +8,12 @@ import lock from '../Images/Dhruvin/lock.svg'
 const Login = () => {
 
 const [passToggle, setPassToggle] = useState("password")
+const [page, setPage] = useState("login")
 
   return (
     <div>
        <div className='flex h-screen'>
-          <div className='w-1/2'>
+          <div className='w-1/2 2xl:block xl:block lg:block md:block sm:hidden ds_login_responsive'>
              <div className='h-full bg-d_color relative'>
                  <h2 className='text-white text-[28px] p-12 absolute left-11'>LOGO</h2>
                 <div className=' h-full flex justify-center items-center p-5'>
@@ -23,10 +24,11 @@ const [passToggle, setPassToggle] = useState("password")
                  
              </div>
           </div>
-          <div className='w-1/2'>
+          <div className='md:w-1/2 sm:w-full w-full'>
             <div className='h-full bg-white relative'>
                 <div className='flex justify-center items-center h-full'>
-                   {/* <div className='xl:w-1/2 lg:w-2/3 md:w-4/5'>
+
+                  {page === "login" &&  <div className='xl:w-1/2 lg:w-2/3 md:w-4/5 sm:w-2/3 w-5/6'>
                      <div className='shadow-[1px_1px_20px_0.5px_rgba(0,0,0,0.06)] p-6'>
                          <h2 className='text-[21px] text-center font-semibold text-d_color'>Login</h2>
                          <form action="" className='mt-4'>
@@ -39,13 +41,13 @@ const [passToggle, setPassToggle] = useState("password")
                               <input type={passToggle} className='border border-d_color h-[40px] rounded-[5px] w-full px-3'  placeholder='Enter Password'/>
                               {passToggle === "password" ? <FaEyeSlash onClick={()=> setPassToggle("text")} className="absolute top-9 right-3 text-[#999999] text-[20px] cursor-pointer" /> : <FaEye onClick={()=> setPassToggle("password")} className="absolute top-9 right-3 text-[#999999] text-[20px] cursor-pointer" /> }
                            </div>
-                           <div className='text-end text-[#FF0000] text-[14px] font-medium'>Forgot Password?</div>
-                           <button className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-10'>Login</button>
+                           <div onClick={()=> setPage("password")} className='text-end text-[#FF0000] text-[14px] font-medium cursor-pointer'>Forgot Password?</div>
+                           <button  className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-10'>Login</button>
                          </form>
                      </div>
-                   </div> */}
+                   </div>}
 
-                   {/* <div className='xl:w-1/2 lg:w-2/3 md:w-4/5'>
+                   {page === "password" &&  <div className='xl:w-1/2 lg:w-2/3 md:w-4/5 sm:w-2/3 w-5/6'>
                      <div className='shadow-[1px_1px_20px_0.5px_rgba(0,0,0,0.06)] p-6'>
                          <h2 className='text-[21px] text-center font-semibold text-d_color'>Forgot Password</h2>
                          <p className='text-center text-[#727272] text-[14px]'>Verify your email to reset your password</p>
@@ -54,12 +56,12 @@ const [passToggle, setPassToggle] = useState("password")
                               <label className='text-d_color font-medium block mb-1'>Email</label>
                               <input type="text" className='border border-d_color h-[40px] rounded-[5px] w-full px-3'  placeholder='Enter Email'/>
                            </div>
-                           <button className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-8'>Send OTP</button>
+                           <button onClick={()=> setPage("verify")} className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-8'>Send OTP</button>
                          </form>
                      </div>
-                   </div> */}
+                   </div>}
 
-                   {/* <div className='xl:w-1/2 lg:w-2/3 md:w-4/5'>
+                   {page === "verify" && <div className='xl:w-1/2 lg:w-2/3 md:w-4/5 sm:w-2/3 w-5/6'>
                      <div className='shadow-[1px_1px_20px_0.5px_rgba(0,0,0,0.06)] p-6'>
                          <h2 className='text-[21px] text-center font-semibold text-d_color'>Verify</h2>
                          <p className='text-center text-[#727272] text-[14px]'>OTP has been sent to <a href="" className='text-d_color underline '>example@gmail.com</a></p>
@@ -70,13 +72,13 @@ const [passToggle, setPassToggle] = useState("password")
                               <input type="text" className='lg:h-[50px] lg:w-[50px] md:h-[40px] md:w-[40px] text-center text-[20px] border border-d_color rounded-[5px] me-5'/>
                               <input type="text" className='lg:h-[50px] lg:w-[50px] md:h-[40px] md:w-[40px] text-center text-[20px] border border-d_color rounded-[5px]'/>
                            </div> 
-                           <button className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-12'>Verify</button>
+                           <button onClick={()=> setPage("reset")} className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-12'>Verify</button>
                            <p className='text-center text-[#727272] mt-3'>Didn’t receive code yet? <span className='text-d_color underline'>Resend</span></p>
                          </form>
                      </div>
-                   </div> */}
+                   </div>}
 
-                   {/* <div className='xl:w-1/2 lg:w-2/3 md:w-4/5'>
+                   { page === "reset" &&  <div className='xl:w-1/2 lg:w-2/3 md:w-4/5 sm:w-2/3 w-5/6'>
                      <div className='shadow-[1px_1px_20px_0.5px_rgba(0,0,0,0.06)] p-6'>
                          <h2 className='text-[21px] text-center font-semibold text-d_color'>Reset Password</h2>
                          <form action="" className='mt-5'>
@@ -91,10 +93,10 @@ const [passToggle, setPassToggle] = useState("password")
                            <button className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-10'>Reset Password</button>
                          </form>
                      </div>
-                   </div> */}
+                   </div>}
 
 
-                   <div className='xl:w-1/2 lg:w-2/3 md:w-4/5'>
+                   {/* <div className='xl:w-1/2 lg:w-2/3 md:w-4/5 sm:w-2/3 w-5/6'>
                      <div className='shadow-[1px_1px_20px_0.5px_rgba(0,0,0,0.06)] p-6'>
                           <div className='flex justify-center'>
                             <img src={lock} alt="" />
@@ -108,7 +110,7 @@ const [passToggle, setPassToggle] = useState("password")
                            <button className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-7'>Unlock</button>
                          </form>
                      </div>
-                   </div>
+                   </div> */}
                 </div>
             </div> 
          </div>
