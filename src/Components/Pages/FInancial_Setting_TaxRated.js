@@ -10,6 +10,7 @@ const FInancial_Setting_TaxRated = () => {
 
 const navigate = useNavigate()
 const [open, setOpen] = useState(false)
+const [column, setColumn] = useState(false)
 
   return (
     <div>
@@ -21,7 +22,32 @@ const [open, setOpen] = useState(false)
                     <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color'>Tax Rates</span></p>
                  </div>
                  <div className='flex'>
-                    <button className='ds_column_btn  flex me-4'> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
+                    <div className='relative'>
+                      <button className='ds_column_btn  flex me-4' onClick={()=> setColumn(!column)}> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
+                        {column && <div className='ds_column_box'>
+                          <div className='flex justify-between items-center mb-2'>
+                             <h6 className='text-d_color'>Name</h6>
+                             <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             </label>
+                          </div>
+                          <div className='flex justify-between items-center mb-2'>
+                             <h6 className='text-d_color'>Tax Rates(%)</h6>
+                             <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             </label>
+                          </div>
+                          <div className='flex justify-between items-center'>
+                             <h6 className='text-d_color'>Status</h6>
+                             <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             </label>
+                          </div>
+                      </div>}
+                    </div>
                     <button className='ds_column_btn  flex me-4'> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
                     <button className='ds_add_currency' onClick={()=> navigate("/layout/addtaxrate")}>+ Add Tax Rate</button>
                  </div>
@@ -109,14 +135,14 @@ const [open, setOpen] = useState(false)
                   </div> 
 
                   <Dialog open={open} onClose={setOpen} className="relative z-10">
-                      <DialogBackdrop transition className="fixed inset-0 bg-gray-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"/>    
-                      <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+                      <DialogBackdrop transition className="fixed inset-0 bg-black-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"/>    
+                      <div className="fixed bg-black/50 inset-0 z-10 w-screen overflow-y-auto">
                         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                           <DialogPanel transition className="relative transform overflow-hidden rounded-[5px] bg-red text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-xl data-closed:sm:translate-y-0 data-closed:sm:scale-95">
                             <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                                   <div className="mt-2">
                                     <p className="text-lg text-center text-d_color">
-                                       Are you sure you want to delete
+                                       Are you sure you want to delete <br />
                                        Tax Rates ?
                                     </p>
                                   </div>
