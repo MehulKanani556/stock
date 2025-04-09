@@ -17,7 +17,7 @@ import return1 from './Images/Parth/Return1.png';
 import Quotation from './Images/Parth/Quotation1.png';
 import Expense from './Images/Parth/Expense1.png';
 import Supplier from './Images/Parth/Supplier1.png';
-import Store from './Images/Parth/Subcatogery1.png';
+import Store from './Images/Parth/Store1.png';
 import Warehouse from './Images/Parth/Warehouse1.png';
 import Payment from './Images/Parth/Payment1.png';
 import Reports from './Images/Parth/Reports1.png';
@@ -49,7 +49,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
   };
 
   return (
-    <div className={`sidebar-container transition-all duration-300    ${isCollapsed ? 'V_collapsed' : 'V_expanded'} hidden md:block`}>
+    <div className={`sidebar-container transition-all duration-300     ${isCollapsed ? 'V_collapsed' : 'V_expanded'} hidden md:block`}>
       <div className=''>
         <div>
           <div className='V_logo'>

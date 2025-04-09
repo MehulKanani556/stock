@@ -1,0 +1,527 @@
+.V_col_box_shadow {
+    box-shadow: 1px 1px 20px 0.5px #0000000F;
+    padding: 20px;
+}
+
+.V_col_text {
+    font-size: 16px;
+}
+
+.V_col_number {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.V_col_img_size {
+    width: 60px;
+    height: 60px;
+}
+
+.V_col_persent {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.V_col_radius {
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+
+.V_col_img_up_size {
+    width: 20px;
+    height: 20px;
+}
+
+.V_main_flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.V_flex_with_width {
+    display: flex;
+    width: 100%;
+}
+
+/* ============ charts ============ */
+
+.V_chart_heading {
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.V_chart_width {
+    width: 70%;
+}
+
+.V_months {
+    font-size: 14px;
+    font-weight: 500;
+    color: #36454F;
+}
+
+.V_months_icon {
+    font-size: 20px;
+    font-weight: 300;
+    color: #36454F;
+}
+
+.V_chart_container {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+@media (min-width: 1920px) {
+    .V_main_flex {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+    }
+
+    .V_flex_with_width {
+        width: 50%;
+        gap: 20px;
+    }
+
+
+    .V_col_box_shadow {
+        box-shadow: 1px 1px 20px 0.5px #0000000F;
+        padding: 20px;
+        width: 50%;
+    }
+
+    .V_col_text {
+        font-size: 16px;
+    }
+
+    .V_col_number {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .V_col_img_size {
+        width: 60px;
+        height: 60px;
+    }
+
+    .V_col_persent {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .V_col_radius {
+        border-radius: 4px;
+        padding: 3px 8px;
+    }
+
+    .V_col_img_up_size {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 1919px) and (min-width: 1650px) {
+    .V_main_flex {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+    }
+
+    .V_flex_with_width {
+        width: 50%;
+        gap: 20px;
+    }
+
+
+    .V_col_box_shadow {
+        box-shadow: 1px 1px 20px 0.5px #0000000F;
+        padding: 20px;
+        width: 50%;
+    }
+
+    .V_col_text {
+        font-size: 16px;
+    }
+
+    .V_col_number {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .V_col_img_size {
+        width: 60px;
+        height: 60px;
+    }
+
+    .V_col_persent {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .V_col_radius {
+        border-radius: 4px;
+        padding: 3px 8px;
+    }
+
+    .V_col_img_up_size {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 1649px) and (min-width: 1440px) {
+    .V_main_flex {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .V_flex_with_width {
+        width: 50%;
+        gap: 10px;
+    }
+
+
+    .V_col_box_shadow {
+        box-shadow: 1px 1px 20px 0.5px #0000000F;
+        padding: 20px;
+        width: 50%;
+    }
+
+    .V_col_text {
+        font-size: 14px;
+    }
+
+    .V_col_number {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .V_col_img_size {
+        width: 50px;
+        height: 50px;
+    }
+
+    .V_col_persent {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .V_col_radius {
+        border-radius: 4px;
+        padding: 3px 8px;
+    }
+
+    .V_col_img_up_size {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 1439px) and (min-width: 1200px) {
+    .V_main_flex {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .V_flex_with_width {
+        width: 50%;
+        gap: 10px;
+    }
+
+
+    .V_col_box_shadow {
+        box-shadow: 1px 1px 20px 0.5px #0000000F;
+        padding: 10px;
+        width: 50%;
+    }
+
+    .V_col_text {
+        font-size: 12px;
+    }
+
+    .V_col_number {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .V_col_img_size {
+        width: 35px;
+        height: 35px;
+    }
+
+    .V_col_persent {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .V_col_radius {
+        border-radius: 4px;
+        padding: 3px 8px;
+    }
+
+    .V_col_img_up_size {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .V_flex_with_width {
+        display: flex;
+        gap: 20px;
+    }
+
+    .V_col_box_shadow {
+        box-shadow: 1px 1px 20px 0.5px #0000000F;
+        padding: 20px;
+        width: 50%;
+    }
+
+    .V_col_text {
+        font-size: 16px;
+    }
+
+    .V_col_number {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .V_col_img_size {
+        width: 60px;
+        height: 60px;
+    }
+
+    .V_col_persent {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .V_col_radius {
+        border-radius: 4px;
+        padding: 7px 15px;
+    }
+
+    .V_col_img_up_size {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    /* ============ charts ============ */
+
+    .V_chart_width {
+        width: 100%;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .V_flex_with_width {
+        display: flex;
+        gap: 20px;
+    }
+
+    .V_col_box_shadow {
+        box-shadow: 1px 1px 20px 0.5px #0000000F;
+        padding: 15px;
+        width: 50%;
+    }
+
+    .V_col_text {
+        font-size: 12px;
+    }
+
+    .V_col_number {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .V_col_img_size {
+        width: 40px;
+        height: 40px;
+    }
+
+    .V_col_persent {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .V_col_radius {
+        border-radius: 4px;
+        padding: 3px 8px;
+    }
+
+    .V_col_img_up_size {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    /* ============ charts ============ */
+
+    .V_chart_width {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 577px) {
+
+    .V_flex_with_width {
+        display: flex;
+        gap: 20px;
+    }
+
+    .V_col_box_shadow {
+        box-shadow: 1px 1px 20px 0.5px #0000000F;
+        padding: 15px;
+        width: 50%;
+    }
+
+    .V_col_text {
+        font-size: 12px;
+    }
+
+    .V_col_number {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .V_col_img_size {
+        width: 40px;
+        height: 40px;
+    }
+
+    .V_col_persent {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .V_col_radius {
+        border-radius: 4px;
+        padding: 3px 8px;
+    }
+
+    .V_col_img_up_size {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* ============ charts ============ */
+
+    .V_chart_width {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) and (min-width: 481px) {
+    .V_main_flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .V_flex_with_width {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .V_col_box_shadow {
+        box-shadow: 1px 1px 20px 0.5px #0000000F;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .V_col_text {
+        font-size: 14px;
+    }
+
+    .V_col_number {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .V_col_img_size {
+        width: 50px;
+        height: 50px;
+    }
+
+    .V_col_persent {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .V_col_radius {
+        border-radius: 4px;
+        padding: 8px 16px;
+    }
+
+    .V_col_img_up_size {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    /* ============ charts ============ */
+
+    .V_chart_width {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+    .V_main_flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .V_flex_with_width {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .V_col_box_shadow {
+        box-shadow: 1px 1px 20px 0.5px #0000000F;
+        padding: 12px;
+        width: 100%;
+    }
+
+    .V_col_text {
+        font-size: 12px;
+    }
+
+    .V_col_number {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .V_col_img_size {
+        width: 40px;
+        height: 40px;
+    }
+
+    .V_col_persent {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .V_col_radius {
+        border-radius: 4px;
+        padding: 3px 8px;
+    }
+
+    .V_col_img_up_size {
+        width: 15px;
+        height: 15px;
+    }
+
+    /* ============ charts ============ */
+
+    .V_chart_width {
+        width: 100%;
+    }
+}
+
+/* @media (max-width: 374px) and (min-width: 320px) {} */

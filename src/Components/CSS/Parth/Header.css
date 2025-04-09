@@ -10,6 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
 .V_search_icon {
@@ -80,6 +81,9 @@
 .V_height_scroll_min{
     height: calc(100vh - 68px);
 }
+.V_Offcanvass_height{
+    height: calc(100vh - 56px);
+}
 
 
 /* =================== OFFCANVAS ==================== */
@@ -96,7 +100,21 @@
     color: #36454F;
 }
 
+.V_circle_dot1 {
+    position: relative;
+    padding-left: 25px;
 
+}
+
+.V_circle_dot1::before {
+    content: '•';
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    padding-left: 5px;
+    left: 0;
+    top: 4px;
+}
 
 
 
@@ -411,15 +429,22 @@
     }
 }
 
-@media (max-width: 480px) and (min-width: 320px) {
+@media (max-width: 480px) and (min-width: 375px) {
     .V_search_container {
-        width: 45%;
+        width: 40%;
         height: 35px;
+        /* margin-bottom: 10px; */
     }
     
     .V_header_container {
         padding: 10px 10px;
+        /* flex-direction: column; */
     }
+
+    /* .V_small_size_apce{
+        width: 100%;
+        justify-content: space-between !important;
+    } */
     
     .V_search_icon {
         font-size: 1.2rem;
@@ -468,6 +493,101 @@
     .V_dropdown_text{
         font-size: 14px;
         font-weight: 400;
+        color: #36454F;
+    }
+
+    .V_offcanvas_btn{
+        border: 1px solid #36454F;
+        border-radius: 6%;
+        padding: 2px;
+        height: 30px;
+        width: 30px;
+    }
+    .V_ofcanvas_icon{
+        font-size: 1.5rem;
+        color: #36454F;
+    }
+}
+
+@media (max-width: 374px) and (min-width: 320px) {
+    .V_search_container {
+        width: 100%;
+        height: 35px;
+        margin-bottom: 10px;
+    }
+    
+    .V_header_container {
+        padding: 15px 20px;
+        flex-direction: column;
+    }
+
+    .V_320_size{
+        justify-content: center !important;
+    }
+
+    .V_small_size_apce{
+        width: 100%;
+        justify-content: space-between !important;
+    }
+    .V_search_icon {
+        font-size: 1.2rem;
+        margin: 0px 8px;
+    }
+    
+    .V_search_input {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .V_user_image {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .V_user_name {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .V_notification_back_image {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .V_notification_icon {
+        top: 30%;
+        left: 30%;
+        width: 12px;
+    }
+    
+    .V_notification_number_image {
+        position: absolute;
+        top: -6%;
+        right: -6%;
+        width: 15px;
+    }
+    
+    .V_notification_number_text {
+        position: absolute;
+        top: -7%;
+        right: 6%;
+        font-size: 10px;
+    }
+    .V_dropdown_text{
+        font-size: 14px;
+        font-weight: 400;
+        color: #36454F;
+    }
+
+    .V_offcanvas_btn{
+        border: 1px solid #36454F;
+        border-radius: 6%;
+        padding: 2px;
+        height: 30px;
+        width: 30px;
+    }
+    .V_ofcanvas_icon{
+        font-size: 1.5rem;
         color: #36454F;
     }
 }

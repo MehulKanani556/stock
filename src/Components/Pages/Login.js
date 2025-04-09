@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 // import '../CSS/Dhruvin/Login.css'
 import laptop from '../Images/Dhruvin/laptop.png'
 import { FaEye } from "react-icons/fa";
@@ -6,9 +7,15 @@ import { FaEyeSlash } from "react-icons/fa6";
 import lock from '../Images/Dhruvin/lock.svg'
 
 const Login = () => {
-
+const navigate = useNavigate();
 const [passToggle, setPassToggle] = useState("password")
 const [page, setPage] = useState("login")
+
+const handleLogin = (e) => {
+  e.preventDefault();
+  // Add your authentication logic here
+  navigate('/layout/dashboard');
+}
 
   return (
     <div>
@@ -42,7 +49,7 @@ const [page, setPage] = useState("login")
                               {passToggle === "password" ? <FaEyeSlash onClick={()=> setPassToggle("text")} className="absolute top-9 right-3 text-[#999999] text-[20px] cursor-pointer" /> : <FaEye onClick={()=> setPassToggle("password")} className="absolute top-9 right-3 text-[#999999] text-[20px] cursor-pointer" /> }
                            </div>
                            <div onClick={()=> setPage("password")} className='text-end text-[#FF0000] text-[14px] font-medium cursor-pointer'>Forgot Password?</div>
-                           <button  className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-10'>Login</button>
+                           <button onClick={handleLogin} className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-10'>Login</button>
                          </form>
                      </div>
                    </div>}
@@ -73,7 +80,7 @@ const [page, setPage] = useState("login")
                               <input type="text" className='lg:h-[50px] lg:w-[50px] md:h-[40px] md:w-[40px] text-center text-[20px] border border-d_color rounded-[5px]'/>
                            </div> 
                            <button onClick={()=> setPage("reset")} className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-12'>Verify</button>
-                           <p className='text-center text-[#727272] mt-3'>Didn’t receive code yet? <span className='text-d_color underline'>Resend</span></p>
+                           <p className='text-center text-[#727272] mt-3'>Didn't receive code yet? <span className='text-d_color underline'>Resend</span></p>
                          </form>
                      </div>
                    </div>}

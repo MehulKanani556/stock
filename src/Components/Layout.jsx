@@ -27,7 +27,7 @@ const Layout = () => {
     return (
         <div className="flex">
             {/* Sidebar - width changes based on collapse state */}
-            <div className={`${isCollapsed ? 'hidden md:block w-[15%] sm:w-[8%] xl:w-[5%]' : 'hidden md:block sm:w-[35%] md:w-[30%] lg:w-[22%] xl:w-[18%]'} transition-all duration-300 bg-d_color text-white h-full`}>
+            <div className={`${isCollapsed ? 'hidden md:block w-[15%] sm:w-[8%] xl:w-[5%]' : 'hidden md:block sm:w-[35%] md:w-[30%] lg:w-[22%] xl:w-[18%]'} transition-all duration-300 bg-d_color sticky top-0 text-white h-full`}>
                 <Sidebar 
                     offToggle={offToggle} 
                     setOffToggle={setOffToggle} 

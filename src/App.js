@@ -9,6 +9,7 @@ import FInancial_Setting_TaxRated from './Components/Pages/FInancial_Setting_Tax
 import EditTaxRates from './Components/Pages/EditTaxRates.js';
 import './Components/CSS/Dhruvin/login.css'
 import ReportProfitLoss from './Components/Pages/ReportProfitLoss.js';
+import Expense from './Components/Pages/Expense.jsx';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
            <Route path="addtaxrate" element={<AddTaxRates/>} />
            <Route path="edittaxrate" element={<EditTaxRates/>} />
            <Route path="reportprofit" element={<ReportProfitLoss/>} />
+           <Route path="expense" element={<Expense />} />
         </Route>
       </Routes>
     </div>
