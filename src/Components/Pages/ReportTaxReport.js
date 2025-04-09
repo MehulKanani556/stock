@@ -1,0 +1,183 @@
+import React, { useRef, useState } from 'react'
+import { IoIosArrowDown, IoMdClose } from 'react-icons/io'
+import mrint from '../Images/Dhruvin/print.svg'
+import xls from '../Images/Dhruvin/xls.svg'
+import pdf from '../Images/Dhruvin/pdf.svg'
+import Bar  from '../Images/Dhruvin/bar.svg'
+import Trash  from '../Images/Dhruvin/trash.svg'
+import { useNavigate } from 'react-router-dom'
+import filter from '../Images/Dhruvin/Filter.svg'
+import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
+import { FaCalendarAlt } from 'react-icons/fa'
+
+const ReportTaxReport = () => {
+
+const [download, setDownload] = useState(false) 
+const [column, setColumn] = useState(false)  
+const navigate = useNavigate() 
+const [open, setOpen] = useState(false)
+const dateInputRef = useRef(null);
+
+const handleIconClick = () => {
+  dateInputRef.current.showPicker?.(); 
+  dateInputRef.current.focus();
+};
+
+  return (
+    <div>
+       <div className='ds_main'>
+          <div className='sm:px-8 px-4 pt-7'>
+          <div className='flex justify-between lg:flex-nowrap flex-wrap'>
+                 <div>
+                    <h2 className='text-d_color text-[24px] font-medium'>Reports</h2>
+                    <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color'>Profit & Loss Report</span></p>  
+                 </div>
+                 <div className='flex xl:flex-wrap lg:flex-nowrap flex-wrap '>
+                    <div className='pt-3'>
+                        <button onClick={()=> setOpen(true)} className='ds_report_filter flex me-4'>
+                              <img src={filter} alt="" className='me-2' /> <span >Filters</span>
+                        </button>
+
+                           <Dialog open={open} onClose={setOpen} className="relative z-10">
+                             <DialogBackdrop transition className="fixed inset-0 bg-black/50 transition-opacity duration-500 ease-in-out data-closed:opacity-0"/>
+                             <div className="fixed inset-0 overflow-hidden">
+                               <div className="absolute inset-0 overflow-hidden">
+                                 <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                                   <DialogPanel transition className="pointer-events-auto relative w-screen max-w-md transform transition duration-500 ease-in-out data-closed:translate-x-full sm:duration-700">
+                                     <TransitionChild>
+                                       <div className="absolute top-0 left-0 -ml-8 flex pt-4 pr-2 duration-500 ease-in-out data-closed:opacity-0 sm:-ml-10 sm:pr-4">
+                                       </div>
+                                     </TransitionChild>
+                                     <div className="flex h-full flex-col overflow-y-scroll bg-white py-4 shadow-xl">
+                                       <div>
+                                          <div className="px-4 sm:px-6 flex justify-between items-center">
+                                            <DialogTitle className="text-xl font-semibold text-gray-900">Filters</DialogTitle>
+                                            <IoMdClose onClick={()=> setOpen(false)} className='text-[22px] text-[#FF0000] cursor-pointer' />
+                                          </div>
+                                          <div className='border-[0.8px] mt-3'></div>
+                                       </div>
+                                       <div className='px-6 mt-6'>
+                                         <div className='mb-4'>
+                                            <div className='relative'>
+                                               <label className='text-d_color font-medium block mb-1'>Date</label>
+                                               <input ref={dateInputRef} type="date" className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'  placeholder='Enter Email'/>
+                                               <FaCalendarAlt onClick={handleIconClick} className='absolute top-[39px] right-[15px] cursor-pointer' fill='#36454F' />
+                                            </div>
+                                          </div>
+                                          <div className='mb-4'>
+                                               <label className='text-d_color font-medium block mb-1'>Supplier Name</label>
+                                               <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
+                                                 <option value="">Select Customer Name</option>
+                                                 <option value="">John Wick</option>
+                                                 <option value="">The Rock</option>
+                                               </select>
+                                          </div>
+                                          <div className='mb-4'>
+                                               <label className='text-d_color font-medium block mb-1'>Payment Method</label>
+                                               <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
+                                                 <option value="">Select Payment Method</option>
+                                                 <option value="">Paypal</option>
+                                                 <option value="">Upi</option>
+                                               </select>
+                                          </div>
+                                       </div>
+                                       <div className='px-6 mt-auto'>
+                                           <button className='ds_report_cancel me-4'>Cancel</button>
+                                           <button className='ds_report_apply'>Apply</button>
+                                       </div>
+                                     </div>
+                                   </DialogPanel>
+                                 </div>
+                               </div>
+                             </div>
+                           </Dialog>
+                    </div>
+                    <div className='relative pt-3'>
+                      <button className='ds_column_btn  flex me-4' onClick={()=> setColumn(!column)}> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
+                        {column && <div className='ds_column_box z-[2]'>
+                          <div className='flex justify-between items-center mb-2'>
+                             <h6 className='text-d_color'>Customer Name</h6>
+                             <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             </label>
+                          </div>
+                          <div className='flex justify-between items-center mb-2'>
+                             <h6 className='text-d_color'>Date</h6>
+                             <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             </label>
+                          </div>
+                          <div className='flex justify-between items-center mb-2'>
+                             <h6 className='text-d_color'>Invoice No.</h6>
+                             <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             </label>
+                          </div>
+                          <div className='flex justify-between items-center mb-2'>
+                             <h6 className='text-d_color'>Total Amount</h6>
+                             <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             </label>
+                          </div>
+                          <div className='flex justify-between items-center mb-2'>
+                             <h6 className='text-d_color'>Payment Method</h6>
+                             <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             </label>
+                          </div>
+                          <div className='flex justify-between items-center mb-2'>
+                             <h6 className='text-d_color'>Discount</h6>
+                             <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             </label>
+                          </div>
+                          <div className='flex justify-between items-center '>
+                             <h6 className='text-d_color'>Tax Amount</h6>
+                             <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             </label>
+                          </div>
+                      </div>}
+                    </div>
+                    <div className='pt-3'>
+                       <button className='ds_column_btn whitespace-nowrap  flex me-4'> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
+                    </div>
+                    <div className='relative pt-3'>
+                       <button onClick={()=> setDownload(!download)} className='ds_fincial_download flex items-center'>Download <IoIosArrowDown className='ms-1' /></button>
+                       {download && <div className='ds_report_download'>
+                         <div className='flex items-center mb-3'>
+                            <div>
+                               <img src={mrint} alt="" className='me-3' />
+                            </div>
+                            <p>Print</p>
+                         </div>
+                         <div className='flex items-center mb-3'>
+                            <div>
+                               <img src={xls} alt="" className='me-3' />
+                            </div>
+                            <p>XLS</p>
+                         </div>
+                         <div className='flex items-center'>
+                            <div>
+                               <img src={pdf} alt="" className='me-3' />
+                            </div>
+                            <p>PDF</p>
+                         </div>
+                       </div>}
+                    </div> 
+                 </div>
+              </div>
+          </div>
+       </div>
+    </div>
+  )
+}
+
+export default ReportTaxReport
