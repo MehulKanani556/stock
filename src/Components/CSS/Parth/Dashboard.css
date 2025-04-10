@@ -17,6 +17,11 @@
     height: 60px;
 }
 
+.V_col_img_back {
+    width: 60px;
+    height: 60px;
+}
+
 .V_col_persent {
     font-size: 16px;
     font-weight: 600;
@@ -32,6 +37,10 @@
     height: 20px;
 }
 
+.V_main_main_flex {
+    display: flex;
+}
+
 .V_main_flex {
     display: flex;
     flex-wrap: wrap;
@@ -40,6 +49,21 @@
 .V_flex_with_width {
     display: flex;
     width: 100%;
+}
+
+.V_month_div {
+    border-radius: 6px;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.V_select {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #36454F;
 }
 
 /* ============ charts ============ */
@@ -53,11 +77,6 @@
     width: 70%;
 }
 
-.V_months {
-    font-size: 14px;
-    font-weight: 500;
-    color: #36454F;
-}
 
 .V_months_icon {
     font-size: 20px;
@@ -69,6 +88,159 @@
     width: 100%;
     height: 100%;
 }
+
+/* ============ stock alert ============ */
+
+.V_stock_alert_width {
+    width: 70%;
+}
+
+.V_stock_alert_table thead tr th {
+    padding-left: 20px;
+    text-align: start;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    color: #36454F;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.V_stock_alert_table thead tr {
+    border-bottom: 0.8px solid #7272724D;
+}
+
+.V_stock_alert_table tbody tr td {
+    padding-left: 20px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    color: #292929;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.V_stock_alert_table tbody tr {
+    border-bottom: 0.8px solid #7272724D;
+}
+
+.V_denger {
+    color: #FF0000 !important;
+}
+
+
+/* ========== width 30% ========== */
+
+.V_width_30 {
+    width: 30%;
+    margin-top: 12px;
+}
+
+/* ==========   recent notification ========== */
+
+.V_recent {
+    box-shadow: 1px 1px 20px 0.5px #0000000F;
+}
+
+.V_notification_text {
+    font-weight: 500;
+    font-size: 22px;
+    color: #36454F;
+}
+
+.V_view_all {
+    font-weight: 500;
+    font-size: 14px;
+    align-self: center;
+    color: #36454F;
+}
+
+.V_recent_img_back {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #FAE1E1;
+}
+
+.V_recent_text {
+    font-weight: 500;
+    font-size: 15px;
+    color: #292929;
+}
+
+.V_recent_text_2 {
+    font-weight: 400;
+    font-size: 12px;
+    color: #727272;
+}
+
+
+/* ========== top selling pie chart ========== */
+
+
+.V_pie_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.V_legent_text {
+    font-size: 16px;
+    /* font-weight: 600; */
+}
+
+.V_pie_chart_div {
+    width: 63%;
+    height: 250px;
+}
+
+.V_legent_div {
+    width: 37%;
+}
+
+.V_recent_pie_chart_margin {
+    margin-top: 20px;
+    height: 250px;
+}
+
+.V_recent_pie_chart_margin2 {
+    margin-top: 20px;
+}
+
+.V_pie_flex2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.V_pie_chart_div2 {
+    width: 63%;
+    height: 285px;
+
+}
+
+.V_legent_div2 {
+    width: 37%;
+}
+
+.V_pie_radius {
+    --pie-inner-radius: 40;
+    --pie-outer-radius: 70;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -105,6 +277,11 @@
         height: 60px;
     }
 
+    .V_col_img_back {
+        width: 60px;
+        height: 60px;
+    }
+
     .V_col_persent {
         font-size: 16px;
         font-weight: 600;
@@ -118,6 +295,33 @@
     .V_col_img_up_size {
         width: 20px;
         height: 20px;
+    }
+
+
+    /* ============ top selling pie chart ============ */
+
+    .V_pie_flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .V_legent_text {
+        font-size: 16px;
+        /* font-weight: 600; */
+    }
+
+    .V_pie_chart_div {
+        width: 63%;
+    }
+
+    .V_pie_chart_div2 {
+        width: 63%;
+        height: 285px;
+    }
+
+    .V_legent_div {
+        width: 37%;
     }
 }
 
@@ -154,6 +358,11 @@
         height: 60px;
     }
 
+    .V_col_img_back {
+        width: 60px;
+        height: 60px;
+    }
+
     .V_col_persent {
         font-size: 16px;
         font-weight: 600;
@@ -168,9 +377,31 @@
         width: 20px;
         height: 20px;
     }
+
+    /* ============ top selling pie chart ============ */
+
+    .V_pie_flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .V_legent_text {
+        font-size: 16px;
+        /* font-weight: 600; */
+    }
+
+    .V_pie_chart_div {
+        width: 63%;
+    }
+
+    .V_legent_div {
+        width: 37%;
+    }
+
 }
 
-@media (max-width: 1649px) and (min-width: 1440px) {
+@media (max-width: 1649px) and (min-width: 1441px) {
     .V_main_flex {
         display: flex;
         flex-wrap: nowrap;
@@ -203,6 +434,11 @@
         height: 50px;
     }
 
+    .V_col_img_back {
+        width: 50px;
+        height: 50px;
+    }
+
     .V_col_persent {
         font-size: 14px;
         font-weight: 600;
@@ -217,9 +453,30 @@
         width: 18px;
         height: 18px;
     }
+
+    /* ============ top selling pie chart ============ */
+
+    .V_pie_flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .V_legent_text {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .V_pie_chart_div {
+        width: 63%;
+    }
+
+    .V_legent_div {
+        width: 37%;
+    }
 }
 
-@media (max-width: 1439px) and (min-width: 1200px) {
+@media (max-width: 1440px) and (min-width: 1200px) {
     .V_main_flex {
         display: flex;
         flex-wrap: nowrap;
@@ -252,6 +509,11 @@
         height: 35px;
     }
 
+    .V_col_img_back {
+        width: 35px;
+        height: 35px;
+    }
+
     .V_col_persent {
         font-size: 12px;
         font-weight: 600;
@@ -265,6 +527,52 @@
     .V_col_img_up_size {
         width: 15px;
         height: 15px;
+    }
+
+    /* ============ top selling pie chart ============ */
+
+    .V_pie_flex {
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: center;
+    }
+
+    .V_legent_text {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .V_pie_chart_div {
+        width: 63%;
+    }
+
+    .V_legent_div {
+        width: 37%;
+    }
+
+    .V_recent_pie_chart_margin2 {
+        margin-top: 20px;
+    }
+
+    .V_pie_flex2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .V_pie_chart_div2 {
+        width: 63%;
+        height: 225px;
+
+    }
+
+    .V_legent_div2 {
+        width: 37%;
+    }
+
+    .V_pie_radius {
+        --pie-inner-radius: 40;
+        --pie-outer-radius: 70;
     }
 }
 
@@ -294,6 +602,11 @@
         height: 60px;
     }
 
+    .V_col_img_back {
+        width: 60px;
+        height: 60px;
+    }
+
     .V_col_persent {
         font-size: 16px;
         font-weight: 600;
@@ -312,8 +625,37 @@
 
     /* ============ charts ============ */
 
+    .V_width_30 {
+        width: 100%;
+        margin-top: 0px;
+    }
+
     .V_chart_width {
         width: 100%;
+    }
+
+    .V_stock_alert_width {
+        width: 100%;
+    }
+
+    .V_flex_2_chart {
+        display: flex;
+        gap: 20px;
+    }
+
+    .V_main_main_flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .V_pie_chart_div {
+        width: 63%;
+        height: 176px;
+    }
+
+    .V_pie_chart_div2 {
+        width: 63%;
+        height: 176px;
     }
 }
 
@@ -343,6 +685,11 @@
         height: 40px;
     }
 
+    .V_col_img_back {
+        width: 40px;
+        height: 40px;
+    }
+
     .V_col_persent {
         font-size: 12px;
         font-weight: 600;
@@ -363,6 +710,67 @@
 
     .V_chart_width {
         width: 100%;
+    }
+
+    .V_stock_alert_width {
+        width: 100%;
+    }
+
+
+    /* ============ stock alert ============ */
+
+    .V_stock_alert_width {
+        width: 100%;
+    }
+
+    .V_stock_alert_table thead tr th {
+        padding-left: 20px;
+        text-align: start;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 16px;
+        text-wrap: nowrap;
+    }
+
+    .V_stock_alert_table tbody tr td {
+        padding-left: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 12px;
+    }
+
+    .V_flex_2_chart {
+        /* display: flex; */
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .V_main_main_flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .V_width_30 {
+        width: 100%;
+    }
+
+    .V_pie_chart_div {
+        width: 63%;
+        height: 200px;
+    }
+
+    .V_legent_div {
+        width: 37%;
+    }
+
+    .V_pie_chart_div2 {
+        width: 63%;
+        height: 200px;
+    }
+
+    .V_legent_div2 {
+        width: 37%;
+        justify-content: center !;
     }
 }
 
@@ -393,6 +801,11 @@
         height: 40px;
     }
 
+    .V_col_img_back {
+        width: 40px;
+        height: 40px;
+    }
+
     .V_col_persent {
         font-size: 12px;
         font-weight: 600;
@@ -413,6 +826,63 @@
     .V_chart_width {
         width: 100%;
     }
+
+    /* ============ stock alert ============ */
+
+    .V_stock_alert_width {
+        width: 100%;
+    }
+
+    .V_stock_alert_table thead tr th {
+        padding-left: 20px;
+        text-align: start;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 16px;
+        text-wrap: nowrap;
+    }
+
+    .V_stock_alert_table tbody tr td {
+        padding-left: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 12px;
+    }
+
+    .V_flex_2_chart {
+        /* display: flex; */
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .V_main_main_flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .V_width_30 {
+        width: 100%;
+    }
+
+    .V_pie_chart_div {
+        width: 63%;
+        height: 176px;
+    }
+
+    .V_legent_div {
+        width: 37%;
+    }
+
+    .V_pie_chart_div2 {
+        width: 63%;
+        height: 200px;
+    }
+
+    .V_legent_div2 {
+        width: 37%;
+        justify-content: center !;
+    }
+
 }
 
 @media (max-width: 576px) and (min-width: 481px) {
@@ -447,6 +917,11 @@
         height: 50px;
     }
 
+    .V_col_img_back {
+        width: 50px;
+        height: 50px;
+    }
+
     .V_col_persent {
         font-size: 14px;
         font-weight: 600;
@@ -467,6 +942,70 @@
 
     .V_chart_width {
         width: 100%;
+    }
+
+    .V_stock_alert_width {
+        width: 100%;
+    }
+
+    .V_chart_container {
+        min-width: 576px !important;
+    }
+
+    /* ============ stock alert ============ */
+
+    .V_stock_alert_width {
+        width: 100%;
+    }
+
+    .V_stock_alert_table thead tr th {
+        padding-left: 20px;
+        text-align: start;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 16px;
+        text-wrap: nowrap;
+    }
+
+    .V_stock_alert_table tbody tr td {
+        padding-left: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 12px;
+    }
+
+    .V_flex_2_chart {
+        /* display: flex; */
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .V_main_main_flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .V_width_30 {
+        width: 100%;
+    }
+
+    .V_pie_chart_div {
+        width: 63%;
+        height: 180px;
+    }
+
+    .V_legent_div {
+        width: 37%;
+    }
+
+    .V_pie_chart_div2 {
+        width: 63%;
+        height: 180px;
+    }
+
+    .V_legent_div2 {
+        width: 37%;
+        justify-content: center !;
     }
 }
 
@@ -502,6 +1041,11 @@
         height: 40px;
     }
 
+    .V_col_img_back {
+        width: 40px;
+        height: 40px;
+    }
+
     .V_col_persent {
         font-size: 12px;
         font-weight: 600;
@@ -517,11 +1061,91 @@
         height: 15px;
     }
 
+    .V_select {
+        font-size: 14px;
+    }
+
+    .V_month_div {
+        height: 50px;
+        padding: 7px 10px;
+    }
+
     /* ============ charts ============ */
 
     .V_chart_width {
         width: 100%;
     }
+
+    .V_chart_container {
+        min-width: 500px !important;
+    }
+
+    /* ============ stock alert ============ */
+
+    .V_stock_alert_width {
+        width: 100%;
+    }
+
+    .V_stock_alert_table thead tr th {
+        padding-left: 20px;
+        text-align: start;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 16px;
+        text-wrap: nowrap;
+    }
+
+    .V_stock_alert_table tbody tr td {
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 12px;
+    }
+
+
+    .V_flex_2_chart {
+        /* display: flex; */
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .V_main_main_flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .V_width_30 {
+        width: 100%;
+    }
+
+    .V_pie_chart_div {
+        width: 57%;
+        height: 180px;
+    }
+
+    .V_legent_div {
+        width: 43%;
+    }
+
+    .V_pie_chart_div2 {
+        width: 57%;
+        height: 180px;
+    }
+
+    .V_legent_div2 {
+        width: 43%;
+        justify-content: center !;
+    }
+
 }
 
 /* @media (max-width: 374px) and (min-width: 320px) {} */
+
+
+
+@media (width: 1440px) {
+    .V_pie_chart_div2 {
+        width: 63%;
+        height: 260px !important;
+    }
+}

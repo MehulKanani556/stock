@@ -1,14 +1,16 @@
 import React from 'react';
-import Total from '../Images/Parth/col_1.png';
+// import Total from '../Images/Parth/col_1.png';
 import '../CSS/Parth/Dashboard.css';
 import up from '../Images/Parth/up.png';
 import down from '../Images/Parth/down.png';
-import Expense from '../Images/Parth/Totalexpense.png';
-import Customer from '../Images/Parth/Totalcustomer.png';
-import Supplier from '../Images/Parth/Totalsupplier.png';
+import Expense from '../Images/Parth/Expense1.png';
+import Customer from '../Images/Parth/totalCustomer.svg';
+import Law from '../Images/Parth/Lawstocks1.png'
+import Supplier from '../Images/Parth/totalSupplier.svg';
 import { FaAngleDown } from 'react-icons/fa';
 // import  from 'react';
-import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import Alert from '../Images/Parth/alert.svg';
 
 const data = [
   {
@@ -85,6 +87,14 @@ const data = [
   // },
 ];
 
+const pieData = [
+  { name: "Product 1", color: "#1E2A5E" },
+  { name: "Product 2", color: "#55679C" },
+  { name: "Product 3", color: "#7C93C3" },
+];
+
+const COLORS = ["#1E2A5E", "#55679C", "#7C93C3", "#CCD6EB"];
+
 
 const Dashboard = () => {
 
@@ -93,19 +103,19 @@ const Dashboard = () => {
   return (
     <div>
       <div className='bg-[#f5f5f5]'>
-        <div className='p-10'>
+        <div className='p-4 md:p-7 lg:p-10'>
 
           <div>
             <h2 className='text-d_color text-[24px] font-medium'>Dashboard</h2>
           </div>
 
-          <div class="V_main_flex gap-5 py-3">
+          <div class="V_main_flex gap-5 py-4">
             <div className='V_flex_with_width '>
               <div class="w-full   bg-white  V_col_box_shadow">
                 <div className='flex justify-between'>
                   <div className='flex'>
-                    <div>
-                      <img src={Total} alt="" className='V_col_img_size' />
+                    <div className='V_col_img_back bg-[#DFEBF1]'>
+                      <img src={Law} alt="" className='V_col_img_size V_filter p-2 md:p-2 2xl:p-2' />
                     </div>
                     <div className='ms-3'>
                       <p className='text-[#727272]  V_col_text'>Total Income</p>
@@ -123,8 +133,8 @@ const Dashboard = () => {
               <div class="w-full bg-white  V_col_box_shadow">
                 <div className='flex justify-between'>
                   <div className='flex'>
-                    <div>
-                      <img src={Expense} alt="" className='V_col_img_size' />
+                    <div className='V_col_img_back bg-[#DFEBF1]'>
+                      <img src={Expense} alt="" className='V_col_img_size V_filter p-2 md:p-2 2xl:p-2' />
                     </div>
                     <div className='ms-3'>
                       <p className='text-[#727272] V_col_text'>Total Expense</p>
@@ -144,8 +154,8 @@ const Dashboard = () => {
               <div class="w-full bg-white  V_col_box_shadow">
                 <div className='flex justify-between'>
                   <div className='flex'>
-                    <div>
-                      <img src={Customer} alt="" className='V_col_img_size' />
+                    <div className='V_col_img_back bg-[#DFEBF1]'>
+                      <img src={Customer} alt="" className='V_col_img_size  p-2 md:p-2 2xl:p-2' />
                     </div>
                     <div className='ms-3'>
                       <p className='text-[#727272] V_col_text'>Total Customers</p>
@@ -163,8 +173,8 @@ const Dashboard = () => {
               <div class="w-full bg-white  V_col_box_shadow">
                 <div className='flex justify-between'>
                   <div className='flex'>
-                    <div>
-                      <img src={Supplier} alt="" className='V_col_img_size' />
+                    <div className='V_col_img_back bg-[#DFEBF1]'>
+                      <img src={Supplier} alt="" className='V_col_img_size p-2 md:p-2 2xl:p-2' />
                     </div>
                     <div className='ms-3'>
                       <p className='text-[#727272] V_col_text'>Total Suppliers</p>
@@ -181,78 +191,289 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
+          <div className="V_main_main_flex gap-6">
 
-          <div className='V_chart_width'>
-            <div className='bg-white p-5 '>
-              <div className='V_chart_heading flex justify-between'>
-                <p className='text-d_color'>Sales & Purchase</p>
-                <div className='flex gap-2 bg-[#DFEBF1] p-2 rounded-lg'>
-                  <p className='V_months'>Months</p>
-                  <FaAngleDown className='V_months_icon' />
+
+            <div className='V_chart_width'>
+
+              {/* ========== chart 1 ========== */}
+              <div className=' py-3'>
+                <div className='bg-white p-5 '>
+                  <div className='V_chart_heading flex justify-between'>
+                    <p className='text-d_color'>Sales & Purchase</p>
+                    <div className='bg-[#DFEBF1]  V_month_div'>
+                      <select id="calander" class="V_select">
+                        <option selected value="month"><p>Months</p></option>
+                        <option value="day"><p>Day</p></option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className=" h-[400px] overflow-x-auto ">
+                    <ResponsiveContainer className='pt-10 w-full V_chart_container'>
+                      <BarChart
+                        width={500}
+                        height={300}
+                        data={data}
+                        margin={{
+                          top: 5,
+                          bottom: 20, // Increased bottom margin to create space between bars and x-axis
+                        }}
+                      >
+                        <CartesianGrid strokeDasharray="" horizontal={true} vertical={false} />
+                        <XAxis dataKey="name" margin={{ top: 20 }} axisLine={{ strokeWidth: 1, y: 5 }} />
+                        <YAxis
+                          tickFormatter={(value) => `${value}`}
+                          domain={[0, 120]}
+                          ticks={[30, 60, 90, 120]}
+                          axisLine={false}
+                        />
+                        <Legend iconType="circle" />
+                        <Bar
+                          dataKey="Purchase"
+                          fill="#1958B4"
+                          barSize={10}
+                        />
+                        <Bar
+                          dataKey="Sales"
+                          fill="#16325B"
+                          barSize={10}
+                        />
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
                 </div>
               </div>
-              {/* <div className='V_chart_container'>
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart
-                    width={500}
-                    height={300}
-                    data={data}
-                    margin={{
-                      top: 5,
-                      right: 30,
-                      left: 20,
-                      bottom: 5,
-                    }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="pv" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-                    <Bar dataKey="uv" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div> */}
-              <div className="w-full h-[400px] overflow-x-auto ">
-                <ResponsiveContainer className='pt-10 V_chart_container'>
-                  <BarChart
-                    width={500}
-                    height={300}
-                    data={data}
-                    margin={{
-                      top: 5,
-                      bottom: 20, // Increased bottom margin to create space between bars and x-axis
-                    }}
-                  >
-                    <CartesianGrid strokeDasharray="" horizontal={true} vertical={false} />
-                      <XAxis dataKey="name" margin={{ top: 20 }} axisLine={{ strokeWidth: 1, y: 5 }} />
-                    <YAxis 
-                      tickFormatter={(value) => `${value}`}
-                      domain={[0, 120]}
-                      ticks={[ 30, 60, 90, 120]}
-                      axisLine={false}
-                    />
-                    <Tooltip />
-                    <Legend iconType="circle" />
-                    <Bar
-                      dataKey="Purchase"
-                      fill="#1958B4" // Changed to a vibrant blue
-                      activeBar={<Rectangle fill="#8884d8" stroke="#4318FF" />}
-                      barSize={10}
-                    />
-                    <Bar
-                      dataKey="Sales" 
-                      fill="#16325B" // Changed to a lighter blue
-                      activeBar={<Rectangle fill="#82ca9d" stroke="#6AD2FF" />}
-                      barSize={10}
-                    />
-                  </BarChart>
-                </ResponsiveContainer>
+
+              {/* ========== stock alert ========== */}
+              <div className=' text-[24px] py-3'>
+                <div className='overflow-x-auto'>
+                  <div className='bg-white p-5'>
+                    <p className='text-d_color'>Stock Alert</p>
+
+                    <div className='overflow-x-auto'>
+                      <table className='w-full V_stock_alert_table'>
+                        <thead>
+                          <tr>
+                            <th>SKU</th>
+                            <th>Item Name</th>
+                            <th>Wearhouse</th>
+                            <th>Qty.</th>
+                            <th>Alert Qty.</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>P1234</td>
+                            <td>Pen</td>
+                            <td>Wearhouse 1</td>
+                            <td>05</td>
+                            <td className='V_denger'>10</td>
+                          </tr>
+                          <tr>
+                            <td>P1234</td>
+                            <td>Pen</td>
+                            <td>Wearhouse 1</td>
+                            <td>05</td>
+                            <td className='V_denger'>10</td>
+                          </tr>
+                          <tr>
+                            <td>P1234</td>
+                            <td>Pen</td>
+                            <td>Wearhouse 1</td>
+                            <td>05</td>
+                            <td className='V_denger'>10</td>
+                          </tr>
+                          <tr>
+                            <td>P1234</td>
+                            <td>Pen</td>
+                            <td>Wearhouse 1</td>
+                            <td>05</td>
+                            <td className='V_denger'>10</td>
+                          </tr>
+                          <tr style={{ border: 'none' }}>
+                            <td>P1234</td>
+                            <td>Pen</td>
+                            <td>Wearhouse 1</td>
+                            <td>05</td>
+                            <td className='V_denger'>10</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+
+            <div className='V_width_30 '>
+
+              {/* ========== recent notification ========== */}
+              <div className='V_recent bg-white w-full'>
+                <div className='p-5'>
+                  <div className="flex justify-between pb-3">
+                    <p className='V_notification_text'>Recent Notification</p>
+                    <p className='V_view_all text-nowrap'>View All</p>
+                  </div>
+                  <div>
+                    <div className='flex py-3 border-b border-[#E0E0E0]'>
+                      <div className='V_recent_img_back flex justify-center items-center'>
+                        <img src={Alert} alt="" className='V_recent_img_size' />
+                      </div>
+                      <div className='ms-3'>
+                        <p className='V_recent_text'>Stock Alert</p>
+                        <p className='V_recent_text_2'>Lorem ipsum dolor sit amet consectetur. Tellus vo....</p>
+                      </div>
+                    </div>
+                    <div className='flex py-3'>
+                      <div className='V_recent_img_back flex justify-center items-center'>
+                        <img src={Alert} alt="" className='V_recent_img_size' />
+                      </div>
+                      <div className='ms-3'>
+                        <p className='V_recent_text'>Stock Alert</p>
+                        <p className='V_recent_text_2'>Lorem ipsum dolor sit amet consectetur. Tellus vo....</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className='V_flex_2_chart'>
+                {/* ========== top selling pie chart ========== */}
+                <div className='V_recent bg-white w-full V_recent_pie_chart_margin'>
+                  <div className='p-5'>
+                    <div>
+                      <p className='V_notification_text'>Top Selling Products</p>
+                    </div>
+
+                    <div className="V_pie_flex items-center">
+                      <div className="V_pie_chart_div">
+                        <ResponsiveContainer width="100%" >
+                          <PieChart>
+                            <Pie
+                              data={pieData.map(item => ({
+                                ...item,
+                                value: 1 // Add equal value for each segment
+                              }))}
+                              cx="50%"
+                              cy="50%"
+                              innerRadius={40}
+                              outerRadius={70}
+                              paddingAngle={2}
+                              dataKey="value"
+                            >
+                              {pieData.map((entry, index) => (
+                                <Cell
+                                  key={`cell-${index}`}
+                                  fill={entry.color} // Use color from pieData
+                                />
+                              ))}
+                            </Pie>
+                          </PieChart>
+                        </ResponsiveContainer>
+                      </div>
+                      <div className="V_legent_div pl-1">
+                        {pieData.map((category, index) => (
+                          <div
+                            key={index}
+                            className="flex  items-center mb-3"
+                          >
+                            <div
+                              style={{
+                                width: "10px",
+                                height: "10px",
+                                borderRadius: "50%",
+                                backgroundColor: category.color, // Use color from pieData
+                                marginRight: "10px",
+                              }}
+                            ></div>
+                            <div className="flex items-center">
+                              <span className="text-gray-600 V_legent_text">
+                                {category.name}
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+                {/* ========== top Payment chart 2 ========== */}
+                <div className='V_recent bg-white w-full V_recent_pie_chart_margin2'>
+                  <div className='p-5'>
+                    <div>
+                      <p className='V_notification_text'>Payments</p>
+                    </div>
+
+                    <div className="V_pie_flex2 items-center">
+                      <div className="V_pie_chart_div2">
+                        <ResponsiveContainer width="100%">
+                          <PieChart>
+                            <Pie
+                              data={pieData.map(item => ({
+                                ...item,
+                                value: 1 // Add equal value for each segment
+                              }))}
+                              cx="50%"
+                              cy="50%"
+                              // innerRadius={40}
+                              // outerRadius={70}
+                              className='V_pie_radius'
+                              paddingAngle={2}
+                              dataKey="value"
+                            >
+                              {pieData.map((entry, index) => (
+                                <Cell
+                                  key={`cell-${index}`}
+                                  fill={entry.color} // Use color from pieData
+                                />
+                              ))}
+                            </Pie>
+                          </PieChart>
+                        </ResponsiveContainer>
+                      </div>
+                      <div className="V_legent_div2 pl-1">
+                        {pieData.map((category, index) => (
+                          <div
+                            key={index}
+                            className="flex  items-center mb-3"
+                          >
+                            <div
+                              style={{
+                                width: "10px",
+                                height: "10px",
+                                borderRadius: "50%",
+                                backgroundColor: category.color, // Use color from pieData
+                                marginRight: "10px",
+                              }}
+                            ></div>
+                            <div className="flex items-center">
+                              <span className="text-gray-600 V_legent_text">
+                                {category.name}
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+
               </div>
 
             </div>
+
+
           </div>
+
+
         </div>
       </div>
     </div>
