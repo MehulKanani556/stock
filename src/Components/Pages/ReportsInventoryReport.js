@@ -12,72 +12,73 @@ import { FaCalendarAlt } from 'react-icons/fa'
 import station from '../Images/Dhruvin/station.png'
 import paypal from '../Images/Dhruvin/paypal.png'
 
-const ReportTaxReport = () => {
 
-const [download, setDownload] = useState(false) 
-const [column, setColumn] = useState(false)  
-const navigate = useNavigate() 
-const [open, setOpen] = useState(false)
-const dateInputRef = useRef(null);
-const totalItems = 30;
-const itemsPerPage = 10;
-const totalPages = Math.ceil(totalItems / itemsPerPage);
-const [currentPage, setCurrentPage] = useState(1);
+const ReportsInventoryReport = () => {
 
-const handleIconClick = () => {
-  dateInputRef.current.showPicker?.(); 
-  dateInputRef.current.focus();
-};
-
-const goToPage = (page) => {
-  if (page < 1 || page > totalPages) return;
-  setCurrentPage(page);
-  console.log('Page changed to:', page);
-};
-
-const getPageNumbers = () => {
-  const maxVisible = 5;
-  const pages = [];
-
-  if (totalPages <= maxVisible + 2) {
-    for (let i = 1; i <= totalPages; i++) {
-      pages.push(i);
-    }
-  } else {
-    if (currentPage <= maxVisible) {
-      for (let i = 1; i <= maxVisible; i++) {
-        pages.push(i);
+    const [download, setDownload] = useState(false) 
+    const [column, setColumn] = useState(false)  
+    const navigate = useNavigate() 
+    const [open, setOpen] = useState(false)
+    const dateInputRef = useRef(null);
+    const totalItems = 30;
+    const itemsPerPage = 10;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const [currentPage, setCurrentPage] = useState(1);
+    
+    const handleIconClick = () => {
+      dateInputRef.current.showPicker?.(); 
+      dateInputRef.current.focus();
+    };
+    
+    const goToPage = (page) => {
+      if (page < 1 || page > totalPages) return;
+      setCurrentPage(page);
+      console.log('Page changed to:', page);
+    };
+    
+    const getPageNumbers = () => {
+      const maxVisible = 5;
+      const pages = [];
+    
+      if (totalPages <= maxVisible + 2) {
+        for (let i = 1; i <= totalPages; i++) {
+          pages.push(i);
+        }
+      } else {
+        if (currentPage <= maxVisible) {
+          for (let i = 1; i <= maxVisible; i++) {
+            pages.push(i);
+          }
+          pages.push('...');
+          pages.push(totalPages);
+        } else if (currentPage > totalPages - maxVisible) {
+          pages.push(1);
+          pages.push('...');
+          for (let i = totalPages - maxVisible + 1; i <= totalPages; i++) {
+            pages.push(i);
+          }
+        } else {
+          pages.push(1);
+          pages.push('...');
+          for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+            pages.push(i);
+          }
+          pages.push('...');
+          pages.push(totalPages);
+        }
       }
-      pages.push('...');
-      pages.push(totalPages);
-    } else if (currentPage > totalPages - maxVisible) {
-      pages.push(1);
-      pages.push('...');
-      for (let i = totalPages - maxVisible + 1; i <= totalPages; i++) {
-        pages.push(i);
-      }
-    } else {
-      pages.push(1);
-      pages.push('...');
-      for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-        pages.push(i);
-      }
-      pages.push('...');
-      pages.push(totalPages);
-    }
-  }
-
-  return pages;
-}
-
+    
+      return pages;
+    }   
+    
   return (
     <div>
-       <div className='ds_main'>
+      <div className='ds_main'>
           <div className='sm:px-8 px-4 pt-7'>
               <div className='flex justify-between lg:flex-nowrap flex-wrap'>
                  <div>
                     <h2 className='text-d_color text-[24px] font-medium'>Reports</h2>
-                    <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Tax Report</span></p>  
+                    <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'> Inventory Reports</span></p>  
                  </div>
                  <div className='flex xl:flex-wrap lg:flex-nowrap flex-wrap '>
                     <div className='pt-3'>
@@ -220,14 +221,6 @@ const getPageNumbers = () => {
                        </div>}
                     </div> 
                  </div>
-              </div>
-              <div className=''>
-                 <button className='ds_report_purchase me-4 mt-4'>
-                     Purchase Tax Report
-                 </button>
-                 <button className='ds_report_sales mt-4'>
-                     Sales Tax Report
-                 </button>
               </div>
 
               <div className='pt-7'>
@@ -396,4 +389,4 @@ const getPageNumbers = () => {
   )
 }
 
-export default ReportTaxReport
+export default ReportsInventoryReport

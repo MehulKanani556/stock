@@ -11,6 +11,14 @@ import './Components/CSS/Dhruvin/login.css'
 import ReportProfitLoss from './Components/Pages/ReportProfitLoss.js';
 import Expense from './Components/Pages/Expense.jsx';
 import ReportTaxReport from './Components/Pages/ReportTaxReport.js';
+import ReportIncomeReport from './Components/Pages/ReportIncomeReport.js';
+import ReportExpenseReport from './Components/Pages/ReportExpenseReport.js';
+import ReportCustomerReport from './Components/Pages/ReportCustomerReport.js';
+import ReportSupplierPayment from './Components/Pages/ReportSupplierPayment.js';
+import ReportSupplierReturn from './Components/Pages/ReportSupplierReturn.js';
+import ReportSupplierPurchase from './Components/Pages/ReportSupplierPurchase.js';
+import ReportInvoiceReport from './Components/Pages/ReportInvoiceReport.js';
+import ReportsInventoryReport from './Components/Pages/ReportsInventoryReport.js';
 
 function App() {
   return (
@@ -26,7 +34,15 @@ function App() {
            <Route path="edittaxrate" element={<EditTaxRates/>} />
            <Route path="reportprofit" element={<ReportProfitLoss/>} />
            <Route path="expense" element={<Expense />} />
-           <Route path="ReporTaxReport" element={<ReportTaxReport/>} />
+           <Route path="ReportTaxReport" element={<ReportTaxReport/>} />
+           <Route path="ReportIncomeReport" element={<ReportIncomeReport/>} />
+           <Route path="ReportExpenseReport" element={<ReportExpenseReport/>} />
+           <Route path="ReportCustomerReport" element={<ReportCustomerReport/>} />
+           <Route path="ReportSupplierReturn" element={<ReportSupplierReturn/>} />
+           <Route path="ReportSupplierPayment" element={<ReportSupplierPayment/>} />
+           <Route path="ReportSupplierPurchase" element={<ReportSupplierPurchase/>} />
+           <Route path="ReportInvoiceReport" element={<ReportInvoiceReport/>} />
+           <Route path="ReportInventoryReport" element={<ReportsInventoryReport/>} />
         </Route>
       </Routes>
     </div>

@@ -62,7 +62,6 @@ const getPageNumbers = () => {
                  <div>
                     <h2 className='text-d_color text-[24px] font-medium'>Reports</h2>
                     <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color'>Profit & Loss Report</span></p>
-                    
                  </div>
                  <div>
                     <div className='relative'>
