@@ -10,14 +10,15 @@ import EditTaxRates from './Components/Pages/EditTaxRates.js';
 import './Components/CSS/Dhruvin/login.css'
 import ReportProfitLoss from './Components/Pages/ReportProfitLoss.js';
 import Expense from './Components/Pages/Expense.jsx';
+import ReportTaxReport from './Components/Pages/ReportTaxReport.js';
 
 function App() {
   return (
   <div>
    <Routes>
        <Route path='/' element={<Login />} />
-        <Route path="/layout" element={<Layout />}>
-           <Route path="dashboard" element={<Dashboard />} />
+        <Route path="/Layout" element={<Layout />}>
+           <Route path="Dashboard" element={<Dashboard />} />
            <Route path="Product" element={<Product />} />
            <Route path="RawMaterial" element={<RawMaterial />} />
            <Route path="taxrated" element={<FInancial_Setting_TaxRated/>} />
@@ -25,6 +26,7 @@ function App() {
            <Route path="edittaxrate" element={<EditTaxRates/>} />
            <Route path="reportprofit" element={<ReportProfitLoss/>} />
            <Route path="expense" element={<Expense />} />
+           <Route path="ReporTaxReport" element={<ReportTaxReport/>} />
         </Route>
       </Routes>
     </div>

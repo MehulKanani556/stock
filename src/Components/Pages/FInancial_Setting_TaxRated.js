@@ -14,15 +14,15 @@ const [column, setColumn] = useState(false)
 
   return (
     <div>
-       <div className='bg-[#f5f5f5]'>
-          <div className='px-8 pt-7'>
-              <div className='flex justify-between items-center'>
+       <div className='ds_main'>
+          <div className='sm:px-8 px-4 pt-4'>
+              <div className='flex flex-wrap justify-between items-center pt-3'>
                  <div>
                     <h2 className='text-d_color text-[24px] font-medium'>Tax Rates</h2>
                     <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color'>Tax Rates</span></p>
                  </div>
-                 <div className='flex'>
-                    <div className='relative'>
+                 <div className='flex flex-wrap '>
+                    <div className='relative pt-3'>
                       <button className='ds_column_btn  flex me-4' onClick={()=> setColumn(!column)}> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
                         {column && <div className='ds_column_box'>
                           <div className='flex justify-between items-center mb-2'>
@@ -48,13 +48,17 @@ const [column, setColumn] = useState(false)
                           </div>
                       </div>}
                     </div>
-                    <button className='ds_column_btn  flex me-4'> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
-                    <button className='ds_add_currency' onClick={()=> navigate("/layout/addtaxrate")}>+ Add Tax Rate</button>
+                    <div className='pt-3'>
+                       <button className='ds_column_btn  flex me-4'> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
+                    </div>
+                    <div className='pt-3'>
+                      <button className='ds_add_currency' onClick={()=> navigate("/Layout/AddTaxRate")}>+ Add Tax Rate</button>
+                    </div>
                  </div>
               </div>
               <div className='pt-7'>
                   <div className='shadow-[1px_1px_20px_0.5px_rgba(0,0,0,0.06)] bg-white'>
-                    <div>
+                    <div className='overflow-x-auto'>
                         <table className='w-full ds_currency_table'>
                             <thead>
                                 <tr>
@@ -76,7 +80,7 @@ const [column, setColumn] = useState(false)
                                     </td>
                                     <td>
                                         <div>
-                                            <button onClick={()=> navigate("/layout/edittaxrate")} className='ds_crud_btn me-3'>
+                                            <button onClick={()=> navigate("/Layout/EditTaxRate")} className='ds_crud_btn me-3'>
                                                 <img src={Pen} alt="" />
                                             </button>
                                             <button onClick={()=> setOpen(true)} className='ds_crud_btn'>
