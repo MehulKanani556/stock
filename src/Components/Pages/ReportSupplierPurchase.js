@@ -1,74 +1,75 @@
+import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
 import React, { useRef, useState } from 'react'
-import { IoIosArrowBack, IoIosArrowDown, IoIosArrowForward, IoMdClose } from 'react-icons/io'
-import mrint from '../Images/Dhruvin/print.svg'
+import { useNavigate } from 'react-router-dom'
+import paypal from '../Images/Dhruvin/paypal.png'
 import xls from '../Images/Dhruvin/xls.svg'
 import pdf from '../Images/Dhruvin/pdf.svg'
 import Bar  from '../Images/Dhruvin/bar.svg'
-import Trash  from '../Images/Dhruvin/trash.svg'
-import { useNavigate } from 'react-router-dom'
-import filter from '../Images/Dhruvin/Filter.svg'
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
+import { IoIosArrowBack, IoIosArrowDown, IoIosArrowForward, IoMdClose } from 'react-icons/io'
 import { FaCalendarAlt } from 'react-icons/fa'
+import filter from '../Images/Dhruvin/Filter.svg'
+import Trash  from '../Images/Dhruvin/trash.svg'
+import mrint from '../Images/Dhruvin/print.svg'
 import station from '../Images/Dhruvin/station.png'
-import paypal from '../Images/Dhruvin/paypal.png'
 
-const ReportTaxReport = () => {
 
-const [download, setDownload] = useState(false) 
-const [column, setColumn] = useState(false)  
-const navigate = useNavigate() 
-const [open, setOpen] = useState(false)
-const dateInputRef = useRef(null);
-const totalItems = 30;
-const itemsPerPage = 10;
-const totalPages = Math.ceil(totalItems / itemsPerPage);
-const [currentPage, setCurrentPage] = useState(1);
+const ReportSupplierPurchase = () => {
 
-const handleIconClick = () => {
-  dateInputRef.current.showPicker?.(); 
-  dateInputRef.current.focus();
-};
-
-const goToPage = (page) => {
-  if (page < 1 || page > totalPages) return;
-  setCurrentPage(page);
-  console.log('Page changed to:', page);
-};
-
-const getPageNumbers = () => {
-  const maxVisible = 5;
-  const pages = [];
-
-  if (totalPages <= maxVisible + 2) {
-    for (let i = 1; i <= totalPages; i++) {
-      pages.push(i);
+    const [download, setDownload] = useState(false) 
+    const [column, setColumn] = useState(false)  
+    const navigate = useNavigate() 
+    const [open, setOpen] = useState(false)
+    const dateInputRef = useRef(null);
+    const totalItems = 30;
+    const itemsPerPage = 10;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const [currentPage, setCurrentPage] = useState(1);
+    
+    const handleIconClick = () => {
+      dateInputRef.current.showPicker?.(); 
+      dateInputRef.current.focus();
+    };
+    
+    const goToPage = (page) => {
+      if (page < 1 || page > totalPages) return;
+      setCurrentPage(page);
+      console.log('Page changed to:', page);
+    };
+    
+    const getPageNumbers = () => {
+      const maxVisible = 5;
+      const pages = [];
+    
+      if (totalPages <= maxVisible + 2) {
+        for (let i = 1; i <= totalPages; i++) {
+          pages.push(i);
+        }
+      } else {
+        if (currentPage <= maxVisible) {
+          for (let i = 1; i <= maxVisible; i++) {
+            pages.push(i);
+          }
+          pages.push('...');
+          pages.push(totalPages);
+        } else if (currentPage > totalPages - maxVisible) {
+          pages.push(1);
+          pages.push('...');
+          for (let i = totalPages - maxVisible + 1; i <= totalPages; i++) {
+            pages.push(i);
+          }
+        } else {
+          pages.push(1);
+          pages.push('...');
+          for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+            pages.push(i);
+          }
+          pages.push('...');
+          pages.push(totalPages);
+        }
+      }
+    
+      return pages;
     }
-  } else {
-    if (currentPage <= maxVisible) {
-      for (let i = 1; i <= maxVisible; i++) {
-        pages.push(i);
-      }
-      pages.push('...');
-      pages.push(totalPages);
-    } else if (currentPage > totalPages - maxVisible) {
-      pages.push(1);
-      pages.push('...');
-      for (let i = totalPages - maxVisible + 1; i <= totalPages; i++) {
-        pages.push(i);
-      }
-    } else {
-      pages.push(1);
-      pages.push('...');
-      for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-        pages.push(i);
-      }
-      pages.push('...');
-      pages.push(totalPages);
-    }
-  }
-
-  return pages;
-}
 
   return (
     <div>
@@ -77,7 +78,7 @@ const getPageNumbers = () => {
               <div className='flex justify-between lg:flex-nowrap flex-wrap'>
                  <div>
                     <h2 className='text-d_color text-[24px] font-medium'>Reports</h2>
-                    <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Tax Report</span></p>  
+                    <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Supplier Reports</span></p>  
                  </div>
                  <div className='flex xl:flex-wrap lg:flex-nowrap flex-wrap '>
                     <div className='pt-3'>
@@ -112,19 +113,11 @@ const getPageNumbers = () => {
                                             </div>
                                           </div>
                                           <div className='mb-4'>
-                                               <label className='text-d_color font-medium block mb-1'>Supplier Name</label>
+                                               <label className='text-d_color font-medium block mb-1'>Status</label>
                                                <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
-                                                 <option value="">Select Customer Name</option>
-                                                 <option value="">John Wick</option>
-                                                 <option value="">The Rock</option>
-                                               </select>
-                                          </div>
-                                          <div className='mb-4'>
-                                               <label className='text-d_color font-medium block mb-1'>Payment Method</label>
-                                               <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
-                                                 <option value="">Select Payment Method</option>
-                                                 <option value="">Paypal</option>
-                                                 <option value="">Upi</option>
+                                                 <option value="">Select Status</option>
+                                                 <option value="">Complete</option>
+                                                 <option value="">InComplete</option>
                                                </select>
                                           </div>
                                        </div>
@@ -143,49 +136,49 @@ const getPageNumbers = () => {
                       <button className='ds_column_btn  flex me-4' onClick={()=> setColumn(!column)}> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
                         {column && <div className='ds_column_box z-[2]'>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Customer Name</h6>
+                             <h6 className='text-d_color'>Purchase Date	</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Date</h6>
+                             <h6 className='text-d_color'>Product	</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Invoice No.</h6>
+                             <h6 className='text-d_color'>Purchase Amount	</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Total Amount</h6>
+                             <h6 className='text-d_color'>Purchase Qty.	</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Payment Method</h6>
+                             <h6 className='text-d_color'>Paid</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Discount</h6>
+                             <h6 className='text-d_color'>Balance</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
-                          <div className='flex justify-between items-center '>
-                             <h6 className='text-d_color'>Tax Amount</h6>
+                          <div className='flex justify-between items-center mb-2'>
+                             <h6 className='text-d_color'>Status</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
@@ -222,13 +215,17 @@ const getPageNumbers = () => {
                  </div>
               </div>
               <div className=''>
-                 <button className='ds_report_purchase me-4 mt-4'>
-                     Purchase Tax Report
-                 </button>
-                 <button className='ds_report_sales mt-4'>
-                     Sales Tax Report
-                 </button>
+                    <button onClick={()=> navigate("/layout/ReportSupplierPurchase")} className='ds_report_sapliar_active ds_report_sapliar me-4 mt-4'>
+                        Purchase
+                    </button>
+                    <button onClick={()=> navigate("/layout/ReportSupplierPayment")} className='ds_report_sapliar_payment me-4 mt-4'>
+                        Payment
+                    </button>
+                    <button onClick={()=> navigate("/layout/ReportSupplierReturn")} className=' ds_report_sapliar_return mt-4'>
+                        Return
+                    </button>
               </div>
+             
 
               <div className='pt-7'>
                   <div className='shadow-[1px_1px_20px_0.5px_rgba(0,0,0,0.06)] bg-white'>
@@ -236,130 +233,88 @@ const getPageNumbers = () => {
                         <table className='w-full ds_report_table'>
                             <thead>
                                 <tr>
-                                    <th>Supplier Name</th>
-                                    <th>Date</th>
-                                    <th>Reference No.</th>
-                                    <th>Total Amount</th>
-                                    <th>Payment Method</th>
-                                    <th>Discount</th>
-                                    <th>Tax Amount</th>
+                                    <th>Purchase Date</th>
+                                    <th>Product</th>
+                                    <th>Purchase Amount</th>
+                                    <th>Purchase Qty.</th>
+                                    <th>Paid</th>
+                                    <th>Balance</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
                                     <td>19 July 2024</td>
-                                    <td>P123456</td>
-                                    <td>$1250</td>
-                                    <td>
-                                       <img src={paypal} alt="" className='w-[80px]' />
-                                    </td>
+                                    <td>Refill</td>
+                                    <td>$120</td>
                                     <td>10</td>
-                                    <td>$150</td>
+                                    <td>$1250</td>
+                                    <td>$0</td>
+                                    <td ><span className='text-[#3AA409] font-semibold'>Completed</span></td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
                                     <td>19 July 2024</td>
-                                    <td>P123456</td>
-                                    <td>$1250</td>
-                                    <td>
-                                       <img src={paypal} alt="" className='w-[80px]' />
-                                    </td>
+                                    <td>Refill</td>
+                                    <td>$120</td>
                                     <td>10</td>
-                                    <td>$150</td>
+                                    <td>$1250</td>
+                                    <td>$0</td>
+                                    <td ><span className='text-[#FF0000] font-semibold'>InComplete</span></td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
                                     <td>19 July 2024</td>
-                                    <td>P123456</td>
-                                    <td>$1250</td>
-                                    <td>
-                                       <img src={paypal} alt="" className='w-[80px]' />
-                                    </td>
+                                    <td>Refill</td>
+                                    <td>$120</td>
                                     <td>10</td>
-                                    <td>$150</td>
+                                    <td>$1250</td>
+                                    <td>$0</td>
+                                    <td ><span className='text-[#3AA409] font-semibold'>Completed</span></td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
                                     <td>19 July 2024</td>
-                                    <td>P123456</td>
-                                    <td>$1250</td>
-                                    <td>
-                                       <img src={paypal} alt="" className='w-[80px]' />
-                                    </td>
+                                    <td>Refill</td>
+                                    <td>$120</td>
                                     <td>10</td>
-                                    <td>$150</td>
+                                    <td>$1250</td>
+                                    <td>$0</td>
+                                    <td ><span className='text-[#3AA409] font-semibold'>Completed</span></td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
                                     <td>19 July 2024</td>
-                                    <td>P123456</td>
-                                    <td>$1250</td>
-                                    <td>
-                                       <img src={paypal} alt="" className='w-[80px]' />
-                                    </td>
+                                    <td>Refill</td>
+                                    <td>$120</td>
                                     <td>10</td>
-                                    <td>$150</td>
+                                    <td>$1250</td>
+                                    <td>$0</td>
+                                    <td ><span className='text-[#3AA409] font-semibold'>Completed</span></td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
                                     <td>19 July 2024</td>
-                                    <td>P123456</td>
-                                    <td>$1250</td>
-                                    <td>
-                                       <img src={paypal} alt="" className='w-[80px]' />
-                                    </td>
+                                    <td>Refill</td>
+                                    <td>$120</td>
                                     <td>10</td>
-                                    <td>$150</td>
+                                    <td>$1250</td>
+                                    <td>$0</td>
+                                    <td ><span className='text-[#FF0000] font-semibold'>InComplete</span></td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
                                     <td>19 July 2024</td>
-                                    <td>P123456</td>
-                                    <td>$1250</td>
-                                    <td>
-                                       <img src={paypal} alt="" className='w-[80px]' />
-                                    </td>
+                                    <td>Refill</td>
+                                    <td>$120</td>
                                     <td>10</td>
-                                    <td>$150</td>
+                                    <td>$1250</td>
+                                    <td>$0</td>
+                                    <td ><span className='text-[#3AA409] font-semibold'>Completed</span></td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
                                     <td>19 July 2024</td>
-                                    <td>P123456</td>
-                                    <td>$1250</td>
-                                    <td>
-                                       <img src={paypal} alt="" className='w-[80px]' />
-                                    </td>
+                                    <td>Refill</td>
+                                    <td>$120</td>
                                     <td>10</td>
-                                    <td>$150</td>
+                                    <td>$1250</td>
+                                    <td>$0</td>
+                                    <td ><span className='text-[#FF0000] font-semibold'>InComplete</span></td>
                                 </tr> 
-                                
-                               
                             </tbody>
                         </table>
 
@@ -391,9 +346,9 @@ const getPageNumbers = () => {
                   </div> 
               </div>
           </div>
-       </div>
+      </div>
     </div>
   )
 }
 
-export default ReportTaxReport
+export default ReportSupplierPurchase
