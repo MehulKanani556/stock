@@ -90,9 +90,8 @@
 }
 
 /* ============ stock alert ============ */
-
-.V_stock_alert_width {
-    width: 70%;
+.V_stock_alert_table{
+    width: 100%;
 }
 
 .V_stock_alert_table thead tr th {
@@ -103,6 +102,7 @@
     color: #36454F;
     font-weight: 600;
     font-size: 20px;
+    text-wrap: nowrap;
 }
 
 .V_stock_alert_table thead tr {
@@ -311,8 +311,14 @@
         /* font-weight: 600; */
     }
 
+    .V_recent_pie_chart_margin {
+        margin-top: 20px;
+        height: 340px;
+    }
+
     .V_pie_chart_div {
         width: 63%;
+        
     }
 
     .V_pie_chart_div2 {
@@ -393,6 +399,10 @@
 
     .V_pie_chart_div {
         width: 63%;
+    }
+    .V_recent_pie_chart_margin {
+        margin-top: 20px;
+        height: 340px;
     }
 
     .V_legent_div {
@@ -546,6 +556,11 @@
         width: 63%;
     }
 
+    .V_recent_pie_chart_margin {
+        margin-top: 20px;
+        height: 340px;
+    }
+
     .V_legent_div {
         width: 37%;
     }
@@ -562,7 +577,7 @@
 
     .V_pie_chart_div2 {
         width: 63%;
-        height: 225px;
+        height: 270px;
 
     }
 
@@ -573,6 +588,11 @@
     .V_pie_radius {
         --pie-inner-radius: 40;
         --pie-outer-radius: 70;
+    }
+    .V_notification_text {
+        font-weight: 500;
+        font-size: 18px;
+        color: #36454F;
     }
 }
 
@@ -1146,6 +1166,6 @@
 @media (width: 1440px) {
     .V_pie_chart_div2 {
         width: 63%;
-        height: 260px !important;
+        height: 270px !important;
     }
 }

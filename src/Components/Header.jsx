@@ -40,6 +40,15 @@ const Header = () => {
   const [reportsOpen, setReportsOpen] = useState(false);
   const [financialOpen, setFinancialOpen] = useState(false);
 
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false);
+
+  const toggleModal = () => setIsDeleteModalOpen(!isDeleteModalOpen);
+  const closeModal = () => setIsDeleteModalOpen(false);
+
+  const toggleChangePasswordModal = () => setIsChangePasswordOpen(!isChangePasswordOpen);
+  const closeChangePasswordModal = () => setIsChangePasswordOpen(false);
+
   const navigate = useNavigate();
 
 
@@ -77,7 +86,7 @@ const Header = () => {
         </div>
 
         <div className="flex V_small_size_apce items-center">
-          <div>
+          <div onClick={() => navigate('/layout/Notification')}>
             <div className='relative'>
               <img src={notback} alt="" className='V_notification_back_image' />
               <div>
@@ -109,23 +118,23 @@ const Header = () => {
 
                     <MenuItems
                       transition
-                      className="absolute right-0 z-10 mt-2 w-36 md:w-44 origin-top-right rounded-md bg-white ring-1 shadow-lg ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                      className="absolute right-0 z-10 mt-2 w-40 md:w-44 origin-top-right rounded-md bg-white ring-1 shadow-lg ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
                     >
                       <div className="">
                         <MenuItem>
-                          <a href="#" className="block px-4 py-2 V_dropdown_text text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden">
+                          <Link to="/layout/EditProfile" className="block px-4 py-2 V_dropdown_text text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden">
                             Edit Profile
-                          </a>
+                          </Link>
                         </MenuItem>
                         <MenuItem>
-                          <a href="#" className="block px-4 py-2 V_dropdown_text text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden">
+                          <Link onClick={toggleChangePasswordModal} className="block px-4 py-2 V_dropdown_text text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden">
                             Change Password
-                          </a>
+                          </Link>
                         </MenuItem>
                         <MenuItem>
-                          <a href="#" className="block px-4 py-2 V_dropdown_text text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden">
+                          <Link className="block px-4 py-2 V_dropdown_text text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden" onClick={toggleModal}>
                             Logout
-                          </a>
+                          </Link>
                         </MenuItem>
                       </div>
                     </MenuItems>
@@ -739,6 +748,139 @@ const Header = () => {
           />
         )}
       </div>
+
+
+
+
+
+      {isDeleteModalOpen && (
+        <div className="fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-screen  overflow-y-auto overflow-x-hidden bg-black bg-opacity-50">
+          <div className="relative p-4 w-sm-full  ">
+            <div className="relative bg-white  shadow-sm V_delete_modal_width">
+
+              <div className="V_are_you_sure text-center">
+
+                <h3 className="V_are_you_sure_text mb-5">
+                  Are you sure you want to logout ?
+                </h3>
+                <div className='flex justify-center items-center gap-5'>
+                  <button
+                    onClick={() => {
+                      // Handle delete logic here
+                      closeModal();
+                    }}
+                    className="text-white  focus:outline-none  items-center text-center V_cancel_btn"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={closeModal}
+                    className=" focus:outline-none  V_yes_btn"
+                  >
+                    Yes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+
+      {/* Modal */}
+      {isChangePasswordOpen && (
+        <div className="fixed top-0 left-0 right-0 z-50 flex justify-center items-center w-full h-screen  overflow-y-auto overflow-x-hidden bg-black bg-opacity-50">
+          <div className="relative p-4 w-full max-w-md max-h-full">
+            <div className="relative bg-white rounded-lg shadow-sm">
+              {/* Header */}
+              <div className="flex items-center justify-between p-4 md:px-7 lg:px-8 V_border_niche">
+                <h3 className="V_chnage_main_heading">
+                  Change Password
+                </h3>
+                <button
+                  type="button"
+                  onClick={closeChangePasswordModal}
+                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  <svg
+                    className="w-3 h-3 text-red-500"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                  <span className="sr-only">Close modal</span>
+                </button>
+              </div>
+
+              {/* Body */}
+              <div className="p-4 md:p-7 lg:p-8">
+                <form className="">
+                  <div className='V_input_field_container_change_password'>
+                    <label
+                      className="V_input_label_label"
+                    >
+                      Old Password*
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      className="V_input_field"
+                      placeholder="Enter Old Password"
+                      required
+                    />
+                  </div>
+                  <div className='V_input_field_container_change_password'>
+                    <label
+                      className="V_input_label_label"
+                    >
+                      Create Password
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      className="V_input_field"
+                      placeholder="Enter New Password"
+                      required
+                    />
+                  </div>
+                  <div className='V_input_field_container_change_password'>
+                    <label
+                      className="V_input_label_label"
+                    >
+                      Confirm Password
+                    </label>
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      className="V_input_field"
+                      placeholder="Confirm New Password"
+                      required
+                    />
+                  </div>
+
+                  
+                  <div className='flex justify-center items-center gap-5 V_margine_top_btn'>
+                    <button className='V_change_password_cancel_btn' onClick={closeChangePasswordModal}>Cancel</button>
+                    <button className='V_change_password_change_btn'>Change</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

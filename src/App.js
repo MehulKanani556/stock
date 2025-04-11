@@ -19,6 +19,8 @@ import ReportSupplierReturn from './Components/Pages/ReportSupplierReturn.js';
 import ReportSupplierPurchase from './Components/Pages/ReportSupplierPurchase.js';
 import ReportInvoiceReport from './Components/Pages/ReportInvoiceReport.js';
 import ReportsInventoryReport from './Components/Pages/ReportsInventoryReport.js';
+import Notification from './Components/Pages/Notification.jsx';
+import EditProfile from './Components/Pages/EditProfile.jsx';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
        <Route path='/' element={<Login />} />
         <Route path="/Layout" element={<Layout />}>
            <Route path="Dashboard" element={<Dashboard />} />
+           <Route path="Notification" element={<Notification />} />
+           <Route path="EditProfile" element={<EditProfile />} />
            <Route path="Product" element={<Product />} />
            <Route path="RawMaterial" element={<RawMaterial />} />
            <Route path="taxrated" element={<FInancial_Setting_TaxRated/>} />

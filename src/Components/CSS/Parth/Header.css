@@ -68,34 +68,37 @@
     font-weight: 600;
 }
 
-.V_dropdown_text{
+.V_dropdown_text {
     font-size: 16px;
     font-weight: 400;
     color: #36454F;
 }
 
 
-.V_height_scroll{
+.V_height_scroll {
     height: calc(100vh - 88px);
 }
-.V_height_scroll_min{
+
+.V_height_scroll_min {
     height: calc(100vh - 68px);
 }
-.V_Offcanvass_height{
+
+.V_Offcanvass_height {
     height: calc(100vh - 56px);
 }
 
 
 /* =================== OFFCANVAS ==================== */
 
-.V_offcanvas_btn{
+.V_offcanvas_btn {
     border: 1px solid #36454F;
     border-radius: 10%;
     padding: 5px;
     height: 35px;
     width: 35px;
 }
-.V_ofcanvas_icon{
+
+.V_ofcanvas_icon {
     font-size: 1.5rem;
     color: #36454F;
 }
@@ -118,71 +121,311 @@
 
 
 
-@media (min-width: 1920px) {}
 
-@media (max-width: 1919px) and (min-width: 1650px) {}
 
-@media (max-width: 1649px) and (min-width: 1440px) {}
+
+
+.V_delete_modal_width {
+    width: 500px;
+    padding: 40px;
+    border-radius: 4px;
+}
+
+.V_are_you_sure {
+    width: 300px;
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: 22px;
+    text-align: center;
+    color: #36454F;
+}
+
+.V_are_you_sure_text {
+    width: 300px;
+}
+
+.V_cancel_btn {
+    background-color: white;
+    color: #36454F;
+    border-radius: 6px;
+    padding: 5px 20px;
+    font-weight: 400;
+    font-size: 16px;
+    border: 1px solid #36454F;
+    width: 150px;
+    height: 45px;
+}
+
+.V_yes_btn {
+    background-color: #36454F;
+    color: white;
+    border-radius: 6px;
+    padding: 5px 20px;
+    font-weight: 400;
+    font-size: 16px;
+    width: 150px;
+    height: 45px;
+    border: 1px solid white;
+}
+
+
+
+
+.V_border_niche {
+    border-bottom: 1px solid #aab4bb;
+}
+
+.V_chnage_main_heading {
+    font-weight: 600;
+    font-size: 22px;
+    color: #36454F;
+}
+
+.V_input_field_container_change_password {
+    margin-bottom: 20px;
+}
+
+
+.V_input_label_label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #36454F;
+}
+
+.V_input_field {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #36454F;
+    border-radius: 5px;
+    padding: 0px 10px;
+    margin-top: 5px;
+}
+
+.V_input_field:focus-visible {
+    outline: none;
+}
+
+
+.V_margine_top_btn {
+    margin-top: 40px;
+}
+
+.V_change_password_cancel_btn {
+    width: 50%;
+    height: 45px;
+    border: 1px solid #36454F;
+    border-radius: 5px;
+    padding: 0px 10px;
+    margin-top: 5px;
+}
+
+.V_change_password_change_btn {
+    color: white;
+    background-color: #36454F;
+    width: 50%;
+    height: 45px;
+    border: 1px solid #36454F;
+    border-radius: 5px;
+    padding: 0px 10px;
+}
+
+
+
+
+
+@media (min-width: 1920px) {
+    .V_delete_modal_width {
+        width: 500px;
+        padding: 40px;
+    }
+
+    .V_are_you_sure {
+        width: 300px;
+        margin: 0 auto;
+        font-size: 22px;
+    }
+
+    .V_are_you_sure_text {
+        width: 300px;
+    }
+
+    .V_cancel_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 150px;
+        height: 45px;
+    }
+
+    .V_yes_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 150px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 1919px) and (min-width: 1650px) {
+    .V_delete_modal_width {
+        width: 500px;
+        padding: 40px;
+    }
+
+    .V_are_you_sure {
+        width: 300px;
+        margin: 0 auto;
+        font-size: 22px;
+    }
+
+    .V_are_you_sure_text {
+        width: 300px;
+    }
+
+    .V_cancel_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 150px;
+        height: 45px;
+    }
+
+    .V_yes_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 150px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 1649px) and (min-width: 1440px) {
+    .V_delete_modal_width {
+        width: 500px;
+        padding: 40px;
+    }
+
+    .V_are_you_sure {
+        width: 300px;
+        margin: 0 auto;
+        font-size: 22px;
+    }
+
+    .V_are_you_sure_text {
+        width: 300px;
+    }
+
+    .V_cancel_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 150px;
+        height: 45px;
+    }
+
+    .V_yes_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 150px;
+        height: 45px;
+    }
+}
 
 @media (max-width: 1439px) and (min-width: 1200px) {
     .V_search_container {
         width: 30%;
         height: 40px;
     }
-    
+
     .V_header_container {
         padding: 20px 25px;
     }
-    
+
     .V_search_icon {
         font-size: 1.2rem;
         margin: 0px 10px;
     }
-    
+
     .V_search_input {
         width: 100%;
         height: 100%;
     }
-    
+
     .V_user_image {
         width: 40px;
         height: 40px;
     }
-    
+
     .V_user_name {
         font-size: 16px;
         font-weight: 600;
     }
-    
+
     .V_notification_back_image {
         width: 40px;
         height: 40px;
     }
-    
+
     .V_notification_icon {
         top: 28%;
         left: 28%;
         width: 15px;
     }
-    
+
     .V_notification_number_image {
         position: absolute;
         top: -10%;
         right: -10%;
         width: 18px;
     }
-    
+
     .V_notification_number_text {
         position: absolute;
         top: -11%;
         right: 5%;
         font-size: 12px;
     }
-    .V_dropdown_text{
+
+    .V_dropdown_text {
         font-size: 16px;
         font-weight: 400;
         color: #36454F;
     }
+
+
+
+
+
+
+
+
+
+    .V_delete_modal_width {
+        width: 450px;
+        padding: 35px;
+    }
+
+    .V_are_you_sure {
+        width: 300px;
+        margin: 0 auto;
+        font-size: 20px;
+    }
+
+    .V_are_you_sure_text {
+        width: 250px;
+        margin: 0px auto 20px auto;
+    }
+
+    .V_cancel_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 180px;
+        height: 40px;
+    }
+
+    .V_yes_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 180px;
+        height: 40px;
+    }
+
+
 }
 
 @media (max-width: 1199px) and (min-width: 992px) {
@@ -190,59 +433,93 @@
         width: 30%;
         height: 40px;
     }
-    
+
     .V_header_container {
         padding: 20px 25px;
     }
-    
+
     .V_search_icon {
         font-size: 1.2rem;
         margin: 0px 10px;
     }
-    
+
     .V_search_input {
         width: 100%;
         height: 100%;
     }
-    
+
     .V_user_image {
         width: 40px;
         height: 40px;
     }
-    
+
     .V_user_name {
         font-size: 16px;
         font-weight: 600;
     }
-    
+
     .V_notification_back_image {
         width: 40px;
         height: 40px;
     }
-    
+
     .V_notification_icon {
         top: 28%;
         left: 28%;
         width: 15px;
     }
-    
+
     .V_notification_number_image {
         position: absolute;
         top: -10%;
         right: -10%;
         width: 18px;
     }
-    
+
     .V_notification_number_text {
         position: absolute;
         top: -11%;
         right: 5%;
         font-size: 12px;
     }
-    .V_dropdown_text{
+
+    .V_dropdown_text {
         font-size: 16px;
         font-weight: 400;
         color: #36454F;
+    }
+
+
+
+
+    .V_delete_modal_width {
+        width: 450px;
+        padding: 35px;
+    }
+
+    .V_are_you_sure {
+        width: 300px;
+        margin: 0 auto;
+        font-size: 20px;
+    }
+
+    .V_are_you_sure_text {
+        width: 250px;
+        margin: 0px auto 20px auto;
+    }
+
+    .V_cancel_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 180px;
+        height: 40px;
+    }
+
+    .V_yes_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 180px;
+        height: 40px;
     }
 }
 
@@ -251,59 +528,97 @@
         width: 40%;
         height: 40px;
     }
-    
+
     .V_header_container {
         padding: 20px 25px;
     }
-    
+
     .V_search_icon {
         font-size: 1.2rem;
         margin: 0px 10px;
     }
-    
+
     .V_search_input {
         width: 100%;
         height: 100%;
     }
-    
+
     .V_user_image {
         width: 40px;
         height: 40px;
     }
-    
+
     .V_user_name {
         font-size: 16px;
         font-weight: 600;
     }
-    
+
     .V_notification_back_image {
         width: 40px;
         height: 40px;
     }
-    
+
     .V_notification_icon {
         top: 28%;
         left: 28%;
         width: 15px;
     }
-    
+
     .V_notification_number_image {
         position: absolute;
         top: -10%;
         right: -10%;
         width: 18px;
     }
-    
+
     .V_notification_number_text {
         position: absolute;
         top: -11%;
         right: 5%;
         font-size: 12px;
     }
-    .V_dropdown_text{
+
+    .V_dropdown_text {
         font-size: 16px;
         font-weight: 400;
         color: #36454F;
+    }
+
+
+
+
+
+
+
+
+    .V_delete_modal_width {
+        width: 450px;
+        padding: 35px;
+    }
+
+    .V_are_you_sure {
+        width: 300px;
+        margin: 0 auto;
+        font-size: 20px;
+    }
+
+    .V_are_you_sure_text {
+        width: 250px;
+        margin: 0px auto 20px auto;
+    }
+
+    .V_cancel_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 180px;
+        height: 40px;
+    }
+
+    .V_yes_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 180px;
+        height: 40px;
     }
 }
 
@@ -312,60 +627,94 @@
         width: 40%;
         height: 35px;
     }
-    
+
     .V_header_container {
         padding: 10px 15px;
     }
-    
+
     .V_search_icon {
         font-size: 1.2rem;
         margin: 0px 8px;
     }
-    
+
     .V_search_input {
         width: 100%;
         height: 100%;
     }
-    
+
     .V_user_image {
         width: 35px;
         height: 35px;
     }
-    
+
     .V_user_name {
         font-size: 14px;
         font-weight: 500;
     }
-    
+
     .V_notification_back_image {
         width: 35px;
         height: 35px;
     }
-    
+
     .V_notification_icon {
         top: 30%;
         left: 30%;
         width: 12px;
     }
-    
+
     .V_notification_number_image {
         position: absolute;
         top: -6%;
         right: -6%;
         width: 15px;
     }
-    
+
     .V_notification_number_text {
         position: absolute;
         top: -7%;
         right: 6%;
         font-size: 10px;
     }
-    .V_dropdown_text{
+
+    .V_dropdown_text {
         font-size: 14px;
         font-weight: 400;
         color: #36454F;
     }
+
+    .V_delete_modal_width {
+        width: 400px;
+        padding: 30px;
+    }
+
+    .V_are_you_sure {
+        width: 250px;
+        margin: 0 auto;
+        font-size: 16px;
+    }
+
+    .V_are_you_sure_text {
+        width: 225px;
+        margin: 0px auto 20px auto;
+    }
+
+    .V_cancel_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 150px;
+        height: 35px;
+    }
+
+    .V_yes_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 150px;
+        height: 35px;
+    }
+
+
+    
 }
 
 @media (max-width: 576px) and (min-width: 481px) {
@@ -373,59 +722,131 @@
         width: 35%;
         height: 35px;
     }
-    
+
     .V_header_container {
         padding: 10px 15px;
     }
-    
+
     .V_search_icon {
         font-size: 1.2rem;
         margin: 0px 8px;
     }
-    
+
     .V_search_input {
         width: 100%;
         height: 100%;
     }
-    
+
     .V_user_image {
         width: 35px;
         height: 35px;
     }
-    
+
     .V_user_name {
         font-size: 14px;
         font-weight: 500;
     }
-    
+
     .V_notification_back_image {
         width: 35px;
         height: 35px;
     }
-    
+
     .V_notification_icon {
         top: 30%;
         left: 30%;
         width: 12px;
     }
-    
+
     .V_notification_number_image {
         position: absolute;
         top: -6%;
         right: -6%;
         width: 15px;
     }
-    
+
     .V_notification_number_text {
         position: absolute;
         top: -7%;
         right: 6%;
         font-size: 10px;
     }
-    .V_dropdown_text{
+
+    .V_dropdown_text {
         font-size: 14px;
         font-weight: 400;
         color: #36454F;
+    }
+
+
+
+    .V_delete_modal_width {
+        width: 400px;
+        padding: 30px;
+    }
+
+    .V_are_you_sure {
+        width: 250px;
+        margin: 0 auto;
+        font-size: 16px;
+    }
+
+    .V_are_you_sure_text {
+        width: 225px;
+        margin: 0px auto 20px auto;
+    }
+
+    .V_cancel_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 150px;
+        height: 35px;
+    }
+
+    .V_yes_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 150px;
+        height: 35px;
+    }
+
+
+
+
+    .V_chnage_main_heading {
+        font-size: 20px;
+    }
+
+    .V_input_field_container_change_password {
+        margin-bottom: 20px;
+    }
+
+
+    .V_input_label_label {
+        font-size: 12px;
+    }
+
+    .V_input_field {
+        width: 100%;
+        height: 40px;
+        padding: 0px 10px;
+        margin-top: 5px;
+    }
+
+
+    .V_margine_top_btn {
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .V_change_password_cancel_btn {
+        width: 50%;
+        height: 40px;
+    }
+
+    .V_change_password_change_btn {
+        width: 50%;
+        height: 40px;
     }
 }
 
@@ -435,7 +856,7 @@
         height: 35px;
         /* margin-bottom: 10px; */
     }
-    
+
     .V_header_container {
         padding: 10px 10px;
         /* flex-direction: column; */
@@ -445,67 +866,141 @@
         width: 100%;
         justify-content: space-between !important;
     } */
-    
+
     .V_search_icon {
         font-size: 1.2rem;
         margin: 0px 8px;
     }
-    
+
     .V_search_input {
         width: 100%;
         height: 100%;
     }
-    
+
     .V_user_image {
         width: 35px;
         height: 35px;
     }
-    
+
     .V_user_name {
         font-size: 14px;
         font-weight: 500;
     }
-    
+
     .V_notification_back_image {
         width: 35px;
         height: 35px;
     }
-    
+
     .V_notification_icon {
         top: 30%;
         left: 30%;
         width: 12px;
     }
-    
+
     .V_notification_number_image {
         position: absolute;
         top: -6%;
         right: -6%;
         width: 15px;
     }
-    
+
     .V_notification_number_text {
         position: absolute;
         top: -7%;
         right: 6%;
         font-size: 10px;
     }
-    .V_dropdown_text{
+
+    .V_dropdown_text {
         font-size: 14px;
         font-weight: 400;
         color: #36454F;
     }
 
-    .V_offcanvas_btn{
+    .V_offcanvas_btn {
         border: 1px solid #36454F;
         border-radius: 6%;
         padding: 2px;
         height: 30px;
         width: 30px;
     }
-    .V_ofcanvas_icon{
+
+    .V_ofcanvas_icon {
         font-size: 1.5rem;
         color: #36454F;
+    }
+
+
+    .V_delete_modal_width {
+        width: 350px;
+        padding: 30px;
+    }
+
+    .V_are_you_sure {
+        width: 230px;
+        margin: 0 auto;
+        font-size: 16px;
+    }
+
+    .V_are_you_sure_text {
+        width: 180px;
+        margin: 0px auto 20px auto;
+    }
+
+    .V_cancel_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 100px;
+        height: 35px;
+    }
+
+    .V_yes_btn {
+        padding: 5px 20px;
+        font-size: 16px;
+        width: 100px;
+        height: 35px;
+    }
+
+
+    .V_border_niche {
+        border-bottom: 1px solid #aab4bb;
+    }
+
+    .V_chnage_main_heading {
+        font-size: 18px;
+    }
+
+    .V_input_field_container_change_password {
+        margin-bottom: 15px;
+    }
+
+
+    .V_input_label_label {
+        font-size: 12px;
+    }
+
+    .V_input_field {
+        width: 100%;
+        height: 35px;
+        padding: 0px 10px;
+        margin-top: 5px;
+    }
+
+
+    .V_margine_top_btn {
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+
+    .V_change_password_cancel_btn {
+        width: 50%;
+        height: 35px;
+    }
+
+    .V_change_password_change_btn {
+        width: 50%;
+        height: 35px;
     }
 }
 
@@ -515,79 +1010,155 @@
         height: 35px;
         margin-bottom: 10px;
     }
-    
+
     .V_header_container {
         padding: 15px 20px;
         flex-direction: column;
     }
 
-    .V_320_size{
+    .V_320_size {
         justify-content: center !important;
     }
 
-    .V_small_size_apce{
+    .V_small_size_apce {
         width: 100%;
         justify-content: space-between !important;
     }
+
     .V_search_icon {
         font-size: 1.2rem;
         margin: 0px 8px;
     }
-    
+
     .V_search_input {
         width: 100%;
         height: 100%;
     }
-    
+
     .V_user_image {
         width: 35px;
         height: 35px;
     }
-    
+
     .V_user_name {
         font-size: 14px;
         font-weight: 500;
     }
-    
+
     .V_notification_back_image {
         width: 35px;
         height: 35px;
     }
-    
+
     .V_notification_icon {
         top: 30%;
         left: 30%;
         width: 12px;
     }
-    
+
     .V_notification_number_image {
         position: absolute;
         top: -6%;
         right: -6%;
         width: 15px;
     }
-    
+
     .V_notification_number_text {
         position: absolute;
         top: -7%;
         right: 6%;
         font-size: 10px;
     }
-    .V_dropdown_text{
+
+    .V_dropdown_text {
         font-size: 14px;
         font-weight: 400;
         color: #36454F;
     }
 
-    .V_offcanvas_btn{
+    .V_offcanvas_btn {
         border: 1px solid #36454F;
         border-radius: 6%;
         padding: 2px;
         height: 30px;
         width: 30px;
     }
-    .V_ofcanvas_icon{
+
+    .V_ofcanvas_icon {
         font-size: 1.5rem;
         color: #36454F;
     }
+
+
+
+    .V_delete_modal_width {
+        width: 280px;
+        padding: 25px;
+    }
+
+    .V_are_you_sure {
+        width: 200px;
+        margin: 0 auto;
+        font-size: 16px;
+    }
+
+    .V_are_you_sure_text {
+        width: 180px;
+        margin: 0px auto 20px auto;
+    }
+
+    .V_cancel_btn {
+        padding: 3px 20px;
+        font-size: 16px;
+        width: 100px;
+        height: 30px;
+    }
+
+    .V_yes_btn {
+        padding: 3px 20px;
+        font-size: 16px;
+        width: 100px;
+        height: 30px;
+    }
+
+
+
+
+
+    .V_chnage_main_heading {
+        font-size: 18px;
+    }
+
+    .V_input_field_container_change_password {
+        margin-bottom: 15px;
+    }
+
+
+    .V_input_label_label {
+        font-size: 12px;
+    }
+
+    .V_input_field {
+        width: 100%;
+        height: 35px;
+        padding: 0px 10px;
+        margin-top: 5px;
+    }
+
+
+    .V_margine_top_btn {
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+
+    .V_change_password_cancel_btn {
+        width: 50%;
+        height: 35px;
+    }
+
+    .V_change_password_change_btn {
+        width: 50%;
+        height: 35px;
+    }
+
 }

@@ -323,7 +323,7 @@ const Dashboard = () => {
                       </div>
                       <div className='ms-3'>
                         <p className='V_recent_text'>Stock Alert</p>
-                        <p className='V_recent_text_2'>Lorem ipsum dolor sit amet consectetur. Tellus vo....</p>
+                        <p className='V_recent_text_2 '>Lorem ipsum dolor sit amet consectetur. Tellus vo....</p>
                       </div>
                     </div>
                     <div className='flex py-3'>
@@ -342,7 +342,7 @@ const Dashboard = () => {
               <div className='V_flex_2_chart'>
                 {/* ========== top selling pie chart ========== */}
                 <div className='V_recent bg-white w-full V_recent_pie_chart_margin'>
-                  <div className='p-5'>
+                  <div className='p-5 lg:p-3'>
                     <div>
                       <p className='V_notification_text'>Top Selling Products</p>
                     </div>
@@ -405,7 +405,7 @@ const Dashboard = () => {
 
                 {/* ========== top Payment chart 2 ========== */}
                 <div className='V_recent bg-white w-full V_recent_pie_chart_margin2'>
-                  <div className='p-5'>
+                  <div className='p-5 lg:p-3'>
                     <div>
                       <p className='V_notification_text'>Payments</p>
                     </div>
@@ -473,6 +473,97 @@ const Dashboard = () => {
 
           </div>
 
+
+          <div className=' text-[24px] py-3'>
+            <div className='overflow-x-auto'>
+              <div className='bg-white p-5'>
+                <p className='text-d_color'>Recent Sales</p>
+
+                <div className='overflow-x-auto'>
+                  <table className='w-full V_stock_alert_table p-3 md:p-5'>
+                    <thead>
+                      <tr>
+                        <th>Invoice No.</th>
+                        <th>Customer Name</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Paid</th>
+                        <th>Due</th>
+                        <th>Payment Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>#12345</td>
+                        <td>John Dave</td>
+                        <td><p className='text-[#3AA409]'>Completed</p></td>
+                        <td>$1205</td>
+                        <td>$1205</td>
+                        <td>$0</td>
+                        <td><p className='text-[#3AA409] bg-[#DBE5D6] py-1 px-5 rounded-sm w-fit'>Paid</p></td>
+                      </tr>
+                      <tr>
+                        <td>#12345</td>
+                        <td>John Dave</td>
+                        <td><p className='text-[#FF0000]'>Incomplete</p></td>
+                        <td>$1205</td>
+                        <td>$0</td>
+                        <td>$1205</td>
+                        <td><p className='text-[#FF0000] bg-[#FAE1E1] py-1 px-5 rounded-sm w-fit'>Due</p></td>
+                      </tr>
+                      <tr>
+                        <td>#12345</td>
+                        <td>John Dave</td>
+                        <td><p className='text-[#FF0000]'>Incomplete</p></td>
+                        <td>$1205</td>
+                        <td>$1150</td>
+                        <td>$55</td>
+                        <td><p className='text-[#FF0000] bg-[#FAE1E1] py-1 px-5 rounded-sm w-fit'>Due</p></td>
+                      </tr>
+                      <tr>
+                        <td>#12345</td>
+                        <td>John Dave</td>
+                        <td><p className='text-[#FF0000]'>Incomplete</p></td>
+                        <td>$1205</td>
+                        <td>$995</td>
+                        <td>$210</td>
+                        <td><p className='text-[#FF0000] bg-[#FAE1E1] py-1 px-5 rounded-sm w-fit'>Due</p></td>
+                      </tr>
+                      <tr>
+                        <td>#12345</td>
+                        <td>John Dave</td>
+                        <td><p className='text-[#3AA409]'>Completed</p></td>
+                        <td>$1205</td>
+                        <td>$1205</td>
+                        <td>$0</td>
+                        <td><p className='text-[#3AA409] bg-[#DBE5D6] py-1 px-5 rounded-sm w-fit'>Paid</p></td>
+                      </tr>
+                      <tr>
+                        <td>#12345</td>
+                        <td>John Dave</td>
+                        <td><p className='text-[#FF0000]'>Incomplete</p></td>
+                        <td>$1205</td>
+                        <td>$0</td>
+                        <td>$1205</td>
+                        <td><p className='text-[#FF0000] bg-[#FAE1E1] py-1 px-5 rounded-sm w-fit'>Due</p></td>
+                      </tr>
+                      <tr style={{ border: 'none' }}>
+                        <td>#12345</td>
+                        <td>John Dave</td>
+                        <td><p className='text-[#FF0000]'>Incomplete</p></td>
+                        <td>$1205</td>
+                        <td>$1150</td>
+                        <td>$55</td>
+                        <td><p className='text-[#FF0000] bg-[#FAE1E1] py-1 px-5 rounded-sm w-fit'>Due</p></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
 
         </div>
       </div>

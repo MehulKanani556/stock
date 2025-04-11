@@ -1,0 +1,605 @@
+.V_all_padding {
+    padding: 40px;
+    margin-top: 30px;
+    box-shadow: 1px 1px 20px 0.5px #0000000F;
+    display: flex;
+}
+
+.V_profile_img_width {
+    width: 25%;
+}
+
+.V_profile_img {
+    width: 200px;
+    height: 200px;
+    border-radius: 6px;
+}
+
+.V_profile_img_text {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center;
+    align-self: center;
+    background-color: #36454F;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    border-radius: 6px;
+}
+
+
+.V_profile_edit_width {
+    width: 75%;
+}
+
+.V_profile_content_width {
+    width: 45%;
+}
+
+.V_profile_label {
+    font-weight: 400;
+    font-size: 14px;
+    color: #36454F;
+}
+
+.V_profile_input {
+    width: 100%;
+    padding: 10px;
+    height: 50px;
+    border: 1px solid #36454F;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.V_input_flex {
+    display: flex;
+    margin-top: 10px;
+}
+
+.V_input_flex1 {
+    display: flex;
+    margin-top: 10px;
+}
+
+
+.V_profile_Cancel_button {
+    background-color: white;
+    color: #36454F;
+    padding: 10px;
+    text-align: center;
+    align-self: center;
+    border-radius: 6px;
+    width: 200px;
+    border: 1px solid #36454F;
+}
+
+.V_profile_Update_button {
+    background-color: #36454F;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    align-self: center;
+    border-radius: 6px;
+    width: 200px;
+}
+
+
+.V_profile_input:focus-visible{
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1920px) and (min-width: 1650px) {}
+
+.V_all_padding {
+    padding: 40px;
+    margin-top: 30px;
+    display: flex;
+}
+
+.V_profile_img_width {
+    width: 25%;
+}
+
+.V_profile_img {
+    width: 200px;
+    height: 200px;
+}
+
+.V_profile_img_text {
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px;
+    width: 200px;
+}
+
+
+.V_profile_edit_width {
+    width: 75%;
+}
+
+.V_profile_content_width {
+    width: 45%;
+}
+
+.V_profile_label {
+    font-size: 14px;
+}
+
+.V_profile_input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    height: 50px;
+}
+
+.V_input_flex {
+    display: flex;
+}
+
+.V_profile_Cancel_button {
+    padding: 10px;
+    width: 200px;
+}
+
+.V_profile_Update_button {
+    padding: 10px;
+    width: 200px;
+
+}
+
+@media (max-width: 1649px) and (min-width: 1440px) {
+    .V_all_padding {
+        padding: 40px;
+        margin-top: 30px;
+        display: flex;
+    }
+
+    .V_profile_img_width {
+        width: 25%;
+    }
+
+    .V_profile_img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .V_profile_img_text {
+        font-size: 16px;
+        margin-top: 10px;
+        padding: 10px;
+        width: 200px;
+    }
+
+
+    .V_profile_edit_width {
+        width: 75%;
+    }
+
+    .V_profile_content_width {
+        width: 45%;
+    }
+
+    .V_profile_label {
+        font-size: 14px;
+    }
+
+    .V_profile_input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        height: 45px;
+    }
+
+    .V_input_flex {
+        display: flex;
+    }
+
+    .V_profile_Cancel_button {
+        padding: 10px;
+        width: 200px;
+        height: 45px;
+    }
+
+    .V_profile_Update_button {
+        padding: 10px;
+        width: 200px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 1439px) and (min-width: 1200px) {
+    .V_all_padding {
+        padding: 25px;
+        margin-top: 30px;
+        display: flex;
+    }
+
+    .V_profile_img_width {
+        width: 25%;
+    }
+
+    .V_profile_img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .V_profile_img_text {
+        font-size: 14px;
+        margin-top: 10px;
+        padding: 10px;
+        width: 180px;
+    }
+
+
+    .V_profile_edit_width {
+        width: 75%;
+    }
+
+    .V_profile_content_width {
+        width: 45%;
+    }
+
+    .V_profile_label {
+        font-size: 14px;
+    }
+
+    .V_profile_input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        height: 40px;
+    }
+
+    .V_input_flex {
+        display: flex;
+    }
+
+    .V_profile_Cancel_button {
+        padding: 10px;
+        width: 200px;
+        height: 40px;
+    }
+
+    .V_profile_Update_button {
+        padding: 10px;
+        width: 200px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .V_all_padding {
+        padding: 25px;
+        margin-top: 30px;
+        display: flex;
+    }
+
+    .V_profile_img_width {
+        width: 40%;
+        margin: auto;
+    }
+
+    .V_profile_img {
+        width: 230px;
+        height: 230px;
+    }
+
+    .V_profile_img_text {
+        font-size: 14px;
+        margin-top: 10px;
+        padding: 10px;
+        width: 230px;
+    }
+
+
+    .V_profile_edit_width {
+        width: 60%;
+    }
+
+    .V_profile_content_width {
+        width: 80%;
+    }
+
+    .V_profile_label {
+        font-size: 14px;
+    }
+
+    .V_profile_input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        height: 40px;
+    }
+
+    .V_input_flex {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .V_profile_Cancel_button {
+        font-size: 14px;
+        padding: 7px;
+        width: 100px;
+        height: 35px;
+    }
+
+    .V_profile_Update_button {
+        font-size: 14px;
+        padding: 7px;
+        width: 100px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .V_all_padding {
+        padding: 15px;
+        margin-top: 30px;
+        display: flex;
+    }
+
+    .V_profile_img_width {
+        width: 35%;
+        margin: 20px 0 0 0;
+    }
+
+    .V_profile_img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .V_profile_img_text {
+        font-size: 12px;
+        margin-top: 10px;
+        padding: 9px;
+        width: 150px;
+        height: 35px;
+    }
+
+
+    .V_profile_edit_width {
+        width: 65%;
+    }
+
+    .V_profile_content_width {
+        width: 85%;
+    }
+
+    .V_profile_label {
+        font-size: 14px;
+    }
+
+    .V_profile_input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        height: 35px;
+    }
+
+    .V_input_flex {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .V_profile_Cancel_button {
+        font-size: 14px;
+        padding: 7px;
+        width: 100px;
+        height: 35px;
+    }
+
+    .V_profile_Update_button {
+        font-size: 14px;
+        padding: 7px;
+        width: 100px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 577px) {
+    .V_all_padding {
+        padding: 20px;
+        margin-top: 30px;
+        display: flex;
+    }
+
+    .V_profile_img_width {
+        width: 35%;
+        margin: 20px 0 0 0;
+    }
+
+    .V_profile_img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .V_profile_img_text {
+        font-size: 12px;
+        margin-top: 10px;
+        padding: 9px;
+        width: 150px;
+        height: 35px;
+    }
+
+
+    .V_profile_edit_width {
+        width: 65%;
+    }
+
+    .V_profile_content_width {
+        width: 85%;
+    }
+
+    .V_profile_label {
+        font-size: 14px;
+    }
+
+    .V_profile_input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        height: 35px;
+    }
+
+    .V_input_flex {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .V_profile_Cancel_button {
+        font-size: 14px;
+        padding: 7px;
+        width: 100px;
+        height: 35px;
+    }
+
+    .V_profile_Update_button {
+        font-size: 14px;
+        padding: 7px;
+        width: 100px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 576px) and (min-width: 481px) {
+    .V_all_padding {
+        padding: 20px;
+        margin-top: 30px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .V_profile_img_width {
+        width: 100%;
+        margin: 20px 0 0 0;
+    }
+
+    .V_profile_img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .V_profile_img_text {
+        font-size: 12px;
+        margin-top: 10px;
+        padding: 9px;
+        width: 150px;
+        height: 35px;
+    }
+
+
+    .V_profile_edit_width {
+        width: 100%;
+    }
+
+    .V_profile_content_width {
+        width: 90%;
+    }
+
+    .V_profile_label {
+        font-size: 14px;
+    }
+
+    .V_profile_input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        height: 35px;
+    }
+
+    .V_input_flex {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .V_profile_Cancel_button {
+        font-size: 14px;
+        padding: 7px;
+        width: 120px;
+        height: 35px;
+    }
+
+    .V_profile_Update_button {
+        font-size: 14px;
+        padding: 7px;
+        width: 120px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+    .V_all_padding {
+        padding: 15px;
+        margin-top: 30px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .V_profile_img_width {
+        width: 100%;
+        margin: 20px 0 0 0;
+    }
+
+    .V_profile_img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .V_profile_img_text {
+        font-size: 12px;
+        margin-top: 10px;
+        padding: 9px;
+        width: 150px;
+        height: 35px;
+    }
+
+
+    .V_profile_edit_width {
+        width: 100%;
+    }
+
+    .V_profile_content_width {
+        width: 100%;
+    }
+
+    .V_profile_label {
+        font-size: 14px;
+    }
+
+    .V_profile_input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        height: 35px;
+    }
+
+    .V_input_flex {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .V_profile_Cancel_button {
+        font-size: 14px;
+        padding: 7px;
+        width: 100px;
+        height: 35px;
+    }
+
+    .V_profile_Update_button {
+        font-size: 14px;
+        padding: 7px;
+        width: 100px;
+        height: 35px;
+    }
+}
