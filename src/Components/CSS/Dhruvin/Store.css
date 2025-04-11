@@ -1,0 +1,13 @@
+.ds_store_btn{
+    border: 1px solid #36454F;
+    padding: 7px 50px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    background-color: #36454F;
+    color: white;
+}
+.ds_store_btn:hover{
+    border: 1px solid #36454F;
+    background-color: transparent;
+    color: #36454F;
+}

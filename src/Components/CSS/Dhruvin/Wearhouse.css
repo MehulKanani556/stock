@@ -1,0 +1,41 @@
+.ds_Select{
+    padding: 8px 15px;
+    border: 1px solid #36454F;
+    border-radius: 5px;
+    width: 100%;
+}
+.ds_viewWare_table{
+    border: 1px solid #36454F;
+    border-spacing:0 ;
+    border-collapse: separate;
+    border-radius: 10px;
+}
+
+.ds_viewWare_table thead tr th{
+    padding: 20px;
+}
+.ds_viewWare_table tbody tr td{
+    padding: 16px 20px;
+    border-top: 1px solid #727272;
+}
+
+@media (max-width:992px) {
+    .ds_viewWare_table thead tr th{
+        padding: 15px;
+    }
+    .ds_viewWare_table tbody tr td{
+        padding: 15px 15px;
+        border-top: 1px solid #727272;
+    }
+      
+}
+
+@media (max-width:768px) {
+    .ds_viewWare_table{
+        min-width: 600px;
+    }
+    .ds_bete{
+        min-width: 600px
+    }
+      
+}

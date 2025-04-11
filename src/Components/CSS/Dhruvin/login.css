@@ -68,7 +68,7 @@
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg) brightness(102%) contrast(102%);
 }
 .ds_crud_btn{
-    padding: 4px;
+    padding: 4px 5px;
     border: 1px solid #36454F;
     background-color: transparent;
     border-radius: 5px;
@@ -117,7 +117,35 @@
    padding: 15px 15px;
    border-radius: 5px;
 }
+.ds_update_btn{
+    border: 1px solid #36454F;
+    padding: 6px 70px;
+    background-color: #36454F;
+    border-radius: 5px;
+    font-weight: 500; 
+    color: white; 
+    transition: 0.3s ease-in-out;
+}
+.ds_update_btn:hover{
+    border: 1px solid #36454F;
+    color: #36454F;
+    background-color: transparent;
+}
+.ds_deletePopup{
+    border: 1px solid #36454F;
+    padding: 6px 70px;
+    background-color: #36454F;
+    border-radius: 5px;
+    font-weight: 500; 
+    color: white; 
+    transition: 0.3s ease-in-out;
+}
+.ds_deletePopup:hover{
+    border: 1px solid #36454F;
+    background-color: transparent;
+    color: #36454F; 
 
+}
 
 /* ********** Login ********* */
 
@@ -139,9 +167,27 @@
 
 @media (max-width:575px) {
     .ds_cancel_btn{
-       padding: 6px 35px;
+       padding: 5px 30px;
     }
     .ds_add_btn{
+       padding: 5px 35px;
+    }
+    .ds_update_btn{
        padding: 6px 42px;
+    }
+    .ds_deletePopup{
+       padding: 6px 35px;
+    }
+}
+
+@media (max-width:374px) {
+    .ds_cancel_btn{
+       padding: 6px 30px;
+    }
+    .ds_add_btn{
+       padding: 6px 44px;
+    }
+    .ds_update_btn{
+       padding: 6px 33px;
     }
 }
