@@ -1,0 +1,94 @@
+.V_column_box1 {
+    position: absolute;
+    width: 160px;
+    box-shadow: 1px 1px 20px 0.5px rgba(0, 0, 0, 0.06);
+    background-color: white;
+    padding: 15px 15px;
+    border-radius: 5px;
+}
+
+.V_image_input1 {
+    padding: 0px 15px;
+    border: 1px solid #36454F;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.V_image_input1:focus-visible {
+    outline: none;
+}
+
+.ds_main_input:focus-visible {
+    outline: none;
+}
+
+.V_browse_btn {
+    background-color: #36454F;
+    color: white;
+    padding: 2px 15px;
+    margin: 4px 0px;
+    border-radius: 5px;
+}
+
+.ds_Select:focus-visible {
+    outline: none;
+}
+
+.V_plus_btn {
+    padding: 7px 7px;
+    border: 1px solid #36454F;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+
+@media (min-width: 1920px) {}
+
+@media (max-width: 1919px) and (min-width: 1650px) {}
+
+@media (max-width: 1649px) and (min-width: 1440px) {}
+
+@media (max-width: 1439px) and (min-width: 1200px) {
+    .V_browse_btn {
+        background-color: #36454F;
+        color: white;
+        padding: 2px 8px;
+        margin: 4px 0px;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .V_browse_btn {
+        background-color: #36454F;
+        color: white;
+        padding: 5px 8px;
+        margin: 4px 0px;
+        border-radius: 5px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {}
+
+@media (max-width: 767px) and (min-width: 577px) {}
+
+@media (max-width: 576px) and (min-width: 481px) {
+    .V_browse_btn {
+        background-color: #36454F;
+        color: white;
+        padding: 2px 8px;
+        margin: 4px 0px;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+    .V_browse_btn {
+        background-color: #36454F;
+        color: white;
+        padding: 2px 8px;
+        margin: 4px 0px;
+        border-radius: 5px;
+    }
+}

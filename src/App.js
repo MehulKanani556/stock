@@ -30,7 +30,9 @@ import ViewWearhouse from './Components/Pages/ViewWearhouse.js';
 import Store from './Components/Pages/Store.js';
 import AddStore from './Components/Pages/AddStore.js';
 import EditStore from './Components/Pages/EditStore.js';
-
+import AddProduct from './Components/Pages/AddProduct.jsx';
+import AddProduct2 from './Components/Pages/AddProduct2.jsx';
+import AddProduct3 from './Components/Pages/AddProduct3.jsx';
 function App() {
   return (
   <div>
@@ -41,6 +43,9 @@ function App() {
            <Route path="Notification" element={<Notification />} />
            <Route path="EditProfile" element={<EditProfile />} />
            <Route path="Product" element={<Product />} />
+           <Route path="AddProduct" element={<AddProduct />} />
+           <Route path="AddProduct2" element={<AddProduct2 />} />
+           <Route path="AddProduct3" element={<AddProduct3 />} />
            <Route path="RawMaterial" element={<RawMaterial />} />
            <Route path="taxrated" element={<FInancial_Setting_TaxRated/>} />
            <Route path="addtaxrate" element={<AddTaxRates/>} />
