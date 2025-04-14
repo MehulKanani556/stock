@@ -21,6 +21,15 @@ import ReportInvoiceReport from './Components/Pages/ReportInvoiceReport.js';
 import ReportsInventoryReport from './Components/Pages/ReportsInventoryReport.js';
 import Notification from './Components/Pages/Notification.jsx';
 import EditProfile from './Components/Pages/EditProfile.jsx';
+import ReportPurchaseReport from './Components/Pages/ReportPurchaseReport.js';
+import ReportSalesReport from './Components/Pages/ReportSalesReport.js';
+import Wearhouse from './Components/Pages/Wearhouse.js';
+import AddWearhouse from './Components/Pages/AddWearhouse.js';
+import EditWearhouse from './Components/Pages/EditWearhouse.js';
+import ViewWearhouse from './Components/Pages/ViewWearhouse.js';
+import Store from './Components/Pages/Store.js';
+import AddStore from './Components/Pages/AddStore.js';
+import EditStore from './Components/Pages/EditStore.js';
 
 function App() {
   return (
@@ -47,6 +56,15 @@ function App() {
            <Route path="ReportSupplierPurchase" element={<ReportSupplierPurchase/>} />
            <Route path="ReportInvoiceReport" element={<ReportInvoiceReport/>} />
            <Route path="ReportInventoryReport" element={<ReportsInventoryReport/>} />
+           <Route path="ReportPurchaseReport" element={<ReportPurchaseReport/>} />
+           <Route path="ReportSalesReport" element={<ReportSalesReport/>} />
+           <Route path="Wearhouse" element={<Wearhouse/>} />
+           <Route path="AddWearhouse" element={<AddWearhouse/>} />
+           <Route path="EditWearhouse" element={<EditWearhouse/>} />
+           <Route path="ViewWearhouse" element={<ViewWearhouse/>} />
+           <Route path="Store" element={<Store/>} />
+           <Route path="AddStore" element={<AddStore/>} />
+           <Route path="EditStore" element={<EditStore/>} />
         </Route>
       </Routes>
     </div>

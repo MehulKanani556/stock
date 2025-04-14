@@ -11,8 +11,7 @@ import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } fro
 import product from '../Images/Dhruvin/product.png'
 
 
-
-const ReportsInventoryReport = () => {
+const ReportPurchaseReport = () => {
 
     const [download, setDownload] = useState(false) 
     const [column, setColumn] = useState(false)  
@@ -69,15 +68,15 @@ const ReportsInventoryReport = () => {
     
       return pages;
     }   
-    
+
   return (
     <div>
-      <div className='ds_main'>
+        <div className='ds_main'>
           <div className='sm:px-8 px-4 pt-7'>
               <div className='flex justify-between lg:flex-nowrap flex-wrap'>
                  <div>
                     <h2 className='text-d_color text-[24px] font-medium'>Reports</h2>
-                    <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'> Inventory Reports</span></p>  
+                    <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Purchase Reports</span></p>  
                  </div>
                  <div className='flex xl:flex-wrap lg:flex-nowrap flex-wrap '>
                     <div className='pt-3'>
@@ -154,14 +153,14 @@ const ReportsInventoryReport = () => {
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Category</h6>
+                             <h6 className='text-d_color'>Purchase Qty.	</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Unit	</h6>
+                             <h6 className='text-d_color'>Purchase Amount		</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
@@ -214,102 +213,76 @@ const ReportsInventoryReport = () => {
                                 <tr>
                                     <th>Product</th>
                                     <th>SKU</th>
-                                    <th>Category</th>
-                                    <th>Unit</th>
+                                    <th>Purchase Qty.</th>
+                                    <th>Purchase Amount</th>
                                     <th>Instock Qty.</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>Refill</td>
                                     <td>P1234</td>
-                                    <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>Refill</td>
                                     <td>P1234</td>
-                                    <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>Refill</td>
                                     <td>P1234</td>
-                                    <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>Refill</td>
                                     <td>P1234</td>
-                                    <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>Refill</td>
                                     <td>P1234</td>
-                                    <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>Refill</td>
                                     <td>P1234</td>
-                                    <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>Refill</td>
                                     <td>P1234</td>
-                                    <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>Refill</td>
                                     <td>P1234</td>
-                                    <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>Refill</td>
                                     <td>P1234</td>
-                                    <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
+                                
                                 
                                
                             </tbody>
@@ -348,4 +321,4 @@ const ReportsInventoryReport = () => {
   )
 }
 
-export default ReportsInventoryReport
+export default ReportPurchaseReport

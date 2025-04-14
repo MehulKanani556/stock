@@ -11,73 +11,72 @@ import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } fro
 import product from '../Images/Dhruvin/product.png'
 
 
+const ReportSalesReport = () => {
 
-const ReportsInventoryReport = () => {
-
-    const [download, setDownload] = useState(false) 
-    const [column, setColumn] = useState(false)  
-    const navigate = useNavigate() 
-    const [open, setOpen] = useState(false)
-    const dateInputRef = useRef(null);
-    const totalItems = 30;
-    const itemsPerPage = 10;
-    const totalPages = Math.ceil(totalItems / itemsPerPage);
-    const [currentPage, setCurrentPage] = useState(1);
-    
-    const handleIconClick = () => {
-      dateInputRef.current.showPicker?.(); 
-      dateInputRef.current.focus();
-    };
-    
-    const goToPage = (page) => {
-      if (page < 1 || page > totalPages) return;
-      setCurrentPage(page);
-      console.log('Page changed to:', page);
-    };
-    
-    const getPageNumbers = () => {
-      const maxVisible = 5;
-      const pages = [];
-    
-      if (totalPages <= maxVisible + 2) {
-        for (let i = 1; i <= totalPages; i++) {
+  const [download, setDownload] = useState(false) 
+  const [column, setColumn] = useState(false)  
+  const navigate = useNavigate() 
+  const [open, setOpen] = useState(false)
+  const dateInputRef = useRef(null);
+  const totalItems = 30;
+  const itemsPerPage = 10;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const [currentPage, setCurrentPage] = useState(1);
+  
+  const handleIconClick = () => {
+    dateInputRef.current.showPicker?.(); 
+    dateInputRef.current.focus();
+  };
+  
+  const goToPage = (page) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+    console.log('Page changed to:', page);
+  };
+  
+  const getPageNumbers = () => {
+    const maxVisible = 5;
+    const pages = [];
+  
+    if (totalPages <= maxVisible + 2) {
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      if (currentPage <= maxVisible) {
+        for (let i = 1; i <= maxVisible; i++) {
+          pages.push(i);
+        }
+        pages.push('...');
+        pages.push(totalPages);
+      } else if (currentPage > totalPages - maxVisible) {
+        pages.push(1);
+        pages.push('...');
+        for (let i = totalPages - maxVisible + 1; i <= totalPages; i++) {
           pages.push(i);
         }
       } else {
-        if (currentPage <= maxVisible) {
-          for (let i = 1; i <= maxVisible; i++) {
-            pages.push(i);
-          }
-          pages.push('...');
-          pages.push(totalPages);
-        } else if (currentPage > totalPages - maxVisible) {
-          pages.push(1);
-          pages.push('...');
-          for (let i = totalPages - maxVisible + 1; i <= totalPages; i++) {
-            pages.push(i);
-          }
-        } else {
-          pages.push(1);
-          pages.push('...');
-          for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-            pages.push(i);
-          }
-          pages.push('...');
-          pages.push(totalPages);
+        pages.push(1);
+        pages.push('...');
+        for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+          pages.push(i);
         }
+        pages.push('...');
+        pages.push(totalPages);
       }
-    
-      return pages;
-    }   
-    
+    }
+  
+    return pages;
+  }   
+
   return (
     <div>
-      <div className='ds_main'>
+       <div className='ds_main'>
           <div className='sm:px-8 px-4 pt-7'>
               <div className='flex justify-between lg:flex-nowrap flex-wrap'>
                  <div>
                     <h2 className='text-d_color text-[24px] font-medium'>Reports</h2>
-                    <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'> Inventory Reports</span></p>  
+                    <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'> Sales Reports</span></p>  
                  </div>
                  <div className='flex xl:flex-wrap lg:flex-nowrap flex-wrap '>
                     <div className='pt-3'>
@@ -109,13 +108,6 @@ const ReportsInventoryReport = () => {
                                                <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
                                                  <option value="">Select Category</option>
                                                  <option value="">Stationary</option>
-                                               </select>
-                                          </div>
-                                          <div className='mb-4'>
-                                               <label className='text-d_color font-medium block mb-1'>Unit</label>
-                                               <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
-                                                 <option value="">Select Unit</option>
-                                                 <option value="">Pc</option>
                                                </select>
                                           </div>
                                           <div className='mb-4'>
@@ -161,14 +153,22 @@ const ReportsInventoryReport = () => {
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Unit	</h6>
+                             <h6 className='text-d_color'>Sold Qty.		</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Instock Qty.</h6>
+                             <h6 className='text-d_color'>Sold Amount	</h6>
+                             <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             </label>
+                          </div>
+                          <div className='flex justify-between items-center mb-2'>
+                             <h6 className='text-d_color'>Instock Qty.
+                             </h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
@@ -215,7 +215,8 @@ const ReportsInventoryReport = () => {
                                     <th>Product</th>
                                     <th>SKU</th>
                                     <th>Category</th>
-                                    <th>Unit</th>
+                                    <th>Sold Qty.</th>
+                                    <th>Sold Amount</th>
                                     <th>Instock Qty.</th>
                                 </tr>
                             </thead>
@@ -227,7 +228,8 @@ const ReportsInventoryReport = () => {
                                     </td>
                                     <td>P1234</td>
                                     <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
@@ -237,7 +239,8 @@ const ReportsInventoryReport = () => {
                                     </td>
                                     <td>P1234</td>
                                     <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
@@ -247,7 +250,8 @@ const ReportsInventoryReport = () => {
                                     </td>
                                     <td>P1234</td>
                                     <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
@@ -257,7 +261,8 @@ const ReportsInventoryReport = () => {
                                     </td>
                                     <td>P1234</td>
                                     <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
@@ -267,7 +272,8 @@ const ReportsInventoryReport = () => {
                                     </td>
                                     <td>P1234</td>
                                     <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
@@ -277,7 +283,8 @@ const ReportsInventoryReport = () => {
                                     </td>
                                     <td>P1234</td>
                                     <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
@@ -287,7 +294,8 @@ const ReportsInventoryReport = () => {
                                     </td>
                                     <td>P1234</td>
                                     <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
@@ -297,7 +305,8 @@ const ReportsInventoryReport = () => {
                                     </td>
                                     <td>P1234</td>
                                     <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 <tr>
@@ -307,7 +316,8 @@ const ReportsInventoryReport = () => {
                                     </td>
                                     <td>P1234</td>
                                     <td>Stationary</td>
-                                    <td>Pc</td>
+                                    <td>10</td>
+                                    <td>$120</td>
                                     <td>8</td>
                                 </tr> 
                                 
@@ -348,4 +358,4 @@ const ReportsInventoryReport = () => {
   )
 }
 
-export default ReportsInventoryReport
+export default ReportSalesReport
