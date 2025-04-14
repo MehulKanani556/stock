@@ -24,6 +24,7 @@ import Reports from './Images/Parth/Reports1.png';
 import Financial from './Images/Parth/Financialsetting1.png';
 import logo from './Images/Parth/Logocircle1.png';
 import { MdKeyboardDoubleArrowLeft } from 'react-icons/md';
+import TaxRatesImage from './Images/Dhruvin/TaxRates.svg'
 
 const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
   const [activeItem, setActiveItem] = useState("")
@@ -66,17 +67,17 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
           </div>
 
           <div className={`${isCollapsed ? '' : 'V_height_scroll'} overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]`}>
-            <div className={`${activeItem === "dashboard" ? 'bg-white text-d_color' : 'text-white'} py-3 mt-3 over`}>
+            <div className={`${activeItem === "Dashboard" ? 'bg-white text-d_color' : 'text-white'} py-3 mt-3 over`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  navigate('/layout/dashboard');
-                  setActiveItem("dashboard");
+                  navigate('/Layout/Dashboard');
+                  setActiveItem("Dashboard");
                 }}
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "dashboard" ?
+                    {activeItem === "Dashboard" ?
                       <img src={dashboard} className='V_icon_size V_filter' /> :
                       <img src={dashboard} className='V_icon_size' />
                     }
@@ -465,7 +466,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  // navigate('/layout/Store');
+                  navigate('/Layout/Store');
                   setActiveItem("Store");
                 }}
               >
@@ -482,17 +483,17 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
             </div>
 
             {/* Warehouse */}
-            <div className={`${activeItem === "Warehouse" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "Warehouse" || activeItem === "AddWarehouse" || activeItem === "EditWarehouse" || activeItem === "ViewWarehouse" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  // navigate('/layout/Warehouse');
+                  navigate('/Layout/Warehouse');
                   setActiveItem("Warehouse");
                 }}
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "Warehouse" ?
+                    {activeItem === "Warehouse" || activeItem === "AddWarehouse" || activeItem === "EditWarehouse" || activeItem === "ViewWarehouse" ?
                       <img src={Warehouse} className='V_icon_size text-d_color V_filter' /> :
                       <img src={Warehouse} className='V_icon_size' />
                     }
@@ -530,27 +531,28 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
 
             {/* Reports Dropdown */}
 
-            <div className={`${(activeItem === "Reports" || activeItem === "PurchaseReport" || activeItem === "InventoryReport" || activeItem === "InvoiceReport" || activeItem === "SupplierReport" || activeItem === "CustomerReport" || activeItem === "ExpenseReport" || activeItem === "IncomeReport" || activeItem === "TaxReport" || activeItem === "ProfitLossReport") ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${(activeItem === "ReportSalesReport" || activeItem === "ReportPurchaseReport" || activeItem === "ReportInventoryReport" || activeItem === "ReportInvoiceReport" || activeItem === "ReportSupplierPurchase" || activeItem === "ReportSupplierPayment" || activeItem === "ReportSupplierReturn" || activeItem === "ReportCustomerReport" || activeItem === "ReportExpenseReport" || activeItem === "ReportIncomeReport" || activeItem === "ReportTaxReport" || activeItem === "ReportSalesTaxReport" || activeItem === "ReportProfit") ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
                   if (isCollapsed) {
-                    navigate('/layout/Reports');
-                    setActiveItem("Reports");
+                    navigate('/Layout/ReportSalesReport');
+                    setActiveItem("ReportSalesReport");
                   } else {
                     if (!reportsOpen) {
-                      setActiveItem("Reports");
-                    } else if (!["Reports", "PurchaseReport", "InventoryReport", "InvoiceReport", "SupplierReport", "CustomerReport", "ExpenseReport", "IncomeReport", "TaxReport", "ProfitLossReport"].includes(activeItem)) {
+                      setActiveItem("ReportSalesReport");
+                    } else if (!["ReportSalesReport", "ReportPurchaseReport", "ReportInventoryReport", "ReportInvoiceReport", "ReportSupplierPurchase", "ReportSupplierPayment" , "ReportSupplierReturn","ReportCustomerReport" ,  "ReportExpenseReport", "ReportIncomeReport", "TaxReport", "ReportTaxReport"].includes(activeItem)) {
                       setActiveItem("");
                     }
                     setReportsOpen(!reportsOpen);
+                    navigate('/Layout/ReportSalesReport');
                   }
                 }}
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} ${isCollapsed ? 'gap-3' : 'V_pading_icon'} `}>
                   <div className={`flex items-center ${isCollapsed ? '' : 'gap-5'}`}>
                     <div>
-                      {(activeItem === "Reports" || activeItem === "PurchaseReport" || activeItem === "InventoryReport" || activeItem === "InvoiceReport" || activeItem === "SupplierReport" || activeItem === "CustomerReport" || activeItem === "ExpenseReport" || activeItem === "IncomeReport" || activeItem === "TaxReport" || activeItem === "ProfitLossReport") ?
+                      {(activeItem === "ReportSalesReport" || activeItem === "ReportPurchaseReport" || activeItem === "ReportInventoryReport" || activeItem === "ReportInvoiceReport" || activeItem === "ReportSupplierPurchase" || activeItem === "ReportSupplierPayment" || activeItem === "ReportSupplierReturn" || activeItem === "ReportCustomerReport" || activeItem === "ReportExpenseReport" || activeItem === "ReportIncomeReport" || activeItem === "ReportTaxReport" || activeItem === "ReportSalesTaxReport"  || activeItem === "ReportProfit") ?
                         <img src={Reports} className=' V_icon_size text-d_color V_filter' /> :
                         <img src={Reports} className=' V_icon_size' />
                       }
@@ -574,10 +576,11 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                 <ul className="mt-2">
                   <li className="relative pl-8 V_circle_dot">
                     <div
-                      className={`py-2 cursor-pointer ${activeItem === "Reports" ? 'text-white V_text_size' : 'text-gray-300 V_text_size'}`}
+                      className={`py-2 cursor-pointer ${activeItem === "ReportSalesReport" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                       onClick={(e) => {
                         e.stopPropagation();
-                        setActiveItem("Reports");
+                        setActiveItem("ReportSalesReport");
+                        navigate('/Layout/ReportSalesReport');
                       }}
                     >
                       <h5 className='font-fw-lighter'>Sales Report</h5>
@@ -585,10 +588,11 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                   </li>
                   <li className="relative pl-8 V_circle_dot">
                     <div
-                      className={`py-2 cursor-pointer ${activeItem === "PurchaseReport" ? 'text-white V_text_size' : 'text-gray-300 V_text_size'}`}
+                      className={`py-2 cursor-pointer ${activeItem === "ReportPurchaseReport" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         setActiveItem("PurchaseReport");
+                        navigate('/Layout/ReportPurchaseReport');
                       }}
                     >
                       <h5 className='font-fw-lighter'>Purchase Report</h5>
@@ -596,10 +600,11 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                   </li>
                   <li className="relative pl-8 V_circle_dot">
                     <div
-                      className={`py-2 cursor-pointer ${activeItem === "InventoryReport" ? 'text-white V_text_size' : 'text-gray-300 V_text_size'}`}
+                      className={`py-2 cursor-pointer ${activeItem === "ReportInventoryReport" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         setActiveItem("InventoryReport");
+                        navigate('/Layout/ReportInventoryReport');
                       }}
                     >
                       <h5 className='font-fw-lighter'>Inventory Report</h5>
@@ -607,10 +612,11 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                   </li>
                   <li className="relative pl-8 V_circle_dot">
                     <div
-                      className={`py-2 cursor-pointer ${activeItem === "InvoiceReport" ? 'text-white V_text_size' : 'text-gray-300 V_text_size'}`}
+                      className={`py-2 cursor-pointer ${activeItem === "ReportInvoiceReport" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         setActiveItem("InvoiceReport");
+                        navigate('/Layout/ReportInvoiceReport');
                       }}
                     >
                       <h5 className='font-fw-lighter'>Invoice Report</h5>
@@ -618,10 +624,11 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                   </li>
                   <li className="relative pl-8 V_circle_dot">
                     <div
-                      className={`py-2 cursor-pointer ${activeItem === "SupplierReport" ? 'text-white V_text_size' : 'text-gray-300 V_text_size'}`}
+                      className={`py-2 cursor-pointer ${activeItem === "ReportSupplierReturn" || activeItem === "ReportSupplierPayment"  || activeItem === "ReportSupplierPurchase"  ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         setActiveItem("SupplierReport");
+                        navigate('/Layout/ReportSupplierReturn');
                       }}
                     >
                       <h5 className='font-fw-lighter'>Supplier Report</h5>
@@ -629,10 +636,11 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                   </li>
                   <li className="relative pl-8 V_circle_dot">
                     <div
-                      className={`py-2 cursor-pointer ${activeItem === "CustomerReport" ? 'text-white V_text_size' : 'text-gray-300 V_text_size'}`}
+                      className={`py-2 cursor-pointer ${activeItem === "ReportCustomerReport" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         setActiveItem("CustomerReport");
+                        navigate('/Layout/ReportCustomerReport');
                       }}
                     >
                       <h5 className='font-fw-lighter'>Customer Report</h5>
@@ -640,10 +648,11 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                   </li>
                   <li className="relative pl-8 V_circle_dot">
                     <div
-                      className={`py-2 cursor-pointer ${activeItem === "ExpenseReport" ? 'text-white V_text_size' : 'text-gray-300 V_text_size'}`}
+                      className={`py-2 cursor-pointer ${activeItem === "ReportExpenseReport" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         setActiveItem("ExpenseReport");
+                        navigate('/Layout/ReportExpenseReport');
                       }}
                     >
                       <h5 className='font-fw-lighter'>Expense Report</h5>
@@ -651,10 +660,11 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                   </li>
                   <li className="relative pl-8 V_circle_dot">
                     <div
-                      className={`py-2 cursor-pointer ${activeItem === "IncomeReport" ? 'text-white V_text_size' : 'text-gray-300 V_text_size'}`}
+                      className={`py-2 cursor-pointer ${activeItem === "ReportIncomeReport" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                       onClick={(e) => {
                         e.stopPropagation();
-                        setActiveItem("IncomeReport");
+                        setActiveItem("ReportIncomeReport");
+                        navigate('/Layout/ReportIncomeReport');
                       }}
                     >
                       <h5 className='font-fw-lighter'>Income  Report</h5>
@@ -662,10 +672,11 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                   </li>
                   <li className="relative pl-8 V_circle_dot">
                     <div
-                      className={`py-2 cursor-pointer ${activeItem === "TaxReport" ? 'text-white V_text_size' : 'text-gray-300 V_text_size'}`}
+                      className={`py-2 cursor-pointer ${activeItem === "ReportTaxReport" || activeItem === "ReportSalesTaxReport"  ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         setActiveItem("TaxReport");
+                        navigate('/Layout/ReportTaxReport');
                       }}
                     >
                       <h5 className='font-fw-lighter'>Tax  Report</h5>
@@ -673,10 +684,11 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                   </li>
                   <li className="relative pl-8 V_circle_dot">
                     <div
-                      className={`py-2 cursor-pointer ${activeItem === "ProfitLossReport" ? 'text-white V_text_size' : 'text-gray-300 V_text_size'}`}
+                      className={`py-2 cursor-pointer ${activeItem === "ReportProfit" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                       onClick={(e) => {
                         e.stopPropagation();
-                        setActiveItem("ProfitLossReport");
+                        setActiveItem("ReportProfit");
+                        navigate('/Layout/ReportProfit');
                       }}
                     >
                       <h5 className='font-fw-lighter'>Profit & Loss Report</h5>
@@ -691,7 +703,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
 
 
 
-            <div className={`${(activeItem === "Financial" || activeItem === "BankAccounts" || activeItem === "TaxRates" || activeItem === "Currencies") ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            {/* <div className={`${(activeItem === "Financial" || activeItem === "BankAccounts" || activeItem === "TaxRates" || activeItem === "Currencies") ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
@@ -727,10 +739,10 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                   }
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Submenu */}
-            {!isCollapsed &&
+            {/* {!isCollapsed &&
               <div className={`transition-all duration-300 ${financialOpen ? 'block' : 'hidden'}`}>
                 <ul className="mt-2">
                   <li className="relative pl-8 V_circle_dot">
@@ -779,8 +791,28 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                   </li>
                 </ul>
               </div>
-            }
+            } */}
 
+           {/* Tax Rates */}
+           <div className={`${activeItem === "TaxRated" || activeItem === "AddTaxRate" || activeItem === "EditTaxRate" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+              <div
+                className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
+                onClick={() => {
+                  navigate('/layout/TaxRated');
+                  setActiveItem("TaxRated");
+                }}
+              >
+                <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
+                  <div>
+                    {activeItem === "TaxRated" || activeItem === "AddTaxRate" || activeItem === "EditTaxRate" ?
+                      <img src={TaxRatesImage} className='V_icon_size text-d_color V_filter' /> :
+                      <img src={TaxRatesImage} className='V_icon_size' />
+                    }
+                  </div>
+                  {!isCollapsed && <h5 className='V_text_size font-fw-lighter'>Tax Rates</h5>}
+                </div>
+              </div>
+            </div>
 
           </div>
         </div>

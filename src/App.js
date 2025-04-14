@@ -23,13 +23,14 @@ import Notification from './Components/Pages/Notification.jsx';
 import EditProfile from './Components/Pages/EditProfile.jsx';
 import ReportPurchaseReport from './Components/Pages/ReportPurchaseReport.js';
 import ReportSalesReport from './Components/Pages/ReportSalesReport.js';
-import Wearhouse from './Components/Pages/Wearhouse.js';
-import AddWearhouse from './Components/Pages/AddWearhouse.js';
-import EditWearhouse from './Components/Pages/EditWearhouse.js';
-import ViewWearhouse from './Components/Pages/ViewWearhouse.js';
+import Warehouse from './Components/Pages/Warehouse.js';
+import AddWarehouse from './Components/Pages/AddWarehouse.js';
+import EditWarehouse from './Components/Pages/EditWarehouse.js';
+import ViewWarehouse from './Components/Pages/ViewWarehouse.js';
 import Store from './Components/Pages/Store.js';
 import AddStore from './Components/Pages/AddStore.js';
 import EditStore from './Components/Pages/EditStore.js';
+import ReportSalesTaxReport from './Components/Pages/ReportSalesTaxReport.js';
 
 function App() {
   return (
@@ -42,12 +43,12 @@ function App() {
            <Route path="EditProfile" element={<EditProfile />} />
            <Route path="Product" element={<Product />} />
            <Route path="RawMaterial" element={<RawMaterial />} />
-           <Route path="taxrated" element={<FInancial_Setting_TaxRated/>} />
-           <Route path="addtaxrate" element={<AddTaxRates/>} />
-           <Route path="edittaxrate" element={<EditTaxRates/>} />
-           <Route path="reportprofit" element={<ReportProfitLoss/>} />
-           <Route path="expense" element={<Expense />} />
+           <Route path="TaxRated" element={<FInancial_Setting_TaxRated/>} />
+           <Route path="AddTaxRate" element={<AddTaxRates/>} />
+           <Route path="EditTaxrate" element={<EditTaxRates/>} />
+           <Route path="ReportProfit" element={<ReportProfitLoss/>} />
            <Route path="ReportTaxReport" element={<ReportTaxReport/>} />
+           <Route path="ReportSalesTaxReport" element={<ReportSalesTaxReport/>} />
            <Route path="ReportIncomeReport" element={<ReportIncomeReport/>} />
            <Route path="ReportExpenseReport" element={<ReportExpenseReport/>} />
            <Route path="ReportCustomerReport" element={<ReportCustomerReport/>} />
@@ -58,10 +59,10 @@ function App() {
            <Route path="ReportInventoryReport" element={<ReportsInventoryReport/>} />
            <Route path="ReportPurchaseReport" element={<ReportPurchaseReport/>} />
            <Route path="ReportSalesReport" element={<ReportSalesReport/>} />
-           <Route path="Wearhouse" element={<Wearhouse/>} />
-           <Route path="AddWearhouse" element={<AddWearhouse/>} />
-           <Route path="EditWearhouse" element={<EditWearhouse/>} />
-           <Route path="ViewWearhouse" element={<ViewWearhouse/>} />
+           <Route path="Warehouse" element={<Warehouse/>} />
+           <Route path="AddWarehouse" element={<AddWarehouse/>} />
+           <Route path="EditWarehouse" element={<EditWarehouse/>} />
+           <Route path="ViewWarehouse" element={<ViewWarehouse/>} />
            <Route path="Store" element={<Store/>} />
            <Route path="AddStore" element={<AddStore/>} />
            <Route path="EditStore" element={<EditStore/>} />

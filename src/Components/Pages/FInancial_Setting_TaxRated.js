@@ -11,6 +11,7 @@ const FInancial_Setting_TaxRated = () => {
 const navigate = useNavigate()
 const [open, setOpen] = useState(false)
 const [column, setColumn] = useState(false)
+const [deleteAll, setDeleteAll] = useState(false)
 
   return (
     <div>
@@ -19,7 +20,7 @@ const [column, setColumn] = useState(false)
               <div className='flex flex-wrap justify-between items-center pt-3'>
                  <div>
                     <h2 className='text-d_color text-[24px] font-medium'>Tax Rates</h2>
-                    <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color'>Tax Rates</span></p>
+                    <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color'>Tax Rates</span></p>
                  </div>
                  <div className='flex flex-wrap '>
                     <div className='relative pt-3'>
@@ -49,7 +50,7 @@ const [column, setColumn] = useState(false)
                       </div>}
                     </div>
                     <div className='pt-3'>
-                       <button className='ds_column_btn  flex me-4'> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
+                       <button onClick={()=> setDeleteAll(true)} className='ds_column_btn  flex me-4'> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
                     </div>
                     <div className='pt-3'>
                       <button className='ds_add_currency' onClick={()=> navigate("/Layout/AddTaxRate")}>+ Add Tax Rate</button>
@@ -138,6 +139,7 @@ const [column, setColumn] = useState(false)
                     </div>
                   </div> 
 
+                   {/* ***************** Single Delete Product *********** */}
                   <Dialog open={open} onClose={setOpen} className="relative z-10">
                       <DialogBackdrop transition className="fixed inset-0 bg-black-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"/>    
                       <div className="fixed bg-black/50 inset-0 z-10 w-screen overflow-y-auto">
@@ -161,7 +163,34 @@ const [column, setColumn] = useState(false)
                           </DialogPanel>
                         </div>
                       </div>
-            </Dialog>
+                 </Dialog>
+
+                 {/* ***************** Delete All Product *********** */}
+                  <Dialog open={deleteAll} onClose={setDeleteAll} className="relative z-10">
+                      <DialogBackdrop transition className="fixed inset-0 bg-black-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"/>    
+                      <div className="fixed bg-black/50 inset-0 z-10 w-screen overflow-y-auto">
+                        <div className="flex min-h-full lg:w-full md:w-3/5  mx-auto justify-center p-4 text-center items-center sm:p-0">
+                          <DialogPanel transition className="relative transform overflow-hidden rounded-[5px] bg-red text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-xl data-closed:sm:translate-y-0 data-closed:sm:scale-95">
+                            <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                  <div className="mt-2">
+                                    <p className="sm:text-lg text-center text-d_color">
+                                      Are you sure you want to delete  <br />
+                                       All TaxRated ?
+
+                                    </p>
+                                  </div>
+                              <div className='text-center mt-10 mb-6'>
+                                 <button type="button" className='ds_cancel_btn me-4' onClick={() => setDeleteAll(false)}>Cancel
+                                 </button>
+                                 <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeleteAll(false)}>Delete
+                                 </button>
+                              </div>
+                            </div>
+                          </DialogPanel>
+                        </div>
+                      </div>
+                 </Dialog>
+
               </div>
           </div>
        </div>

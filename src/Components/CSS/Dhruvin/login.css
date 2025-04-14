@@ -191,3 +191,9 @@
        padding: 6px 33px;
     }
 }
+
+@media (max-width:321px) {
+    .ds_column_box{
+        left: -36px;
+    }
+}

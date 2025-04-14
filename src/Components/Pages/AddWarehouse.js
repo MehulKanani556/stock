@@ -1,13 +1,18 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const AddWearhouse = () => {
+const AddWarehouse = () => {
+
+const navigate = useNavigate()
+
+
   return (
     <div>
       <div className='ds_main'>
        <div className='sm:px-8 px-4 pt-7'>
           <div>
-             <h2 className='text-d_color text-[24px] font-medium'>Add Wearhouse</h2>
-             <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-[#727272]'>Wearhouse /</span> <span className='text-d_color font-semibold'>Add Wearhouse</span></p>
+             <h2 className='text-d_color text-[24px] font-medium'>Add Warehouse</h2>
+             <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span onClick={()=> navigate("/Layout/Warehouse")} className='text-[#727272]'>Warehouse /</span> <span className='text-d_color font-semibold'>Add Warehouse</span></p>
           </div>
           <div className='pt-7'>
             <div className='ds_main_box'>
@@ -15,8 +20,8 @@ const AddWearhouse = () => {
                   <div className="flex flex-wrap">
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Wearhouse Name</label>
-                               <input type="email" id="text" className="ds_main_input" placeholder="Enter Wearhouse Name" required />
+                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Warehouse Name</label>
+                               <input type="email" id="text" className="ds_main_input" placeholder="Enter Warehouse Name" required />
                           </div>
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
@@ -99,4 +104,4 @@ const AddWearhouse = () => {
   )
 }
 
-export default AddWearhouse
+export default AddWarehouse

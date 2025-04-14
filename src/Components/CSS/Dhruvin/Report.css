@@ -124,16 +124,16 @@
 }
 .ds_report_purchase{
     padding: 7px 15px;
-    background-color: #36454F;
-    color: white;
+    background-color: transparent;
+    color: #36454F;
     border: 1px solid #36454F;
     border-radius: 4px;
     transition: 0.3s ease-in-out;
 }
 .ds_report_purchase:hover{
-    background-color: transparent;
+    background-color: #36454F;
     border: 1px solid #36454F;
-    color: #36454F;
+    color: white;
 }
 .ds_report_sales{
     border: 1px solid #36454F;
@@ -145,6 +145,19 @@
     background-color: #36454F;
     border: 1px solid #36454F;
     color: white;
+}
+
+.ds_report_active{
+    background-color: #36454F !important;
+    color: white !important;
+    border: 1px solid #36454F !important;
+    transition: 0.3s ease-in-out !important;
+}
+.ds_report_active:hover{
+    background-color:transparent !important;
+    color: #36454F !important;
+    border: 1px solid #36454F !important;
+    transition: 0.3s ease-in-out !important;
 }
 
  /* ******************* Rerport Income Report ***************** */

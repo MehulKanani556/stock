@@ -1,13 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const ViewWearhouse = () => {
+const ViewWarehouse = () => {
+
+  const navigate = useNavigate()
+
   return (
     <div>
       <div className='ds_main'>
        <div className='sm:px-8 px-4 pt-7'>
           <div>
-             <h2 className='text-d_color text-[24px] font-medium'>View Wearhouse</h2>
-             <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-[#727272]'>Wearhouse /</span> <span className='text-d_color font-semibold'>View Wearhouse</span></p>
+             <h2 className='text-d_color text-[24px] font-medium'>View Warehouse</h2>
+             <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span onClick={()=> navigate("/Layout/Warehouse")} className='text-[#727272]'>Warehouse /</span> <span className='text-d_color font-semibold'>View Warehouse</span></p>
           </div>
           <div className='pt-7'>
             <div className='ds_main_box'>
@@ -18,14 +22,14 @@ const ViewWearhouse = () => {
                          <thead>
                             <tr>
                                 <th>
-                                    <span className='text-xl text-d_color whitespace-nowrap'>Wearhouse Details</span>
+                                    <span className='text-xl text-d_color whitespace-nowrap'>Warehouse Details</span>
                                 </th>
                             </tr>
                          </thead>
                          <tbody>
                             <tr>
-                                <td style={{borderRight:"1px solid #727272"}}>Wearhouse Name</td>
-                                <td>Wearhouse 1</td>
+                                <td style={{borderRight:"1px solid #727272"}}>Warehouse Name</td>
+                                <td>Warehouse 1</td>
                             </tr>
                             <tr>
                                 <td style={{borderRight:"1px solid #727272"}}>Contact Person</td>
@@ -56,4 +60,4 @@ const ViewWearhouse = () => {
   )
 }
 
-export default ViewWearhouse
+export default ViewWarehouse

@@ -4,6 +4,7 @@ import '../CSS/Dhruvin/Report.css'
 import mrint from '../Images/Dhruvin/print.svg'
 import xls from '../Images/Dhruvin/xls.svg'
 import pdf from '../Images/Dhruvin/pdf.svg'
+import { useNavigate } from 'react-router-dom'
 
 const ReportProfitLoss = () => {
 
@@ -12,6 +13,8 @@ const totalItems = 30;
 const itemsPerPage = 10;
 const totalPages = Math.ceil(totalItems / itemsPerPage);
 const [currentPage, setCurrentPage] = useState(1);
+const navigate = useNavigate()
+
 
 const goToPage = (page) => {
   if (page < 1 || page > totalPages) return;
@@ -61,7 +64,7 @@ const getPageNumbers = () => {
               <div className='flex justify-between '>
                  <div>
                     <h2 className='text-d_color text-[24px] font-medium'>Reports</h2>
-                    <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color'>Profit & Loss Report</span></p>
+                    <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color'>Profit & Loss Report</span></p>
                  </div>
                  <div>
                     <div className='relative'>
@@ -91,8 +94,8 @@ const getPageNumbers = () => {
               </div>
 
               <div className='mt-4'>
-                        <button className='ds_reoprt_profit me-4'>Profit</button>
-                        <button className='ds_reoprt_loss'>Loss</button>
+                    <button className='ds_reoprt_profit me-4'>Profit</button>
+                    <button className='ds_reoprt_loss'>Loss</button>
               </div>
 
               <div>
