@@ -12,68 +12,69 @@ import { FaCalendarAlt } from 'react-icons/fa'
 import station from '../Images/Dhruvin/station.png'
 import paypal from '../Images/Dhruvin/paypal.png'
 
-const ReportTaxReport = () => {
 
-const [download, setDownload] = useState(false) 
-const [column, setColumn] = useState(false)  
-const navigate = useNavigate() 
-const [open, setOpen] = useState(false)
-const dateInputRef = useRef(null);
-const totalItems = 30;
-const itemsPerPage = 10;
-const totalPages = Math.ceil(totalItems / itemsPerPage);
-const [currentPage, setCurrentPage] = useState(1);
-const [deleteAll, setDeleteAll] = useState(false)
+const ReportSalesTaxReport = () => {
 
-const handleIconClick = () => {
-  dateInputRef.current.showPicker?.(); 
-  dateInputRef.current.focus();
-};
-
-const goToPage = (page) => {
-  if (page < 1 || page > totalPages) return;
-  setCurrentPage(page);
-  console.log('Page changed to:', page);
-};
-
-const getPageNumbers = () => {
-  const maxVisible = 5;
-  const pages = [];
-
-  if (totalPages <= maxVisible + 2) {
-    for (let i = 1; i <= totalPages; i++) {
-      pages.push(i);
+    const [download, setDownload] = useState(false) 
+    const [column, setColumn] = useState(false)  
+    const navigate = useNavigate() 
+    const [open, setOpen] = useState(false)
+    const dateInputRef = useRef(null);
+    const totalItems = 30;
+    const itemsPerPage = 10;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [deleteAll, setDeleteAll] = useState(false)
+    
+    const handleIconClick = () => {
+      dateInputRef.current.showPicker?.(); 
+      dateInputRef.current.focus();
+    };
+    
+    const goToPage = (page) => {
+      if (page < 1 || page > totalPages) return;
+      setCurrentPage(page);
+      console.log('Page changed to:', page);
+    };
+    
+    const getPageNumbers = () => {
+      const maxVisible = 5;
+      const pages = [];
+    
+      if (totalPages <= maxVisible + 2) {
+        for (let i = 1; i <= totalPages; i++) {
+          pages.push(i);
+        }
+      } else {
+        if (currentPage <= maxVisible) {
+          for (let i = 1; i <= maxVisible; i++) {
+            pages.push(i);
+          }
+          pages.push('...');
+          pages.push(totalPages);
+        } else if (currentPage > totalPages - maxVisible) {
+          pages.push(1);
+          pages.push('...');
+          for (let i = totalPages - maxVisible + 1; i <= totalPages; i++) {
+            pages.push(i);
+          }
+        } else {
+          pages.push(1);
+          pages.push('...');
+          for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+            pages.push(i);
+          }
+          pages.push('...');
+          pages.push(totalPages);
+        }
+      }
+    
+      return pages;
     }
-  } else {
-    if (currentPage <= maxVisible) {
-      for (let i = 1; i <= maxVisible; i++) {
-        pages.push(i);
-      }
-      pages.push('...');
-      pages.push(totalPages);
-    } else if (currentPage > totalPages - maxVisible) {
-      pages.push(1);
-      pages.push('...');
-      for (let i = totalPages - maxVisible + 1; i <= totalPages; i++) {
-        pages.push(i);
-      }
-    } else {
-      pages.push(1);
-      pages.push('...');
-      for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-        pages.push(i);
-      }
-      pages.push('...');
-      pages.push(totalPages);
-    }
-  }
-
-  return pages;
-}
 
   return (
     <div>
-       <div className='ds_main'>
+      <div className='ds_main'>
           <div className='sm:px-8 px-4 pt-7'>
               <div className='flex justify-between lg:flex-nowrap flex-wrap'>
                  <div>
@@ -113,9 +114,9 @@ const getPageNumbers = () => {
                                             </div>
                                           </div>
                                           <div className='mb-4'>
-                                               <label className='text-d_color font-medium block mb-1'>Supplier Name</label>
+                                               <label className='text-d_color font-medium block mb-1'>Customer Name</label>
                                                <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
-                                                 <option value="">Select Supplier Name</option>
+                                                 <option value="">Select Customer Name</option>
                                                  <option value="">John Wick</option>
                                                  <option value="">The Rock</option>
                                                </select>
@@ -144,7 +145,7 @@ const getPageNumbers = () => {
                       <button className='ds_column_btn  flex me-4' onClick={()=> setColumn(!column)}> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
                         {column && <div className='ds_column_box z-[2]'>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Supplier Name</h6>
+                             <h6 className='text-d_color'>Customer Name</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
@@ -223,23 +224,23 @@ const getPageNumbers = () => {
                  </div>
               </div>
               <div className=''>
-                 <button className='ds_report_active ds_report_purchase me-4 mt-4'>
+                 <button onClick={()=> navigate("/Layout/ReportTaxReport")} className='ds_report_purchase me-4 mt-4'>
                      Purchase Tax Report
                  </button>
-                 <button onClick={()=> navigate("/Layout/ReportSalesTaxReport")} className='ds_report_sales mt-4'>
+                 <button className='ds_report_active ds_report_sales mt-4'>
                      Sales Tax Report
                  </button>
               </div>
 
               <div className='pt-7'>
                   <div className='shadow-[1px_1px_20px_0.5px_rgba(0,0,0,0.06)] bg-white'>
-                    <div className='overflow-x-auto'>
+                    <div className='relative overflow-x-auto'>
                         <table className='w-full ds_report_table'>
                             <thead>
                                 <tr>
-                                    <th>Supplier Name</th>
+                                    <th>Customer Name</th>
                                     <th>Date</th>
-                                    <th>Reference No.</th>
+                                    <th>Invoice No.</th>
                                     <th>Total Amount</th>
                                     <th>Payment Method</th>
                                     <th>Discount</th>
@@ -248,10 +249,7 @@ const getPageNumbers = () => {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
+                                    <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>P123456</td>
                                     <td>$1250</td>
@@ -262,10 +260,7 @@ const getPageNumbers = () => {
                                     <td>$150</td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
+                                    <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>P123456</td>
                                     <td>$1250</td>
@@ -276,10 +271,7 @@ const getPageNumbers = () => {
                                     <td>$150</td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
+                                    <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>P123456</td>
                                     <td>$1250</td>
@@ -290,10 +282,7 @@ const getPageNumbers = () => {
                                     <td>$150</td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
+                                    <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>P123456</td>
                                     <td>$1250</td>
@@ -304,10 +293,7 @@ const getPageNumbers = () => {
                                     <td>$150</td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
+                                    <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>P123456</td>
                                     <td>$1250</td>
@@ -318,10 +304,7 @@ const getPageNumbers = () => {
                                     <td>$150</td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
+                                    <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>P123456</td>
                                     <td>$1250</td>
@@ -332,10 +315,7 @@ const getPageNumbers = () => {
                                     <td>$150</td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
+                                    <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>P123456</td>
                                     <td>$1250</td>
@@ -346,10 +326,7 @@ const getPageNumbers = () => {
                                     <td>$150</td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Apex Stationary</span>
-                                    </td>
+                                    <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>P123456</td>
                                     <td>$1250</td>
@@ -391,8 +368,8 @@ const getPageNumbers = () => {
                        </div>
                   </div> 
 
-                   {/* ***************** Delete All Report *********** */}
-                   <Dialog open={deleteAll} onClose={setDeleteAll} className="relative z-10">
+                  {/* ***************** Delete All Report *********** */}
+                  <Dialog open={deleteAll} onClose={setDeleteAll} className="relative z-10">
                       <DialogBackdrop transition className="fixed inset-0 bg-black-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"/>    
                       <div className="fixed bg-black/50 inset-0 z-10 w-screen overflow-y-auto">
                         <div className="flex min-h-full lg:w-full md:w-3/5  mx-auto justify-center p-4 text-center items-center sm:p-0">
@@ -401,7 +378,8 @@ const getPageNumbers = () => {
                                   <div className="mt-2">
                                     <p className="sm:text-lg text-center text-d_color">
                                       Are you sure you want to delete  <br />
-                                      Purchase Tax Report ?
+                                      Sales Tax Report ?
+
                                     </p>
                                   </div>
                               <div className='text-center mt-10 mb-6'>
@@ -422,4 +400,4 @@ const getPageNumbers = () => {
   )
 }
 
-export default ReportTaxReport
+export default ReportSalesTaxReport

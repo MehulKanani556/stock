@@ -23,6 +23,7 @@ const ReportsInventoryReport = () => {
     const itemsPerPage = 10;
     const totalPages = Math.ceil(totalItems / itemsPerPage);
     const [currentPage, setCurrentPage] = useState(1);
+    const [deleteAll, setDeleteAll] = useState(false)
     
     const handleIconClick = () => {
       dateInputRef.current.showPicker?.(); 
@@ -77,7 +78,7 @@ const ReportsInventoryReport = () => {
               <div className='flex justify-between lg:flex-nowrap flex-wrap'>
                  <div>
                     <h2 className='text-d_color text-[24px] font-medium'>Reports</h2>
-                    <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'> Inventory Reports</span></p>  
+                    <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'> Inventory Reports</span></p>  
                  </div>
                  <div className='flex xl:flex-wrap lg:flex-nowrap flex-wrap '>
                     <div className='pt-3'>
@@ -178,7 +179,7 @@ const ReportsInventoryReport = () => {
                       </div>}
                     </div>
                     <div className='pt-3'>
-                       <button className='ds_column_btn whitespace-nowrap  flex me-4'> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
+                       <button onClick={()=> setDeleteAll(true)} className='ds_column_btn whitespace-nowrap  flex me-4'> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
                     </div>
                     <div className='relative pt-3'>
                        <button onClick={()=> setDownload(!download)} className='ds_fincial_download flex items-center'>Download <IoIosArrowDown className='ms-1' /></button>
@@ -341,6 +342,33 @@ const ReportsInventoryReport = () => {
                         </button>
                        </div>
                   </div> 
+
+                  {/* ***************** Delete All Product *********** */}
+                  <Dialog open={deleteAll} onClose={setDeleteAll} className="relative z-10">
+                      <DialogBackdrop transition className="fixed inset-0 bg-black-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"/>    
+                      <div className="fixed bg-black/50 inset-0 z-10 w-screen overflow-y-auto">
+                        <div className="flex min-h-full lg:w-full md:w-3/5  mx-auto justify-center p-4 text-center items-center sm:p-0">
+                          <DialogPanel transition className="relative transform overflow-hidden rounded-[5px] bg-red text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-xl data-closed:sm:translate-y-0 data-closed:sm:scale-95">
+                            <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                  <div className="mt-2">
+                                    <p className="sm:text-lg text-center text-d_color">
+                                      Are you sure you want to delete  <br />
+                                      Inventory Reports ?
+
+                                    </p>
+                                  </div>
+                              <div className='text-center mt-10 mb-6'>
+                                 <button type="button" className='ds_cancel_btn me-4' onClick={() => setDeleteAll(false)}>Cancel
+                                 </button>
+                                 <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeleteAll(false)}>Delete
+                                 </button>
+                              </div>
+                            </div>
+                          </DialogPanel>
+                        </div>
+                      </div>
+                 </Dialog>
+
               </div>
           </div>
        </div>

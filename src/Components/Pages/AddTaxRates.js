@@ -1,13 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const AddTaxRates = () => {
+
+const navigate =  useNavigate()  
+
   return (
     <div>
       <div className='ds_main'>
        <div className='sm:px-8 px-4 pt-7'>
           <div>
              <h2 className='text-d_color text-[24px] font-medium'>Add Tax Rates</h2>
-             <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-[#727272]'>Tax Rates /</span> <span className='text-d_color font-medium'>Add Tax Rates</span></p>
+             <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span onClick={()=> navigate("/Layout/TaxRated")} className='text-[#727272]'>Tax Rates /</span> <span className='text-d_color font-medium'>Add Tax Rates</span></p>
           </div>
           <div className='pt-7'>
             <div className='ds_main_box'>

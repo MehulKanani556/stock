@@ -11,8 +11,9 @@ import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } fro
 import product from '../Images/Dhruvin/product.png'
 import Pen from '../Images/Dhruvin/pen.svg'
 import Red from '../Images/Dhruvin/trash_red.svg'
-import '../CSS/Dhruvin/Wearhouse.css'
+import '../CSS/Dhruvin/Warehouse.css'
 import Eye from '../Images/Dhruvin/eye.svg'
+import '../CSS/Dhruvin/Store.css'
 
 const Store = () => {
 
@@ -26,6 +27,8 @@ const Store = () => {
   const itemsPerPage = 10;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
+  const [deleteAll, setDeleteAll] = useState(false)
+
   
   const handleIconClick = () => {
     dateInputRef.current.showPicker?.(); 
@@ -81,7 +84,7 @@ const Store = () => {
               <div className='flex justify-between lg:flex-nowrap flex-wrap'>
                  <div>
                     <h2 className='text-d_color text-[24px] font-medium'>Store</h2>
-                    <p className='cursor-pointer'><span className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Store</span></p>  
+                    <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Store</span></p>  
                  </div>
                  <div className='flex xl:flex-wrap lg:flex-nowrap flex-wrap '>
                     <div className='pt-3'>
@@ -176,10 +179,10 @@ const Store = () => {
                       </div>}
                     </div>
                     <div className='pt-3'>
-                       <button className='ds_column_btn whitespace-nowrap  flex me-4'> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
+                       <button onClick={()=> setDeleteAll(true)} className='ds_column_btn whitespace-nowrap  flex me-4'> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
                     </div>
                     <div className='pt-3'>
-                      <button className='ds_add_currency' onClick={()=> navigate("/Layout/AddWearhouse")}>+ Add Warehouse</button>
+                      <button className='ds_store_btn' onClick={()=> navigate("/Layout/AddStore")}>+ Add Store</button>
                     </div>
                  </div>
               </div>
@@ -391,7 +394,7 @@ const Store = () => {
               </div>
           </div>
 
-          <Dialog open={deleteToggle} onClose={setDeleteToggle} className="relative z-10">
+            <Dialog open={deleteToggle} onClose={setDeleteToggle} className="relative z-10">
                       <DialogBackdrop transition className="fixed inset-0 bg-black-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"/>    
                       <div className="fixed bg-black/50 inset-0 z-10 w-screen overflow-y-auto">
                         <div className="flex min-h-full lg:w-full md:w-3/5  mx-auto justify-center p-4 text-center items-center sm:p-0">
@@ -415,6 +418,32 @@ const Store = () => {
                         </div>
                       </div>
             </Dialog>
+
+             {/* ***************** Delete All Product *********** */}
+             <Dialog open={deleteAll} onClose={setDeleteAll} className="relative z-10">
+                      <DialogBackdrop transition className="fixed inset-0 bg-black-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"/>    
+                      <div className="fixed bg-black/50 inset-0 z-10 w-screen overflow-y-auto">
+                        <div className="flex min-h-full lg:w-full md:w-3/5  mx-auto justify-center p-4 text-center items-center sm:p-0">
+                          <DialogPanel transition className="relative transform overflow-hidden rounded-[5px] bg-red text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-xl data-closed:sm:translate-y-0 data-closed:sm:scale-95">
+                            <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                  <div className="mt-2">
+                                    <p className="sm:text-lg text-center text-d_color">
+                                      Are you sure you want to delete  <br />
+                                       All Store ?
+
+                                    </p>
+                                  </div>
+                              <div className='text-center mt-10 mb-6'>
+                                 <button type="button" className='ds_cancel_btn me-4' onClick={() => setDeleteAll(false)}>Cancel
+                                 </button>
+                                 <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeleteAll(false)}>Delete
+                                 </button>
+                              </div>
+                            </div>
+                          </DialogPanel>
+                        </div>
+                      </div>
+                 </Dialog>
        </div>
     </div>
   )
