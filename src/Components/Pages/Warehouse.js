@@ -204,7 +204,7 @@ const Warehouse = () => {
                                        </label>
                                     </td>
                                     <td>
-                                        <div>
+                                           <div>
                                                 <button onClick={()=> navigate("/Layout/ViewWarehouse")} className='ds_crud_btn me-3'>
                                                     <img src={Eye} alt="" />
                                                 </button>
