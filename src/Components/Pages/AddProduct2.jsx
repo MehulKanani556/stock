@@ -6,6 +6,7 @@ import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } fro
 import Trash from '../Images/Dhruvin/trash.svg'
 import Red from '../Images/Dhruvin/trash_red.svg';
 import plus from '../Images/Parth/Plus.svg';
+import '../CSS/Parth/Product.css';
 
 const steps = [
   { label: "Product Information", icon: <FaInfoCircle /> },
@@ -22,6 +23,7 @@ const AddProduct2 = () => {
   const [isAddVariationOpen, setIsAddVariationOpen] = useState(false);
   const [images, setImages] = useState([]);
 
+  
   const toggleAddVariationModal = () => setIsAddVariationOpen(!isAddVariationOpen);
   const closeAddVariationModal = () => {
     setIsAddVariationOpen(false);
@@ -57,7 +59,7 @@ const AddProduct2 = () => {
     if (location.state && location.state.productType) {
       setProductType(location.state.productType);
     }
-  }, [location]);
+  }, [location.state]);
 
   const goNext = () => {
     if (currentStep < steps.length - 1) {
@@ -96,7 +98,7 @@ const AddProduct2 = () => {
                         <div key={index} className="flex-1 flex flex-col items-center relative">
                           {/* Line connector */}
                           {index === 0 && (
-                            <div className={`absolute h-[2px] w-full top-5 left-1/2 border-dashed border-t-2 border-[rgba(22,50,91,1)]`}></div>
+                            <div className={`absolute h-[2px] w-full top-5 left-1/2 border-dashed border-t-2 border-[#36454F]`}></div>
                           )}
                           {index === 1 && (
                             <div className={`absolute h-[2px] w-full top-5 left-1/2 border-dashed border-t-2 border-gray-400`}></div>
@@ -106,7 +108,7 @@ const AddProduct2 = () => {
                           <div
                             className={`w-10 h-10 rounded-full border-2 flex items-center justify-center relative z-10
                               ${index <= 1
-                                ? "bg-[rgba(22,50,91,1)] text-white border-[rgba(22,50,91,1)]"
+                                ? "bg-[#36454F] text-white border-[#36454F]"
                                 : "bg-white text-gray-500 border-gray-500"
                               }
                             `}
@@ -121,7 +123,7 @@ const AddProduct2 = () => {
                           {/* Step label */}
                           <div
                             className={`mt-2 text-sm w-12 text-center ${index <= 1
-                              ? "text-[rgba(22,50,91,1)] font-medium"
+                              ? "text-[#36454F] font-medium"
                               : "text-gray-500"
                               }`}
                           >
@@ -197,15 +199,15 @@ const AddProduct2 = () => {
                         <button className='ds_cancel_btn me-5'
                           onClick={() => {
                             goPrev();
-                            navigate('/layout/addproduct');
+                            navigate('/layout/addproduct', { state: { productType } });
                           }}
                         >Cancel</button>
                         <button className='ds_add_btn'
                           onClick={() => {
                             goNext();
-                            navigate('/layout/addproduct3');
+                            navigate('/layout/addproduct3', { state: { productType } });
                           }}
-                        >Add</button>
+                        >Next</button>
                       </div>
                     </div>
                   )}
@@ -223,7 +225,7 @@ const AddProduct2 = () => {
                             </select>
                           </div>
                         </div>
-                        <div className=' sm:ms-4 sm:ms-0 md:pt-3 sm:mt-10 md:mt-8' onClick={() => setIsAddVariationOpen(true)}>
+                        <div className='ms-4 sm:ms-0 md:pt-3 sm:mt-10 md:mt-8' onClick={() => setIsAddVariationOpen(true)}>
                           <button className='ds_add_currency lg:mx-5' >+ Add More</button>
                         </div>
                       </div>
@@ -397,15 +399,15 @@ const AddProduct2 = () => {
                         <button className='ds_cancel_btn me-5'
                           onClick={() => {
                             goPrev();
-                            navigate('/layout/addproduct');
+                            navigate('/layout/addproduct', { state: { productType } });
                           }}
                         >Cancel</button>
                         <button className='ds_add_btn'
                           onClick={() => {
                             goNext();
-                            navigate('/layout/addproduct3');
+                            navigate('/layout/addproduct3', { state: { productType } });
                           }}
-                        >Add</button>
+                        >Next</button>
                       </div>
 
 
@@ -421,7 +423,7 @@ const AddProduct2 = () => {
         </div>
 
 
-        
+
         <Dialog open={deleteToggle} onClose={setDeleteToggle} className="relative z-10">
           <DialogBackdrop transition className="fixed inset-0 bg-black-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in" />
           <div className="fixed bg-black/50 inset-0 z-10 w-screen overflow-y-auto">
@@ -500,7 +502,7 @@ const AddProduct2 = () => {
                           />
                           <input
                             type="file"
-                            id="fileInput1" 
+                            id="fileInput1"
                             className="hidden"
                             onChange={(e) => handleImageUpload(e, 'fileDisplay1')}
                             accept="image/*"
@@ -548,8 +550,8 @@ const AddProduct2 = () => {
                       <div className="flex flex-wrap gap-4 mt-4">
                         {images.map((image, index) => (
                           <div key={index} className="relative w-24 h-24 border border-black rounded-md">
-                            <img 
-                              src={image.preview} 
+                            <img
+                              src={image.preview}
                               alt={`Selected ${index + 1}`}
                               className="w-full h-full object-cover rounded"
                             />
@@ -565,20 +567,49 @@ const AddProduct2 = () => {
                         ))}
                       </div>
                     )}
-                    <div className='V_input_field_container_change_password'>
-                      <label
-                        className="V_input_label_label"
-                      >
-                        Confirm Password
-                      </label>
-                      <input
-                        type="password"
-                        name="password"
-                        id="password"
-                        className="V_input_field"
-                        placeholder="Confirm New Password"
-                        required
-                      />
+                    <div className="w-full mb-3">
+                      <div>
+                        <label for="barcode" className="block mb-1 text-md font-medium text-d_color dark:text-white">Barcode</label>
+                        <input type="text" id="text" className="ds_main_input" placeholder="Enter Barcode" required />
+                      </div>
+                    </div>
+                    <div className="w-full mb-3">
+                      <div>
+                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Quantity</label>
+                        <input type="email" id="text" className="ds_main_input" placeholder="Enter quantity" required />
+                      </div>
+                    </div>
+                    <div className="w-full mb-3">
+                      <div>
+                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Alert Quantity</label>
+                        <input type="email" id="text" className="ds_main_input" placeholder="Enter alert quantity" required />
+                      </div>
+                    </div>
+                    <div className="w-full mb-3">
+                      <div>
+                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Tax</label>
+                        <select className='ds_Select'>
+                          <option value="">Select tax</option>
+                          <option value="">weekly</option>
+                          <option value="">daily</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="w-full mb-3">
+                      <div>
+                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Discount Type</label>
+                        <select className='ds_Select'>
+                          <option value="">Select discount type</option>
+                          <option value="">weekly</option>
+                          <option value="">daily</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="w-full mb-3">
+                      <div>
+                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Discount Value</label>
+                        <input type="email" id="text" className="ds_main_input" placeholder="Enter discount value" required />
+                      </div>
                     </div>
 
 

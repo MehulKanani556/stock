@@ -67,7 +67,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
           </div>
 
           <div className={`${isCollapsed ? '' : 'V_height_scroll'} overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]`}>
-            <div className={`${activeItem === "Dashboard" ? 'bg-white text-d_color' : 'text-white'} py-3 mt-3 over`}>
+            <div className={`${activeItem === "Dashboard" || activeItem === "Notification" || activeItem === "EditProfile" ? 'bg-white text-d_color' : 'text-white'} py-3 mt-3 over`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
@@ -77,7 +77,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "Dashboard" ?
+                    {activeItem === "Dashboard" || activeItem === "Notification" || activeItem === "EditProfile" ?
                       <img src={dashboard} className='V_icon_size V_filter' /> :
                       <img src={dashboard} className='V_icon_size' />
                     }
@@ -87,7 +87,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               </div>
             </div>
 
-            <div className={`${activeItem === "Product" ? 'bg-white text-d_color' : 'text-white'} py-3 `}>
+            <div className={`${activeItem === "product" || activeItem === "AddProduct" || activeItem === "addproduct2" || activeItem === "addproduct3" || activeItem === "EditProduct" || activeItem === "EditProduct2" || activeItem === "EditProduct3" ? 'bg-white text-d_color' : 'text-white'} py-3 `}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
@@ -97,7 +97,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "Product" ?
+                    {activeItem === "product" || activeItem === "AddProduct" || activeItem === "addproduct2" || activeItem === "addproduct3" || activeItem === "EditProduct" || activeItem === "EditProduct2" || activeItem === "EditProduct3" ?
                       <img src={Product} className=' V_icon_size V_filter' /> :
                       <img src={Product} className=' V_icon_size filter grayscale brightness-0 invert' />
                     }

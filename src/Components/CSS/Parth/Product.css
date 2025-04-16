@@ -52,8 +52,11 @@
     .V_browse_btn {
         background-color: #36454F;
         color: white;
+        width: 70px;
         padding: 2px 8px;
         margin: 4px 0px;
+        font-size: 12px;
+        height: 27px;
         border-radius: 5px;
     }
 }
@@ -62,10 +65,12 @@
     .V_browse_btn {
         background-color: #36454F;
         color: white;
-        padding: 5px 8px;
+        width: 70px;
+        padding: 2px 8px;
         margin: 4px 0px;
-        border-radius: 5px;
         font-size: 12px;
+        height: 27px;
+        border-radius: 5px;
     }
 }
 
@@ -89,6 +94,8 @@
         color: white;
         padding: 2px 8px;
         margin: 4px 0px;
+        font-size: 12px;
+        height: 30px;
         border-radius: 5px;
     }
 }

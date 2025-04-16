@@ -11,7 +11,7 @@ import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } fro
 import product from '../Images/Dhruvin/product.png'
 import Pen from '../Images/Dhruvin/pen.svg'
 import Red from '../Images/Dhruvin/trash_red.svg'
-import '../CSS/Dhruvin/Wearhouse.css'
+import '../CSS/Dhruvin/Warehouse.css'
 import '../CSS/Parth/Product.css'
 import Eye from '../Images/Dhruvin/eye.svg'
 
@@ -262,7 +262,7 @@ const Product = () => {
                           <button onClick={() => navigate("/Layout/ViewWearhouse")} className='ds_crud_btn me-3'>
                             <img src={Eye} alt="" />
                           </button>
-                          <button onClick={() => navigate("/Layout/EditWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditProduct", { state: { productType: 'single' }})} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>

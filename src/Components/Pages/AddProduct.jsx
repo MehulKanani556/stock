@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FaInfoCircle, FaTags, FaListUl } from "react-icons/fa";
-import { useNavigate } from 'react-router-dom';
 import { LiaFileInvoiceDollarSolid } from 'react-icons/lia';
 
 
@@ -11,13 +10,37 @@ const steps = [
   { label: "Custom Fields", icon: <FaListUl /> },
 ];
 
-const AddProduct = () => {
+const EditProduct = () => {
 
   const [currentStep, setCurrentStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState([]);
   const [productType, setProductType] = useState('');
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state && location.state.productType) {
+      setProductType(location.state.productType);
+    }
+  }, [location.state]);
+
+  useEffect(() => {
+    setProductType('');
+  }, []);
+
+  useEffect(() => {
+    if (productType) {
+      sessionStorage.setItem('productType', productType);
+    }
+  }, [productType]);
+
+  useEffect(() => {
+    const storedProductType = sessionStorage.getItem('productType');
+    if (storedProductType && !productType) {
+      setProductType(storedProductType);
+    }
+  }, []);
 
   const goNext = () => {
     if (currentStep < steps.length - 1) {
@@ -56,7 +79,7 @@ const AddProduct = () => {
                         <div key={index} className="flex-1 flex flex-col items-center relative">
                           {/* Line connector */}
                           {index < steps.length - 1 && (
-                            <div className={`absolute h-[2px] w-full top-5 left-1/2 border-dashed border-t-2 ${isStepCompleted(index) ? 'border-[rgba(22,50,91,1)]' : 'border-gray-400'
+                            <div className={`absolute h-[2px] w-full top-5 left-1/2 border-dashed border-t-2 ${isStepCompleted(index) ? 'border-[#36454F]' : 'border-gray-400'
                               }`}></div>
                           )}
 
@@ -64,9 +87,9 @@ const AddProduct = () => {
                           <div
                             className={`w-10 h-10 rounded-full border-2 flex items-center justify-center relative z-10
                               ${currentStep === index
-                                ? "bg-[rgba(22,50,91,1)] text-white border-[rgba(22,50,91,1)]"
+                                ? "bg-[#36454F] text-white border-[#36454F]"
                                 : isStepCompleted(index)
-                                  ? "bg-[rgba(22,50,91,1)] text-white border-[rgba(22,50,91,1)]"
+                                  ? "bg-[#36454F] text-white border-[#36454F]"
                                   : "bg-white text-gray-500 border-gray-500"
                               }
                             `}
@@ -81,7 +104,7 @@ const AddProduct = () => {
                           {/* Step label */}
                           <div
                             className={`mt-2 text-sm w-12 text-center ${currentStep === index || isStepCompleted(index)
-                              ? "text-[rgba(22,50,91,1)] font-medium"
+                              ? "text-[#36454F] font-medium"
                               : "text-gray-500"
                               }`}
                           >
@@ -215,7 +238,11 @@ const AddProduct = () => {
 
 
                 <div className='flex justify-center mt-8 mb-3'>
-                  <button className='ds_cancel_btn me-5'>Previous</button>
+                  <button className='ds_cancel_btn me-5'
+                  onClick={() => {
+                    navigate('/layout/product');
+                  }}
+                  >Cancel</button>
                   <button
                     className='ds_add_btn'
                     onClick={() => {
@@ -238,4 +265,4 @@ const AddProduct = () => {
   )
 }
 
-export default AddProduct
+export default EditProduct

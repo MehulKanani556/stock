@@ -9,7 +9,6 @@ import FInancial_Setting_TaxRated from './Components/Pages/FInancial_Setting_Tax
 import EditTaxRates from './Components/Pages/EditTaxRates.js';
 import './Components/CSS/Dhruvin/login.css'
 import ReportProfitLoss from './Components/Pages/ReportProfitLoss.js';
-import Expense from './Components/Pages/Expense.jsx';
 import ReportTaxReport from './Components/Pages/ReportTaxReport.js';
 import ReportIncomeReport from './Components/Pages/ReportIncomeReport.js';
 import ReportExpenseReport from './Components/Pages/ReportExpenseReport.js';
@@ -33,6 +32,9 @@ import EditStore from './Components/Pages/EditStore.js';
 import AddProduct from './Components/Pages/AddProduct.jsx';
 import AddProduct2 from './Components/Pages/AddProduct2.jsx';
 import AddProduct3 from './Components/Pages/AddProduct3.jsx';
+import EditProduct from './Components/Pages/EditProduct.jsx';
+import EditProduct2 from './Components/Pages/EditProduct2.jsx';
+import EditProduct3 from './Components/Pages/EditProduct3.jsx';
 import ReportSalesTaxReport from './Components/Pages/ReportSalesTaxReport.js';
 
 function App() {
@@ -47,7 +49,10 @@ function App() {
            <Route path="Product" element={<Product />} />
            <Route path="AddProduct" element={<AddProduct />} />
            <Route path="AddProduct2" element={<AddProduct2 />} />
-           <Route path="AddProduct3" element={<AddProduct3 />} />
+            <Route path="AddProduct3" element={<AddProduct3 />} />
+            <Route path="EditProduct" element={<EditProduct />} />
+            <Route path="EditProduct2" element={<EditProduct2 />} />
+            <Route path="EditProduct3" element={<EditProduct3 />} />
            <Route path="RawMaterial" element={<RawMaterial />} />
            <Route path="TaxRated" element={<FInancial_Setting_TaxRated/>} />
            <Route path="AddTaxRate" element={<AddTaxRates/>} />
