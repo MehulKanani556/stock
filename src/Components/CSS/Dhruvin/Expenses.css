@@ -1,0 +1,13 @@
+.ds_expense_btn{
+    padding: 7px 10px;
+    background-color: #36454F;
+    color: white;
+    border: 1px solid #36454F;
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+}
+.ds_expense_btn:hover{
+    background-color: transparent;
+    color: #36454F;
+    border: 1px solid #36454F;
+}

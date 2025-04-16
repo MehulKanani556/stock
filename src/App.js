@@ -34,6 +34,12 @@ import AddProduct from './Components/Pages/AddProduct.jsx';
 import AddProduct2 from './Components/Pages/AddProduct2.jsx';
 import AddProduct3 from './Components/Pages/AddProduct3.jsx';
 import ReportSalesTaxReport from './Components/Pages/ReportSalesTaxReport.js';
+import Supplier from './Components/Pages/Supplier.js';
+import AddSuppliers from './Components/Pages/AddSuppliers.js';
+import EditSuppliers from './Components/Pages/EditSuppliers.js';
+import ViewSuppliers from './Components/Pages/ViewSuppliers.js';
+import ExpensesCategory from './Components/Pages/ExpensesCategory.js';
+import AddExpensesCategory from './Components/Pages/AddExpensesCategory.js';
 
 function App() {
   return (
@@ -72,6 +78,12 @@ function App() {
            <Route path="Store" element={<Store/>} />
            <Route path="AddStore" element={<AddStore/>} />
            <Route path="EditStore" element={<EditStore/>} />
+           <Route path="Supplier" element={<Supplier/>} />
+           <Route path="AddSupplier" element={<AddSuppliers/>} />
+           <Route path="EditSupplier" element={<EditSuppliers/>} />
+           <Route path="ViewSupplier" element={<ViewSuppliers/>} />
+           <Route path="ExpenseCategory" element={<ExpensesCategory/>} />
+           <Route path="AddExpenseCategory" element={<AddExpensesCategory/>} />
         </Route>
       </Routes>
     </div>

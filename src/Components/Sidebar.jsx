@@ -441,7 +441,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
 
 
             {/* Supplier */}
-            <div className={`${activeItem === "Supplier" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "Supplier" || activeItem === "AddSupplier" || activeItem === "EditSupplier" || activeItem === "ViewSupplier" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={`cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
@@ -451,7 +451,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "Supplier" ?
+                    {activeItem === "Supplier" || activeItem === "AddSupplier" || activeItem === "EditSupplier" || activeItem === "ViewSupplier" ?
                       <img src={Supplier} className='V_icon_size text-d_color V_filter' /> :
                       <img src={Supplier} className='V_icon_size' />
                     }
