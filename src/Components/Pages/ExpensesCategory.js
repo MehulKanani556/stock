@@ -186,7 +186,7 @@ const ExpensesCategory = () => {
                                     <td>Employee Vehicle</td>
                                     <td>
                                       <div>
-                                         <button onClick={()=> navigate("/Layout/EditSupplier")} className='ds_crud_btn me-3'>
+                                         <button onClick={()=> navigate("/Layout/EditExpenseCategory")} className='ds_crud_btn me-3'>
                                              <img src={Pen} alt="" />
                                          </button>
                                          <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
@@ -196,45 +196,105 @@ const ExpensesCategory = () => {
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <td>19 July 2024</td>
-                                    <td>Entertainment</td>
-                                    <td>$1250</td>
-                                </tr>
-                                <tr>
-                                    <td>19 July 2024</td>
-                                    <td>Office Expenses</td>
-                                    <td>$1250</td>
-                                </tr>
-                                <tr>
-                                    <td>19 July 2024</td>
-                                    <td>Entertainment</td>
-                                    <td>$1250</td>
-                                </tr>
-                                <tr>
-                                    <td>19 July 2024</td>
-                                    <td>Foods & Snacks</td>
-                                    <td>$1250</td>
-                                </tr>
-                                <tr>
-                                    <td>19 July 2024</td>
                                     <td>Employee Benefits</td>
-                                    <td>$1250</td>
-                                </tr>
+                                    <td>Employee Vehicle</td>
+                                    <td>
+                                      <div>
+                                         <button onClick={()=> navigate("/Layout/EditExpenseCategory")} className='ds_crud_btn me-3'>
+                                             <img src={Pen} alt="" />
+                                         </button>
+                                         <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                             <img src={Red} alt="" />
+                                         </button>
+                                      </div>
+                                    </td>
+                                </tr> 
                                 <tr>
-                                    <td>19 July 2024</td>
-                                    <td>Foods & Snacks</td>
-                                    <td>$1250</td>
-                                </tr>
+                                    <td>Employee Benefits</td>
+                                    <td>Employee Vehicle</td>
+                                    <td>
+                                      <div>
+                                         <button onClick={()=> navigate("/Layout/EditExpenseCategory")} className='ds_crud_btn me-3'>
+                                             <img src={Pen} alt="" />
+                                         </button>
+                                         <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                             <img src={Red} alt="" />
+                                         </button>
+                                      </div>
+                                    </td>
+                                </tr> 
                                 <tr>
-                                    <td>19 July 2024</td>
-                                    <td>Entertainment</td>
-                                    <td>$1250</td>
-                                </tr>
+                                    <td>Employee Benefits</td>
+                                    <td>Employee Vehicle</td>
+                                    <td>
+                                      <div>
+                                         <button onClick={()=> navigate("/Layout/EditExpenseCategory")} className='ds_crud_btn me-3'>
+                                             <img src={Pen} alt="" />
+                                         </button>
+                                         <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                             <img src={Red} alt="" />
+                                         </button>
+                                      </div>
+                                    </td>
+                                </tr> 
                                 <tr>
-                                    <td>19 July 2024</td>
-                                    <td>Office Expenses</td>
-                                    <td>$1250</td>
-                                </tr>
+                                    <td>Employee Benefits</td>
+                                    <td>Employee Vehicle</td>
+                                    <td>
+                                      <div>
+                                         <button onClick={()=> navigate("/Layout/EditExpenseCategory")} className='ds_crud_btn me-3'>
+                                             <img src={Pen} alt="" />
+                                         </button>
+                                         <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                             <img src={Red} alt="" />
+                                         </button>
+                                      </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td>Employee Benefits</td>
+                                    <td>Employee Vehicle</td>
+                                    <td>
+                                      <div>
+                                         <button onClick={()=> navigate("/Layout/EditExpenseCategory")} className='ds_crud_btn me-3'>
+                                             <img src={Pen} alt="" />
+                                         </button>
+                                         <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                             <img src={Red} alt="" />
+                                         </button>
+                                      </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td>Employee Benefits</td>
+                                    <td>Employee Vehicle</td>
+                                    <td>
+                                      <div>
+                                         <button onClick={()=> navigate("/Layout/EditExpenseCategory")} className='ds_crud_btn me-3'>
+                                             <img src={Pen} alt="" />
+                                         </button>
+                                         <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                             <img src={Red} alt="" />
+                                         </button>
+                                      </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td>Employee Benefits</td>
+                                    <td>Employee Vehicle</td>
+                                    <td>
+                                      <div>
+                                         <button onClick={()=> navigate("/Layout/EditExpenseCategory")} className='ds_crud_btn me-3'>
+                                             <img src={Pen} alt="" />
+                                         </button>
+                                         <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                             <img src={Red} alt="" />
+                                         </button>
+                                      </div>
+                                    </td>
+                                </tr> 
+                                
+                               
                             </tbody>
                       </table>
 
@@ -274,7 +334,7 @@ const ExpensesCategory = () => {
                                   <div className="mt-2">
                                     <p className="sm:text-lg text-center text-d_color">
                                        Are you sure you want to delete <br />
-                                       Supplier ?
+                                       Expense Category ?
 
                                     </p>
                                   </div>
@@ -300,7 +360,7 @@ const ExpensesCategory = () => {
                                   <div className="mt-2">
                                     <p className="sm:text-lg text-center text-d_color">
                                       Are you sure you want to delete  <br />
-                                     All Supplier ?
+                                     All Expense Category ?
 
                                     </p>
                                   </div>

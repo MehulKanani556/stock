@@ -42,6 +42,17 @@ import EditSuppliers from "./Components/Pages/EditSuppliers.js";
 import ViewSuppliers from "./Components/Pages/ViewSuppliers.js";
 import ExpensesCategory from "./Components/Pages/ExpensesCategory.js";
 import AddExpensesCategory from "./Components/Pages/AddExpensesCategory.js";
+import EditExpensesCategory from "./Components/Pages/EditExpensesCategory.js";
+import Expenses from "./Components/Pages/Expenses.js";
+import AddExpense from "./Components/Pages/AddExpense.js";
+import EditExpense from "./Components/Pages/EditExpense.js";
+import Quotation from "./Components/Pages/Quotation.js";
+import AddQuotation from "./Components/Pages/AddQuotation.js";
+import EditQuotation from "./Components/Pages/EditQuotation.js";
+import SalesReturn from "./Components/Pages/SalesReturn.js";
+import AddSalesReturn from "./Components/Pages/AddSalesReturn.js";
+
+
 
 function App() {
   return (
@@ -89,6 +100,15 @@ function App() {
           <Route path="ViewSupplier" element={<ViewSuppliers />} />
           <Route path="ExpenseCategory" element={<ExpensesCategory />} />
           <Route path="AddExpenseCategory" element={<AddExpensesCategory />} />
+          <Route path="EditExpenseCategory" element={<EditExpensesCategory/>} />
+          <Route path="Expense" element={<Expenses/>} />
+          <Route path="AddExpense" element={<AddExpense/>} />
+          <Route path="EditExpense" element={<EditExpense/>} />
+          <Route path="Quotation" element={<Quotation/>} />
+          <Route path="AddQuotation" element={<AddQuotation/>} />
+          <Route path="EditQuotation" element={<EditQuotation/>} />
+          <Route path="SalesReturn" element={<SalesReturn/>} />
+          <Route path="AddSalesReturn" element={<AddSalesReturn/>} />
         </Route>
       </Routes>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const AddExpensesCategory = () => {
+const EditExpensesCategory = () => {
 
 const navigate = useNavigate() 
 
@@ -10,8 +10,8 @@ const navigate = useNavigate()
        <div className='ds_main'>
        <div className='sm:px-8 px-4 pt-7'>
           <div>
-             <h2 className='text-d_color text-[24px] font-medium'>Add Expense Category</h2>
-             <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span onClick={()=> navigate("/Layout/ExpenseCategory")} className='text-[#727272]'>Expense category /</span> <span className='text-d_color font-semibold'>Add Expense Category</span></p>
+             <h2 className='text-d_color text-[24px] font-medium'>Edit Expense Category</h2>
+             <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span onClick={()=> navigate("/Layout/ExpenseCategory")} className='text-[#727272]'>Expense category /</span> <span className='text-d_color font-semibold'>Edit Expense Category</span></p>
           </div>              
           <div className='pt-7'>
             <div className='ds_main_box'>
@@ -33,7 +33,7 @@ const navigate = useNavigate()
                   </div>
                   <div className='flex justify-center mt-8 mb-3'>
                      <button className='ds_cancel_btn me-5'>Cancel</button>
-                     <button className='ds_add_btn'>Add</button>
+                     <button className='ds_update_btn'>Update</button>
                   </div>
                </div>
 
@@ -45,4 +45,4 @@ const navigate = useNavigate()
   )
 }
 
-export default AddExpensesCategory
+export default EditExpensesCategory
