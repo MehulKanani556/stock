@@ -30,11 +30,7 @@ import Store from "./Components/Pages/Store.js";
 import AddStore from "./Components/Pages/AddStore.js";
 import EditStore from "./Components/Pages/EditStore.js";
 import AddProduct from "./Components/Pages/AddProduct.jsx";
-import AddProduct2 from "./Components/Pages/AddProduct2.jsx";
-import AddProduct3 from "./Components/Pages/AddProduct3.jsx";
 import EditProduct from "./Components/Pages/EditProduct.jsx";
-import EditProduct2 from "./Components/Pages/EditProduct2.jsx";
-import EditProduct3 from "./Components/Pages/EditProduct3.jsx";
 import ReportSalesTaxReport from "./Components/Pages/ReportSalesTaxReport.js";
 import Supplier from "./Components/Pages/Supplier.js";
 import AddSuppliers from "./Components/Pages/AddSuppliers.js";
@@ -42,8 +38,13 @@ import EditSuppliers from "./Components/Pages/EditSuppliers.js";
 import ViewSuppliers from "./Components/Pages/ViewSuppliers.js";
 import ExpensesCategory from "./Components/Pages/ExpensesCategory.js";
 import AddExpensesCategory from "./Components/Pages/AddExpensesCategory.js";
-
+import ViewProduct from "./Components/Pages/ViewProduct.jsx";
+import AddRawMaterial from "./Components/Pages/AddRawMaterial.jsx";
+import EditRawMaterial from "./Components/Pages/EditRawMaterial.jsx";
+import ViewRawMaterial from "./Components/Pages/ViewRawMaterial.jsx";
+import ExpiredProduct from "./Components/Pages/ExpiredProduct.jsx";
 function App() {
+  
   return (
     <div>
       <Routes>
@@ -54,12 +55,13 @@ function App() {
           <Route path="EditProfile" element={<EditProfile />} />
           <Route path="Product" element={<Product />} />
           <Route path="AddProduct" element={<AddProduct />} />
-          <Route path="AddProduct2" element={<AddProduct2 />} />
-          <Route path="AddProduct3" element={<AddProduct3 />} />
           <Route path="EditProduct" element={<EditProduct />} />
-          <Route path="EditProduct2" element={<EditProduct2 />} />
-          <Route path="EditProduct3" element={<EditProduct3 />} />
+          <Route path="ViewProduct" element={<ViewProduct />} />
           <Route path="RawMaterial" element={<RawMaterial />} />
+          <Route path="AddRawMaterial" element={<AddRawMaterial />} />
+          <Route path="EditRawMaterial" element={<EditRawMaterial />} />
+          <Route path="ViewRawMaterial" element={<ViewRawMaterial />} />
+          <Route path="ExpiredProduct" element={<ExpiredProduct />} />
           <Route path="TaxRated" element={<FInancial_Setting_TaxRated />} />
           <Route path="AddTaxRate" element={<AddTaxRates />} />
           <Route path="EditTaxrate" element={<EditTaxRates />} />

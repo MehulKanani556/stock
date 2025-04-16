@@ -87,17 +87,17 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               </div>
             </div>
 
-            <div className={`${activeItem === "product" || activeItem === "AddProduct" || activeItem === "addproduct2" || activeItem === "addproduct3" || activeItem === "EditProduct" || activeItem === "EditProduct2" || activeItem === "EditProduct3" ? 'bg-white text-d_color' : 'text-white'} py-3 `}>
+            <div className={`${activeItem === "Product" || activeItem === "AddProduct"  || activeItem === "EditProduct"  || activeItem === "ViewProduct" ? 'bg-white text-d_color' : 'text-white'} py-3 `}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  navigate('/layout/Product');
+                  navigate('/Layout/Product');
                   setActiveItem("Product");
                 }}
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "product" || activeItem === "AddProduct" || activeItem === "addproduct2" || activeItem === "addproduct3" || activeItem === "EditProduct" || activeItem === "EditProduct2" || activeItem === "EditProduct3" ?
+                    {activeItem === "Product" || activeItem === "AddProduct" || activeItem === "EditProduct" || activeItem === "ViewProduct" ?
                       <img src={Product} className=' V_icon_size V_filter' /> :
                       <img src={Product} className=' V_icon_size filter grayscale brightness-0 invert' />
                     }
@@ -108,7 +108,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
             </div>
 
             {/* Raw Material */}
-            <div className={`${activeItem === "RawMaterial" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "RawMaterial" || activeItem === "AddRawMaterial" || activeItem === "EditRawMaterial" || activeItem === "ViewRawMaterial" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
@@ -118,7 +118,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "RawMaterial" ?
+                    {activeItem === "RawMaterial" || activeItem === "AddRawMaterial" || activeItem === "EditRawMaterial" || activeItem === "ViewRawMaterial" ?
                       <img src={RawMaterial} className='V_icon_size V_filter' /> :
                       <img src={RawMaterial} className='V_icon_size filter grayscale brightness-0 invert' />
                     }
@@ -134,7 +134,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  // navigate('/layout/ExpiredProduct');
+                  navigate('/layout/ExpiredProduct');
                   setActiveItem("ExpiredProduct");
                 }}
               >

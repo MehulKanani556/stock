@@ -86,7 +86,7 @@ const Product = () => {
           <div className='flex justify-between xl:flex-nowrap flex-wrap'>
             <div>
               <h2 className='text-d_color text-[24px] font-medium'>Product</h2>
-              <p className='cursor-pointer'><Link to="/layout/dashboard" className='text-[#727272]'>Dashboard /</Link> <span className='text-d_color font-semibold'>Product</span></p>
+              <p className='cursor-pointer'><Link to="/Layout/Dashboard" className='text-[#727272]'>Dashboard /</Link> <span className='text-d_color font-semibold'>Product</span></p>
             </div>
             <div className='flex xl:flex-nowrap lg:flex-wrap flex-wrap '>
 
@@ -259,10 +259,10 @@ const Product = () => {
                       <td>Pc</td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/ViewWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/ViewProduct", { state: { productType: 'single' } })} className='ds_crud_btn me-3'>
                             <img src={Eye} alt="" />
                           </button>
-                          <button onClick={() => navigate("/Layout/EditProduct", { state: { productType: 'single' }})} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditProduct", { state: { productType: 'single' } })} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -284,10 +284,10 @@ const Product = () => {
                       <td>Pc</td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/ViewWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/ViewProduct", { state: { productType: 'variant' } })} className='ds_crud_btn me-3'>
                             <img src={Eye} alt="" />
                           </button>
-                          <button onClick={() => navigate("/Layout/EditWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditProduct", { state: { productType: 'variant' } })} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -309,10 +309,10 @@ const Product = () => {
                       <td>Pc</td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/ViewWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/ViewProduct", { state: { productType: 'single' } })} className='ds_crud_btn me-3'>
                             <img src={Eye} alt="" />
                           </button>
-                          <button onClick={() => navigate("/Layout/EditWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditProduct", { state: { productType: 'single' } })} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -334,10 +334,10 @@ const Product = () => {
                       <td>Pc</td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/ViewWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/ViewProduct")} className='ds_crud_btn me-3'>
                             <img src={Eye} alt="" />
                           </button>
-                          <button onClick={() => navigate("/Layout/EditWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditProduct", { state: { productType: 'single' } })} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -359,10 +359,10 @@ const Product = () => {
                       <td>Pc</td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/ViewWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/ViewProduct")} className='ds_crud_btn me-3'>
                             <img src={Eye} alt="" />
                           </button>
-                          <button onClick={() => navigate("/Layout/EditWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditProduct", { state: { productType: 'single' } })} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -384,10 +384,10 @@ const Product = () => {
                       <td>Pc</td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/ViewWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/ViewProduct")} className='ds_crud_btn me-3'>
                             <img src={Eye} alt="" />
                           </button>
-                          <button onClick={() => navigate("/Layout/EditWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditProduct", { state: { productType: 'single' } })} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -409,10 +409,10 @@ const Product = () => {
                       <td>Pc</td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/ViewWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/ViewProduct")} className='ds_crud_btn me-3'>
                             <img src={Eye} alt="" />
                           </button>
-                          <button onClick={() => navigate("/Layout/EditWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditProduct", { state: { productType: 'single' } })} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -434,10 +434,10 @@ const Product = () => {
                       <td>Pc</td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/ViewWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/ViewProduct")} className='ds_crud_btn me-3'>
                             <img src={Eye} alt="" />
                           </button>
-                          <button onClick={() => navigate("/Layout/EditWearhouse")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditProduct", { state: { productType: 'single' } })} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -486,7 +486,7 @@ const Product = () => {
                   <div className="mt-2">
                     <p className="sm:text-lg text-center text-d_color">
                       Are you sure you want to delete <br />
-                      Wearhouse ?
+                      Product ?
 
                     </p>
                   </div>
