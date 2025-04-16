@@ -14,7 +14,7 @@ const [page, setPage] = useState("login")
 const handleLogin = (e) => {
   e.preventDefault();
   // Add your authentication logic here
-  navigate('/layout/dashboard');
+  navigate('/Layout/Dashboard');
 }
 
   return (
