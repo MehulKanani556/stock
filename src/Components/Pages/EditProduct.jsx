@@ -359,7 +359,7 @@ const AddProduct = () => {
                                                             <button className='ds_add_btn'
                                                                 onClick={() => {
                                                                     goNext();
-                                                                    navigate('/Layout/EditProduct3', { state: { productType } });
+                                                                    navigate('/Layout/EditProduct', { state: { productType } });
                                                                 }}
                                                             >Next</button>
                                                         </div>

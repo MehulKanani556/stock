@@ -130,7 +130,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
 
 
             {/* Expired Products */}
-            <div className={`${activeItem === "ExpiredProduct" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "ExpiredProduct" || activeItem === "EditExpiredProduct" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
@@ -140,7 +140,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "ExpiredProduct" ?
+                    {activeItem === "ExpiredProduct" || activeItem === "EditExpiredProduct" ?
                       <img src={ExpiredProduct} className='V_icon_size V_filter' /> :
                       <img src={ExpiredProduct} className='V_icon_size filter grayscale brightness-0 invert' />
                     }
@@ -152,17 +152,17 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
 
 
             {/* Low Stocks */}
-            <div className={`${activeItem === "LawStocks" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "LowStocks" || activeItem === "EditLowStocks" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  // navigate('/layout/LawStocks');
+                  navigate('/Layout/LowStocks');
                   setActiveItem("LawStocks");
                 }}
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "LawStocks" ?
+                    {activeItem === "LowStocks" || activeItem === "EditLowStocks" ?
                       <img src={LawStocks} className='V_icon_size V_filter' /> :
                       <img src={LawStocks} className='V_icon_size' />
                     }
@@ -174,17 +174,17 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
 
 
             {/* Category */}
-            <div className={`${activeItem === "Catogery" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "Category" || activeItem === "AddCategory" || activeItem === "EditCategory" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  // navigate('/layout/Catogery');
-                  setActiveItem("Catogery");
+                  navigate('/Layout/Category');
+                  setActiveItem("Category");
                 }}
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "Catogery" ?
+                    {activeItem === "Category" || activeItem === "AddCategory" || activeItem === "EditCategory" ?
                       <img src={Catogery} className='V_icon_size text-d_color V_filter' /> :
                       <img src={Catogery} className='V_icon_size' />
                     }
@@ -195,17 +195,17 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
             </div>
 
             {/* Subcategory */}
-            <div className={`${activeItem === "SubCatogery" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "SubCategory" || activeItem === "AddSubCategory" || activeItem === "EditSubCategory" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  // navigate('/layout/SubCatogery');
-                  setActiveItem("SubCatogery");
+                  navigate('/Layout/SubCategory');
+                  setActiveItem("SubCategory");
                 }}
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "SubCatogery" ?
+                    {activeItem === "SubCategory" || activeItem === "AddSubCategory" || activeItem === "EditSubCategory" ?
                       <img src={SubCatogery} className='V_icon_size text-d_color V_filter' /> :
                       <img src={SubCatogery} className='V_icon_size' />
                     }
@@ -216,17 +216,17 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
             </div>
 
             {/* Unit */}
-            <div className={`${activeItem === "Unit" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "Unit" || activeItem === "AddUnit" || activeItem === "EditUnit" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  // navigate('/layout/Unit');
+                  navigate('/Layout/Unit');
                   setActiveItem("Unit");
                 }}
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "Unit" ?
+                    {activeItem === "Unit" || activeItem === "AddUnit" || activeItem === "EditUnit" ?
                       <img src={Unit} className='V_icon_size text-d_color V_filter' /> :
                       <img src={Unit} className='V_icon_size' />
                     }

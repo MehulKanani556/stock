@@ -1,3 +1,4 @@
+
 import { Route, Routes } from "react-router-dom";
 import Login from "./Components/Pages/Login";
 import Layout from "./Components/Layout.jsx";
@@ -43,6 +44,7 @@ import AddRawMaterial from "./Components/Pages/AddRawMaterial.jsx";
 import EditRawMaterial from "./Components/Pages/EditRawMaterial.jsx";
 import ViewRawMaterial from "./Components/Pages/ViewRawMaterial.jsx";
 import ExpiredProduct from "./Components/Pages/ExpiredProduct.jsx";
+import EditExpiredProduct from "./Components/Pages/EditExpiredProduct.jsx";
 import EditExpensesCategory from "./Components/Pages/EditExpensesCategory.js";
 import Expenses from "./Components/Pages/Expenses.js";
 import AddExpense from "./Components/Pages/AddExpense.js";
@@ -52,8 +54,17 @@ import AddQuotation from "./Components/Pages/AddQuotation.js";
 import EditQuotation from "./Components/Pages/EditQuotation.js";
 import SalesReturn from "./Components/Pages/SalesReturn.js";
 import AddSalesReturn from "./Components/Pages/AddSalesReturn.js";
-
-
+import Category from "./Components/Pages/Category.jsx";
+import AddCategory from "./Components/Pages/AddCategory.jsx";
+import EditCategory from "./Components/Pages/EditCategory.jsx";
+import LowStocks from "./Components/Pages/LowStocks.jsx";
+import EditLowStocks from "./Components/Pages/EditLowStocks.jsx";
+import SubCategory from "./Components/Pages/SubCategory.jsx";
+import AddSubCategory from "./Components/Pages/AddSubCategory.jsx";
+import EditSubCategory from "./Components/Pages/EditSubCategory.jsx";
+import Unit from "./Components/Pages/Unit.jsx";
+import AddUnit from "./Components/Pages/AddUnit.jsx";
+import EditUnit from "./Components/Pages/EditUnit.jsx";
 
 function App() {
   
@@ -74,6 +85,18 @@ function App() {
           <Route path="EditRawMaterial" element={<EditRawMaterial />} />
           <Route path="ViewRawMaterial" element={<ViewRawMaterial />} />
           <Route path="ExpiredProduct" element={<ExpiredProduct />} />
+          <Route path="EditExpiredProduct" element={<EditExpiredProduct />} />
+          <Route path="LowStocks" element={<LowStocks />} />
+          <Route path="EditLowStocks" element={<EditLowStocks />} />
+          <Route path="Category" element={<Category />} />
+          <Route path="AddCategory" element={<AddCategory />} />
+          <Route path="EditCategory" element={<EditCategory />} />
+          <Route path="SubCategory" element={<SubCategory />} />
+          <Route path="AddSubCategory" element={<AddSubCategory />} />
+          <Route path="EditSubCategory" element={<EditSubCategory />} />
+          <Route path="Unit" element={<Unit />} />
+          <Route path="AddUnit" element={<AddUnit />} />
+          <Route path="EditUnit" element={<EditUnit />} />
           <Route path="TaxRated" element={<FInancial_Setting_TaxRated />} />
           <Route path="AddTaxRate" element={<AddTaxRates />} />
           <Route path="EditTaxrate" element={<EditTaxRates />} />

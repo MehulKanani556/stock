@@ -15,10 +15,8 @@ const steps = [
 const EditRawMaterial = () => {
     const [currentStep, setCurrentStep] = useState(0);
     const [completedSteps, setCompletedSteps] = useState([]);
-    const [productType, setProductType] = useState('');
 
     const navigate = useNavigate();
-    const location = useLocation();
 
 
     const goNext = () => {

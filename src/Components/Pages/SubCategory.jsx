@@ -1,47 +1,29 @@
 import React, { useRef, useState } from 'react'
 import { IoIosArrowBack, IoIosArrowDown, IoIosArrowForward, IoMdClose } from 'react-icons/io'
-import mrint from '../Images/Dhruvin/print.svg'
-import xls from '../Images/Dhruvin/xls.svg'
-import pdf from '../Images/Dhruvin/pdf.svg'
 import Bar from '../Images/Dhruvin/bar.svg'
 import Trash from '../Images/Dhruvin/trash.svg'
 import { Link, useNavigate } from 'react-router-dom'
 import filter from '../Images/Dhruvin/Filter.svg'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
-import product from '../Images/Dhruvin/product.png'
 import Pen from '../Images/Dhruvin/pen.svg'
 import Red from '../Images/Dhruvin/trash_red.svg'
 import '../CSS/Dhruvin/Warehouse.css'
 import '../CSS/Parth/Product.css'
-import Eye from '../Images/Dhruvin/eye.svg'
-import { FaCalendarAlt } from 'react-icons/fa'
+
+const SubCatogery = () => {
 
 
-const ExpiredProduct = () => {
 
-  const [download, setDownload] = useState(false)
   const [column, setColumn] = useState(false)
-  const [sort, setSort] = useState(false)
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
   const [deleteToggle, setDeleteToggle] = useState(false)
   const [deleteAllToggle, setDeleteAllToggle] = useState(false)
-  const dateInputRef = useRef(null);
-  const dateInputRef1 = useRef(null);
   const totalItems = 30;
   const itemsPerPage = 10;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const handleIconClick = () => {
-    dateInputRef.current.showPicker?.();
-    dateInputRef.current.focus();
-  };
-
-  const handleIconClick1 = () => {
-    dateInputRef1.current.showPicker?.();
-    dateInputRef1.current.focus();
-  };
 
   const goToPage = (page) => {
     if (page < 1 || page > totalPages) return;
@@ -91,8 +73,8 @@ const ExpiredProduct = () => {
         <div className='sm:px-8 px-4 pt-7'>
           <div className='flex justify-between xl:flex-nowrap flex-wrap'>
             <div>
-              <h2 className='text-d_color text-[24px] font-medium'>Expired Product</h2>
-              <p className='cursor-pointer'><Link to="/Layout/Dashboard" className='text-[#727272]'>Dashboard /</Link> <span className='text-d_color font-semibold'>Expired Product</span></p>
+              <h2 className='text-d_color text-[24px] font-medium'>Subcategory</h2>
+              <p className='cursor-pointer'><Link to="/Layout/Dashboard" className='text-[#727272]'>Dashboard /</Link> <span className='text-d_color font-semibold'>Subcategory</span></p>
             </div>
             <div className='flex xl:flex-nowrap lg:flex-wrap flex-wrap '>
 
@@ -121,18 +103,22 @@ const ExpiredProduct = () => {
                             </div>
                             <div className='px-6 mt-6'>
                               <div className='mb-4'>
-                                <div className='relative'>
-                                  <label className='text-d_color font-medium block mb-1'>Manufacture Date</label>
-                                  <input ref={dateInputRef} type="date" className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3' placeholder='Enter Email' />
-                                  <FaCalendarAlt onClick={handleIconClick} className='absolute top-[39px] right-[15px] cursor-pointer' fill='#36454F' />
-                                </div>
+                                <label className='text-d_color font-medium block mb-1'>Category</label>
+                                <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
+                                  <option value="">Select Category</option>
+                                  <option value="">Stationary</option>
+                                  <option value="">Stationary1</option>
+                                </select>
                               </div>
+                            </div>
+                            <div className='px-6 mt-6'>
                               <div className='mb-4'>
-                                <div className='relative'>
-                                  <label className='text-d_color font-medium block mb-1'>Expiry Date</label>
-                                  <input ref={dateInputRef1} type="date" className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3' placeholder='Enter Email' />
-                                  <FaCalendarAlt onClick={handleIconClick1} className='absolute top-[39px] right-[15px] cursor-pointer' fill='#36454F' />
-                                </div>
+                                <label className='text-d_color font-medium block mb-1'>Status</label>
+                                <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
+                                  <option value="">Select Status</option>
+                                  <option value="">Stationary</option>
+                                  <option value="">Stationary1</option>
+                                </select>
                               </div>
                             </div>
                             <div className='px-6 mt-auto'>
@@ -150,13 +136,6 @@ const ExpiredProduct = () => {
                 <button className='ds_column_btn  flex me-4' onClick={() => setColumn(!column)}> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
                 {column && <div className='ds_column_box z-[2]'>
                   <div className='flex justify-between items-center mb-2'>
-                    <h6 className='text-d_color'>Product</h6>
-                    <label class="inline-flex items-center cursor-pointer">
-                      <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                      <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
-                    </label>
-                  </div>
-                  <div className='flex justify-between items-center mb-2'>
                     <h6 className='text-d_color'>SKU</h6>
                     <label class="inline-flex items-center cursor-pointer">
                       <input type="checkbox" value="" class="sr-only peer" defaultChecked />
@@ -164,14 +143,21 @@ const ExpiredProduct = () => {
                     </label>
                   </div>
                   <div className='flex justify-between items-center mb-2'>
-                    <h6 className='text-d_color'>Manufacture Date</h6>
+                    <h6 className='text-d_color'>Subcategory Name</h6>
                     <label class="inline-flex items-center cursor-pointer">
                       <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                       <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                     </label>
                   </div>
                   <div className='flex justify-between items-center mb-2'>
-                    <h6 className='text-d_color'>Expiry Date</h6>
+                    <h6 className='text-d_color'>Category</h6>
+                    <label class="inline-flex items-center cursor-pointer">
+                      <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                      <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                    </label>
+                  </div>
+                  <div className='flex justify-between items-center mb-2'>
+                    <h6 className='text-d_color'>Status</h6>
                     <label class="inline-flex items-center cursor-pointer">
                       <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                       <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
@@ -186,8 +172,12 @@ const ExpiredProduct = () => {
                   </div>
                 </div>}
               </div>
+
               <div className='pt-3'>
-                <button className='ds_column_btn whitespace-nowrap  flex me-4' onClick={() => setDeleteAllToggle(true)}> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
+                <button className='ds_column_btn whitespace-nowrap  flex me-4 ' onClick={() => setDeleteAllToggle(true)}> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
+              </div>
+              <div className='pt-3'>
+                <button className='ds_add_currency' onClick={() => navigate("/Layout/AddSubCategory")}>+ Add Sub Category</button>
               </div>
             </div>
           </div>
@@ -198,25 +188,27 @@ const ExpiredProduct = () => {
                 <table className='w-full ds_income_table'>
                   <thead>
                     <tr>
-                      <th>Product</th>
                       <th>SKU</th>
-                      <th>Manufacture Date</th>
-                      <th>Expired Date</th>
+                      <th>Subcategory Name</th>
+                      <th>Category</th>
+                      <th>Status</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className='flex align-middle'>
-                        <img src={product} alt="" className='w-[25px] me-2' />
-                        <span className='mt-1'>Blue Pen</span>
-                      </td>
                       <td>P1234</td>
-                      <td>19 July 2024</td>
-                      <td>19 July 2025</td>
+                      <td>Pen</td>
+                      <td>Stationary</td>
+                      <td>
+                        <label class="inline-flex items-center cursor-pointer">
+                          <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                          <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                        </label>
+                      </td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/EditExpiredProduct")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditSubCategory")} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -226,16 +218,18 @@ const ExpiredProduct = () => {
                       </td>
                     </tr>
                     <tr>
-                      <td className='flex align-middle'>
-                        <img src={product} alt="" className='w-[25px] me-2' />
-                        <span className='mt-1'>Blue Pen</span>
-                      </td>
                       <td>P1234</td>
-                      <td>19 July 2024</td>
-                      <td>19 July 2025</td>
+                      <td>Pen</td>
+                      <td>Stationary</td>
+                      <td>
+                        <label class="inline-flex items-center cursor-pointer">
+                          <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                          <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                        </label>
+                      </td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/EditExpiredProduct")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditSubCategory")} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -245,16 +239,18 @@ const ExpiredProduct = () => {
                       </td>
                     </tr>
                     <tr>
-                      <td className='flex align-middle'>
-                        <img src={product} alt="" className='w-[25px] me-2' />
-                        <span className='mt-1'>Blue Pen</span>
-                      </td>
                       <td>P1234</td>
-                      <td>19 July 2024</td>
-                      <td>19 July 2025</td>
+                      <td>Pen</td>
+                      <td>Stationary</td>
+                      <td>
+                        <label class="inline-flex items-center cursor-pointer">
+                          <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                          <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                        </label>
+                      </td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/EditExpiredProduct")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditSubCategory")} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -264,16 +260,18 @@ const ExpiredProduct = () => {
                       </td>
                     </tr>
                     <tr>
-                      <td className='flex align-middle'>
-                        <img src={product} alt="" className='w-[25px] me-2' />
-                        <span className='mt-1'>Blue Pen</span>
-                      </td>
                       <td>P1234</td>
-                      <td>19 July 2024</td>
-                      <td>19 July 2025</td>
+                      <td>Pen</td>
+                      <td>Stationary</td>
+                      <td>
+                        <label class="inline-flex items-center cursor-pointer">
+                          <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                          <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                        </label>
+                      </td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/EditExpiredProduct")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditSubCategory")} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -283,16 +281,18 @@ const ExpiredProduct = () => {
                       </td>
                     </tr>
                     <tr>
-                      <td className='flex align-middle'>
-                        <img src={product} alt="" className='w-[25px] me-2' />
-                        <span className='mt-1'>Blue Pen</span>
-                      </td>
                       <td>P1234</td>
-                      <td>19 July 2024</td>
-                      <td>19 July 2025</td>
+                      <td>Pen</td>
+                      <td>Stationary</td>
+                      <td>
+                        <label class="inline-flex items-center cursor-pointer">
+                          <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                          <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                        </label>
+                      </td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/EditExpiredProduct")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditSubCategory")} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -302,16 +302,18 @@ const ExpiredProduct = () => {
                       </td>
                     </tr>
                     <tr>
-                      <td className='flex align-middle'>
-                        <img src={product} alt="" className='w-[25px] me-2' />
-                        <span className='mt-1'>Blue Pen</span>
-                      </td>
                       <td>P1234</td>
-                      <td>19 July 2024</td>
-                      <td>19 July 2025</td>
+                      <td>Pen</td>
+                      <td>Stationary</td>
+                      <td>
+                        <label class="inline-flex items-center cursor-pointer">
+                          <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                          <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                        </label>
+                      </td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/EditExpiredProduct")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditSubCategory")} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -321,16 +323,18 @@ const ExpiredProduct = () => {
                       </td>
                     </tr>
                     <tr>
-                      <td className='flex align-middle'>
-                        <img src={product} alt="" className='w-[25px] me-2' />
-                        <span className='mt-1'>Blue Pen</span>
-                      </td>
                       <td>P1234</td>
-                      <td>19 July 2024</td>
-                      <td>19 July 2025</td>
+                      <td>Pen</td>
+                      <td>Stationary</td>
+                      <td>
+                        <label class="inline-flex items-center cursor-pointer">
+                          <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                          <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                        </label>
+                      </td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/EditExpiredProduct")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditSubCategory")} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -340,16 +344,18 @@ const ExpiredProduct = () => {
                       </td>
                     </tr>
                     <tr style={{ borderBottom: 'none' }}>
-                      <td className='flex align-middle'>
-                        <img src={product} alt="" className='w-[25px] me-2' />
-                        <span className='mt-1'>Blue Pen</span>
-                      </td>
                       <td>P1234</td>
-                      <td>19 July 2024</td>
-                      <td>19 July 2025</td>
+                      <td>Pen</td>
+                      <td>Stationary</td>
+                      <td>
+                        <label class="inline-flex items-center cursor-pointer">
+                          <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                          <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                        </label>
+                      </td>
                       <td>
                         <div>
-                          <button onClick={() => navigate("/Layout/EditExpiredProduct")} className='ds_crud_btn me-3'>
+                          <button onClick={() => navigate("/Layout/EditSubCategory")} className='ds_crud_btn me-3'>
                             <img src={Pen} alt="" />
                           </button>
                           <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -398,7 +404,7 @@ const ExpiredProduct = () => {
                   <div className="mt-2">
                     <p className="sm:text-lg text-center text-d_color">
                       Are you sure you want to delete <br />
-                      Expired Product ?
+                      Subcategory ?
 
                     </p>
                   </div>
@@ -423,7 +429,8 @@ const ExpiredProduct = () => {
                   <div className="mt-2">
                     <p className="sm:text-lg text-center text-d_color">
                       Are you sure you want to delete <br />
-                      All Expired Product ?
+                      All Subcategory ?
+
                     </p>
                   </div>
                   <div className='text-center mt-10 mb-6'>
@@ -442,4 +449,4 @@ const ExpiredProduct = () => {
   )
 }
 
-export default ExpiredProduct
+export default SubCatogery
