@@ -52,6 +52,12 @@ import AddQuotation from "./Components/Pages/AddQuotation.js";
 import EditQuotation from "./Components/Pages/EditQuotation.js";
 import SalesReturn from "./Components/Pages/SalesReturn.js";
 import AddSalesReturn from "./Components/Pages/AddSalesReturn.js";
+import EditSalesReturn from "./Components/Pages/EditSalesReturn.js";
+import Invoice from "./Components/Pages/Invoice.js";
+import Sales from "./Components/Pages/Sales.js";
+import AddSales from "./Components/Pages/AddSales.js";
+import EditSales from "./Components/Pages/EditSales.js";
+import ViewSales from "./Components/Pages/ViewSales.js";
 
 
 
@@ -112,6 +118,12 @@ function App() {
           <Route path="EditQuotation" element={<EditQuotation/>} />
           <Route path="SalesReturn" element={<SalesReturn/>} />
           <Route path="AddSalesReturn" element={<AddSalesReturn/>} />
+          <Route path="EditSalesReturn" element={<EditSalesReturn/>} />
+          <Route path="Invoice" element={<Invoice/>} />
+          <Route path="Sales" element={<Sales/>} />
+          <Route path="AddSales" element={<AddSales/>} />
+          <Route path="EditSales" element={<EditSales/>} />
+          <Route path="ViewSales" element={<ViewSales/>} />
         </Route>
       </Routes>
     </div>

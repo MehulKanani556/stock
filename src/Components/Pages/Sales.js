@@ -9,8 +9,17 @@ import product from '../Images/Dhruvin/product.png'
 import Pen from '../Images/Dhruvin/pen.svg'
 import Red from '../Images/Dhruvin/trash_red.svg'
 import '../CSS/Dhruvin/SalesReturn.css'
+import Eye from '../Images/Dhruvin/eye.svg'
+import Dot from '../Images/Dhruvin/dot.svg'
+import { FaCalendarAlt } from 'react-icons/fa'
+import Dollar from '../Images/Dhruvin/dollar.svg'
+import Plus from '../Images/Dhruvin/plus_round.svg'
+import { IoClose } from 'react-icons/io5'
+import Print from '../Images/Dhruvin/print.svg'
 
-const SalesReturn = () => {
+
+
+const Sales = () => {
 
     const [download, setDownload] = useState(false) 
     const [column, setColumn] = useState(false)  
@@ -23,53 +32,56 @@ const SalesReturn = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [deleteAll, setDeleteAll] = useState(false)
     const [deleteToggle, setDeleteToggle] = useState(false)
-
+    const [dotToggle, setDotToggle] = useState(false)
+    const [showPayment, setShowPayment] = useState(false)
+    const [editPayment, setEditPayment] = useState(false)
+    const [createPayment, setCreatePayment] = useState(false)
     
     const handleIconClick = () => {
-      dateInputRef.current.showPicker?.(); 
-      dateInputRef.current.focus();
-    };
-    
-    const goToPage = (page) => {
-      if (page < 1 || page > totalPages) return;
-      setCurrentPage(page);
-      console.log('Page changed to:', page);
-    };
-    
-    const getPageNumbers = () => {
-      const maxVisible = 5;
-      const pages = [];
-    
-      if (totalPages <= maxVisible + 2) {
-        for (let i = 1; i <= totalPages; i++) {
-          pages.push(i);
-        }
-      } else {
-        if (currentPage <= maxVisible) {
-          for (let i = 1; i <= maxVisible; i++) {
-            pages.push(i);
-          }
-          pages.push('...');
-          pages.push(totalPages);
-        } else if (currentPage > totalPages - maxVisible) {
-          pages.push(1);
-          pages.push('...');
-          for (let i = totalPages - maxVisible + 1; i <= totalPages; i++) {
+        dateInputRef.current.showPicker?.(); 
+        dateInputRef.current.focus();
+      };
+      
+      const goToPage = (page) => {
+        if (page < 1 || page > totalPages) return;
+        setCurrentPage(page);
+        console.log('Page changed to:', page);
+      };
+      
+      const getPageNumbers = () => {
+        const maxVisible = 5;
+        const pages = [];
+      
+        if (totalPages <= maxVisible + 2) {
+          for (let i = 1; i <= totalPages; i++) {
             pages.push(i);
           }
         } else {
-          pages.push(1);
-          pages.push('...');
-          for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-            pages.push(i);
+          if (currentPage <= maxVisible) {
+            for (let i = 1; i <= maxVisible; i++) {
+              pages.push(i);
+            }
+            pages.push('...');
+            pages.push(totalPages);
+          } else if (currentPage > totalPages - maxVisible) {
+            pages.push(1);
+            pages.push('...');
+            for (let i = totalPages - maxVisible + 1; i <= totalPages; i++) {
+              pages.push(i);
+            }
+          } else {
+            pages.push(1);
+            pages.push('...');
+            for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+              pages.push(i);
+            }
+            pages.push('...');
+            pages.push(totalPages);
           }
-          pages.push('...');
-          pages.push(totalPages);
         }
-      }
-    
-      return pages;
-    } 
+      
+        return pages;
+      } 
 
   return (
     <div>
@@ -77,8 +89,8 @@ const SalesReturn = () => {
           <div className='sm:px-8 px-4 pt-7'>
               <div className='flex justify-between lg:flex-nowrap flex-wrap'>
                  <div>
-                    <h2 className='text-d_color text-[24px] font-medium'>Sales Return</h2>
-                    <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Sales Return</span></p>  
+                    <h2 className='text-d_color text-[24px] font-medium'>Sales </h2>
+                    <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Sales</span></p>  
                  </div>
                  <div className='flex xl:flex-wrap lg:flex-nowrap flex-wrap '>
                     <div className='pt-3'>
@@ -105,12 +117,12 @@ const SalesReturn = () => {
                                           <div className='border-[0.8px] mt-3'></div>
                                        </div>
                                        <div className='px-6 mt-6'>
-                                          <div className='mb-4'>
-                                               <label className='text-d_color font-medium block mb-1'>Customer</label>
-                                               <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
-                                                 <option value="">Select Customer</option>
-                                                 <option value="">Johan Dave</option>
-                                               </select>
+                                         <div className='mb-4'>
+                                            <div className='relative'>
+                                               <label className='text-d_color font-medium block mb-1'>Date</label>
+                                               <input ref={dateInputRef} type="date" className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'  placeholder='Enter Email'/>
+                                               <FaCalendarAlt onClick={handleIconClick} className='absolute top-[39px] right-[15px] cursor-pointer' fill='#36454F' />
+                                            </div>
                                           </div>
                                           <div className='mb-4'>
                                                <label className='text-d_color font-medium block mb-1'>Payment Status</label>
@@ -132,18 +144,11 @@ const SalesReturn = () => {
                              </div>
                            </Dialog>
                     </div>
-                    <div className='me-4 pt-3 relative'>
-                        <select className='ds_sort_by flex items-center'>Sort by <IoIosArrowDown className='ms-2' />
-                            <option value="">Sort by </option>
-                            <option value="">Newest</option>
-                            <option value="">Oldest</option>
-                        </select>
-                    </div>
                     <div className='relative pt-3'>
                       <button className='ds_column_btn  flex me-4' onClick={()=> setColumn(!column)}> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
                         {column && <div className='ds_column_box z-[2]'>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Product</h6>
+                             <h6 className='text-d_color'>Invoice No.</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
@@ -205,7 +210,7 @@ const SalesReturn = () => {
                        <button onClick={()=> setDeleteAll(true)} className='ds_column_btn whitespace-nowrap  flex me-4'> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
                     </div>
                     <div className='pt-3'>
-                      <button className='ds_add_currency' onClick={()=> navigate("/Layout/AddSalesReturn")}>+ Add Sales Return</button>
+                      <button className='ds_store_btn' onClick={()=> navigate("/Layout/AddSales")}>+ Add Sales</button>
                     </div>
                  </div>
               </div>
@@ -216,7 +221,7 @@ const SalesReturn = () => {
                         <table className='w-full ds_report_table'>
                             <thead>
                                 <tr>
-                                    <th>Product</th>
+                                    <th>Invoice No.</th>
                                     <th>Customer Name</th>
                                     <th>Date</th>
                                     <th>Total</th>
@@ -228,22 +233,37 @@ const SalesReturn = () => {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>#12345</td>
                                     <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td><span className='px-[26px] py-2 rounded-[4px] text-[#3AA409] bg-[#DBE6D6] font-semibold'>Paid</span></td>
-                                    <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
+                                    <td className='flex'>
+                                          <button onClick={()=> navigate("/Layout/ViewSupplier")} className='ds_crud_btn me-3'>
+                                               <img  src={Eye} alt="" />
+                                          </button>
+                                        <button onClick={()=> navigate("/Layout/EditSales")} className='ds_crud_btn me-3'>
                                              <img src={Pen} alt="" />
                                          </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn me-3'>
                                              <img src={Red} alt="" />
+                                        </button>
+                                        <button  className='ds_crud_btn' onClick={()=> setDotToggle(!dotToggle)}>
+                                             <div className='relative'>
+                                             <img src={Dot} alt=""  />
+                                              {dotToggle && <div className='ds_sale_option'>
+                                                                <div className='flex' onClick={()=> setShowPayment(true)}>
+                                                                    <img className='me-4' src={Dollar} alt="" />
+                                                                    <p>Show Payments</p>
+                                                                </div>
+                                                                <div className='flex mt-3' onClick={()=> setCreatePayment(true)}>
+                                                                    <img className='me-4' src={Plus} alt="" />
+                                                                    <p>Create Payment</p>
+                                                                </div>
+                                                    </div>}
+                                             </div>
                                         </button>
                                     </td>
                                 </tr> 
@@ -259,7 +279,7 @@ const SalesReturn = () => {
                                     <td>$1250</td>
                                     <td><span className='px-7 py-2 rounded-[4px] text-[#FF0000] bg-[#FAE1E1] font-semibold'>Due</span></td>
                                     <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
+                                        <button onClick={()=> navigate("/Layout/EditSales")} className='ds_crud_btn me-3'>
                                              <img src={Pen} alt="" />
                                          </button>
                                         <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
@@ -462,7 +482,168 @@ const SalesReturn = () => {
                           </DialogPanel>
                         </div>
                       </div>
-                 </Dialog>
+                  </Dialog>
+
+                  {/* ***************** Show Payent *********** */}
+                  <Dialog open={showPayment} onClose={setShowPayment} className="relative z-10">
+                      <DialogBackdrop transition className="fixed inset-0 bg-black-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"/>    
+                      <div className="fixed bg-black/50 inset-0 z-10 w-screen overflow-y-auto">
+                        <div className="flex min-h-full xl:w-full md:w-3/5  mx-auto justify-center p-4 text-center items-center sm:p-0">
+                          <DialogPanel transition className="relative transform overflow-hidden rounded-[5px] bg-red text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-2xl data-closed:sm:translate-y-0 data-closed:sm:scale-95">
+                            <div className="bg-white px-0 pt-5 pb-4  sm:pb-4">
+                                <div className='px-4 flex justify-between'>
+                                    <p className='text-d_color text-lg font-semibold'>Show Payments</p>
+                                    <IoClose onClick={()=> setShowPayment(false)} className='text-2xl text-[#FF0000] cursor-pointer' />
+                                </div>
+                                <div className='overflow-x-auto'>
+                                    <table className='w-full ds_payment_table mt-3'>
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Invoice No.</th>
+                                                <th>Amount</th>
+                                                <th>Paid by</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>19 July 2024</td>
+                                                <td>#12345</td>
+                                                <td>$1050</td>
+                                                <td>Cash</td>
+                                                <td>
+                                                   <button onClick={()=> {setEditPayment(true) ; setShowPayment(false)}} className='ds_crud_btn me-3'>
+                                                         <img src={Pen} alt="" />
+                                                   </button>
+                                                   <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
+                                                         <img src={Print} alt="" />
+                                                   </button>
+                                                   <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                                        <img src={Red} alt="" />
+                                                   </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                          </DialogPanel>
+                        </div>
+                      </div>
+                  </Dialog>
+
+                  {/* ***************** Edit Payments *********** */}
+                  <Dialog open={editPayment} onClose={setEditPayment} className="relative z-10">
+                      <DialogBackdrop transition className="fixed inset-0 bg-black-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"/>    
+                      <div className="fixed bg-black/50 inset-0 z-10 w-screen overflow-y-auto">
+                        <div className="flex min-h-full lg:w-full md:w-3/5  mx-auto justify-center p-4 text-center items-center sm:p-0">
+                          <DialogPanel transition className="relative transform overflow-hidden rounded-[5px] bg-red text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-xl data-closed:sm:translate-y-0 data-closed:sm:scale-95">
+                            <div className="bg-white  pt-5 pb-4  sm:pb-4">
+                               <div className='px-5 flex justify-between'>
+                                    <p className='text-d_color text-lg font-semibold'>Edit Payments</p>
+                                    <IoClose onClick={()=> setEditPayment(false)} className='text-2xl text-[#FF0000] cursor-pointer' />
+                                </div>
+                                <div className='border-[0.8px] border-[rgba(114, 114, 114, 0.3)] mt-4'></div>
+                                <div className='flex flex-wrap px-2'>
+                                   <div className="sm:w-full w-full mb-5 px-4 pt-5">
+                                       <div className='relative'>
+                                          <label className='text-d_color font-medium block mb-1'>Date</label>
+                                          <input ref={dateInputRef} type="date" className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'  placeholder='Enter Email'/>
+                                          <FaCalendarAlt onClick={handleIconClick} className='absolute top-[39px] right-[15px] cursor-pointer' fill='#36454F' />
+                                       </div>
+                                   </div>
+                                    <div className="sm:w-full w-full mb-5 px-4 pt-1">
+                                        <div>
+                                             <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Invoice No.</label>
+                                             <input type="text" id="text" className="ds_main_input" placeholder="#12345" required />
+                                        </div>
+                                    </div>
+                                    <div className="sm:w-full w-full mb-5 px-4 pt-1">
+                                        <div>
+                                             <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Received Amount</label>
+                                             <input type="text" id="text" className="ds_main_input" placeholder="$1200" required />
+                                        </div>
+                                    </div>
+                                    <div className="sm:w-full w-full mb-5 px-4 pt-1">
+                                        <div>
+                                             <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Paying Amount</label>
+                                             <input type="text" id="text" className="ds_main_input" placeholder="#12345" required />
+                                        </div>
+                                    </div>
+                                    <div className="sm:w-full w-full mb-5 px-4 pt-1">
+                                    <div>
+                                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Payment Type</label>
+                                        <select className='ds_Select'>
+                                          <option value="">Select Payment Type</option>
+                                          <option value="">Cash</option>
+                                          <option value="">Upi</option>
+                                       </select>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div className='px-6 mt-4 flex justify-between mb-3'>
+                                    <button className='ds_edit_payment_cancel'>Cancel</button>
+                                    <button className='ds_edit_payment_update'>Update</button>
+                                </div>
+                            </div>
+                          </DialogPanel>
+                        </div>
+                      </div>
+                  </Dialog>
+
+                  {/* ***************** Edit Payments *********** */}
+                  <Dialog open={createPayment} onClose={setCreatePayment} className="relative z-10">
+                      <DialogBackdrop transition className="fixed inset-0 bg-black-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"/>    
+                      <div className="fixed bg-black/50 inset-0 z-10 w-screen overflow-y-auto">
+                        <div className="flex min-h-full lg:w-full md:w-3/5  mx-auto justify-center p-4 text-center items-center sm:p-0">
+                          <DialogPanel transition className="relative transform overflow-hidden rounded-[5px] bg-red text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-xl data-closed:sm:translate-y-0 data-closed:sm:scale-95">
+                            <div className="bg-white  pt-5 pb-4  sm:pb-4">
+                               <div className='px-5 flex justify-between'>
+                                    <p className='text-d_color text-lg font-semibold'>Create Payments</p>
+                                    <IoClose onClick={()=> setCreatePayment(false)} className='text-2xl text-[#FF0000] cursor-pointer' />
+                                </div>
+                                <div className='border-[0.8px] border-[rgba(114, 114, 114, 0.3)] mt-4'></div>
+                                <div className='flex flex-wrap px-2'>
+                                   <div className="sm:w-full w-full mb-5 px-4 pt-5">
+                                       <div className='relative'>
+                                          <label className='text-d_color font-medium block mb-1'>Date</label>
+                                          <input ref={dateInputRef} type="date" className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'  placeholder='Enter Email'/>
+                                          <FaCalendarAlt onClick={handleIconClick} className='absolute top-[39px] right-[15px] cursor-pointer' fill='#36454F' />
+                                       </div>
+                                   </div>
+                                    <div className="sm:w-full w-full mb-5 px-4 pt-1">
+                                        <div>
+                                             <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Invoice No.</label>
+                                             <input type="text" id="text" className="ds_main_input" placeholder="Enter Invoice No." required />
+                                        </div>
+                                    </div>
+                                    <div className="sm:w-full w-full mb-5 px-4 pt-1">
+                                        <div>
+                                             <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Paying Amount</label>
+                                             <input type="text" id="text" className="ds_main_input" placeholder="$" required />
+                                        </div>
+                                    </div>
+                                    <div className="sm:w-full w-full mb-5 px-4 pt-1">
+                                    <div>
+                                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Payment Type</label>
+                                        <select className='ds_Select'>
+                                          <option value="">Select Payment Type</option>
+                                          <option value="">Cash</option>
+                                          <option value="">Upi</option>
+                                       </select>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div className='px-6 mt-4 flex justify-between mb-3'>
+                                    <button className='ds_edit_payment_cancel'>Cancel</button>
+                                    <button className='ds_edit_payment_add'>Add</button>
+                                </div>
+                            </div>
+                          </DialogPanel>
+                        </div>
+                      </div>
+                  </Dialog>
               </div>
           </div>
       </div>
@@ -470,4 +651,4 @@ const SalesReturn = () => {
   )
 }
 
-export default SalesReturn
+export default Sales

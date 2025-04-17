@@ -2,8 +2,9 @@ import React, { useRef } from 'react'
 import { FaCalendarAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom'
 import '../CSS/Dhruvin/Quotation.css'
+import Search from '../Images/Dhruvin/search-icon.svg'
 
-const AddSalesReturn = () => {
+const AddSales = () => {
 
 const dateInputRef = useRef(null);
 const navigate = useNavigate() 
@@ -11,26 +12,20 @@ const navigate = useNavigate()
 const handleIconClick = () => {
     dateInputRef.current.showPicker?.(); 
     dateInputRef.current.focus();
-};    
+};      
 
   return (
     <div>
       <div className='ds_main'>
        <div className='sm:px-8 px-4 pt-7'>
           <div>
-             <h2 className='text-d_color text-[24px] font-medium'>Add Sales Return</h2>
-             <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span onClick={()=> navigate("/Layout/SalesReturn")} className='text-[#727272]'>Sales  /</span> <span className='text-d_color font-semibold'>Add Sales Return</span></p>
+             <h2 className='text-d_color text-[24px] font-medium'>Add Sales </h2>
+             <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span onClick={()=> navigate("/Layout/Sales")} className='text-[#727272]'>Sales  /</span> <span className='text-d_color font-semibold'>Add Sales </span></p>
           </div>              
           <div className='pt-7'>
             <div className='ds_main_box'>
                <div className='sm:px-8 px-2 pb-7 pt-8'>
                   <div className="flex flex-wrap">
-                      <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
-                          <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Customer Name</label>
-                               <input type="text" id="text" className="ds_main_input" placeholder="Enter customer name" required />
-                          </div>
-                      </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                             <div className='relative'>
                                <label className='text-d_color font-medium block mb-1'>Date</label>
@@ -38,6 +33,30 @@ const handleIconClick = () => {
                                <FaCalendarAlt onClick={handleIconClick} className='absolute top-[39px] right-[15px] cursor-pointer' fill='#36454F' />
                             </div>
                       </div>
+
+                      <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
+                          <div>
+                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Customer Name</label>
+                               <input type="text" id="text" className="ds_main_input" placeholder="Enter customer name" required />
+                          </div>
+                      </div>
+
+                      <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
+                          <div>
+                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact No.</label>
+                               <input type="text" id="text" className="ds_main_input" placeholder="Enter contact no" required />
+                          </div>
+                      </div>
+
+                      <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
+                          <div>
+                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Store</label>
+                               <select className='ds_Select'>
+                                 <option value="">Select Store </option>
+                               </select>
+                          </div>
+                      </div>
+                      
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Payment Status</label>
@@ -48,26 +67,32 @@ const handleIconClick = () => {
                                </select>
                           </div>
                       </div>
-                      <div className=" sm:w-full w-full mb-5 px-4 pt-1">
-                          <div>
+
+                      <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
+                          <div className='relative'>
                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Name</label>
-                               <input type="text" id="text" className="ds_main_input" placeholder="Enter Product Code or Name" required />
+                               <input type="text" id="text" className="ds_main_input" style={{paddingLeft:"35px"}} placeholder="Enter Product Code or Name" required />
+                               <div className='absolute top-[38px] left-[10px]'>
+                                  <img src={Search} alt="" />
+                               </div>
                           </div>
-                      </div> 
+                      </div>
+
                       
                   </div>
 
-                  <div className='mt-0 px-4 mb-[100px] overflow-x-auto'>
+                  <div className='mt-0 px-4 mb-[50px] overflow-x-auto'>
                     <table className='w-full ds_quotation_table'>
                         <thead>
                             <tr>
                                 <th>Product</th>
-                                <th>Net Unit Price ($)</th>
-                                <th>Stock</th>
                                 <th>Qty</th>
+                                <th>Price ($)</th>
                                 <th>Discount ($)</th>
                                 <th>Tax(%)</th>
-                                <th>Sub Cost(%)</th>
+                                <th>Tax Amount ($)</th>
+                                <th>Unit Price($)</th>
+                                <th>Total Cost(%)</th>
                             </tr>
                         </thead>
                     </table>
@@ -87,6 +112,10 @@ const handleIconClick = () => {
                         <tr>
                           <td  style={{borderRight:"1px solid #727272" , backgroundColor:"rgba(114, 114, 114, 0.1)"}} className='text-[#727272]'>Shipping</td>
                           <td className='text-[#727272]'>$ 0.00</td>
+                        </tr>
+                        <tr>
+                          <td  style={{borderRight:"1px solid #727272" , backgroundColor:"rgba(114, 114, 114, 0.1)"}} className='text-[#727272]'>No. of Products</td>
+                          <td className='text-[#727272]'>0</td>
                         </tr>
                         <tr>
                           <td  style={{borderRight:"1px solid #727272" , backgroundColor:"rgba(114, 114, 114, 0.1)" , borderBottom:"0"}} className='text-[#727272]'>Total Amount</td>
@@ -110,4 +139,4 @@ const handleIconClick = () => {
   )
 }
 
-export default AddSalesReturn
+export default AddSales
