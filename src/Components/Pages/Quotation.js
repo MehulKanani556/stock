@@ -1,22 +1,15 @@
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
 import React, { useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import paypal from '../Images/Dhruvin/paypal.png'
-import xls from '../Images/Dhruvin/xls.svg'
-import pdf from '../Images/Dhruvin/pdf.svg'
-import Bar  from '../Images/Dhruvin/bar.svg'
 import { IoIosArrowBack, IoIosArrowDown, IoIosArrowForward, IoMdClose } from 'react-icons/io'
-import { FaCalendarAlt } from 'react-icons/fa'
-import filter from '../Images/Dhruvin/Filter.svg'
+import Bar  from '../Images/Dhruvin/bar.svg'
 import Trash  from '../Images/Dhruvin/trash.svg'
-import mrint from '../Images/Dhruvin/print.svg'
-import station from '../Images/Dhruvin/station.png'
+import { useNavigate } from 'react-router-dom'
+import filter from '../Images/Dhruvin/Filter.svg'
+import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
+import product from '../Images/Dhruvin/product.png'
 import Pen from '../Images/Dhruvin/pen.svg'
 import Red from '../Images/Dhruvin/trash_red.svg'
-import Eye from '../Images/Dhruvin/eye.svg'
 
-
-const Supplier = () => {
+const Quotation = () => {
 
     const [download, setDownload] = useState(false) 
     const [column, setColumn] = useState(false)  
@@ -29,6 +22,7 @@ const Supplier = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [deleteAll, setDeleteAll] = useState(false)
     const [deleteToggle, setDeleteToggle] = useState(false)
+
     
     const handleIconClick = () => {
       dateInputRef.current.showPicker?.(); 
@@ -74,7 +68,7 @@ const Supplier = () => {
       }
     
       return pages;
-    }    
+    }   
 
   return (
     <div>
@@ -82,8 +76,8 @@ const Supplier = () => {
           <div className='sm:px-8 px-4 pt-7'>
               <div className='flex justify-between lg:flex-nowrap flex-wrap'>
                  <div>
-                    <h2 className='text-d_color text-[24px] font-medium'>Supplier</h2>
-                    <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Supplier</span></p>  
+                    <h2 className='text-d_color text-[24px] font-medium'>Quotation</h2>
+                    <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Quotation</span></p>  
                  </div>
                  <div className='flex xl:flex-wrap lg:flex-nowrap flex-wrap '>
                     <div className='pt-3'>
@@ -111,19 +105,17 @@ const Supplier = () => {
                                        </div>
                                        <div className='px-6 mt-6'>
                                           <div className='mb-4'>
-                                               <label className='text-d_color font-medium block mb-1'>Supplier</label>
+                                               <label className='text-d_color font-medium block mb-1'>Product</label>
                                                <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
-                                                 <option value="">Select Supplier Name</option>
-                                                 <option value="">John Wick</option>
-                                                 <option value="">Ronaldo</option>
+                                                 <option value="">Select Product</option>
+                                                 <option value="">Blue Pen</option>
                                                </select>
                                           </div>
                                           <div className='mb-4'>
-                                               <label className='text-d_color font-medium block mb-1'>Country</label>
+                                               <label className='text-d_color font-medium block mb-1'>Customer</label>
                                                <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
-                                                 <option value="">Select Country</option>
-                                                 <option value="">India</option>
-                                                 <option value="">Usa</option>
+                                                 <option value="">Select Customer</option>
+                                                 <option value="">Johan Dave	</option>
                                                </select>
                                           </div>
                                        </div>
@@ -142,300 +134,205 @@ const Supplier = () => {
                       <button className='ds_column_btn  flex me-4' onClick={()=> setColumn(!column)}> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
                         {column && <div className='ds_column_box z-[2]'>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Supplier Name	</h6>
+                             <h6 className='text-d_color'>Product</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Store Name</h6>
+                             <h6 className='text-d_color'>Customer Name	</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Code</h6>
+                             <h6 className='text-d_color'>Reference No.	</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Email</h6>
+                             <h6 className='text-d_color'>Total	</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Contact No.</h6>
+                             <h6 className='text-d_color'>Action</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
-                          <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Country</h6>
-                             <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
-                             </label>
-                          </div>
-                          <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Action
-                             </h6>
-                             <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
-                             </label>
-                          </div>
+                         
                       </div>}
                     </div>
                     <div className='pt-3'>
                        <button onClick={()=> setDeleteAll(true)} className='ds_column_btn whitespace-nowrap  flex me-4'> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
                     </div>
-                    <div className='relative pt-3 me-4'>
-                       <button onClick={()=> setDownload(!download)} className='ds_fincial_download flex items-center'>Download <IoIosArrowDown className='ms-1' /></button>
-                       {download && <div className='ds_report_download'>
-                         <div className='flex items-center mb-3'>
-                            <div>
-                               <img src={mrint} alt="" className='me-3' />
-                            </div>
-                            <p>Print</p>
-                         </div>
-                         <div className='flex items-center mb-3'>
-                            <div>
-                               <img src={xls} alt="" className='me-3' />
-                            </div>
-                            <p>XLS</p>
-                         </div>
-                         <div className='flex items-center'>
-                            <div>
-                               <img src={pdf} alt="" className='me-3' />
-                            </div>
-                            <p>PDF</p>
-                         </div>
-                       </div>}
-                    </div> 
                     <div className='pt-3'>
-                      <button className='ds_store_btn' onClick={()=> navigate("/Layout/AddSupplier")}>+ Add Supplier</button>
+                      <button className='ds_add_currency' onClick={()=> navigate("/Layout/AddQuotation")}>+ Add Quotation</button>
                     </div>
                  </div>
               </div>
-            
-             
 
               <div className='pt-7'>
                   <div className='shadow-[1px_1px_20px_0.5px_rgba(0,0,0,0.06)] bg-white'>
                     <div className='overflow-x-auto'>
-                        <table className='w-full ds_report_table'>
+                        <table className='w-full ds_income_table'>
                             <thead>
                                 <tr>
-                                    <th>Supplier Name</th>
-                                    <th>Store Name</th>
-                                    <th>Code</th>
-                                    <th>Email</th>
-                                    <th>Contact No.</th>
-                                    <th>Country</th>
+                                    <th>Product</th>
+                                    <th>Customer Name</th>
+                                    <th>Reference No.</th>
+                                    <th>Total</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Johan Patel</span>
+                                       <img src={product} alt="" className='w-[25px] me-2' />
+                                       <span className='mt-1'>Blue Pen</span>
                                     </td>
-                                    <td>Apex Stationary</td>
-                                    <td>123</td>
-                                    <td>example@gmail.com</td>
-                                    <td>+1 2345678923</td>
-                                    <td>Italy</td>
+                                    <td>Johan Dave</td>
+                                    <td>P123456</td>
+                                    <td>$1250</td>
                                     <td>
-                                       <div>
-                                                <button onClick={()=> navigate("/Layout/ViewSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Eye} alt="" />
-                                                </button>
-                                                <button onClick={()=> navigate("/Layout/EditSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Pen} alt="" />
-                                                </button>
-                                                <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                                    <img src={Red} alt="" />
-                                                </button>
-                                            </div>
-                                       </td>
+                                        <button onClick={()=> navigate("/Layout/EditQuotation")} className='ds_crud_btn me-3'>
+                                             <img src={Pen} alt="" />
+                                         </button>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                             <img src={Red} alt="" />
+                                        </button>
+                                    </td>
                                 </tr> 
                                 <tr>
                                     <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Johan Patel</span>
+                                       <img src={product} alt="" className='w-[25px] me-2' />
+                                       <span className='mt-1'>Blue Pen</span>
                                     </td>
-                                    <td>Apex Stationary</td>
-                                    <td>123</td>
-                                    <td>example@gmail.com</td>
-                                    <td>+1 2345678923</td>
-                                    <td>Italy</td>
+                                    <td>Johan Dave</td>
+                                    <td>P123456</td>
+                                    <td>$1250</td>
                                     <td>
-                                       <div>
-                                                <button onClick={()=> navigate("/Layout/ViewSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Eye} alt="" />
-                                                </button>
-                                                <button onClick={()=> navigate("/Layout/EditSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Pen} alt="" />
-                                                </button>
-                                                <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                                    <img src={Red} alt="" />
-                                                </button>
-                                            </div>
-                                       </td>
+                                        <button onClick={()=> navigate("/Layout/EditQuotation")} className='ds_crud_btn me-3'>
+                                             <img src={Pen} alt="" />
+                                         </button>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                             <img src={Red} alt="" />
+                                        </button>
+                                    </td>
                                 </tr> 
                                 <tr>
                                     <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Johan Patel</span>
+                                       <img src={product} alt="" className='w-[25px] me-2' />
+                                       <span className='mt-1'>Blue Pen</span>
                                     </td>
-                                    <td>Apex Stationary</td>
-                                    <td>123</td>
-                                    <td>example@gmail.com</td>
-                                    <td>+1 2345678923</td>
-                                    <td>Italy</td>
+                                    <td>Johan Dave</td>
+                                    <td>P123456</td>
+                                    <td>$1250</td>
                                     <td>
-                                       <div>
-                                                <button onClick={()=> navigate("/Layout/ViewSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Eye} alt="" />
-                                                </button>
-                                                <button onClick={()=> navigate("/Layout/EditSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Pen} alt="" />
-                                                </button>
-                                                <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                                    <img src={Red} alt="" />
-                                                </button>
-                                            </div>
-                                       </td>
+                                        <button onClick={()=> navigate("/Layout/EditQuotation")} className='ds_crud_btn me-3'>
+                                             <img src={Pen} alt="" />
+                                         </button>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                             <img src={Red} alt="" />
+                                        </button>
+                                    </td>
                                 </tr> 
                                 <tr>
                                     <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Johan Patel</span>
+                                       <img src={product} alt="" className='w-[25px] me-2' />
+                                       <span className='mt-1'>Blue Pen</span>
                                     </td>
-                                    <td>Apex Stationary</td>
-                                    <td>123</td>
-                                    <td>example@gmail.com</td>
-                                    <td>+1 2345678923</td>
-                                    <td>Italy</td>
+                                    <td>Johan Dave</td>
+                                    <td>P123456</td>
+                                    <td>$1250</td>
                                     <td>
-                                       <div>
-                                                <button onClick={()=> navigate("/Layout/ViewSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Eye} alt="" />
-                                                </button>
-                                                <button onClick={()=> navigate("/Layout/EditSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Pen} alt="" />
-                                                </button>
-                                                <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                                    <img src={Red} alt="" />
-                                                </button>
-                                            </div>
-                                       </td>
+                                        <button onClick={()=> navigate("/Layout/EditQuotation")} className='ds_crud_btn me-3'>
+                                             <img src={Pen} alt="" />
+                                         </button>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                             <img src={Red} alt="" />
+                                        </button>
+                                    </td>
                                 </tr> 
                                 <tr>
                                     <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Johan Patel</span>
+                                       <img src={product} alt="" className='w-[25px] me-2' />
+                                       <span className='mt-1'>Blue Pen</span>
                                     </td>
-                                    <td>Apex Stationary</td>
-                                    <td>123</td>
-                                    <td>example@gmail.com</td>
-                                    <td>+1 2345678923</td>
-                                    <td>Italy</td>
+                                    <td>Johan Dave</td>
+                                    <td>P123456</td>
+                                    <td>$1250</td>
                                     <td>
-                                       <div>
-                                                <button onClick={()=> navigate("/Layout/ViewSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Eye} alt="" />
-                                                </button>
-                                                <button onClick={()=> navigate("/Layout/EditSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Pen} alt="" />
-                                                </button>
-                                                <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                                    <img src={Red} alt="" />
-                                                </button>
-                                            </div>
-                                       </td>
+                                        <button onClick={()=> navigate("/Layout/EditQuotation")} className='ds_crud_btn me-3'>
+                                             <img src={Pen} alt="" />
+                                         </button>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                             <img src={Red} alt="" />
+                                        </button>
+                                    </td>
                                 </tr> 
                                 <tr>
                                     <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Johan Patel</span>
+                                       <img src={product} alt="" className='w-[25px] me-2' />
+                                       <span className='mt-1'>Blue Pen</span>
                                     </td>
-                                    <td>Apex Stationary</td>
-                                    <td>123</td>
-                                    <td>example@gmail.com</td>
-                                    <td>+1 2345678923</td>
-                                    <td>Italy</td>
+                                    <td>Johan Dave</td>
+                                    <td>P123456</td>
+                                    <td>$1250</td>
                                     <td>
-                                       <div>
-                                                <button onClick={()=> navigate("/Layout/ViewSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Eye} alt="" />
-                                                </button>
-                                                <button onClick={()=> navigate("/Layout/EditSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Pen} alt="" />
-                                                </button>
-                                                <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                                    <img src={Red} alt="" />
-                                                </button>
-                                            </div>
-                                       </td>
+                                        <button onClick={()=> navigate("/Layout/EditQuotation")} className='ds_crud_btn me-3'>
+                                             <img src={Pen} alt="" />
+                                         </button>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                             <img src={Red} alt="" />
+                                        </button>
+                                    </td>
                                 </tr> 
                                 <tr>
                                     <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Johan Patel</span>
+                                       <img src={product} alt="" className='w-[25px] me-2' />
+                                       <span className='mt-1'>Blue Pen</span>
                                     </td>
-                                    <td>Apex Stationary</td>
-                                    <td>123</td>
-                                    <td>example@gmail.com</td>
-                                    <td>+1 2345678923</td>
-                                    <td>Italy</td>
+                                    <td>Johan Dave</td>
+                                    <td>P123456</td>
+                                    <td>$1250</td>
                                     <td>
-                                       <div>
-                                                <button onClick={()=> navigate("/Layout/ViewSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Eye} alt="" />
-                                                </button>
-                                                <button onClick={()=> navigate("/Layout/EditSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Pen} alt="" />
-                                                </button>
-                                                <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                                    <img src={Red} alt="" />
-                                                </button>
-                                            </div>
-                                       </td>
+                                        <button onClick={()=> navigate("/Layout/EditQuotation")} className='ds_crud_btn me-3'>
+                                             <img src={Pen} alt="" />
+                                         </button>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                             <img src={Red} alt="" />
+                                        </button>
+                                    </td>
                                 </tr> 
                                 <tr>
                                     <td className='flex align-middle'>
-                                       <img src={station} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Johan Patel</span>
+                                       <img src={product} alt="" className='w-[25px] me-2' />
+                                       <span className='mt-1'>Blue Pen</span>
                                     </td>
-                                    <td>Apex Stationary</td>
-                                    <td>123</td>
-                                    <td>example@gmail.com</td>
-                                    <td>+1 2345678923</td>
-                                    <td>Italy</td>
+                                    <td>Johan Dave</td>
+                                    <td>P123456</td>
+                                    <td>$1250</td>
                                     <td>
-                                       <div>
-                                                <button onClick={()=> navigate("/Layout/ViewSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Eye} alt="" />
-                                                </button>
-                                                <button onClick={()=> navigate("/Layout/EditSupplier")} className='ds_crud_btn me-3'>
-                                                    <img src={Pen} alt="" />
-                                                </button>
-                                                <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                                    <img src={Red} alt="" />
-                                                </button>
-                                            </div>
-                                       </td>
+                                        <button onClick={()=> navigate("/Layout/EditQuotation")} className='ds_crud_btn me-3'>
+                                             <img src={Pen} alt="" />
+                                         </button>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                             <img src={Red} alt="" />
+                                        </button>
+                                    </td>
                                 </tr> 
                                 
+                                
+                               
                             </tbody>
                         </table>
 
@@ -474,8 +371,8 @@ const Supplier = () => {
                             <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                                   <div className="mt-2">
                                     <p className="sm:text-lg text-center text-d_color">
-                                       Are you sure you want to delete <br />
-                                       Supplier ?
+                                      Are you sure you want to delete  <br />
+                                      Quotation ?
 
                                     </p>
                                   </div>
@@ -489,7 +386,7 @@ const Supplier = () => {
                           </DialogPanel>
                         </div>
                       </div>
-               </Dialog>
+                 </Dialog>
 
                   {/* ***************** Delete All Product *********** */}
                   <Dialog open={deleteAll} onClose={setDeleteAll} className="relative z-10">
@@ -501,7 +398,7 @@ const Supplier = () => {
                                   <div className="mt-2">
                                     <p className="sm:text-lg text-center text-d_color">
                                       Are you sure you want to delete  <br />
-                                     All Supplier ?
+                                      All Quotation ?
 
                                     </p>
                                   </div>
@@ -516,6 +413,7 @@ const Supplier = () => {
                         </div>
                       </div>
                  </Dialog>
+
               </div>
           </div>
       </div>
@@ -523,4 +421,4 @@ const Supplier = () => {
   )
 }
 
-export default Supplier
+export default Quotation

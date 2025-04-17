@@ -343,17 +343,17 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
             </div>
 
             {/* Quotation */}
-            <div className={`${activeItem === "Quotation" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "Quotation" || activeItem === "AddQuotation" || activeItem === "EditQuotation" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  // navigate('/layout/Quotation');
+                  navigate('/Layout/Quotation');
                   setActiveItem("Quotation");
                 }}
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "Quotation" ?
+                    {activeItem === "Quotation" || activeItem === "AddQuotation" || activeItem === "EditQuotation" ?
                       <img src={Quotation} className='V_icon_size text-d_color V_filter' /> :
                       <img src={Quotation} className='V_icon_size' />
                     }
@@ -368,12 +368,12 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
 
 
             {/* Expense Dropdown */}
-            <div className={`${(activeItem === "Expense" || activeItem === "ExpenseCategory") ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${(activeItem === "Expense" || activeItem === "AddExpense" || activeItem === "EditExpense" || activeItem === "ExpenseCategory" || activeItem === "AddExpenseCategory" || activeItem === "EditExpenseCategory"  ) ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
                   if (isCollapsed) {
-                    navigate('/layout/Expense');
+                    navigate('/Layout/Expense');
                     setActiveItem("Expense");
                   } else {
                     if (!expenseOpen) {
@@ -382,13 +382,14 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                       setActiveItem("");
                     }
                     setExpenseOpen(!expenseOpen);
+                    navigate('/Layout/Expense');
                   }
                 }}
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} ${isCollapsed ? 'gap-3' : 'V_pading_icon'} `}>
                   <div className={`flex items-center ${isCollapsed ? '' : 'gap-5'}`}>
                     <div>
-                      {(activeItem === "Expense" || activeItem === "ExpenseCategory") ?
+                      {(activeItem === "Expense" || activeItem === "AddExpense" || activeItem === "EditExpense" || activeItem === "ExpenseCategory" || activeItem === "AddExpenseCategory" || activeItem === "EditExpenseCategory" ) ?
                         <img src={Expense} className='V_icon_size text-d_color V_filter' /> :
                         <img src={Expense} className='V_icon_size' />
                       }
@@ -412,10 +413,11 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                 <ul className="mt-2">
                   <li className="relative pl-8 V_circle_dot">
                     <div
-                      className={`py-2 cursor-pointer ${activeItem === "Expense" ? 'text-white V_text_size' : 'text-gray-300 V_text_size'}`}
+                      className={`py-2 cursor-pointer ${activeItem === "Expense" || activeItem === "AddExpense" || activeItem === "EditExpense" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         setActiveItem("Expense");
+                        navigate('/Layout/Expense');
                       }}
                     >
                       <h5 className='font-fw-lighter'>Expense</h5>
@@ -423,10 +425,11 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                   </li>
                   <li className="relative pl-8 V_circle_dot">
                     <div
-                      className={`py-2 cursor-pointer ${activeItem === "ExpenseCategory" ? 'text-white V_text_size' : 'text-gray-300 V_text_size'}`}
+                      className={`py-2 cursor-pointer ${activeItem === "ExpenseCategory" ||  activeItem === "AddExpenseCategory" || activeItem === "EditExpenseCategory" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         setActiveItem("ExpenseCategory");
+                        navigate('/Layout/ExpenseCategory');
                       }}
                     >
                       <h5 className='font-fw-lighter'>Expense Category</h5>
@@ -445,7 +448,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               <div
                 className={`cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  // navigate('/layout/Supplier');
+                  navigate('/Layout/Supplier');
                   setActiveItem("Supplier");
                 }}
               >
@@ -462,7 +465,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
             </div>
 
             {/* Store */}
-            <div className={`${activeItem === "Store" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "Store" || activeItem === "AddStore" || activeItem === "EditStore" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
@@ -472,7 +475,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "Store" ?
+                    {activeItem === "Store" || activeItem === "AddStore" || activeItem === "EditStore" ?
                       <img src={Store} className='V_icon_size text-d_color V_filter' /> :
                       <img src={Store} className='V_icon_size' />
                     }
