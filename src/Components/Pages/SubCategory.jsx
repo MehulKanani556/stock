@@ -436,7 +436,7 @@ const SubCatogery = () => {
                   <div className='text-center mt-10 mb-6'>
                     <button type="button" className='ds_cancel_btn me-4' onClick={() => setDeleteAllToggle(false)}>Cancel
                     </button>
-                    <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeleteAllToggle(false)}>Delete All
+                    <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeleteAllToggle(false)}>Delete
                     </button>
                   </div>
                 </div>

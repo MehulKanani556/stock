@@ -10,7 +10,7 @@ import Red from '../Images/Dhruvin/trash_red.svg'
 import '../CSS/Dhruvin/Warehouse.css'
 import '../CSS/Parth/Product.css'
 
-const Unit = () => {
+const Warranty = () => {
 
     const [column, setColumn] = useState(false)
     const navigate = useNavigate()
@@ -21,7 +21,7 @@ const Unit = () => {
     const itemsPerPage = 10;
     const totalPages = Math.ceil(totalItems / itemsPerPage);
     const [currentPage, setCurrentPage] = useState(1);
-
+    const [sort, setSort] = useState(false);
 
     const goToPage = (page) => {
         if (page < 1 || page > totalPages) return;
@@ -71,8 +71,8 @@ const Unit = () => {
                 <div className='sm:px-8 px-4 pt-7'>
                     <div className='flex justify-between xl:flex-nowrap flex-wrap'>
                         <div>
-                            <h2 className='text-d_color text-[24px] font-medium'>Unit</h2>
-                            <p className='cursor-pointer'><Link to="/Layout/Dashboard" className='text-[#727272]'>Dashboard /</Link> <span className='text-d_color font-semibold'>Unit</span></p>
+                            <h2 className='text-d_color text-[24px] font-medium'>Warranty</h2>
+                            <p className='cursor-pointer'><Link to="/Layout/Dashboard" className='text-[#727272]'>Dashboard /</Link> <span className='text-d_color font-semibold'>Warranty</span></p>
                         </div>
                         <div className='flex xl:flex-nowrap lg:flex-wrap flex-wrap '>
 
@@ -101,6 +101,16 @@ const Unit = () => {
                                                         </div>
                                                         <div className='px-6 mt-6'>
                                                             <div className='mb-4'>
+                                                                <label className='text-d_color font-medium block mb-1'>Duration</label>
+                                                                <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
+                                                                    <option value="">Select Duration</option>
+                                                                    <option value="">Stationary</option>
+                                                                    <option value="">Stationary1</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div className='px-6 mt-6'>
+                                                            <div className='mb-4'>
                                                                 <label className='text-d_color font-medium block mb-1'>Status</label>
                                                                 <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
                                                                     <option value="">Select Status</option>
@@ -121,24 +131,40 @@ const Unit = () => {
                                 </Dialog>
                             </div>
                             <div className='relative pt-3'>
+                                <button className='ds_column_btn flex me-4' onClick={() => setSort(!sort)}>
+                                    <span className=''>Sort by</span>
+                                    <span className={` ${sort ? 'rotate-180 pe-3 my-auto' : 'ps-3 my-auto'}`}>
+                                        <IoIosArrowDown />
+                                    </span>
+                                </button>
+                                {sort && <div className='V_column_box1 z-[2]'>
+                                    <div className=' mb-2'>
+                                        <h6 className='text-d_color'>Newest</h6>
+                                    </div>
+                                    <div className='mb-2'>
+                                        <h6 className='text-d_color'>Oldest</h6>
+                                    </div>
+                                </div>}
+                            </div>
+                            <div className='relative pt-3'>
                                 <button className='ds_column_btn  flex me-4' onClick={() => setColumn(!column)}> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
                                 {column && <div className='ds_column_box z-[2]'>
                                     <div className='flex justify-between items-center mb-2'>
-                                        <h6 className='text-d_color'>SKU</h6>
+                                        <h6 className='text-d_color'>Name</h6>
                                         <label class="inline-flex items-center cursor-pointer">
                                             <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                             <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                                         </label>
                                     </div>
                                     <div className='flex justify-between items-center mb-2'>
-                                        <h6 className='text-d_color'>Unit Name</h6>
+                                        <h6 className='text-d_color'>Description</h6>
                                         <label class="inline-flex items-center cursor-pointer">
                                             <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                             <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                                         </label>
                                     </div>
                                     <div className='flex justify-between items-center mb-2'>
-                                        <h6 className='text-d_color'>Short Name</h6>
+                                        <h6 className='text-d_color'>Duration</h6>
                                         <label class="inline-flex items-center cursor-pointer">
                                             <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                             <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
@@ -165,7 +191,7 @@ const Unit = () => {
                                 <button className='ds_column_btn whitespace-nowrap  flex me-4 ' onClick={() => setDeleteAllToggle(true)}> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
                             </div>
                             <div className='pt-3'>
-                                <button className='ds_add_currency' onClick={() => navigate("/Layout/AddUnit")}>+ Add Unit</button>
+                                <button className='ds_add_currency' onClick={() => navigate("/Layout/AddWarranty")}>+ Add Warranty</button>
                             </div>
                         </div>
                     </div>
@@ -176,18 +202,18 @@ const Unit = () => {
                                 <table className='w-full ds_income_table'>
                                     <thead>
                                         <tr>
-                                            <th>SKU</th>
-                                            <th>Unit Name</th>
-                                            <th>Short Name</th>
+                                            <th>Name</th>
+                                            <th className='w-[22%]'>Description</th>
+                                            <th>Duration</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
+                                            <td>Express Waranty</td>
+                                            <td>Sagittis eros odio et interdum malesuada purus magnis adipiscing. Nec tincidunt et </td>
+                                            <td>3 Months</td>
                                             <td>
                                                 <label class="inline-flex items-center cursor-pointer">
                                                     <input type="checkbox" value="" class="sr-only peer" defaultChecked />
@@ -196,7 +222,7 @@ const Unit = () => {
                                             </td>
                                             <td>
                                                 <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
+                                                    <button onClick={() => navigate("/Layout/EditWarranty")} className='ds_crud_btn me-3'>
                                                         <img src={Pen} alt="" />
                                                     </button>
                                                     <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -206,9 +232,9 @@ const Unit = () => {
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
+                                            <td>Special Warranty</td>
+                                            <td>Sagittis eros odio et interdum malesuada purus magnis adipiscing. Nec tincidunt et </td>
+                                            <td>6 Months</td>
                                             <td>
                                                 <label class="inline-flex items-center cursor-pointer">
                                                     <input type="checkbox" value="" class="sr-only peer" defaultChecked />
@@ -217,112 +243,7 @@ const Unit = () => {
                                             </td>
                                             <td>
                                                 <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
-                                                        <img src={Pen} alt="" />
-                                                    </button>
-                                                    <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
-                                                        <img src={Red} alt="" />
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
-                                            <td>
-                                                <label class="inline-flex items-center cursor-pointer">
-                                                    <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                                    <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
-                                                        <img src={Pen} alt="" />
-                                                    </button>
-                                                    <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
-                                                        <img src={Red} alt="" />
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
-                                            <td>
-                                                <label class="inline-flex items-center cursor-pointer">
-                                                    <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                                    <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
-                                                        <img src={Pen} alt="" />
-                                                    </button>
-                                                    <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
-                                                        <img src={Red} alt="" />
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
-                                            <td>
-                                                <label class="inline-flex items-center cursor-pointer">
-                                                    <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                                    <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
-                                                        <img src={Pen} alt="" />
-                                                    </button>
-                                                    <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
-                                                        <img src={Red} alt="" />
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
-                                            <td>
-                                                <label class="inline-flex items-center cursor-pointer">
-                                                    <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                                    <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
-                                                        <img src={Pen} alt="" />
-                                                    </button>
-                                                    <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
-                                                        <img src={Red} alt="" />
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
-                                            <td>
-                                                <label class="inline-flex items-center cursor-pointer">
-                                                    <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                                    <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
+                                                    <button onClick={() => navigate("/Layout/EditWarranty")} className='ds_crud_btn me-3'>
                                                         <img src={Pen} alt="" />
                                                     </button>
                                                     <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -332,9 +253,9 @@ const Unit = () => {
                                             </td>
                                         </tr>
                                         <tr style={{ borderBottom: 'none' }}>
-                                            <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
+                                            <td>Implied Warranty</td>
+                                            <td>Sagittis eros odio et interdum malesuada purus magnis adipiscing. Nec tincidunt et </td>
+                                            <td>1 Year</td>
                                             <td>
                                                 <label class="inline-flex items-center cursor-pointer">
                                                     <input type="checkbox" value="" class="sr-only peer" defaultChecked />
@@ -343,7 +264,7 @@ const Unit = () => {
                                             </td>
                                             <td>
                                                 <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
+                                                    <button onClick={() => navigate("/Layout/EditWarranty")} className='ds_crud_btn me-3'>
                                                         <img src={Pen} alt="" />
                                                     </button>
                                                     <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -392,7 +313,7 @@ const Unit = () => {
                                     <div className="mt-2">
                                         <p className="sm:text-lg text-center text-d_color">
                                             Are you sure you want to delete <br />
-                                            Unit ?
+                                            Warranty ?
 
                                         </p>
                                     </div>
@@ -417,15 +338,14 @@ const Unit = () => {
                                     <div className="mt-2">
                                         <p className="sm:text-lg text-center text-d_color">
                                             Are you sure you want to delete <br />
-                                            All Unit ?
+                                            All Warranty ?
 
                                         </p>
                                     </div>
                                     <div className='text-center mt-10 mb-6'>
                                         <button type="button" className='ds_cancel_btn me-4' onClick={() => setDeleteAllToggle(false)}>Cancel
                                         </button>
-                                        <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeleteAllToggle(false)}>Delete
-                                        </button>
+                                        <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeleteAllToggle(false)}>Delete                                        </button>
                                     </div>
                                 </div>
                             </DialogPanel>
@@ -437,4 +357,4 @@ const Unit = () => {
     )
 }
 
-export default Unit
+export default Warranty

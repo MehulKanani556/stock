@@ -237,17 +237,17 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
             </div>
 
             {/* Variant Attributes */}
-            <div className={`${activeItem === "Variant" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "Variant" || activeItem === "AddVariant" || activeItem === "EditVariant" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  // navigate('/layout/Variant');
+                  navigate('/layout/Variant');
                   setActiveItem("Variant");
                 }}
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "Variant" ?
+                    {activeItem === "Variant" || activeItem === "AddVariant" || activeItem === "EditVariant" ?
                       <img src={Variant} className='V_icon_size text-d_color V_filter' /> :
                       <img src={Variant} className='V_icon_size' />
                     }
@@ -258,17 +258,17 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
             </div>
 
             {/* Warranty */}
-            <div className={`${activeItem === "warranty" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "Warranty" || activeItem === "AddWarranty" || activeItem === "EditWarranty" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  // navigate('/layout/warranty');
-                  setActiveItem("warranty");
+                  navigate('/layout/Warranty');
+                  setActiveItem("Warranty");
                 }}
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "warranty" ?
+                    {activeItem === "Warranty" || activeItem === "AddWarranty" || activeItem === "EditWarranty" ?
                       <img src={warranty} className='V_icon_size V_filter' /> :
                       <img src={warranty} className='V_icon_size filter grayscale brightness-0 invert' />
                     }
@@ -801,7 +801,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  navigate('/layout/TaxRated');
+                  navigate('/Layout/TaxRated');
                   setActiveItem("TaxRated");
                 }}
               >

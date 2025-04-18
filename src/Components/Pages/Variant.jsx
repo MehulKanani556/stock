@@ -10,7 +10,7 @@ import Red from '../Images/Dhruvin/trash_red.svg'
 import '../CSS/Dhruvin/Warehouse.css'
 import '../CSS/Parth/Product.css'
 
-const Unit = () => {
+const Variant = () => {
 
     const [column, setColumn] = useState(false)
     const navigate = useNavigate()
@@ -71,8 +71,8 @@ const Unit = () => {
                 <div className='sm:px-8 px-4 pt-7'>
                     <div className='flex justify-between xl:flex-nowrap flex-wrap'>
                         <div>
-                            <h2 className='text-d_color text-[24px] font-medium'>Unit</h2>
-                            <p className='cursor-pointer'><Link to="/Layout/Dashboard" className='text-[#727272]'>Dashboard /</Link> <span className='text-d_color font-semibold'>Unit</span></p>
+                            <h2 className='text-d_color text-[24px] font-medium'>Variant Attributes</h2>
+                            <p className='cursor-pointer'><Link to="/Layout/Dashboard" className='text-[#727272]'>Dashboard /</Link> <span className='text-d_color font-semibold'>Variant Attributes</span></p>
                         </div>
                         <div className='flex xl:flex-nowrap lg:flex-wrap flex-wrap '>
 
@@ -131,14 +131,14 @@ const Unit = () => {
                                         </label>
                                     </div>
                                     <div className='flex justify-between items-center mb-2'>
-                                        <h6 className='text-d_color'>Unit Name</h6>
+                                        <h6 className='text-d_color'>Variant Name</h6>
                                         <label class="inline-flex items-center cursor-pointer">
                                             <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                             <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                                         </label>
                                     </div>
                                     <div className='flex justify-between items-center mb-2'>
-                                        <h6 className='text-d_color'>Short Name</h6>
+                                        <h6 className='text-d_color'>Value</h6>
                                         <label class="inline-flex items-center cursor-pointer">
                                             <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                             <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
@@ -165,7 +165,7 @@ const Unit = () => {
                                 <button className='ds_column_btn whitespace-nowrap  flex me-4 ' onClick={() => setDeleteAllToggle(true)}> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
                             </div>
                             <div className='pt-3'>
-                                <button className='ds_add_currency' onClick={() => navigate("/Layout/AddUnit")}>+ Add Unit</button>
+                                <button className='ds_add_currency' onClick={() => navigate("/Layout/AddVariant")}>+ Add Variant</button>
                             </div>
                         </div>
                     </div>
@@ -177,8 +177,8 @@ const Unit = () => {
                                     <thead>
                                         <tr>
                                             <th>SKU</th>
-                                            <th>Unit Name</th>
-                                            <th>Short Name</th>
+                                            <th>Variant Name</th>
+                                            <th>Value</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
@@ -186,8 +186,8 @@ const Unit = () => {
                                     <tbody>
                                         <tr>
                                             <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
+                                            <td>Size</td>
+                                            <td>S, M, L, XL</td>
                                             <td>
                                                 <label class="inline-flex items-center cursor-pointer">
                                                     <input type="checkbox" value="" class="sr-only peer" defaultChecked />
@@ -196,7 +196,7 @@ const Unit = () => {
                                             </td>
                                             <td>
                                                 <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
+                                                    <button onClick={() => navigate("/Layout/EditVariant")} className='ds_crud_btn me-3'>
                                                         <img src={Pen} alt="" />
                                                     </button>
                                                     <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -207,8 +207,8 @@ const Unit = () => {
                                         </tr>
                                         <tr>
                                             <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
+                                            <td>Color</td>
+                                            <td>Red, Blue, Green</td>
                                             <td>
                                                 <label class="inline-flex items-center cursor-pointer">
                                                     <input type="checkbox" value="" class="sr-only peer" defaultChecked />
@@ -217,7 +217,7 @@ const Unit = () => {
                                             </td>
                                             <td>
                                                 <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
+                                                    <button onClick={() => navigate("/Layout/EditVariant")} className='ds_crud_btn me-3'>
                                                         <img src={Pen} alt="" />
                                                     </button>
                                                     <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -228,8 +228,8 @@ const Unit = () => {
                                         </tr>
                                         <tr>
                                             <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
+                                            <td>Size</td>
+                                            <td>S, M, L, XL</td>
                                             <td>
                                                 <label class="inline-flex items-center cursor-pointer">
                                                     <input type="checkbox" value="" class="sr-only peer" defaultChecked />
@@ -238,7 +238,7 @@ const Unit = () => {
                                             </td>
                                             <td>
                                                 <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
+                                                    <button onClick={() => navigate("/Layout/EditVariant")} className='ds_crud_btn me-3'>
                                                         <img src={Pen} alt="" />
                                                     </button>
                                                     <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -249,8 +249,8 @@ const Unit = () => {
                                         </tr>
                                         <tr>
                                             <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
+                                            <td>Color</td>
+                                            <td>Red, Blue, Green</td>
                                             <td>
                                                 <label class="inline-flex items-center cursor-pointer">
                                                     <input type="checkbox" value="" class="sr-only peer" defaultChecked />
@@ -259,7 +259,7 @@ const Unit = () => {
                                             </td>
                                             <td>
                                                 <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
+                                                    <button onClick={() => navigate("/Layout/EditVariant")} className='ds_crud_btn me-3'>
                                                         <img src={Pen} alt="" />
                                                     </button>
                                                     <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -270,8 +270,8 @@ const Unit = () => {
                                         </tr>
                                         <tr>
                                             <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
+                                            <td>Size</td>
+                                            <td>S, M, L, XL</td>
                                             <td>
                                                 <label class="inline-flex items-center cursor-pointer">
                                                     <input type="checkbox" value="" class="sr-only peer" defaultChecked />
@@ -280,7 +280,7 @@ const Unit = () => {
                                             </td>
                                             <td>
                                                 <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
+                                                    <button onClick={() => navigate("/Layout/EditVariant")} className='ds_crud_btn me-3'>
                                                         <img src={Pen} alt="" />
                                                     </button>
                                                     <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -291,8 +291,8 @@ const Unit = () => {
                                         </tr>
                                         <tr>
                                             <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
+                                            <td>Color</td>
+                                            <td>Red, Blue, Green</td>
                                             <td>
                                                 <label class="inline-flex items-center cursor-pointer">
                                                     <input type="checkbox" value="" class="sr-only peer" defaultChecked />
@@ -301,7 +301,7 @@ const Unit = () => {
                                             </td>
                                             <td>
                                                 <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
+                                                    <button onClick={() => navigate("/Layout/EditVariant")} className='ds_crud_btn me-3'>
                                                         <img src={Pen} alt="" />
                                                     </button>
                                                     <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -312,8 +312,8 @@ const Unit = () => {
                                         </tr>
                                         <tr>
                                             <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
+                                            <td>Size</td>
+                                            <td>S, M, L, XL</td>
                                             <td>
                                                 <label class="inline-flex items-center cursor-pointer">
                                                     <input type="checkbox" value="" class="sr-only peer" defaultChecked />
@@ -322,7 +322,7 @@ const Unit = () => {
                                             </td>
                                             <td>
                                                 <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
+                                                    <button onClick={() => navigate("/Layout/EditVariant")} className='ds_crud_btn me-3'>
                                                         <img src={Pen} alt="" />
                                                     </button>
                                                     <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -333,8 +333,8 @@ const Unit = () => {
                                         </tr>
                                         <tr style={{ borderBottom: 'none' }}>
                                             <td>P1234</td>
-                                            <td>Piece</td>
-                                            <td>Pc</td>
+                                            <td>Color</td>
+                                            <td>Red, Blue, Green</td>
                                             <td>
                                                 <label class="inline-flex items-center cursor-pointer">
                                                     <input type="checkbox" value="" class="sr-only peer" defaultChecked />
@@ -343,7 +343,7 @@ const Unit = () => {
                                             </td>
                                             <td>
                                                 <div>
-                                                    <button onClick={() => navigate("/Layout/EditUnit")} className='ds_crud_btn me-3'>
+                                                    <button onClick={() => navigate("/Layout/EditVariant")} className='ds_crud_btn me-3'>
                                                         <img src={Pen} alt="" />
                                                     </button>
                                                     <button onClick={() => setDeleteToggle(true)} className='ds_crud_btn'>
@@ -392,7 +392,7 @@ const Unit = () => {
                                     <div className="mt-2">
                                         <p className="sm:text-lg text-center text-d_color">
                                             Are you sure you want to delete <br />
-                                            Unit ?
+                                            Variant Attributes ?
 
                                         </p>
                                     </div>
@@ -417,7 +417,7 @@ const Unit = () => {
                                     <div className="mt-2">
                                         <p className="sm:text-lg text-center text-d_color">
                                             Are you sure you want to delete <br />
-                                            All Unit ?
+                                            All Variant Attributes ?
 
                                         </p>
                                     </div>
@@ -437,4 +437,4 @@ const Unit = () => {
     )
 }
 
-export default Unit
+export default Variant                  

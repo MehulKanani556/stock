@@ -88,13 +88,25 @@ const data = [
 ];
 
 const pieData = [
-  { name: "Product 1", color: "#1E2A5E" },
-  { name: "Product 2", color: "#55679C" },
-  { name: "Product 3", color: "#7C93C3" },
+  { name: "Product 1", color: "#1E2A5E", value: 45 },
+  { name: "Product 2", color: "#55679C", value: 25 },
+  { name: "Product 3", color: "#7C93C3", value: 30 },
 ];
 
 const COLORS = ["#1E2A5E", "#55679C", "#7C93C3", "#CCD6EB"];
 
+const RADIAN = Math.PI / 180;
+const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+  return (
+    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central" className='m-auto'>
+      {`${(percent * 100).toFixed(0)}%`}
+    </text>
+  );
+};
 
 const Dashboard = () => {
 
@@ -415,14 +427,13 @@ const Dashboard = () => {
                         <ResponsiveContainer width="100%">
                           <PieChart>
                             <Pie
-                              data={pieData.map(item => ({
-                                ...item,
-                                value: 1 // Add equal value for each segment
-                              }))}
+                              data={pieData}
                               cx="50%"
                               cy="50%"
                               // innerRadius={40}
                               // outerRadius={70}
+                              labelLine={false}
+                              label={renderCustomizedLabel}
                               className='V_pie_radius'
                               paddingAngle={2}
                               dataKey="value"

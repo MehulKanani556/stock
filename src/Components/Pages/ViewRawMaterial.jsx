@@ -13,7 +13,7 @@ const ViewRawMaterial = () => {
                 <div className='sm:px-8 px-4 pt-7'>
                     <div>
                         <h2 className='text-d_color text-[24px] font-medium'>View Raw Material</h2>
-                        <p className='cursor-pointer'><span onClick={() => navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span onClick={() => navigate("/Layout/Raw Material")} className='text-[#727272]'>Raw Material /</span> <span className='text-d_color font-semibold'>View Supplier</span></p>
+                        <p className='cursor-pointer'><span onClick={() => navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span onClick={() => navigate("/Layout/Raw Material")} className='text-[#727272]'>Raw Material /</span> <span className='text-d_color font-semibold'>View Raw Material</span></p>
                     </div>
                     <div className='pt-7'>
                         <div className='ds_main_box'>

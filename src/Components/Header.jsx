@@ -29,9 +29,8 @@ import Expense from './Images/Parth/Expense1.png';
 import Supplier from './Images/Parth/Supplier1.png';
 import Store from './Images/Parth/Store1.png';
 import Warehouse from './Images/Parth/Warehouse1.png';
-import Payment from './Images/Parth/Payment1.png';
 import Reports from './Images/Parth/Reports1.png';
-import Financial from './Images/Parth/Financialsetting1.png';
+import TaxRatesImage from './Images/Dhruvin/TaxRates.svg'
 import logo from './Images/Parth/Logocircle1.png';
 
 const Header = () => {
@@ -179,7 +178,7 @@ const Header = () => {
             <div className='text-white py-3 mt-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/dashboard'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/Dashboard'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
@@ -194,7 +193,7 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/Product'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/Product'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
@@ -209,7 +208,7 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/RawMaterial'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/RawMaterial'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
@@ -224,7 +223,7 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/ExpiredProduct'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/ExpiredProduct'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
@@ -239,7 +238,7 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/LawStocks'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/LowStocks'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
@@ -254,7 +253,7 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/Catogery'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/Category'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
@@ -269,7 +268,7 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/SubCatogery'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/SubCategory'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
@@ -285,7 +284,7 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/Unit'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/Unit'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
@@ -300,7 +299,7 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/Variant'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/Variant'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
@@ -315,7 +314,7 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/warranty'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/Warranty'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
@@ -330,7 +329,7 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/sales'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/Sales'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
@@ -345,7 +344,7 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/invoice'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/Invoice'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
@@ -360,13 +359,13 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/return'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/SalesReturn'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
                     <img src={return1} className='V_icon_size' />
                   </div>
-                  <h5 className='V_text_size font-fw-lighter'>Return Order</h5>
+                  <h5 className='V_text_size font-fw-lighter'>Sales Order</h5>
                 </div>
               </div>
             </div>
@@ -375,7 +374,7 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/Quotation'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/Quotation'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center   gap-5 V_pading_icon' >
                   <div>
@@ -417,7 +416,7 @@ const Header = () => {
                         className='py-2 cursor-pointer text-gray-300 V_text_size'
                         onClick={(e) => {
                           e.stopPropagation();
-                          navigate('/layout/Expense');
+                          navigate('/Layout/Expense');
                           setIsDrawerOpen(false);
                         }}
                       >
@@ -429,7 +428,7 @@ const Header = () => {
                         className='py-2 cursor-pointer text-gray-300 V_text_size'
                         onClick={(e) => {
                           e.stopPropagation();
-                          navigate('/layout/ExpenseCategory');
+                          navigate('/Layout/ExpenseCategory');
                           setIsDrawerOpen(false);
                         }}
                       >
@@ -445,7 +444,7 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/Supplier'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/Supplier'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center   gap-5 V_pading_icon' >
                   <div>
@@ -460,7 +459,7 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/Store'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/Store'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center   gap-5 V_pading_icon' >
                   <div>
@@ -476,28 +475,13 @@ const Header = () => {
             <div className='text-white py-3 over relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/Warehouse'); setIsDrawerOpen(false) }}
+                onClick={() => { navigate('/Layout/Warehouse'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center   gap-5 V_pading_icon' >
                   <div>
                     <img src={Warehouse} className='V_icon_size' />
                   </div>
                   <h5 className='V_text_size font-fw-lighter'>Warehouse</h5>
-                </div>
-              </div>
-            </div>
-
-
-            <div className='text-white py-3 over relative z-[100]'>
-              <div
-                className='cursor-pointer ms-3'
-                onClick={() => { navigate('/layout/Payment'); setIsDrawerOpen(false) }}
-              >
-                <div className='flex items-center   gap-5 V_pading_icon' >
-                  <div>
-                    <img src={Payment} className='V_icon_size' />
-                  </div>
-                  <h5 className='V_text_size font-fw-lighter'>Payment</h5>
                 </div>
               </div>
             </div>
@@ -532,7 +516,7 @@ const Header = () => {
                         className='py-2 cursor-pointer text-gray-300 V_text_size'
                         onClick={(e) => {
                           e.stopPropagation();
-                          navigate('/layout/Reports');
+                          navigate('/Layout/ReportSalesReport');
                           setIsDrawerOpen(false);
                         }}
                       >
@@ -544,7 +528,7 @@ const Header = () => {
                         className='py-2 cursor-pointer text-gray-300 V_text_size'
                         onClick={(e) => {
                           e.stopPropagation();
-                          navigate('/layout/PurchaseReport');
+                          navigate('/Layout/ReportPurchaseReport');
                           setIsDrawerOpen(false);
                         }}
                       >
@@ -556,7 +540,7 @@ const Header = () => {
                         className='py-2 cursor-pointer text-gray-300 V_text_size'
                         onClick={(e) => {
                           e.stopPropagation();
-                          navigate('/layout/InventoryReport');
+                          navigate('/Layout/ReportInventoryReport');
                           setIsDrawerOpen(false);
                         }}
                       >
@@ -568,7 +552,7 @@ const Header = () => {
                         className='py-2 cursor-pointer text-gray-300 V_text_size'
                         onClick={(e) => {
                           e.stopPropagation();
-                          navigate('/layout/InvoiceReport');
+                          navigate('/Layout/ReportInvoiceReport');
                           setIsDrawerOpen(false);
                         }}
                       >
@@ -580,7 +564,7 @@ const Header = () => {
                         className='py-2 cursor-pointer text-gray-300 V_text_size'
                         onClick={(e) => {
                           e.stopPropagation();
-                          navigate('/layout/SupplierReport');
+                          navigate('/Layout/ReportSupplierReturn');
                           setIsDrawerOpen(false);
                         }}
                       >
@@ -591,7 +575,7 @@ const Header = () => {
                         className='py-2 cursor-pointer text-gray-300 V_text_size'
                         onClick={(e) => {
                           e.stopPropagation();
-                          navigate('/layout/CustomerReport');
+                          navigate('/Layout/ReportCustomerReport');
                           setIsDrawerOpen(false);
                         }}
                       >
@@ -602,7 +586,7 @@ const Header = () => {
                         className='py-2 cursor-pointer text-gray-300 V_text_size'
                         onClick={(e) => {
                           e.stopPropagation();
-                          navigate('/layout/ExpenseReport');
+                          navigate('/Layout/ReportExpenseReport');
                           setIsDrawerOpen(false);
                         }}
                       >
@@ -613,7 +597,7 @@ const Header = () => {
                         className='py-2 cursor-pointer text-gray-300 V_text_size'
                         onClick={(e) => {
                           e.stopPropagation();
-                          navigate('/layout/IncomeReport');
+                          navigate('/Layout/ReportIncomeReport');
                           setIsDrawerOpen(false);
                         }}
                       >
@@ -624,7 +608,7 @@ const Header = () => {
                         className='py-2 cursor-pointer text-gray-300 V_text_size'
                         onClick={(e) => {
                           e.stopPropagation();
-                          navigate('/layout/TaxReport');
+                          navigate('/Layout/ReportTaxReport');
                           setIsDrawerOpen(false);
                         }}
                       >
@@ -635,7 +619,7 @@ const Header = () => {
                         className='py-2 cursor-pointer text-gray-300 V_text_size'
                         onClick={(e) => {
                           e.stopPropagation();
-                          navigate('/layout/ProfitLossReport');
+                          navigate('/Layout/ReportProfit');
                           setIsDrawerOpen(false);
                         }}
                       >
@@ -657,78 +641,19 @@ const Header = () => {
             <div className='text-white py-3 relative z-[100]'>
               <div
                 className='cursor-pointer ms-3'
-                onClick={() => {
-                  setFinancialOpen(!financialOpen);
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigate('/Layout/TaxRated');
+                  setIsDrawerOpen(false);
                 }}
               >
                 <div className='flex items-center V_pading_icon'>
                   <div className='flex items-center gap-5'>
                     <div>
-                      <img src={Financial} className='V_icon_size' />
+                      <img src={TaxRatesImage} className='V_icon_size' />
                     </div>
-                    <h5 className='V_text_size font-fw-lighter'>Financial Setting</h5>
+                    <h5 className='V_text_size font-fw-lighter'>Tax Rates</h5>
                   </div>
-
-                  <div className={`transform transition-transform ms-3 place-items-center duration-200 ${reportsOpen ? 'rotate-180' : ''}`}>
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
-                </div>
-
-
-                <div className={`transition-all duration-300 ${financialOpen ? 'block' : 'hidden'}`}>
-                  <ul className="mt-2">
-                    <li className="relative pl-8 V_circle_dot1">
-                      <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          navigate('/layout/Financial');
-                          setIsDrawerOpen(false);
-                        }}
-                      >
-                        <h5 className='font-fw-lighter'>Payment Gateway</h5>
-                      </div>
-                    </li>
-                    <li className="relative pl-8 V_circle_dot1">
-                      <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          navigate('/layout/BankAccounts');
-                          setIsDrawerOpen(false);
-                        }}
-                      >
-                        <h5 className='font-fw-lighter'>Bank Accounts</h5>
-                      </div>
-                    </li>
-                    <li className="relative pl-8 V_circle_dot1">
-                      <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          navigate('/layout/TaxRates');
-                          setIsDrawerOpen(false);
-                        }}
-                      >
-                        <h5 className='font-fw-lighter'>Tax Rates</h5>
-                      </div>
-                    </li>
-                    <li className="relative pl-8 V_circle_dot1">
-                      <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          navigate('/layout/Currencies');
-                          setIsDrawerOpen(false);
-                        }}
-                      >
-                        <h5 className='font-fw-lighter'>Currencies</h5>
-                      </div>
-                    </li>
-
-                  </ul>
                 </div>
 
 
@@ -870,7 +795,7 @@ const Header = () => {
                     />
                   </div>
 
-                  
+
                   <div className='flex justify-center items-center gap-5 V_margine_top_btn'>
                     <button className='V_change_password_cancel_btn' onClick={closeChangePasswordModal}>Cancel</button>
                     <button className='V_change_password_change_btn'>Change</button>

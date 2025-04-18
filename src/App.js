@@ -71,8 +71,12 @@ import Sales from "./Components/Pages/Sales.js";
 import AddSales from "./Components/Pages/AddSales.js";
 import EditSales from "./Components/Pages/EditSales.js";
 import ViewSales from "./Components/Pages/ViewSales.js";
-
-
+import Variant from "./Components/Pages/Variant.jsx";
+import AddVariant from "./Components/Pages/AddVariant.jsx";
+import EditVariant from "./Components/Pages/EditVariant.jsx";
+import Warranty from "./Components/Pages/Warranty.jsx";
+import AddWarranty from "./Components/Pages/AddWarranty.jsx";
+import EditWarranty from "./Components/Pages/EditWarranty.jsx";
 
 function App() {
   
@@ -105,6 +109,12 @@ function App() {
           <Route path="Unit" element={<Unit />} />
           <Route path="AddUnit" element={<AddUnit />} />
           <Route path="EditUnit" element={<EditUnit />} />
+          <Route path="Variant" element={<Variant />} />
+          <Route path="AddVariant" element={<AddVariant />} />
+          <Route path="EditVariant" element={<EditVariant />} />
+          <Route path="Warranty" element={<Warranty />} />
+          <Route path="AddWarranty" element={<AddWarranty />} />
+          <Route path="EditWarranty" element={<EditWarranty />} />
           <Route path="TaxRated" element={<FInancial_Setting_TaxRated />} />
           <Route path="AddTaxRate" element={<AddTaxRates />} />
           <Route path="EditTaxrate" element={<EditTaxRates />} />
