@@ -1,0 +1,163 @@
+.ds_sale_btn{
+    border: 1px solid #36454F;
+    padding: 5px 16px;
+    color: #36454F;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+}
+
+.ds_sale_btn:hover{
+    background-color: #36454F;
+    color: white;
+    border: 1px solid #36454F;
+}
+.ds_sale_btn:hover img{
+    filter: invert(100%) sepia(48%) saturate(2%) hue-rotate(44deg) brightness(108%) contrast(100%);
+}
+.ds_sale_table tbody tr td{
+    border-top: 1px solid #727272;
+    border-right: 1px solid #727272;
+    border-bottom: 1px solid #727272;
+}
+.ds_sale_table tbody tr:first-child td{
+   padding: 40px 10px 10px 18px;
+}
+.ds_sale_table tbody tr td{
+    padding: 14px 17px;
+}
+
+
+.ds_sale_table2 thead tr th{
+    color:#36454F;
+    border-bottom: 1px solid #727272;
+    padding: 15px 40px;
+    text-align: start;
+ }
+ .ds_sale_table2 tbody tr td{
+     color:#36454F;
+     padding: 15px 40px;
+  }
+ .ds_sale_table2 tbody tr{
+     border-bottom: 1px solid #727272;
+ }
+
+ .ds_sale_option{
+    position: absolute;
+    top: 33px;
+    left: -140px;
+    background-color: white;
+    border-radius: 4px;
+    width: 200px;
+    padding: 15px;
+    box-shadow: 1px 1px 20px 0.5px #0000000F;
+ }
+ .ds_payment_table thead tr th{
+    padding: 17px 10px 17px 18px;
+    color: #36454F;
+ }
+ .ds_payment_table thead tr{
+    border-top: 1px solid #727272;
+    border-bottom: 1px solid #727272;
+ }
+ .ds_payment_table tbody tr td{
+    padding: 17px 10px 17px 18px;
+    color: #36454F;
+ }
+ .ds_payment_table tbody tr{
+    border-top: 1px solid #727272;
+ }
+ .ds_edit_payment_cancel{
+    background-color: transparent;
+    color: #36454F;
+    border: 1px solid #36454F;
+    padding: 6px 70px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+ }
+ .ds_edit_payment_cancel:hover{
+   background-color: #36454F; 
+   border: 1px solid #36454F;
+   color: white;
+ }
+ .ds_edit_payment_update{
+    background-color: #36454F;
+    color: white;
+    border: 1px solid #36454F;
+    padding: 6px 70px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+ }
+ .ds_edit_payment_update:hover{
+    background-color: transparent; 
+    border: 1px solid #36454F;
+    color: #36454F;
+ }
+.ds_edit_payment_add{
+    background-color: #36454F;
+    color: white;
+    border: 1px solid #36454F;
+    padding: 6px 82px;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+.ds_edit_payment_add{
+    background-color: transparent; 
+    border: 1px solid #36454F;
+    color: #36454F;
+}
+
+ @media (max-width:1200px) {
+    .ds_sale_table{
+        min-width: 900px;
+    }
+    .ds_sale_table2{
+        min-width: 1400px;
+    }
+    .ds_payment_table{
+        min-width: 700px;
+    }
+}
+
+
+@media (max-width:576px) {
+    .ds_sale_option{
+        top: 33px;
+        left: -160px;
+        
+     }
+     .ds_edit_payment_cancel{
+         padding: 6px 50px;
+     }
+     .ds_edit_payment_update{
+        padding: 6px 50px;
+    }
+    .ds_edit_payment_add{
+        padding: 6px 60px;
+    }
+}
+
+@media (max-width:421px) {
+   
+     .ds_edit_payment_cancel{
+         padding: 6px 40px;
+     }
+     .ds_edit_payment_update{
+        padding: 6px 40px;
+    }
+    .ds_edit_payment_add{
+        padding: 6px 50px;
+    }
+}
+
+@media (max-width:374px) {
+    .ds_edit_payment_cancel{
+        padding: 6px 25px;
+    }
+    .ds_edit_payment_update{
+       padding: 6px 25px;
+   }
+   .ds_edit_payment_add{
+    padding: 6px 35px;
+}
+}

@@ -301,17 +301,17 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
             </div>
 
             {/* Invoice */}
-            <div className={`${activeItem === "invoice" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "Invoice" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  // navigate('/layout/invoice');
+                  navigate('/Layout/Invoice');
                   setActiveItem("invoice");
                 }}
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "invoice" ?
+                    {activeItem === "Invoice" ?
                       <img src={invoice} className='V_icon_size text-d_color V_filter' /> :
                       <img src={invoice} className='V_icon_size' />
                     }
@@ -322,22 +322,22 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
             </div>
 
             {/* Return Order */}
-            <div className={`${activeItem === "return" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "SalesReturn" || activeItem === "AddSalesReturn" || activeItem === "EditSalesReturn" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  // navigate('/layout/return');
-                  setActiveItem("return");
+                  navigate('/Layout/SalesReturn');
+                  setActiveItem("SalesReturn");
                 }}
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "return" ?
+                    {activeItem === "SalesReturn" || activeItem === "AddSalesReturn" || activeItem === "EditSalesReturn" ?
                       <img src={return1} className='V_icon_size text-d_color V_filter' /> :
                       <img src={return1} className='V_icon_size' />
                     }
                   </div>
-                  {!isCollapsed && <h5 className='V_text_size font-fw-lighter'>Return Order</h5>}
+                  {!isCollapsed && <h5 className='V_text_size font-fw-lighter'>Sales Return</h5>}
                 </div>
               </div>
             </div>

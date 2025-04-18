@@ -1,16 +1,18 @@
-import React, { useRef, useState } from 'react'
-import { IoIosArrowBack, IoIosArrowDown, IoIosArrowForward, IoMdClose } from 'react-icons/io'
-import Bar  from '../Images/Dhruvin/bar.svg'
-import Trash  from '../Images/Dhruvin/trash.svg'
-import { useNavigate } from 'react-router-dom'
-import filter from '../Images/Dhruvin/Filter.svg'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
-import product from '../Images/Dhruvin/product.png'
-import Pen from '../Images/Dhruvin/pen.svg'
-import Red from '../Images/Dhruvin/trash_red.svg'
-import '../CSS/Dhruvin/SalesReturn.css'
+import React, { useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import paypal from '../Images/Dhruvin/paypal.png'
+import xls from '../Images/Dhruvin/xls.svg'
+import pdf from '../Images/Dhruvin/pdf.svg'
+import Bar  from '../Images/Dhruvin/bar.svg'
+import { IoIosArrowBack, IoIosArrowDown, IoIosArrowForward, IoMdClose } from 'react-icons/io'
+import { FaCalendarAlt } from 'react-icons/fa'
+import filter from '../Images/Dhruvin/Filter.svg'
+import Trash  from '../Images/Dhruvin/trash.svg'
+import mrint from '../Images/Dhruvin/print.svg'
+import station from '../Images/Dhruvin/station.png'
 
-const SalesReturn = () => {
+const Invoice = () => {
 
     const [download, setDownload] = useState(false) 
     const [column, setColumn] = useState(false)  
@@ -22,8 +24,6 @@ const SalesReturn = () => {
     const totalPages = Math.ceil(totalItems / itemsPerPage);
     const [currentPage, setCurrentPage] = useState(1);
     const [deleteAll, setDeleteAll] = useState(false)
-    const [deleteToggle, setDeleteToggle] = useState(false)
-
     
     const handleIconClick = () => {
       dateInputRef.current.showPicker?.(); 
@@ -69,16 +69,16 @@ const SalesReturn = () => {
       }
     
       return pages;
-    } 
+    }
 
   return (
     <div>
-      <div className='ds_main'>
+       <div className='ds_main'>
           <div className='sm:px-8 px-4 pt-7'>
               <div className='flex justify-between lg:flex-nowrap flex-wrap'>
                  <div>
-                    <h2 className='text-d_color text-[24px] font-medium'>Sales Return</h2>
-                    <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Sales Return</span></p>  
+                    <h2 className='text-d_color text-[24px] font-medium'>Invoice</h2>
+                    <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Invoice</span></p>  
                  </div>
                  <div className='flex xl:flex-wrap lg:flex-nowrap flex-wrap '>
                     <div className='pt-3'>
@@ -105,12 +105,12 @@ const SalesReturn = () => {
                                           <div className='border-[0.8px] mt-3'></div>
                                        </div>
                                        <div className='px-6 mt-6'>
-                                          <div className='mb-4'>
-                                               <label className='text-d_color font-medium block mb-1'>Customer</label>
-                                               <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
-                                                 <option value="">Select Customer</option>
-                                                 <option value="">Johan Dave</option>
-                                               </select>
+                                       <div className='mb-4'>
+                                            <div className='relative'>
+                                               <label className='text-d_color font-medium block mb-1'>Date</label>
+                                               <input ref={dateInputRef} type="date" className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'  placeholder='Enter Email'/>
+                                               <FaCalendarAlt onClick={handleIconClick} className='absolute top-[39px] right-[15px] cursor-pointer' fill='#36454F' />
+                                            </div>
                                           </div>
                                           <div className='mb-4'>
                                                <label className='text-d_color font-medium block mb-1'>Payment Status</label>
@@ -132,18 +132,11 @@ const SalesReturn = () => {
                              </div>
                            </Dialog>
                     </div>
-                    <div className='me-4 pt-3 relative'>
-                        <select className='ds_sort_by flex items-center'>Sort by <IoIosArrowDown className='ms-2' />
-                            <option value="">Sort by </option>
-                            <option value="">Newest</option>
-                            <option value="">Oldest</option>
-                        </select>
-                    </div>
                     <div className='relative pt-3'>
                       <button className='ds_column_btn  flex me-4' onClick={()=> setColumn(!column)}> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
                         {column && <div className='ds_column_box z-[2]'>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Product</h6>
+                             <h6 className='text-d_color'>Invoice No.</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
@@ -157,14 +150,14 @@ const SalesReturn = () => {
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Date</h6>
+                             <h6 className='text-d_color'>Due Date</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Total	</h6>
+                             <h6 className='text-d_color'>Total</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
@@ -185,30 +178,22 @@ const SalesReturn = () => {
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Payment Status	</h6>
+                             <h6 className='text-d_color'>Payment Status
+                             </h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
                                 <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
-                          <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Action</h6>
-                             <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
-                             </label>
-                          </div>
-                         
                       </div>}
                     </div>
                     <div className='pt-3'>
                        <button onClick={()=> setDeleteAll(true)} className='ds_column_btn whitespace-nowrap  flex me-4'> <img src={Trash} alt="" className='me-2' /> <span >Delete All</span></button>
                     </div>
-                    <div className='pt-3'>
-                      <button className='ds_add_currency' onClick={()=> navigate("/Layout/AddSalesReturn")}>+ Add Sales Return</button>
-                    </div>
                  </div>
               </div>
+            
+             
 
               <div className='pt-7'>
                   <div className='shadow-[1px_1px_20px_0.5px_rgba(0,0,0,0.06)] bg-white'>
@@ -216,176 +201,98 @@ const SalesReturn = () => {
                         <table className='w-full ds_report_table'>
                             <thead>
                                 <tr>
-                                    <th>Product</th>
+                                    <th>Invoice No.</th>
                                     <th>Customer Name</th>
-                                    <th>Date</th>
+                                    <th>Due Date</th>
                                     <th>Total</th>
                                     <th>Paid</th>
                                     <th>Due</th>
                                     <th>Payment Status</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>#12345</td>
                                     <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td><span className='px-[26px] py-2 rounded-[4px] text-[#3AA409] bg-[#DBE6D6] font-semibold'>Paid</span></td>
-                                    <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
-                                             <img src={Pen} alt="" />
-                                         </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                             <img src={Red} alt="" />
-                                        </button>
-                                    </td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>#12345</td>
                                     <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td><span className='px-7 py-2 rounded-[4px] text-[#FF0000] bg-[#FAE1E1] font-semibold'>Due</span></td>
-                                    <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
-                                             <img src={Pen} alt="" />
-                                         </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                             <img src={Red} alt="" />
-                                        </button>
-                                    </td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>#12345</td>
                                     <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td><span className='px-[26px] py-2 rounded-[4px] text-[#3AA409] bg-[#DBE6D6] font-semibold'>Paid</span></td>
-                                    <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
-                                             <img src={Pen} alt="" />
-                                         </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                             <img src={Red} alt="" />
-                                        </button>
-                                    </td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>#12345</td>
                                     <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td><span className='px-[26px] py-2 rounded-[4px] text-[#3AA409] bg-[#DBE6D6] font-semibold'>Paid</span></td>
-                                    <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
-                                             <img src={Pen} alt="" />
-                                         </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                             <img src={Red} alt="" />
-                                        </button>
-                                    </td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>#12345</td>
                                     <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td><span className='px-[26px] py-2 rounded-[4px] text-[#3AA409] bg-[#DBE6D6] font-semibold'>Paid</span></td>
-                                    <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
-                                             <img src={Pen} alt="" />
-                                         </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                             <img src={Red} alt="" />
-                                        </button>
-                                    </td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>#12345</td>
                                     <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td><span className='px-7 py-2 rounded-[4px] text-[#FF0000] bg-[#FAE1E1] font-semibold'>Due</span></td>
-                                    <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
-                                             <img src={Pen} alt="" />
-                                         </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                             <img src={Red} alt="" />
-                                        </button>
-                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#12345</td>
+                                    <td>Johan Dave</td>
+                                    <td>19 July 2024</td>
+                                    <td>$1250</td>
+                                    <td>$1250</td>
+                                    <td>$1250</td>
+                                    <td><span className='px-[26px] py-2 rounded-[4px] text-[#3AA409] bg-[#DBE6D6] font-semibold'>Paid</span></td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>#12345</td>
+                                    <td>Johan Dave</td>
+                                    <td>19 July 2024</td>
+                                    <td>$1250</td>
+                                    <td>$1250</td>
+                                    <td>$1250</td>
+                                    <td><span className='px-7 py-2 rounded-[4px] text-[#FF0000] bg-[#FAE1E1] font-semibold'>Due</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#12345</td>
                                     <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td><span className='px-[26px] py-2 rounded-[4px] text-[#3AA409] bg-[#DBE6D6] font-semibold'>Paid</span></td>
-                                    <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
-                                             <img src={Pen} alt="" />
-                                         </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                             <img src={Red} alt="" />
-                                        </button>
-                                    </td>
-                                </tr> <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
-                                    <td>Johan Dave</td>
-                                    <td>19 July 2024</td>
-                                    <td>$1250</td>
-                                    <td>$1250</td>
-                                    <td>$1250</td>
-                                    <td><span className='px-[26px] py-2 rounded-[4px] text-[#3AA409] bg-[#DBE6D6] font-semibold'>Paid</span></td>
-                                    <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
-                                             <img src={Pen} alt="" />
-                                         </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
-                                             <img src={Red} alt="" />
-                                        </button>
-                                    </td>
                                 </tr> 
+                                
                             </tbody>
                         </table>
 
@@ -416,31 +323,8 @@ const SalesReturn = () => {
                        </div>
                   </div> 
 
-                  <Dialog open={deleteToggle} onClose={setDeleteToggle} className="relative z-10">
-                      <DialogBackdrop transition className="fixed inset-0 bg-black-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"/>    
-                      <div className="fixed bg-black/50 inset-0 z-10 w-screen overflow-y-auto">
-                        <div className="flex min-h-full lg:w-full md:w-3/5  mx-auto justify-center p-4 text-center items-center sm:p-0">
-                          <DialogPanel transition className="relative transform overflow-hidden rounded-[5px] bg-red text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-xl data-closed:sm:translate-y-0 data-closed:sm:scale-95">
-                            <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                                  <div className="mt-2">
-                                    <p className="sm:text-lg text-center text-d_color">
-                                      Are you sure you want to delete  <br /> Sales Return ?
-                                    </p>
-                                  </div>
-                              <div className='text-center mt-10 mb-6'>
-                                 <button type="button" className='ds_cancel_btn me-4' onClick={() => setDeleteToggle(false)}>Cancel
-                                 </button>
-                                 <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeleteToggle(false)}>Delete
-                                 </button>
-                              </div>
-                            </div>
-                          </DialogPanel>
-                        </div>
-                      </div>
-                 </Dialog>
-
-                   {/* ***************** Delete All Report *********** */}
-                   <Dialog open={deleteAll} onClose={setDeleteAll} className="relative z-10">
+                  {/* ***************** Delete All Product *********** */}
+                  <Dialog open={deleteAll} onClose={setDeleteAll} className="relative z-10">
                       <DialogBackdrop transition className="fixed inset-0 bg-black-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"/>    
                       <div className="fixed bg-black/50 inset-0 z-10 w-screen overflow-y-auto">
                         <div className="flex min-h-full lg:w-full md:w-3/5  mx-auto justify-center p-4 text-center items-center sm:p-0">
@@ -449,7 +333,8 @@ const SalesReturn = () => {
                                   <div className="mt-2">
                                     <p className="sm:text-lg text-center text-d_color">
                                       Are you sure you want to delete  <br />
-                                      All Sales Return?
+                                      All Invoice ?
+
                                     </p>
                                   </div>
                               <div className='text-center mt-10 mb-6'>
@@ -470,4 +355,4 @@ const SalesReturn = () => {
   )
 }
 
-export default SalesReturn
+export default Invoice
