@@ -11,7 +11,7 @@ const navigate =  useNavigate()
        <div className='sm:px-8 px-4 pt-7'>
           <div>
              <h2 className='text-d_color text-[24px] font-medium'>Add Tax Rates</h2>
-             <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span onClick={()=> navigate("/Layout/TaxRated")} className='text-[#727272]'>Tax Rates /</span> <span className='text-d_color font-medium'>Add Tax Rates</span></p>
+             <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span onClick={()=> navigate("/Layout/TaxRated")} className='text-[#727272]'>Tax Rates /</span> <span className='text-d_color font-semibold'>Add Tax Rates</span></p>
           </div>
           <div className='pt-7'>
             <div className='ds_main_box'>
@@ -41,7 +41,7 @@ const navigate =  useNavigate()
                       </div>
                   </div>
                   <div className='flex justify-center mt-8 mb-3'>
-                     <button className='ds_cancel_btn me-5'>Cancel</button>
+                     <button className='ds_cancel_btn me-5' onClick={()=> navigate("/Layout/TaxRated")}>Cancel</button>
                      <button className='ds_add_btn'>Add</button>
                   </div>
                </div>

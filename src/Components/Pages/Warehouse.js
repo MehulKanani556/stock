@@ -155,6 +155,20 @@ const Warehouse = () => {
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
+                             <h6 className='text-d_color'>Total Products	</h6>
+                             <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             </label>
+                          </div>
+                          <div className='flex justify-between items-center mb-2'>
+                             <h6 className='text-d_color'>Stock</h6>
+                             <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
+                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             </label>
+                          </div>
+                          <div className='flex justify-between items-center mb-2'>
                              <h6 className='text-d_color'>Status</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
@@ -188,6 +202,8 @@ const Warehouse = () => {
                                     <th>Warehouse</th>
                                     <th>Contact Person </th>
                                     <th>Contact No.</th>
+                                    <th>Total Products</th>
+                                    <th>Stock</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -197,6 +213,8 @@ const Warehouse = () => {
                                     <td>Warehouse 1</td>
                                     <td>Johan Dave</td>
                                     <td>+1 2345678923</td>
+                                    <td>10</td>
+                                    <td>10</td>
                                     <td>
                                        <label className="inline-flex items-center me-5 cursor-pointer">
                                             <input type="checkbox" value="" className="sr-only peer" defaultChecked />
@@ -221,6 +239,8 @@ const Warehouse = () => {
                                     <td>Warehouse 1</td>
                                     <td>Johan Dave</td>
                                     <td>+1 2345678923</td>
+                                    <td>10</td>
+                                    <td>10</td>
                                     <td>
                                        <label className="inline-flex items-center me-5 cursor-pointer">
                                             <input type="checkbox" value="" className="sr-only peer" defaultChecked />
@@ -228,8 +248,8 @@ const Warehouse = () => {
                                        </label>
                                     </td>
                                     <td>
-                                        <div>
-                                               <button onClick={()=> navigate("/Layout/ViewWarehouse")} className='ds_crud_btn me-3'>
+                                           <div>
+                                                <button onClick={()=> navigate("/Layout/ViewWarehouse")} className='ds_crud_btn me-3'>
                                                     <img src={Eye} alt="" />
                                                 </button>
                                                 <button onClick={()=> navigate("/Layout/EditWarehouse")} className='ds_crud_btn me-3'>
@@ -240,11 +260,13 @@ const Warehouse = () => {
                                                 </button>
                                             </div>
                                         </td>
-                                </tr> 
+                                </tr>
                                 <tr>
                                     <td>Warehouse 1</td>
                                     <td>Johan Dave</td>
                                     <td>+1 2345678923</td>
+                                    <td>10</td>
+                                    <td>10</td>
                                     <td>
                                        <label className="inline-flex items-center me-5 cursor-pointer">
                                             <input type="checkbox" value="" className="sr-only peer" defaultChecked />
@@ -252,8 +274,8 @@ const Warehouse = () => {
                                        </label>
                                     </td>
                                     <td>
-                                        <div>
-                                               <button onClick={()=> navigate("/Layout/ViewWarehouse")} className='ds_crud_btn me-3'>
+                                           <div>
+                                                <button onClick={()=> navigate("/Layout/ViewWarehouse")} className='ds_crud_btn me-3'>
                                                     <img src={Eye} alt="" />
                                                 </button>
                                                 <button onClick={()=> navigate("/Layout/EditWarehouse")} className='ds_crud_btn me-3'>
@@ -264,11 +286,13 @@ const Warehouse = () => {
                                                 </button>
                                             </div>
                                         </td>
-                                </tr> 
+                                </tr>
                                 <tr>
                                     <td>Warehouse 1</td>
                                     <td>Johan Dave</td>
                                     <td>+1 2345678923</td>
+                                    <td>10</td>
+                                    <td>10</td>
                                     <td>
                                        <label className="inline-flex items-center me-5 cursor-pointer">
                                             <input type="checkbox" value="" className="sr-only peer" defaultChecked />
@@ -276,8 +300,8 @@ const Warehouse = () => {
                                        </label>
                                     </td>
                                     <td>
-                                        <div>
-                                               <button onClick={()=> navigate("/Layout/ViewWarehouse")} className='ds_crud_btn me-3'>
+                                           <div>
+                                                <button onClick={()=> navigate("/Layout/ViewWarehouse")} className='ds_crud_btn me-3'>
                                                     <img src={Eye} alt="" />
                                                 </button>
                                                 <button onClick={()=> navigate("/Layout/EditWarehouse")} className='ds_crud_btn me-3'>
@@ -288,11 +312,13 @@ const Warehouse = () => {
                                                 </button>
                                             </div>
                                         </td>
-                                </tr> 
+                                </tr>
                                 <tr>
                                     <td>Warehouse 1</td>
                                     <td>Johan Dave</td>
                                     <td>+1 2345678923</td>
+                                    <td>10</td>
+                                    <td>10</td>
                                     <td>
                                        <label className="inline-flex items-center me-5 cursor-pointer">
                                             <input type="checkbox" value="" className="sr-only peer" defaultChecked />
@@ -300,8 +326,8 @@ const Warehouse = () => {
                                        </label>
                                     </td>
                                     <td>
-                                        <div>
-                                               <button onClick={()=> navigate("/Layout/ViewWarehouse")} className='ds_crud_btn me-3'>
+                                           <div>
+                                                <button onClick={()=> navigate("/Layout/ViewWarehouse")} className='ds_crud_btn me-3'>
                                                     <img src={Eye} alt="" />
                                                 </button>
                                                 <button onClick={()=> navigate("/Layout/EditWarehouse")} className='ds_crud_btn me-3'>
@@ -312,11 +338,13 @@ const Warehouse = () => {
                                                 </button>
                                             </div>
                                         </td>
-                                </tr> 
+                                </tr>
                                 <tr>
                                     <td>Warehouse 1</td>
                                     <td>Johan Dave</td>
                                     <td>+1 2345678923</td>
+                                    <td>10</td>
+                                    <td>10</td>
                                     <td>
                                        <label className="inline-flex items-center me-5 cursor-pointer">
                                             <input type="checkbox" value="" className="sr-only peer" defaultChecked />
@@ -324,8 +352,8 @@ const Warehouse = () => {
                                        </label>
                                     </td>
                                     <td>
-                                        <div>
-                                               <button onClick={()=> navigate("/Layout/ViewWarehouse")} className='ds_crud_btn me-3'>
+                                           <div>
+                                                <button onClick={()=> navigate("/Layout/ViewWarehouse")} className='ds_crud_btn me-3'>
                                                     <img src={Eye} alt="" />
                                                 </button>
                                                 <button onClick={()=> navigate("/Layout/EditWarehouse")} className='ds_crud_btn me-3'>
@@ -336,11 +364,13 @@ const Warehouse = () => {
                                                 </button>
                                             </div>
                                         </td>
-                                </tr> 
+                                </tr>
                                 <tr>
                                     <td>Warehouse 1</td>
                                     <td>Johan Dave</td>
                                     <td>+1 2345678923</td>
+                                    <td>10</td>
+                                    <td>10</td>
                                     <td>
                                        <label className="inline-flex items-center me-5 cursor-pointer">
                                             <input type="checkbox" value="" className="sr-only peer" defaultChecked />
@@ -348,8 +378,8 @@ const Warehouse = () => {
                                        </label>
                                     </td>
                                     <td>
-                                        <div>
-                                               <button onClick={()=> navigate("/Layout/ViewWarehouse")} className='ds_crud_btn me-3'>
+                                           <div>
+                                                <button onClick={()=> navigate("/Layout/ViewWarehouse")} className='ds_crud_btn me-3'>
                                                     <img src={Eye} alt="" />
                                                 </button>
                                                 <button onClick={()=> navigate("/Layout/EditWarehouse")} className='ds_crud_btn me-3'>
@@ -360,11 +390,13 @@ const Warehouse = () => {
                                                 </button>
                                             </div>
                                         </td>
-                                </tr> 
+                                </tr>
                                 <tr>
                                     <td>Warehouse 1</td>
                                     <td>Johan Dave</td>
                                     <td>+1 2345678923</td>
+                                    <td>10</td>
+                                    <td>10</td>
                                     <td>
                                        <label className="inline-flex items-center me-5 cursor-pointer">
                                             <input type="checkbox" value="" className="sr-only peer" defaultChecked />
@@ -372,8 +404,8 @@ const Warehouse = () => {
                                        </label>
                                     </td>
                                     <td>
-                                        <div>
-                                               <button onClick={()=> navigate("/Layout/ViewWarehouse")} className='ds_crud_btn me-3'>
+                                           <div>
+                                                <button onClick={()=> navigate("/Layout/ViewWarehouse")} className='ds_crud_btn me-3'>
                                                     <img src={Eye} alt="" />
                                                 </button>
                                                 <button onClick={()=> navigate("/Layout/EditWarehouse")} className='ds_crud_btn me-3'>
@@ -384,8 +416,7 @@ const Warehouse = () => {
                                                 </button>
                                             </div>
                                         </td>
-                                </tr> 
-                                
+                                </tr>
                             </tbody>
                         </table>
 
@@ -432,7 +463,7 @@ const Warehouse = () => {
                                     </p>
                                   </div>
                               <div className='text-center mt-10 mb-6'>
-                                 <button type="button" className='ds_cancel_btn me-4' onClick={() => setDeleteToggle(false)}>Cancel
+                                 <button type="button" className='ds_cancel_popup me-4' onClick={() => setDeleteToggle(false)}>Cancel
                                  </button>
                                  <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeleteToggle(false)}>Delete
                                  </button>
@@ -459,7 +490,7 @@ const Warehouse = () => {
                                     </p>
                                   </div>
                               <div className='text-center mt-10 mb-6'>
-                                 <button type="button" className='ds_cancel_btn me-4' onClick={() => setDeleteAll(false)}>Cancel
+                                 <button type="button" className='ds_cancel_popup me-4' onClick={() => setDeleteAll(false)}>Cancel
                                  </button>
                                  <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeleteAll(false)}>Delete
                                  </button>

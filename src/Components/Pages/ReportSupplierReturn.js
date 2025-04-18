@@ -108,9 +108,9 @@ const ReportSupplierReturn = () => {
                                        </div>
                                        <div className='px-6 mt-6'>
                                         <div className='mb-4'>
-                                               <label className='text-d_color font-medium block mb-1'>Customer Name</label>
+                                               <label className='text-d_color font-medium block mb-1'>Supplier Name</label>
                                                <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
-                                                 <option value="">Select Customer Name</option>
+                                                 <option value="">Select Supplier Name</option>
                                                  <option value="">John Wick</option>
                                                  <option value="">John Wick</option>
                                                </select>
@@ -395,7 +395,7 @@ const ReportSupplierReturn = () => {
                                     </p>
                                   </div>
                               <div className='text-center mt-10 mb-6'>
-                                 <button type="button" className='ds_cancel_btn me-4' onClick={() => setDeleteAll(false)}>Cancel
+                                 <button type="button" className='ds_cancel_popup me-4' onClick={() => setDeleteAll(false)}>Cancel
                                  </button>
                                  <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeleteAll(false)}>Delete
                                  </button>

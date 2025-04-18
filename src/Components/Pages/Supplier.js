@@ -156,13 +156,6 @@ const Supplier = () => {
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
-                             <h6 className='text-d_color'>Code</h6>
-                             <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
-                             </label>
-                          </div>
-                          <div className='flex justify-between items-center mb-2'>
                              <h6 className='text-d_color'>Email</h6>
                              <label class="inline-flex items-center cursor-pointer">
                                 <input type="checkbox" value="" class="sr-only peer" defaultChecked />
@@ -235,7 +228,6 @@ const Supplier = () => {
                                 <tr>
                                     <th>Supplier Name</th>
                                     <th>Store Name</th>
-                                    <th>Code</th>
                                     <th>Email</th>
                                     <th>Contact No.</th>
                                     <th>Country</th>
@@ -249,7 +241,6 @@ const Supplier = () => {
                                        <span className='mt-1'>Johan Patel</span>
                                     </td>
                                     <td>Apex Stationary</td>
-                                    <td>123</td>
                                     <td>example@gmail.com</td>
                                     <td>+1 2345678923</td>
                                     <td>Italy</td>
@@ -273,7 +264,6 @@ const Supplier = () => {
                                        <span className='mt-1'>Johan Patel</span>
                                     </td>
                                     <td>Apex Stationary</td>
-                                    <td>123</td>
                                     <td>example@gmail.com</td>
                                     <td>+1 2345678923</td>
                                     <td>Italy</td>
@@ -297,7 +287,6 @@ const Supplier = () => {
                                        <span className='mt-1'>Johan Patel</span>
                                     </td>
                                     <td>Apex Stationary</td>
-                                    <td>123</td>
                                     <td>example@gmail.com</td>
                                     <td>+1 2345678923</td>
                                     <td>Italy</td>
@@ -321,7 +310,6 @@ const Supplier = () => {
                                        <span className='mt-1'>Johan Patel</span>
                                     </td>
                                     <td>Apex Stationary</td>
-                                    <td>123</td>
                                     <td>example@gmail.com</td>
                                     <td>+1 2345678923</td>
                                     <td>Italy</td>
@@ -345,7 +333,6 @@ const Supplier = () => {
                                        <span className='mt-1'>Johan Patel</span>
                                     </td>
                                     <td>Apex Stationary</td>
-                                    <td>123</td>
                                     <td>example@gmail.com</td>
                                     <td>+1 2345678923</td>
                                     <td>Italy</td>
@@ -369,7 +356,6 @@ const Supplier = () => {
                                        <span className='mt-1'>Johan Patel</span>
                                     </td>
                                     <td>Apex Stationary</td>
-                                    <td>123</td>
                                     <td>example@gmail.com</td>
                                     <td>+1 2345678923</td>
                                     <td>Italy</td>
@@ -393,7 +379,6 @@ const Supplier = () => {
                                        <span className='mt-1'>Johan Patel</span>
                                     </td>
                                     <td>Apex Stationary</td>
-                                    <td>123</td>
                                     <td>example@gmail.com</td>
                                     <td>+1 2345678923</td>
                                     <td>Italy</td>
@@ -417,7 +402,6 @@ const Supplier = () => {
                                        <span className='mt-1'>Johan Patel</span>
                                     </td>
                                     <td>Apex Stationary</td>
-                                    <td>123</td>
                                     <td>example@gmail.com</td>
                                     <td>+1 2345678923</td>
                                     <td>Italy</td>
@@ -480,7 +464,7 @@ const Supplier = () => {
                                     </p>
                                   </div>
                               <div className='text-center mt-10 mb-6'>
-                                 <button type="button" className='ds_cancel_btn me-4' onClick={() => setDeleteToggle(false)}>Cancel
+                                 <button type="button" className='ds_cancel_popup me-4' onClick={() => setDeleteToggle(false)}>Cancel
                                  </button>
                                  <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeleteToggle(false)}>Delete
                                  </button>
@@ -506,7 +490,7 @@ const Supplier = () => {
                                     </p>
                                   </div>
                               <div className='text-center mt-10 mb-6'>
-                                 <button type="button" className='ds_cancel_btn me-4' onClick={() => setDeleteAll(false)}>Cancel
+                                 <button type="button" className='ds_cancel_popup me-4' onClick={() => setDeleteAll(false)}>Cancel
                                  </button>
                                  <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeleteAll(false)}>Delete
                                  </button>

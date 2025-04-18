@@ -16,7 +16,7 @@ import Dollar from '../Images/Dhruvin/dollar.svg'
 import Plus from '../Images/Dhruvin/plus_round.svg'
 import { IoClose } from 'react-icons/io5'
 import Print from '../Images/Dhruvin/print.svg'
-
+import '../CSS/Dhruvin/Sales.css'
 
 
 const Sales = () => {
@@ -36,6 +36,7 @@ const Sales = () => {
     const [showPayment, setShowPayment] = useState(false)
     const [editPayment, setEditPayment] = useState(false)
     const [createPayment, setCreatePayment] = useState(false)
+    const [deletePayment, setDeletePayment] = useState(false)
     
     const handleIconClick = () => {
         dateInputRef.current.showPicker?.(); 
@@ -241,7 +242,7 @@ const Sales = () => {
                                     <td>$1250</td>
                                     <td><span className='px-[26px] py-2 rounded-[4px] text-[#3AA409] bg-[#DBE6D6] font-semibold'>Paid</span></td>
                                     <td className='flex'>
-                                          <button onClick={()=> navigate("/Layout/ViewSupplier")} className='ds_crud_btn me-3'>
+                                          <button onClick={()=> navigate("/Layout/ViewSales")} className='ds_crud_btn me-3'>
                                                <img  src={Eye} alt="" />
                                           </button>
                                         <button onClick={()=> navigate("/Layout/EditSales")} className='ds_crud_btn me-3'>
@@ -268,141 +269,177 @@ const Sales = () => {
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>#12345</td>
                                     <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td><span className='px-7 py-2 rounded-[4px] text-[#FF0000] bg-[#FAE1E1] font-semibold'>Due</span></td>
-                                    <td>
+                                    <td className='flex'>
+                                          <button onClick={()=> navigate("/Layout/ViewSales")} className='ds_crud_btn me-3'>
+                                               <img  src={Eye} alt="" />
+                                          </button>
                                         <button onClick={()=> navigate("/Layout/EditSales")} className='ds_crud_btn me-3'>
                                              <img src={Pen} alt="" />
                                          </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn me-3'>
                                              <img src={Red} alt="" />
+                                        </button>
+                                        <button  className='ds_crud_btn'>
+                                             <div className='relative'>
+                                               <img src={Dot} alt=""  />
+                                             </div>
                                         </button>
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>#12345</td>
                                     <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td><span className='px-[26px] py-2 rounded-[4px] text-[#3AA409] bg-[#DBE6D6] font-semibold'>Paid</span></td>
-                                    <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
+                                    <td className='flex'>
+                                          <button onClick={()=> navigate("/Layout/ViewSales")} className='ds_crud_btn me-3'>
+                                               <img  src={Eye} alt="" />
+                                          </button>
+                                        <button onClick={()=> navigate("/Layout/EditSales")} className='ds_crud_btn me-3'>
                                              <img src={Pen} alt="" />
                                          </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn me-3'>
                                              <img src={Red} alt="" />
+                                        </button>
+                                        <button  className='ds_crud_btn'>
+                                             <div className='relative'>
+                                               <img src={Dot} alt=""  />
+                                             </div>
                                         </button>
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>#12345</td>
                                     <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td><span className='px-[26px] py-2 rounded-[4px] text-[#3AA409] bg-[#DBE6D6] font-semibold'>Paid</span></td>
-                                    <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
+                                    <td className='flex'>
+                                          <button onClick={()=> navigate("/Layout/ViewSales")} className='ds_crud_btn me-3'>
+                                               <img  src={Eye} alt="" />
+                                          </button>
+                                        <button onClick={()=> navigate("/Layout/EditSales")} className='ds_crud_btn me-3'>
                                              <img src={Pen} alt="" />
                                          </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn me-3'>
                                              <img src={Red} alt="" />
+                                        </button>
+                                        <button  className='ds_crud_btn' >
+                                             <div className='relative'>
+                                               <img src={Dot} alt=""  />
+                                             </div>
                                         </button>
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>#12345</td>
                                     <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td><span className='px-[26px] py-2 rounded-[4px] text-[#3AA409] bg-[#DBE6D6] font-semibold'>Paid</span></td>
-                                    <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
+                                    <td className='flex'>
+                                          <button onClick={()=> navigate("/Layout/ViewSales")} className='ds_crud_btn me-3'>
+                                               <img  src={Eye} alt="" />
+                                          </button>
+                                        <button onClick={()=> navigate("/Layout/EditSales")} className='ds_crud_btn me-3'>
                                              <img src={Pen} alt="" />
                                          </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn me-3'>
                                              <img src={Red} alt="" />
+                                        </button>
+                                        <button  className='ds_crud_btn'>
+                                             <div className='relative'>
+                                               <img src={Dot} alt=""  />
+                                             </div>
                                         </button>
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>#12345</td>
                                     <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td><span className='px-7 py-2 rounded-[4px] text-[#FF0000] bg-[#FAE1E1] font-semibold'>Due</span></td>
-                                    <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
+                                    <td className='flex'>
+                                          <button onClick={()=> navigate("/Layout/ViewSales")} className='ds_crud_btn me-3'>
+                                               <img  src={Eye} alt="" />
+                                          </button>
+                                        <button onClick={()=> navigate("/Layout/EditSales")} className='ds_crud_btn me-3'>
                                              <img src={Pen} alt="" />
                                          </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn me-3'>
                                              <img src={Red} alt="" />
+                                        </button>
+                                        <button  className='ds_crud_btn'>
+                                             <div className='relative'>
+                                               <img src={Dot} alt=""  />
+                                             </div>
                                         </button>
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                    <td>#12345</td>
                                     <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td><span className='px-[26px] py-2 rounded-[4px] text-[#3AA409] bg-[#DBE6D6] font-semibold'>Paid</span></td>
-                                    <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
+                                    <td className='flex'>
+                                          <button onClick={()=> navigate("/Layout/ViewSales")} className='ds_crud_btn me-3'>
+                                               <img  src={Eye} alt="" />
+                                          </button>
+                                        <button onClick={()=> navigate("/Layout/EditSales")} className='ds_crud_btn me-3'>
                                              <img src={Pen} alt="" />
                                          </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn me-3'>
                                              <img src={Red} alt="" />
                                         </button>
+                                        <button  className='ds_crud_btn' >
+                                             <div className='relative'>
+                                               <img src={Dot} alt=""  />
+                                             </div>
+                                        </button>
                                     </td>
-                                </tr> <tr>
-                                    <td className='flex align-middle'>
-                                       <img src={product} alt="" className='w-[25px] me-2' />
-                                       <span className='mt-1'>Blue Pen</span>
-                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td>#12345</td>
                                     <td>Johan Dave</td>
                                     <td>19 July 2024</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
                                     <td>$1250</td>
-                                    <td><span className='px-[26px] py-2 rounded-[4px] text-[#3AA409] bg-[#DBE6D6] font-semibold'>Paid</span></td>
-                                    <td>
-                                        <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
+                                    <td><span className='px-7 py-2 rounded-[4px] text-[#FF0000] bg-[#FAE1E1] font-semibold'>Due</span></td>
+                                    <td className='flex'>
+                                          <button onClick={()=> navigate("/Layout/ViewSales")} className='ds_crud_btn me-3'>
+                                               <img  src={Eye} alt="" />
+                                          </button>
+                                        <button onClick={()=> navigate("/Layout/EditSales")} className='ds_crud_btn me-3'>
                                              <img src={Pen} alt="" />
                                          </button>
-                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                        <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn me-3'>
                                              <img src={Red} alt="" />
+                                        </button>
+                                        <button  className='ds_crud_btn'>
+                                             <div className='relative'>
+                                                <img src={Dot} alt=""  />
+                                             </div>
                                         </button>
                                     </td>
                                 </tr> 
@@ -444,11 +481,11 @@ const Sales = () => {
                             <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                                   <div className="mt-2">
                                     <p className="sm:text-lg text-center text-d_color">
-                                      Are you sure you want to delete  <br /> Sales Return ?
+                                      Are you sure you want to delete  <br /> Sales ?
                                     </p>
                                   </div>
                               <div className='text-center mt-10 mb-6'>
-                                 <button type="button" className='ds_cancel_btn me-4' onClick={() => setDeleteToggle(false)}>Cancel
+                                 <button type="button" className='ds_cancel_popup me-4' onClick={() => setDeleteToggle(false)}>Cancel
                                  </button>
                                  <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeleteToggle(false)}>Delete
                                  </button>
@@ -469,11 +506,11 @@ const Sales = () => {
                                   <div className="mt-2">
                                     <p className="sm:text-lg text-center text-d_color">
                                       Are you sure you want to delete  <br />
-                                      All Sales Return?
+                                      All Sales?
                                     </p>
                                   </div>
                               <div className='text-center mt-10 mb-6'>
-                                 <button type="button" className='ds_cancel_btn me-4' onClick={() => setDeleteAll(false)}>Cancel
+                                 <button type="button" className='ds_cancel_popup me-4' onClick={() => setDeleteAll(false)}>Cancel
                                  </button>
                                  <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeleteAll(false)}>Delete
                                  </button>
@@ -516,10 +553,10 @@ const Sales = () => {
                                                    <button onClick={()=> {setEditPayment(true) ; setShowPayment(false)}} className='ds_crud_btn me-3'>
                                                          <img src={Pen} alt="" />
                                                    </button>
-                                                   <button onClick={()=> navigate("/Layout/EditSalesReturn")} className='ds_crud_btn me-3'>
+                                                   <button className='ds_crud_btn me-3'>
                                                          <img src={Print} alt="" />
                                                    </button>
-                                                   <button onClick={()=> setDeleteToggle(true)} className='ds_crud_btn'>
+                                                   <button onClick={()=> {setDeletePayment(true); setShowPayment(false)}} className='ds_crud_btn'>
                                                         <img src={Red} alt="" />
                                                    </button>
                                                 </td>
@@ -592,7 +629,7 @@ const Sales = () => {
                       </div>
                   </Dialog>
 
-                  {/* ***************** Edit Payments *********** */}
+                  {/* ***************** Create Payments *********** */}
                   <Dialog open={createPayment} onClose={setCreatePayment} className="relative z-10">
                       <DialogBackdrop transition className="fixed inset-0 bg-black-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"/>    
                       <div className="fixed bg-black/50 inset-0 z-10 w-screen overflow-y-auto">
@@ -636,9 +673,34 @@ const Sales = () => {
                                     </div>
                                 </div>
                                 <div className='px-6 mt-4 flex justify-between mb-3'>
-                                    <button className='ds_edit_payment_cancel'>Cancel</button>
+                                    <button className='ds_edit_payment_cancel' onClick={()=> setCreatePayment(false)}>Cancel</button>
                                     <button className='ds_edit_payment_add'>Add</button>
                                 </div>
+                            </div>
+                          </DialogPanel>
+                        </div>
+                      </div>
+                  </Dialog>
+
+                  {/* ***************** Delete Payment *********** */}
+                  <Dialog open={deletePayment} onClose={setDeletePayment} className="relative z-10">
+                      <DialogBackdrop transition className="fixed inset-0 bg-black-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"/>    
+                      <div className="fixed bg-black/50 inset-0 z-10 w-screen overflow-y-auto">
+                        <div className="flex min-h-full lg:w-full md:w-3/5  mx-auto justify-center p-4 text-center items-center sm:p-0">
+                          <DialogPanel transition className="relative transform overflow-hidden rounded-[5px] bg-red text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-xl data-closed:sm:translate-y-0 data-closed:sm:scale-95">
+                            <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                                  <div className="mt-2">
+                                    <p className="sm:text-lg text-center text-d_color">
+                                      Are you sure you want to delete  <br />
+                                      Payment ?
+                                    </p>
+                                  </div>
+                              <div className='text-center mt-10 mb-6'>
+                                 <button type="button" className='ds_cancel_popup me-4' onClick={() => setDeletePayment(false)}>Cancel
+                                 </button>
+                                 <button type="button" className='ds_deletePopup' data-autofocus onClick={() => setDeletePayment(false)}>Delete
+                                 </button>
+                              </div>
                             </div>
                           </DialogPanel>
                         </div>
