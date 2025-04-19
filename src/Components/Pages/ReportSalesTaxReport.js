@@ -378,7 +378,7 @@ const ReportSalesTaxReport = () => {
                                   <div className="mt-2">
                                     <p className="sm:text-lg text-center text-d_color">
                                       Are you sure you want to delete  <br />
-                                      Sales Tax Report ?
+                                      All Sales Tax Report ?
 
                                     </p>
                                   </div>

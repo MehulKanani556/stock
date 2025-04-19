@@ -64,12 +64,12 @@ const getPageNumbers = () => {
               <div className='flex justify-between '>
                  <div>
                     <h2 className='text-d_color text-[24px] font-medium'>Reports</h2>
-                    <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color'>Profit & Loss Report</span></p>
+                    <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Profit & Loss Report</span></p>
                  </div>
                  <div>
                     <div className='relative'>
                        <button onClick={()=> setDownload(!download)} className='ds_fincial_download flex items-center'>Download <IoIosArrowDown className='ms-1' /></button>
-                       {download && <div className='ds_report_download'>
+                       {download && <div className='ds_report_download ds_report_box'>
                          <div className='flex items-center mb-3'>
                             <div>
                                <img src={mrint} alt="" className='me-3' />

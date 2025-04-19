@@ -15,7 +15,7 @@ const ViewWarehouse = () => {
           </div>
           <div className='pt-7'>
             <div className='ds_main_box'>
-               <div className='sm:px-10 px-10 pb-10 pt-10'>
+               <div className='sm:px-10 px-5 pb-10 pt-10'>
                    <div className='xl:w-2/3'>
                       <div className='overflow-x-auto'>
                         <table className='ds_viewWare_table w-full'>

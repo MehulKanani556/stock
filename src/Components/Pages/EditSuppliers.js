@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Product from '../Images/Dhruvin/mini_product.png'
 
 const EditSuppliers = () => {
 
@@ -83,6 +84,9 @@ const EditSuppliers = () => {
                                <input type="file" ref={fileInputRef} style={{ display: 'none' }} onChange={handleFileChange}/>
                                <div onClick={handleButtonClick} className='absolute top-[36px] right-[14px] bg-[#16325B] text-white rounded-[4px] px-3 text-[14px]'>
                                   Change
+                               </div>
+                               <div className='absolute top-[32px] left-[13px]'>
+                                  <img src={Product} alt="" className='w-[30px]' />
                                </div>
                           </div>
                       </div>

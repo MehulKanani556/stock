@@ -110,24 +110,24 @@ const handleIconClick = () => {
                     </table>
                   </div>
 
-                  <div className='mt-10 mb-10 flex justify-end'>
+                  <div className='mt-10 mb-10 flex justify-end sm:px-0 px-3'>
                      <table className='ds_mini_table xl:w-1/4 lg:w-2/5 md:w-3/5 sm:w-full w-full'>
                        <tbody>
                         <tr>
-                          <td  style={{borderRight:"1px solid #727272" , backgroundColor:"rgba(114, 114, 114, 0.1)"}}>Order Tax</td>
-                          <td>$ 0.00</td>
+                          <td  style={{borderRight:"1px solid #727272" , backgroundColor:"rgba(114, 114, 114, 0.1)"}} className='text-[#727272]'>Order Tax</td>
+                          <td className='text-[#727272]'>$ 0.00</td>
                         </tr>
                         <tr>
-                          <td  style={{borderRight:"1px solid #727272" , backgroundColor:"rgba(114, 114, 114, 0.1)"}}>Discount</td>
-                          <td>$ 0.00</td>
+                          <td  style={{borderRight:"1px solid #727272" , backgroundColor:"rgba(114, 114, 114, 0.1)"}} className='text-[#727272]'>Discount</td>
+                          <td className='text-[#727272]'>$ 0.00</td>
                         </tr>
                         <tr>
-                          <td  style={{borderRight:"1px solid #727272" , backgroundColor:"rgba(114, 114, 114, 0.1)"}}>Shipping</td>
-                          <td>$ 0.00</td>
+                          <td  style={{borderRight:"1px solid #727272" , backgroundColor:"rgba(114, 114, 114, 0.1)"}} className='text-[#727272]'>Shipping</td>
+                          <td className='text-[#727272]'>$ 0.00</td>
                         </tr>
                         <tr>
-                          <td  style={{borderRight:"1px solid #727272" , backgroundColor:"rgba(114, 114, 114, 0.1)" , borderBottom:"0"}}>Total Amount</td>
-                          <td style={{ borderBottom:"0"}}>$100.00</td>
+                          <td  style={{borderRight:"1px solid #727272" , backgroundColor:"rgba(114, 114, 114, 0.1)" , borderBottom:"0"}} className='text-[#727272]'>Total Amount</td>
+                          <td className='text-[#727272]' style={{ borderBottom:"0"}}>$100.00</td>
                         </tr>
                        </tbody>
                      </table>

@@ -196,7 +196,7 @@ const Warehouse = () => {
               <div className='pt-7'>
                   <div className='shadow-[1px_1px_20px_0.5px_rgba(0,0,0,0.06)] bg-white'>
                     <div className='relative overflow-x-auto'>
-                        <table className='w-full ds_income_table'>
+                        <table className='w-full ds_report_table'>
                             <thead>
                                 <tr>
                                     <th>Warehouse</th>

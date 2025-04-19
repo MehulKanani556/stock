@@ -75,7 +75,7 @@ const SalesReturn = () => {
     <div>
       <div className='ds_main'>
           <div className='sm:px-8 px-4 pt-7'>
-              <div className='flex justify-between lg:flex-nowrap flex-wrap'>
+              <div className='flex justify-between xl:flex-nowrap flex-wrap'>
                  <div>
                     <h2 className='text-d_color text-[24px] font-medium'>Sales Return</h2>
                     <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Sales Return</span></p>  
@@ -141,7 +141,7 @@ const SalesReturn = () => {
                     </div>
                     <div className='relative pt-3'>
                       <button className='ds_column_btn  flex me-4' onClick={()=> setColumn(!column)}> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
-                        {column && <div className='ds_column_box z-[2]'>
+                        {column && <div className='ds_column_box z-[2] ds_sales_box'>
                           <div className='flex justify-between items-center mb-2'>
                              <h6 className='text-d_color'>Product</h6>
                              <label class="inline-flex items-center cursor-pointer">

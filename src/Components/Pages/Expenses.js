@@ -81,7 +81,7 @@ const Expenses = () => {
     <div>
       <div className='ds_main'>
           <div className='sm:px-8 px-4 pt-7'>
-              <div className='flex justify-between lg:flex-nowrap flex-wrap'>
+              <div className='flex justify-between xl:flex-nowrap flex-wrap'>
                  <div>
                     <h2 className='text-d_color text-[24px] font-medium'>Expense</h2>
                     <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Expense</span></p>  
