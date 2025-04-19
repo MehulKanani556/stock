@@ -139,7 +139,7 @@ const handleIconClick = () => {
                  </div>
 
                   <div className='flex justify-center mt-8 mb-3'>
-                     <button className='ds_cancel_btn me-5'>Cancel</button>
+                     <button className='ds_cancel_popup me-5' onClick={()=> navigate("/Layout/Quotation")}>Cancel</button>
                      <button className='ds_update_btn'>Update</button>
                   </div>
                </div>

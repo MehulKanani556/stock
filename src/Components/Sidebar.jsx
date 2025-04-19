@@ -280,17 +280,17 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
 
 
             {/* Sales */}
-            <div className={`${activeItem === "sales" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "Sales" || activeItem === "AddSales" || activeItem === "EditSales" || activeItem === "ViewSales" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  // navigate('/layout/sales');
-                  setActiveItem("sales");
+                  navigate('/Layout/Sales');
+                  setActiveItem("Sales");
                 }}
               >
                 <div className={`flex items-center ${isCollapsed ? 'justify-center' : ''} gap-5 ${isCollapsed ? '' : 'V_pading_icon'}`}>
                   <div>
-                    {activeItem === "sales" ?
+                    {activeItem === "Sales" || activeItem === "AddSales" || activeItem === "EditSales" || activeItem === "ViewSales" ?
                       <img src={sales} className='V_icon_size text-d_color V_filter' /> :
                       <img src={sales} className='V_icon_size' />
                     }
@@ -507,7 +507,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
             </div>
 
             {/* Payment Gateway */}
-            <div className={`${activeItem === "Payment" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            {/* <div className={`${activeItem === "Payment" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
@@ -525,7 +525,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
                   {!isCollapsed && <h5 className='V_text_size font-fw-lighter'>Payment Gateway</h5>}
                 </div>
               </div>
-            </div>
+            </div> */}
 
 
 

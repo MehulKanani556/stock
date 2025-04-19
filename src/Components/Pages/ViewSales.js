@@ -92,13 +92,7 @@ const navigate = useNavigate()
                                      <span className='mt-1'>Blue Pen</span>
                                  </td>
                                  <td>
-                                     <div className='ds_quotation_btn'>
-                                         <div className='flex items-center justify-between h-full w-full px-2'>
-                                           <FaMinus className='text-white m-1 p-1 text-[18px] border border-white rounded-[4px]' />
-                                           <p className='text-white'>10</p>
-                                           <FaPlus className='text-white m-1 p-1 text-[18px] border border-white rounded-[4px]' />
-                                         </div>
-                                     </div>
+                                    10 Pc
                                  </td>
                                  <td>$2500</td>                            
                                  <td>$200</td>
@@ -113,13 +107,7 @@ const navigate = useNavigate()
                                      <span className='mt-1'>Blue Pen</span>
                                  </td>
                                  <td>
-                                     <div className='ds_quotation_btn'>
-                                         <div className='flex items-center justify-between h-full w-full px-2'>
-                                           <FaMinus className='text-white m-1 p-1 text-[18px] border border-white rounded-[4px]' />
-                                           <p className='text-white'>10</p>
-                                           <FaPlus className='text-white m-1 p-1 text-[18px] border border-white rounded-[4px]' />
-                                         </div>
-                                     </div>
+                                    10 Pc
                                  </td>
                                  <td>$2500</td>                            
                                  <td>$200</td>

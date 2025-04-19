@@ -84,7 +84,9 @@
 }
 .ds_cancel_btn{
     border: 1px solid #36454F;
-    padding: 6px 65px;
+    /* padding: 6px 65px; */
+    height: 38px;
+    width: 175px;
     color: #36454F;
     border-radius: 5px;
     font-weight: 500;
@@ -144,7 +146,20 @@
     border: 1px solid #36454F;
     background-color: transparent;
     color: #36454F; 
-
+}
+.ds_cancel_popup{
+    border: 1px solid #36454F;
+    padding: 6px 66px;
+    background-color: transparent;
+    border-radius: 5px;
+    font-weight: 500; 
+    color: #36454F; 
+    transition: 0.3s ease-in-out; 
+}
+.ds_cancel_popup:hover{
+    background-color: #36454F;
+    color: white;
+    border: 1px solid #36454F;
 }
 
 /* ********** Login ********* */
@@ -154,6 +169,19 @@
     .ds_currency_table{
         min-width:600px;
     }
+}
+
+@media (max-width:992px) {
+    .ds_cancel_btn{
+        /* padding: 5px 30px; */
+        width: 155px;
+     }
+     .ds_add_btn{
+        padding: 5px 59px;
+     }
+     .ds_update_btn{
+        padding: 6px 53px;
+     }
 }
 
 @media (max-width:640px) {
@@ -167,10 +195,11 @@
 
 @media (max-width:575px) {
     .ds_cancel_btn{
-       padding: 5px 30px;
+       /* padding: 5px 30px; */
+       width: 130px;
     }
     .ds_add_btn{
-       padding: 5px 35px;
+       padding: 5px 48px;
     }
     .ds_update_btn{
        padding: 6px 42px;
@@ -178,17 +207,20 @@
     .ds_deletePopup{
        padding: 6px 35px;
     }
+    .ds_cancel_popup{
+      padding: 6px 32px;
+    }
 }
 
-@media (max-width:374px) {
+@media (max-width:376px) {
     .ds_cancel_btn{
-       padding: 6px 30px;
+        width: 100px;
     }
     .ds_add_btn{
-       padding: 6px 44px;
+       padding: 6px 38px;
     }
     .ds_update_btn{
-       padding: 6px 33px;
+       padding: 6px 25px;
     }
 }
 
