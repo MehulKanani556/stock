@@ -109,7 +109,7 @@ const Warranty = () => {
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <div className='px-6 mt-6'>
+                                                        <div className='px-6'>
                                                             <div className='mb-4'>
                                                                 <label className='text-d_color font-medium block mb-1'>Status</label>
                                                                 <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>
@@ -130,7 +130,7 @@ const Warranty = () => {
                                     </div>
                                 </Dialog>
                             </div>
-                            <div className='relative pt-3'>
+                            {/* <div className='relative pt-3'>
                                 <button className='ds_column_btn flex me-4' onClick={() => setSort(!sort)}>
                                     <span className=''>Sort by</span>
                                     <span className={` ${sort ? 'rotate-180 pe-3 my-auto' : 'ps-3 my-auto'}`}>
@@ -145,7 +145,16 @@ const Warranty = () => {
                                         <h6 className='text-d_color'>Oldest</h6>
                                     </div>
                                 </div>}
-                            </div>
+                            </div> */}
+
+                                 <div className='me-4 pt-3 relative'>
+                                      <select className='ds_sort_by flex items-center'>Sort by <IoIosArrowDown className='ms-2' />
+                                          <option value="">Sort by </option>
+                                          <option value="">Newest</option>
+                                          <option value="">Oldest</option>
+                                      </select>
+                                  </div>
+
                             <div className='relative pt-3'>
                                 <button className='ds_column_btn  flex me-4' onClick={() => setColumn(!column)}> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
                                 {column && <div className='ds_column_box z-[2]'>
