@@ -72,7 +72,7 @@ const navigate = useNavigate()
                      </div>
 
                       <div className='mt-3   overflow-x-auto'>
-                         <table className='w-full ds_sale_table2'>
+                         <table className='w-full ds_quotation_table'>
                              <thead>
                                  <tr>
                                      <th>Product</th>

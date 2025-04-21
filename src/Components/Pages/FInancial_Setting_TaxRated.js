@@ -5,6 +5,7 @@ import Pen from '../Images/Dhruvin/pen.svg'
 import Red from '../Images/Dhruvin/trash_red.svg'
 import { useNavigate } from 'react-router-dom'
 import { Dialog, DialogBackdrop, DialogPanel} from '@headlessui/react'
+import '../CSS/Dhruvin/TaxRated.css'
 
 const FInancial_Setting_TaxRated = () => {
 
@@ -20,12 +21,12 @@ const [deleteAll, setDeleteAll] = useState(false)
               <div className='flex flex-wrap justify-between items-center pt-3'>
                  <div>
                     <h2 className='text-d_color text-[24px] font-medium'>Tax Rates</h2>
-                    <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color'>Tax Rates</span></p>
+                    <p className='cursor-pointer'><span onClick={()=> navigate("/Layout/Dashboard")} className='text-[#727272]'>Dashboard /</span> <span className='text-d_color font-semibold'>Tax Rates</span></p>
                  </div>
                  <div className='flex flex-wrap '>
                     <div className='relative pt-3'>
                       <button className='ds_column_btn  flex me-4' onClick={()=> setColumn(!column)}> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
-                        {column && <div className='ds_column_box'>
+                        {column && <div className='ds_column_box ds_textrated_box'>
                           <div className='flex justify-between items-center mb-2'>
                              <h6 className='text-d_color'>Name</h6>
                              <label class="inline-flex items-center cursor-pointer">

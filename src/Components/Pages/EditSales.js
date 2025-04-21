@@ -143,11 +143,11 @@ const handleIconClick = () => {
                        </tbody>
                      
                    </table>                   
-                   <span className='ds_quotation_table w-full block border-[0.1px] border-[#727272] mt-3'></span>
+                   {/* <span className='ds_quotation_table w-full block border-[0.1px] border-[#727272] mt-3'></span> */}
 
                   </div>
 
-                  <div className='mt-10 mb-10 flex justify-end'>
+                  <div className='mt-10 mb-10 sm:px-0 px-2 flex justify-end'>
                      <table className='ds_mini_table xl:w-1/4 lg:w-2/5 md:w-3/5 sm:w-full w-full'>
                        <tbody>
                         <tr>

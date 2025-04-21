@@ -68,6 +68,7 @@
     background-color: white;
     border-radius: 4px;
     padding: 20px;
+    z-index: 1;
  }
  .ds_report_arrow{
     width: 35px;
@@ -255,6 +256,10 @@
     .ds_report_apply {
         padding: 7px 40px;
     }
+/* **************** Reports(Profit & Loss Report -Profit  Report)  ******************** */
+.ds_report_box{
+    left: -8px !important;
+}
 }
 
 @media (max-width:321px) {
@@ -264,5 +269,8 @@
     }
     .ds_report_apply {
         padding: 7px 30px;
+    }
+    .ds_report_mini{
+        left: -31px !important;
     }
 }

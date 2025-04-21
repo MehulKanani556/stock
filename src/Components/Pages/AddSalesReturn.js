@@ -73,7 +73,7 @@ const handleIconClick = () => {
                     </table>
                   </div>
 
-                  <div className='mt-10 mb-10 flex justify-end'>
+                  <div className='mt-10 mb-10 flex justify-end sm:px-0 px-3'>
                      <table className='ds_mini_table xl:w-1/4 lg:w-2/5 md:w-3/5 sm:w-full w-full'>
                        <tbody>
                         <tr>

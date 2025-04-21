@@ -29,7 +29,7 @@
     padding: 10px;
 }
 
-@media (max-width:1200px) {
+@media (max-width:1500px) {
     .ds_quotation_table{
         min-width: 1100px;
     }

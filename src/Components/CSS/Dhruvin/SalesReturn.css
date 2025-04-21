@@ -19,3 +19,15 @@
     width: 100px;
     
 }
+
+@media (max-width:426px) {
+    .ds_sales_box{
+        left: -51px !important;
+    }
+}
+
+@media (max-width:376px) {
+    .ds_sales_box{
+        left: 0px !important;
+    }
+}

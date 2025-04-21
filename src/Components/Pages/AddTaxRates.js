@@ -32,7 +32,7 @@ const navigate =  useNavigate()
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Status</label>
-                               <select className='ds_main_input'>
+                               <select className='ds_Select'>
                                  <option value="">Select Currency Symbol</option>
                                  <option value="">Active</option>
                                  <option value="">InActive</option>
