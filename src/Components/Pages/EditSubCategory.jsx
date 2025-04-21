@@ -11,8 +11,8 @@ const EditSubCategory = () => {
             <div className='ds_main'>
                 <div className='sm:px-8 px-4 pt-7'>
                     <div>
-                        <h2 className='text-d_color text-[24px] font-medium'>Add Subcategory</h2>
-                        <p className='cursor-pointer'><Link to="/Layout/Dashboard" className='text-[#727272]'>Dashboard /</Link> <Link to="/Layout/AddSubCategory" className='text-[#727272]'>Subcategory /</Link> <span className='text-d_color font-semibold'>Add Subcategory</span></p>
+                        <h2 className='text-d_color text-[24px] font-medium'>Edit Subcategory</h2>
+                        <p className='cursor-pointer'><Link to="/Layout/Dashboard" className='text-[#727272]'>Dashboard /</Link> <Link to="/Layout/SubCategory" className='text-[#727272]'>Subcategory /</Link> <span className='text-d_color font-semibold'>Edit Subcategory</span></p>
                     </div>
                     <div className='pt-7'>
                         <div className='ds_main_box'>
@@ -66,10 +66,10 @@ const EditSubCategory = () => {
                                             }}
                                         >Cancel</button>
                                         <button
-                                            className='ds_add_btn'
+                                            className='ds_update_btn'
                                             onClick={() => navigate("/Layout/SubCategory")}
 
-                                        >Add</button>
+                                        >Update</button>
                                     </div>
 
 

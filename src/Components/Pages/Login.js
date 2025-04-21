@@ -49,7 +49,7 @@ const handleLogin = (e) => {
                               {passToggle === "password" ? <FaEyeSlash onClick={()=> setPassToggle("text")} className="absolute top-9 right-3 text-[#999999] text-[20px] cursor-pointer" /> : <FaEye onClick={()=> setPassToggle("password")} className="absolute top-9 right-3 text-[#999999] text-[20px] cursor-pointer" /> }
                            </div>
                            <div onClick={()=> setPage("password")} className='text-end text-[#FF0000] text-[14px] font-medium cursor-pointer'>Forgot Password?</div>
-                           <button onClick={handleLogin} className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-10'>Login</button>
+                           <button onClick={handleLogin} className='w-full bg-d_color transition duration-300 ease-in-out text-white h-[40px] rounded-[5px] mt-10 hover:bg-white hover:border hover:border-d_color hover:text-d_color'>Login</button>
                          </form>
                      </div>
                    </div>}
@@ -63,7 +63,7 @@ const handleLogin = (e) => {
                               <label className='text-d_color font-medium block mb-1'>Email</label>
                               <input type="text" className='border border-d_color h-[40px] rounded-[5px] w-full px-3'  placeholder='Enter Email'/>
                            </div>
-                           <button onClick={()=> setPage("verify")} className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-8'>Send OTP</button>
+                           <button onClick={()=> setPage("verify")} className='w-full bg-d_color transition duration-300 ease-in-out text-white h-[40px] rounded-[5px] mt-8 hover:bg-white hover:border hover:border-d_color hover:text-d_color'>Send OTP</button>
                          </form>
                      </div>
                    </div>}
@@ -79,7 +79,7 @@ const handleLogin = (e) => {
                               <input type="text" className='lg:h-[50px] lg:w-[50px] md:h-[40px] md:w-[40px] text-center text-[20px] border border-d_color rounded-[5px] me-5'/>
                               <input type="text" className='lg:h-[50px] lg:w-[50px] md:h-[40px] md:w-[40px] text-center text-[20px] border border-d_color rounded-[5px]'/>
                            </div> 
-                           <button onClick={()=> setPage("reset")} className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-12'>Verify</button>
+                           <button onClick={()=> setPage("reset")} className='w-full bg-d_color transition duration-300 ease-in-out text-white h-[40px] rounded-[5px] hover:bg-white hover:border hover:border-d_color hover:text-d_color mt-12'>Verify</button>
                            <p className='text-center text-[#727272] mt-3'>Didn't receive code yet? <span className='text-d_color underline'>Resend</span></p>
                          </form>
                      </div>
@@ -97,7 +97,7 @@ const handleLogin = (e) => {
                               <label className='text-d_color font-medium block mb-1'>Confirm Password</label>
                               <input type="password" className='border border-d_color h-[40px] rounded-[5px] w-full px-3'  placeholder='Enter confirm password'/>
                            </div>
-                           <button className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-10'>Reset Password</button>
+                           <button className='w-full bg-d_color transition duration-300 ease-in-out text-white h-[40px] rounded-[5px] hover:bg-white hover:border hover:border-d_color hover:text-d_color mt-10'>Reset Password</button>
                          </form>
                      </div>
                    </div>}
@@ -114,7 +114,7 @@ const handleLogin = (e) => {
                               <label className='text-d_color font-medium block mb-1'>Password</label>
                               <input type="password" className='border border-d_color h-[40px] rounded-[5px] w-full px-3'  placeholder='Enter password'/>
                            </div>
-                           <button className='w-full bg-d_color text-white h-[40px] rounded-[5px] mt-7'>Unlock</button>
+                           <button className='w-full bg-d_color transition duration-300 ease-in-out text-white h-[40px] rounded-[5px] hover:bg-white hover:border hover:border-d_color hover:text-d_color mt-7'>Unlock</button>
                          </form>
                      </div>
                    </div> */}

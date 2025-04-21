@@ -13,8 +13,8 @@ const EditCategory = () => {
             <div className='ds_main'>
                 <div className='sm:px-8 px-4 pt-7'>
                     <div>
-                        <h2 className='text-d_color text-[24px] font-medium'>Add Category</h2>
-                        <p className='cursor-pointer'><Link to="/Layout/Dashboard" className='text-[#727272]'>Dashboard /</Link> <Link to="/Layout/Category" className='text-[#727272]'>Category /</Link> <span className='text-d_color font-semibold'>Add Category</span></p>
+                        <h2 className='text-d_color text-[24px] font-medium'>Edit Category</h2>
+                        <p className='cursor-pointer'><Link to="/Layout/Dashboard" className='text-[#727272]'>Dashboard /</Link> <Link to="/Layout/Category" className='text-[#727272]'>Category /</Link> <span className='text-d_color font-semibold'>Edit Category</span></p>
                     </div>
                     <div className='pt-7'>
                         <div className='ds_main_box'>
@@ -58,7 +58,7 @@ const EditCategory = () => {
                                             }}
                                         >Cancel</button>
                                         <button
-                                            className='ds_add_btn'
+                                            className='ds_update_btn'
                                             onClick={() => navigate("/Layout/Category")}
 
                                         >Update</button>

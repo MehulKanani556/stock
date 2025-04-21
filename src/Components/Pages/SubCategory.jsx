@@ -111,7 +111,7 @@ const SubCatogery = () => {
                                 </select>
                               </div>
                             </div>
-                            <div className='px-6 mt-6'>
+                            <div className='px-6 '>
                               <div className='mb-4'>
                                 <label className='text-d_color font-medium block mb-1'>Status</label>
                                 <select className='ds_report_date border border-d_color h-[40px] rounded-[5px] w-full px-3'>

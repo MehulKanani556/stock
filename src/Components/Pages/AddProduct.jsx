@@ -118,7 +118,7 @@ const AddProduct = () => {
           </div>
           <div className='pt-7'>
             <div className='ds_main_box'>
-              <div className='sm:px-8 px-2 pb-7 pt-8'>
+              <div className={ currentStep === 1 && productType === 'variant' ? (` pb-7 pt-8`) : (`sm:px-8 px-2 pb-7 pt-8`)}>
 
                 <div>
                   <div className="w-full max-w-4xl mx-auto py-10 px-4">
@@ -627,7 +627,7 @@ const AddProduct = () => {
                                 accept="image/*"
                               />
                               <button
-                                className='V_browse_btn w-1/3'
+                                className='V_browse_btn '
                                 onClick={() => document.getElementById('fileInput').click()}
                               >
                                 Generate

@@ -1,0 +1,18 @@
+@media (max-width:426px) {
+    .ds_warranty_box{
+        left: -55px;
+    }
+}
+
+@media (max-width:376px) {
+    .ds_warranty_box{
+        left: 0px;
+    }
+}
+
+@media (max-width:321px) {
+    /* ************ Raw Material  ************** */
+    .ds_row_box{
+       left: 0 !important;
+    }
+}

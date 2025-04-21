@@ -48,7 +48,7 @@ const EditExpiredProduct = () => {
                 <div className='sm:px-8 px-4 pt-7'>
                     <div>
                         <h2 className='text-d_color text-[24px] font-medium'>Edit Expired Product</h2>
-                        <p className='cursor-pointer'><Link to="/Layout/Dashboard" className='text-[#727272]'>Dashboard /</Link> <Link to="/Layout/ExpiredProduct" className='text-[#727272]'>Expired Product/</Link> <span className='text-d_color font-semibold'>Edit Expired Product</span></p>
+                        <p className='cursor-pointer'><Link to="/Layout/Dashboard" className='text-[#727272]'>Dashboard /</Link> <Link to="/Layout/ExpiredProduct" className='text-[#727272]'>Expired Product /</Link> <span className='text-d_color font-semibold'>Edit Expired Product</span></p>
                     </div>
                     <div className='pt-7'>
                         <div className='ds_main_box'>

@@ -177,7 +177,7 @@
 
 .V_chnage_main_heading {
     font-weight: 600;
-    font-size: 22px;
+    font-size: 20px;
     color: #36454F;
 }
 
@@ -212,23 +212,31 @@
 
 .V_change_password_cancel_btn {
     width: 50%;
-    height: 45px;
     border: 1px solid #36454F;
     border-radius: 5px;
-    padding: 0px 10px;
-    margin-top: 5px;
+    padding: 5px 10px;
+    transition: 0.3s ease-in-out;
+}
+.V_change_password_cancel_btn:hover{
+    background-color: #36454F;
+    color: white;
+    border: 1px solid #36454F;
 }
 
 .V_change_password_change_btn {
     color: white;
     background-color: #36454F;
     width: 50%;
-    height: 45px;
     border: 1px solid #36454F;
     border-radius: 5px;
-    padding: 0px 10px;
+    padding: 5px 10px;
+    transition: 0.3s ease-in-out;
 }
-
+.V_change_password_change_btn:hover{
+    border: 1px solid #36454F;
+    background-color: white;
+    color: #36454F;
+}
 
 
 
@@ -251,16 +259,28 @@
 
     .V_cancel_btn {
         padding: 5px 20px;
-        font-size: 16px;
         width: 150px;
-        height: 45px;
+        height: 35px !important;
+        transition: 0.3s ease-in-out;
+        border: 1px solid #36454F;
+    }
+    .V_cancel_btn:hover{
+        background-color: #36454F;
+        color: white;
+        border: 1px solid #36454F;
     }
 
     .V_yes_btn {
         padding: 5px 20px;
-        font-size: 16px;
         width: 150px;
-        height: 45px;
+        height: 35px !important;
+        border: 1px solid #36454F;
+        transition: 0.3s ease-in-out;
+    }
+    .V_yes_btn:hover{
+        background-color: transparent;
+        color: #36454F;
+        border: 1px solid #36454F;
     }
 }
 

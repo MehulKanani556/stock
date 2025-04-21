@@ -232,6 +232,12 @@ const AddRawMaterial = () => {
                                                 </div>
                                                 <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                                     <div>
+                                                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Discount</label>
+                                                        <input type="text" id="text" className="ds_main_input" placeholder="Enter Discount" required />  
+                                                    </div>
+                                                </div>
+                                                <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
+                                                    <div>
                                                         <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Qty. Alert</label>
                                                         <input type="text" id="text" className="ds_main_input" placeholder="Enter quantity alert" required />
                                                     </div>

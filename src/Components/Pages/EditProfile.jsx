@@ -23,22 +23,22 @@ const EditProfile = () => {
                             <div className='w-full'>
                                 <div className='V_input_flex gap-5 '>
                                     <div className='V_profile_content_width mx-auto'>
-                                        <p className='V_profile_label'>First Name</p>
-                                        <input type="text" placeholder='Enter Name' className='V_profile_input' />
+                                        <p className='V_profile_label mb-1'>First Name</p>
+                                        <input type="text" placeholder='Enter Name' className='ds_main_input' />
                                     </div>
-                                    <div className='V_profile_content_width mx-auto'>
-                                        <p className='V_profile_label'>Last Name</p>
-                                        <input type="text" placeholder='Enter Name' className='V_profile_input' />
+                                    <div className='V_profile_content_width sm:mt-0 mt-2 mx-auto'>
+                                        <p className='V_profile_label mb-1'>Last Name</p>
+                                        <input type="text" placeholder='Enter Name' className='ds_main_input' />
                                     </div>
                                 </div>
                                 <div className='V_input_flex gap-5 mt-5'>
-                                    <div className='V_profile_content_width mx-auto'>
-                                        <p className='V_profile_label'>Email</p>
-                                        <input type="email" placeholder='Enter Email' className='V_profile_input' />
+                                    <div className='V_profile_content_width mx-auto mt-2'>
+                                        <p className='V_profile_label mb-1'>Email</p>
+                                        <input type="email" placeholder='Enter Email' className='ds_main_input' />
                                     </div>
-                                    <div className='V_profile_content_width mx-auto'>
-                                        <p className='V_profile_label'>Contact No.</p>
-                                        <input type="text" placeholder='Enter Contact No.' className='V_profile_input' />
+                                    <div className='V_profile_content_width mx-auto mt-2'>
+                                        <p className='V_profile_label mb-1'>Contact No.</p>
+                                        <input type="text" placeholder='Enter Contact No.' className='ds_main_input' />
                                     </div>
                                 </div>
                                 <div className='mt-5 flex justify-center'>

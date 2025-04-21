@@ -92,7 +92,7 @@ const Product = () => {
 
               <div className='relative pt-3'>
                 <button className='ds_column_btn  flex me-4' onClick={() => setColumn(!column)}> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
-                {column && <div className='ds_column_box z-[2]'>
+                {column && <div className='ds_column_box z-[2] ds_row_box'>
                   <div className='flex justify-between items-center mb-2'>
                     <h6 className='text-d_color'>Product</h6>
                     <label class="inline-flex items-center cursor-pointer">

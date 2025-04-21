@@ -61,7 +61,7 @@ const EditVariant = () => {
                                             }}
                                         >Cancel</button>
                                         <button
-                                            className='ds_add_btn'
+                                            className='ds_update_btn'
                                             onClick={() => navigate("/Layout/Variant")}
 
                                         >Update</button>

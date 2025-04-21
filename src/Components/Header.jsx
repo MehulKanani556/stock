@@ -751,7 +751,7 @@ const Header = () => {
                 <form className="">
                   <div className='V_input_field_container_change_password'>
                     <label
-                      className="V_input_label_label"
+                      className="V_input_label_label mb-1"
                     >
                       Old Password*
                     </label>
@@ -759,14 +759,14 @@ const Header = () => {
                       type="password"
                       name="password"
                       id="password"
-                      className="V_input_field"
+                      className="ds_main_input"
                       placeholder="Enter Old Password"
                       required
                     />
                   </div>
                   <div className='V_input_field_container_change_password'>
                     <label
-                      className="V_input_label_label"
+                      className="V_input_label_label mb-1"
                     >
                       Create Password
                     </label>
@@ -774,14 +774,14 @@ const Header = () => {
                       type="password"
                       name="password"
                       id="password"
-                      className="V_input_field"
+                      className="ds_main_input"
                       placeholder="Enter New Password"
                       required
                     />
                   </div>
                   <div className='V_input_field_container_change_password'>
                     <label
-                      className="V_input_label_label"
+                      className="V_input_label_label mb-1"
                     >
                       Confirm Password
                     </label>
@@ -789,7 +789,7 @@ const Header = () => {
                       type="password"
                       name="password"
                       id="password"
-                      className="V_input_field"
+                      className="ds_main_input"
                       placeholder="Confirm New Password"
                       required
                     />

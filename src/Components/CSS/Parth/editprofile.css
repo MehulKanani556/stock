@@ -148,14 +148,29 @@
 }
 
 .V_profile_Cancel_button {
-    padding: 10px;
+    padding: 5px 10px;
     width: 200px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border: 1px solid #36454F;
 }
 
 .V_profile_Update_button {
-    padding: 10px;
+    padding: 5px 10px;
     width: 200px;
-
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border: 1px solid #36454F;
+}
+.V_profile_Cancel_button:hover{
+    background-color: #36454F;
+    color: white;  
+    border: 1px solid #36454F;
+}
+.V_profile_Update_button:hover{
+    background-color: transparent;
+    color:#36454F;  
+    border: 1px solid #36454F;
 }
 
 @media (max-width: 1649px) and (min-width: 1440px) {
@@ -206,9 +221,8 @@
     }
 
     .V_profile_Cancel_button {
-        padding: 10px;
+        padding: 5px 10px;
         width: 200px;
-        height: 45px;
     }
 
     .V_profile_Update_button {
@@ -266,9 +280,9 @@
     }
 
     .V_profile_Cancel_button {
-        padding: 10px;
+        padding: 5px 10px;
         width: 200px;
-        height: 40px;
+        /* height: 30px; */
     }
 
     .V_profile_Update_button {

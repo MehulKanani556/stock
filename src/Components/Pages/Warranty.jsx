@@ -9,6 +9,7 @@ import Pen from '../Images/Dhruvin/pen.svg'
 import Red from '../Images/Dhruvin/trash_red.svg'
 import '../CSS/Dhruvin/Warehouse.css'
 import '../CSS/Parth/Product.css'
+import '../CSS/Dhruvin/Warranty.css'
 
 const Warranty = () => {
 
@@ -157,7 +158,7 @@ const Warranty = () => {
 
                             <div className='relative pt-3'>
                                 <button className='ds_column_btn  flex me-4' onClick={() => setColumn(!column)}> <img src={Bar} alt="" className='me-2' /> <span >Column</span></button>
-                                {column && <div className='ds_column_box z-[2]'>
+                                {column && <div className='ds_column_box z-[2] ds_warranty_box'>
                                     <div className='flex justify-between items-center mb-2'>
                                         <h6 className='text-d_color'>Name</h6>
                                         <label class="inline-flex items-center cursor-pointer">
