@@ -12,7 +12,6 @@ import '../CSS/Dhruvin/SalesReturn.css'
 
 const SalesReturn = () => {
 
-    const [download, setDownload] = useState(false) 
     const [column, setColumn] = useState(false)  
     const navigate = useNavigate() 
     const [open, setOpen] = useState(false)
@@ -25,10 +24,6 @@ const SalesReturn = () => {
     const [deleteToggle, setDeleteToggle] = useState(false)
 
     
-    const handleIconClick = () => {
-      dateInputRef.current.showPicker?.(); 
-      dateInputRef.current.focus();
-    };
     
     const goToPage = (page) => {
       if (page < 1 || page > totalPages) return;
@@ -122,7 +117,7 @@ const SalesReturn = () => {
                                           </div>
                                        </div>
                                        <div className='px-6 mt-auto'>
-                                           <button className='ds_report_cancel me-4'>Cancel</button>
+                                           <button className='ds_report_cancel me-4' onClick={()=> setOpen(false)}>Cancel</button>
                                            <button className='ds_report_apply'>Apply</button>
                                        </div>
                                      </div>

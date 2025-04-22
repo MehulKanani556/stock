@@ -11,11 +11,11 @@ import Red from '../Images/Dhruvin/trash_red.svg'
 
 const Quotation = () => {
 
-    const [download, setDownload] = useState(false) 
+    
     const [column, setColumn] = useState(false)  
     const navigate = useNavigate() 
     const [open, setOpen] = useState(false)
-    const dateInputRef = useRef(null);
+   
     const totalItems = 30;
     const itemsPerPage = 10;
     const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -23,11 +23,7 @@ const Quotation = () => {
     const [deleteAll, setDeleteAll] = useState(false)
     const [deleteToggle, setDeleteToggle] = useState(false)
 
-    
-    const handleIconClick = () => {
-      dateInputRef.current.showPicker?.(); 
-      dateInputRef.current.focus();
-    };
+
     
     const goToPage = (page) => {
       if (page < 1 || page > totalPages) return;
@@ -120,7 +116,7 @@ const Quotation = () => {
                                           </div>
                                        </div>
                                        <div className='px-6 mt-auto'>
-                                           <button className='ds_report_cancel me-4'>Cancel</button>
+                                           <button className='ds_report_cancel me-4' onClick={()=> setOpen(false)}>Cancel</button>
                                            <button className='ds_report_apply'>Apply</button>
                                        </div>
                                      </div>

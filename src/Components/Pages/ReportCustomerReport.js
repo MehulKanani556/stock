@@ -130,7 +130,7 @@ const ReportCustomerReport = () => {
                                           </div>
                                        </div>
                                        <div className='px-6 mt-auto'>
-                                           <button className='ds_report_cancel me-4'>Cancel</button>
+                                           <button className='ds_report_cancel me-4' onClick={()=> setOpen(false)}>Cancel</button>
                                            <button className='ds_report_apply'>Apply</button>
                                        </div>
                                      </div>
@@ -370,7 +370,7 @@ const ReportCustomerReport = () => {
                                   <div className="mt-2">
                                     <p className="sm:text-lg text-center text-d_color">
                                       Are you sure you want to delete  <br />
-                                      Customer Reports ?
+                                      All Customer Reports ?
 
                                     </p>
                                   </div>

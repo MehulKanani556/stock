@@ -259,7 +259,7 @@ const AddProduct = () => {
                                 accept="image/*"
                               />
                               <button
-                                className='V_browse_btn w-1/3'
+                                className='V_browse_btn '
                                 onClick={() => document.getElementById('fileInput').click()}
                               >
                                 Browse
@@ -747,7 +747,7 @@ const AddProduct = () => {
                                     accept="image/*"
                                   />
                                   <button
-                                    className='V_browse_btn w-1/3'
+                                    className='V_browse_btn '
                                     onClick={() => document.getElementById('fileInput1').click()}
                                   >
                                     Browse
@@ -775,7 +775,7 @@ const AddProduct = () => {
                                     accept="image/*"
                                   />
                                   <button
-                                    className='V_browse_btn w-1/3'
+                                    className='V_browse_btn '
                                     onClick={() => document.getElementById('fileInput2').click()}
                                   >
                                     Browse

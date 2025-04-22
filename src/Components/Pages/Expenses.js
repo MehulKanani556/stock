@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { IoIosArrowBack, IoIosArrowDown, IoIosArrowForward, IoMdClose } from 'react-icons/io'
+import { IoIosArrowBack, IoIosArrowForward, IoMdClose } from 'react-icons/io'
 import Bar  from '../Images/Dhruvin/bar.svg'
 import Trash  from '../Images/Dhruvin/trash.svg'
 import { useNavigate } from 'react-router-dom'
@@ -12,7 +12,7 @@ import '../CSS/Dhruvin/Store.css'
 
 const Expenses = () => {
 
-    const [download, setDownload] = useState(false) 
+    
     const [column, setColumn] = useState(false)  
     const navigate = useNavigate() 
     const [open, setOpen] = useState(false)
@@ -25,10 +25,7 @@ const Expenses = () => {
     const [deleteAll, setDeleteAll] = useState(false)
   
     
-    const handleIconClick = () => {
-      dateInputRef.current.showPicker?.(); 
-      dateInputRef.current.focus();
-    };
+
     
     const goToPage = (page) => {
       if (page < 1 || page > totalPages) return;
@@ -132,7 +129,7 @@ const Expenses = () => {
                                           </div>
                                        </div>
                                        <div className='px-6 mt-auto'>
-                                           <button className='ds_report_cancel me-4'>Cancel</button>
+                                           <button className='ds_report_cancel me-4' onClick={()=> setOpen(false)}>Cancel</button>
                                            <button className='ds_report_apply'>Apply</button>
                                        </div>
                                      </div>

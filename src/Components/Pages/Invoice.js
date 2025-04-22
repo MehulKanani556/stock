@@ -9,7 +9,6 @@ import Trash  from '../Images/Dhruvin/trash.svg'
 
 const Invoice = () => {
 
-    const [download, setDownload] = useState(false) 
     const [column, setColumn] = useState(false)  
     const navigate = useNavigate() 
     const [open, setOpen] = useState(false)
@@ -117,7 +116,7 @@ const Invoice = () => {
                                           </div>
                                        </div>
                                        <div className='px-6 mt-auto'>
-                                           <button className='ds_report_cancel me-4'>Cancel</button>
+                                           <button className='ds_report_cancel me-4' onClick={() => setOpen(false)}>Cancel</button>
                                            <button className='ds_report_apply'>Apply</button>
                                        </div>
                                      </div>

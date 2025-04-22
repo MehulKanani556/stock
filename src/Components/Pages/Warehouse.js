@@ -23,12 +23,7 @@ const Warehouse = () => {
     const totalPages = Math.ceil(totalItems / itemsPerPage);
     const [currentPage, setCurrentPage] = useState(1);
    const [deleteAll, setDeleteAll] = useState(false)
-    
-    const handleIconClick = () => {
-      dateInputRef.current.showPicker?.(); 
-      dateInputRef.current.focus();
-    };
-    
+
     const goToPage = (page) => {
       if (page < 1 || page > totalPages) return;
       setCurrentPage(page);
@@ -115,7 +110,7 @@ const Warehouse = () => {
                                           </div>
                                        </div>
                                        <div className='px-6 mt-auto'>
-                                           <button className='ds_report_cancel me-4'>Cancel</button>
+                                           <button className='ds_report_cancel me-4' onClick={()=> setOpen(false)}>Cancel</button>
                                            <button className='ds_report_apply'>Apply</button>
                                        </div>
                                      </div>

@@ -47,7 +47,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
   };
 
   return (
-    <div className={`sidebar-container transition-all duration-300     ${isCollapsed ? 'V_collapsed' : 'V_expanded'} hidden md:block`}>
+    <div className={`sidebar-container     ${isCollapsed ? 'V_collapsed' : 'V_expanded'} hidden md:block`}>
       <div className=''>
         <div>
           <div className='V_logo'>
