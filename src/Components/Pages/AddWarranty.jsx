@@ -28,13 +28,13 @@ const AddWarranty = () => {
                                     <div className="flex flex-wrap">
                                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                             <div>
-                                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Warranty Name </label>
+                                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Warranty Name </label>
                                                 <input type="text" id="text" className="ds_main_input" placeholder="Enter Warranty Name" required />
                                             </div>
                                         </div>
                                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                             <div>
-                                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Duration</label>
+                                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Duration</label>
                                                 <select className='ds_Select'>
                                                     <option value="">Select Duration</option>
                                                     <option value="">supply 1</option>
@@ -44,7 +44,7 @@ const AddWarranty = () => {
                                         </div>
                                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                             <div>
-                                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Periods</label>
+                                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Periods</label>
                                                 <select className='ds_Select'>
                                                     <option value="">Select Periods</option>
                                                     <option value="">supply 1</option>
@@ -54,13 +54,13 @@ const AddWarranty = () => {
                                         </div>
                                         <div className="lg:w-2/3 md:2/3 sm:w-full w-full mb-5 px-4 pt-1">
                                             <div>
-                                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Description</label>
+                                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Description</label>
                                                 <input type="text" id="text" className="ds_main_input" placeholder="Enter Warranty Description" required />
                                             </div>
                                         </div>
                                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                             <div>
-                                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Status</label>
+                                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Status</label>
                                                 <select className='ds_Select'>
                                                     <option value="">Select Status</option>
                                                     <option value="">supply 1</option>

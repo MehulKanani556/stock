@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { FaInfoCircle, FaTags, FaListUl } from "react-icons/fa";
-import { LiaFileInvoiceDollarSolid } from 'react-icons/lia';
-import { RiUserSearchFill } from 'react-icons/ri';
+import React from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 
 const EditCategory = () => {
     const navigate = useNavigate();
-
 
     return (
         <div>
@@ -28,7 +24,7 @@ const EditCategory = () => {
                                     <div className="flex flex-wrap">
                                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                             <div>
-                                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Supplier </label>
+                                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Supplier </label>
                                                 <select className='ds_Select'>
                                                     <option value="">Select Supplier</option>
                                                     <option value="">supply 1</option>
@@ -38,13 +34,13 @@ const EditCategory = () => {
                                         </div>
                                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                             <div>
-                                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact Person Name</label>
+                                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact Person Name</label>
                                                 <input type="text" id="text" className="ds_main_input" placeholder="Enter Contact person Name" required />
                                             </div>
                                         </div>
                                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                             <div>
-                                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact No.</label>
+                                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact No.</label>
                                                 <input type="text" id="text" className="ds_main_input" placeholder="Contact No." required />
                                             </div>
                                         </div>

@@ -29,37 +29,37 @@ const EditSuppliers = () => {
                   <div className="flex flex-wrap">
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Supplier Name</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Supplier Name</label>
                                <input type="email" id="text" className="ds_main_input" placeholder="Enter Supplier Name" required />
                           </div>
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Store Name</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Store Name</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Enter Store Name" required />
                           </div>
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Email</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Email</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Enter Email" required />
                           </div>
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact No.</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact No.</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Enter Contact No." required />
                           </div>
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Address</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Address</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Enter Address" required />
                           </div>
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">City</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">City</label>
                                <select className='ds_Select'>
                                  <option value="">Select City</option>
                                  <option value="">Jaipur</option>
@@ -69,7 +69,7 @@ const EditSuppliers = () => {
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Country</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Country</label>
                                <select className='ds_Select'>
                                  <option value="">Select Country</option>
                                  <option value="">India</option>
@@ -79,7 +79,7 @@ const EditSuppliers = () => {
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div className='relative'>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Image</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Image</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Select Image" required />
                                <input type="file" ref={fileInputRef} style={{ display: 'none' }} onChange={handleFileChange}/>
                                <div onClick={handleButtonClick} className='absolute top-[36px] right-[14px] bg-[#16325B] text-white rounded-[4px] px-3 text-[14px]'>

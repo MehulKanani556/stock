@@ -38,21 +38,21 @@ const handleIconClick = () => {
 
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Customer Name</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Customer Name</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Enter customer name" required />
                           </div>
                       </div>
 
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact No.</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact No.</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Enter contact no" required />
                           </div>
                       </div>
 
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Store</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Store</label>
                                <select className='ds_Select'>
                                  <option value="">Select Store </option>
                                </select>
@@ -61,7 +61,7 @@ const handleIconClick = () => {
                       
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Payment Status</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Payment Status</label>
                                <select className='ds_Select'>
                                  <option value="">Select Payment Status</option>
                                  <option value="">Paid</option>
@@ -72,7 +72,7 @@ const handleIconClick = () => {
 
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div className='relative'>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Name</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Name</label>
                                <input type="text" id="text" className="ds_main_input" style={{paddingLeft:"35px"}} placeholder="Enter Product Code or Name" required />
                                <div className='absolute top-[38px] left-[10px]'>
                                   <img src={Search} alt="" />

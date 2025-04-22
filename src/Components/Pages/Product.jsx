@@ -1,8 +1,5 @@
 import React, { useRef, useState } from 'react'
 import { IoIosArrowBack, IoIosArrowDown, IoIosArrowForward, IoMdClose } from 'react-icons/io'
-import mrint from '../Images/Dhruvin/print.svg'
-import xls from '../Images/Dhruvin/xls.svg'
-import pdf from '../Images/Dhruvin/pdf.svg'
 import Bar from '../Images/Dhruvin/bar.svg'
 import Trash from '../Images/Dhruvin/trash.svg'
 import { Link, useNavigate } from 'react-router-dom'
@@ -19,23 +16,18 @@ import Eye from '../Images/Dhruvin/eye.svg'
 
 const Product = () => {
 
-  const [download, setDownload] = useState(false)
   const [column, setColumn] = useState(false)
   const [sort, setSort] = useState(false)
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
   const [deleteToggle, setDeleteToggle] = useState(false)
   const [deleteAllToggle, setDeleteAllToggle] = useState(false)
-  const dateInputRef = useRef(null);
   const totalItems = 30;
   const itemsPerPage = 10;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const handleIconClick = () => {
-    dateInputRef.current.showPicker?.();
-    dateInputRef.current.focus();
-  };
+
 
   const goToPage = (page) => {
     if (page < 1 || page > totalPages) return;
@@ -95,58 +87,58 @@ const Product = () => {
                 {column && <div className='ds_column_box z-[2] ds_row_box'>
                   <div className='flex justify-between items-center mb-2'>
                     <h6 className='text-d_color'>Product</h6>
-                    <label class="inline-flex items-center cursor-pointer">
-                      <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                      <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                    <label className="inline-flex items-center cursor-pointer">
+                      <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                      <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                     </label>
                   </div>
                   <div className='flex justify-between items-center mb-2'>
                     <h6 className='text-d_color'>SKU</h6>
-                    <label class="inline-flex items-center cursor-pointer">
-                      <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                      <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                    <label className="inline-flex items-center cursor-pointer">
+                      <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                      <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                     </label>
                   </div>
                   <div className='flex justify-between items-center mb-2'>
                     <h6 className='text-d_color'>Category</h6>
-                    <label class="inline-flex items-center cursor-pointer">
-                      <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                      <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                    <label className="inline-flex items-center cursor-pointer">
+                      <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                      <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                     </label>
                   </div>
                   <div className='flex justify-between items-center mb-2'>
                     <h6 className='text-d_color'>Price</h6>
-                    <label class="inline-flex items-center cursor-pointer">
-                      <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                      <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                    <label className="inline-flex items-center cursor-pointer">
+                      <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                      <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                     </label>
                   </div>
                   <div className='flex justify-between items-center mb-2'>
                     <h6 className='text-d_color'>Cost</h6>
-                    <label class="inline-flex items-center cursor-pointer">
-                      <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                      <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                    <label className="inline-flex items-center cursor-pointer">
+                      <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                      <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                     </label>
                   </div>
                   <div className='flex justify-between items-center mb-2'>
                     <h6 className='text-d_color'>Qty.</h6>
-                    <label class="inline-flex items-center cursor-pointer">
-                      <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                      <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                    <label className="inline-flex items-center cursor-pointer">
+                      <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                      <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                     </label>
                   </div>
                   <div className='flex justify-between items-center mb-2'>
                     <h6 className='text-d_color'>Unit</h6>
-                    <label class="inline-flex items-center cursor-pointer">
-                      <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                      <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                    <label className="inline-flex items-center cursor-pointer">
+                      <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                      <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                     </label>
                   </div>
                   <div className='flex justify-between items-center mb-2'>
                     <h6 className='text-d_color'>Action</h6>
-                    <label class="inline-flex items-center cursor-pointer">
-                      <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                      <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                    <label className="inline-flex items-center cursor-pointer">
+                      <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                      <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                     </label>
                   </div>
                 </div>}

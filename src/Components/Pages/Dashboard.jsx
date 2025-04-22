@@ -7,9 +7,8 @@ import Expense from '../Images/Parth/Expense1.png';
 import Customer from '../Images/Parth/totalCustomer.svg';
 import Law from '../Images/Parth/Lawstocks1.png'
 import Supplier from '../Images/Parth/totalSupplier.svg';
-import { FaAngleDown } from 'react-icons/fa';
 // import  from 'react';
-import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { BarChart, Bar,  XAxis, YAxis, CartesianGrid, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import Alert from '../Images/Parth/alert.svg';
 
 const data = [
@@ -121,9 +120,9 @@ const Dashboard = () => {
             <h2 className='text-d_color text-[24px] font-medium'>Dashboard</h2>
           </div>
 
-          <div class="V_main_flex gap-5 py-4">
+          <div className="V_main_flex gap-5 py-4">
             <div className='V_flex_with_width '>
-              <div class="w-full   bg-white  V_col_box_shadow">
+              <div className="w-full   bg-white  V_col_box_shadow">
                 <div className='flex justify-between'>
                   <div className='flex'>
                     <div className='V_col_img_back bg-[#DFEBF1]'>
@@ -142,7 +141,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div class="w-full bg-white  V_col_box_shadow">
+              <div className="w-full bg-white  V_col_box_shadow">
                 <div className='flex justify-between'>
                   <div className='flex'>
                     <div className='V_col_img_back bg-[#DFEBF1]'>
@@ -163,7 +162,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className='V_flex_with_width'>
-              <div class="w-full bg-white  V_col_box_shadow">
+              <div className="w-full bg-white  V_col_box_shadow">
                 <div className='flex justify-between'>
                   <div className='flex'>
                     <div className='V_col_img_back bg-[#DFEBF1]'>
@@ -182,7 +181,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div class="w-full bg-white  V_col_box_shadow">
+              <div className="w-full bg-white  V_col_box_shadow">
                 <div className='flex justify-between'>
                   <div className='flex'>
                     <div className='V_col_img_back bg-[#DFEBF1]'>
@@ -214,7 +213,7 @@ const Dashboard = () => {
                   <div className='V_chart_heading flex justify-between'>
                     <p className='text-d_color'>Sales & Purchase</p>
                     <div className='bg-[#DFEBF1]  V_month_div'>
-                      <select id="calander" class="V_select">
+                      <select id="calander" className="V_select">
                         <option selected value="month"><p>Months</p></option>
                         <option value="day"><p>Day</p></option>
                       </select>

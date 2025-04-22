@@ -19,19 +19,19 @@ const EditTaxRates = () => {
                   <div className="flex flex-wrap">
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Tax Name</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Tax Name</label>
                                <input type="email" id="text" className="ds_main_input" placeholder="Enter Tax Name" required />
                           </div>
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Tax Rate (%)</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Tax Rate (%)</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Enter Tax Name" required />
                           </div>
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Status</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Status</label>
                                <select className='ds_Select'>
                                  <option value="">Select Currency Symbol</option>
                                  <option value="">Active</option>

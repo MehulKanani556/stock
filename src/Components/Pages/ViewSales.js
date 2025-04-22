@@ -1,12 +1,10 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import Big from '../Images/Dhruvin/bigProduct.png'
 import '../CSS/Dhruvin/Sales.css'
 import Pdf from '../Images/Dhruvin/pdf.svg'
 import Xls from '../Images/Dhruvin/xls.svg'
 import Print from '../Images/Dhruvin/print.svg'
 import product from '../Images/Dhruvin/product.png'
-import { FaMinus, FaPlus } from 'react-icons/fa'
 
 
 const ViewSales = () => {

@@ -25,19 +25,19 @@ const EditVariant = () => {
                                     <div className="flex flex-wrap">
                                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                             <div>
-                                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">SKU</label>
+                                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">SKU</label>
                                                 <input type="text" id="text" className="ds_main_input" placeholder="S0001" required />
                                             </div>
                                         </div>
                                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                             <div>
-                                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Variant Name</label>
+                                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Variant Name</label>
                                                 <input type="text" id="text" className="ds_main_input" placeholder="Enter Variant name" required />
                                             </div>
                                         </div>
                                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                             <div>
-                                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Status</label>
+                                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Status</label>
                                                 <select className='ds_Select'>
                                                     <option value="">Select Status</option>
                                                     <option value="">supply 1</option>
@@ -47,7 +47,7 @@ const EditVariant = () => {
                                         </div>
                                         <div className="w-full mb-5 px-4 pt-1">
                                             <div>
-                                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Value</label>
+                                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Value</label>
                                                 <input type="text" id="text" className="ds_main_input" placeholder="Enter Value" required />
                                             </div>
                                         </div>

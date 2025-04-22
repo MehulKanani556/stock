@@ -1,11 +1,10 @@
 import React, { useRef, useState } from 'react'
-import { IoIosArrowBack, IoIosArrowDown, IoIosArrowForward, IoMdClose } from 'react-icons/io'
+import { IoIosArrowBack,  IoIosArrowForward, IoMdClose } from 'react-icons/io'
 import Bar  from '../Images/Dhruvin/bar.svg'
 import Trash  from '../Images/Dhruvin/trash.svg'
 import { useNavigate } from 'react-router-dom'
 import filter from '../Images/Dhruvin/Filter.svg'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
-import product from '../Images/Dhruvin/product.png'
 import Pen from '../Images/Dhruvin/pen.svg'
 import Red from '../Images/Dhruvin/trash_red.svg'
 import '../CSS/Dhruvin/SalesReturn.css'
@@ -150,58 +149,58 @@ const Sales = () => {
                         {column && <div className='ds_column_box z-[2]'>
                           <div className='flex justify-between items-center mb-2'>
                              <h6 className='text-d_color'>Invoice No.</h6>
-                             <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             <label className="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
                              <h6 className='text-d_color'>Customer Name	</h6>
-                             <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             <label className="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
                              <h6 className='text-d_color'>Date</h6>
-                             <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             <label className="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
                              <h6 className='text-d_color'>Total	</h6>
-                             <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             <label className="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
                              <h6 className='text-d_color'>Paid</h6>
-                             <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             <label className="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
                              <h6 className='text-d_color'>Due</h6>
-                             <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             <label className="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
                              <h6 className='text-d_color'>Payment Status	</h6>
-                             <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             <label className="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                           <div className='flex justify-between items-center mb-2'>
                              <h6 className='text-d_color'>Action</h6>
-                             <label class="inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                             <label className="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                              </label>
                           </div>
                          
@@ -592,25 +591,25 @@ const Sales = () => {
                                    </div>
                                     <div className="sm:w-full w-full mb-5 px-4 pt-1">
                                         <div>
-                                             <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Invoice No.</label>
+                                             <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Invoice No.</label>
                                              <input type="text" id="text" className="ds_main_input" placeholder="#12345" required />
                                         </div>
                                     </div>
                                     <div className="sm:w-full w-full mb-5 px-4 pt-1">
                                         <div>
-                                             <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Received Amount</label>
+                                             <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Received Amount</label>
                                              <input type="text" id="text" className="ds_main_input" placeholder="$1200" required />
                                         </div>
                                     </div>
                                     <div className="sm:w-full w-full mb-5 px-4 pt-1">
                                         <div>
-                                             <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Paying Amount</label>
+                                             <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Paying Amount</label>
                                              <input type="text" id="text" className="ds_main_input" placeholder="#12345" required />
                                         </div>
                                     </div>
                                     <div className="sm:w-full w-full mb-5 px-4 pt-1">
                                     <div>
-                                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Payment Type</label>
+                                        <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Payment Type</label>
                                         <select className='ds_Select'>
                                           <option value="">Select Payment Type</option>
                                           <option value="">Cash</option>
@@ -651,19 +650,19 @@ const Sales = () => {
                                    </div>
                                     <div className="sm:w-full w-full mb-5 px-4 pt-1">
                                         <div>
-                                             <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Invoice No.</label>
+                                             <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Invoice No.</label>
                                              <input type="text" id="text" className="ds_main_input" placeholder="Enter Invoice No." required />
                                         </div>
                                     </div>
                                     <div className="sm:w-full w-full mb-5 px-4 pt-1">
                                         <div>
-                                             <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Paying Amount</label>
+                                             <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Paying Amount</label>
                                              <input type="text" id="text" className="ds_main_input" placeholder="$" required />
                                         </div>
                                     </div>
                                     <div className="sm:w-full w-full mb-5 px-4 pt-1">
                                     <div>
-                                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Payment Type</label>
+                                        <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Payment Type</label>
                                         <select className='ds_Select'>
                                           <option value="">Select Payment Type</option>
                                           <option value="">Cash</option>

@@ -28,7 +28,7 @@ const handleIconClick = () => {
                   <div className="flex flex-wrap">
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Expense Category</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Expense Category</label>
                                <select className='ds_Select'>
                                  <option value="">Select Expense Category</option>
                                  <option value="">Jaipur</option>
@@ -38,13 +38,13 @@ const handleIconClick = () => {
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Expense Name</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Expense Name</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Enter Expense Name" required />
                           </div>
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Amount</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Amount</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="$" required />
                           </div>
                       </div>
@@ -60,7 +60,7 @@ const handleIconClick = () => {
                       
                       <div className="lg:w-1/2 md:1/2 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Status</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Status</label>
                                <select className='ds_Select'>
                                  <option value="">Select Status</option>
                                  <option value="">Active</option>

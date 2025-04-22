@@ -28,7 +28,7 @@ const handleIconClick = () => {
                   <div className="flex flex-wrap">
                       <div className="lg:w-1/2 md:1/2 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Customer Name</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Customer Name</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Enter customer name" required />
                           </div>
                       </div>
@@ -41,7 +41,7 @@ const handleIconClick = () => {
                       </div>
                       <div className=" sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Name</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Name</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Enter Product Code or Name" required />
                           </div>
                       </div> 

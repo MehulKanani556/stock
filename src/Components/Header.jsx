@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaBars, FaSearch } from 'react-icons/fa';
 import './CSS/Parth/Header.css';
 import Userimage from './Images/Parth/Userimage.png';
-import { Menu, MenuButton, MenuItems, MenuItem, Button } from '@headlessui/react';
+import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/react';
 import notback from './Images/Parth/notification_back_image.png';
 import notbackicon from './Images/Parth/notification_icon.png';
 import notbacknumber from './Images/Parth/notification_number_back_image.png';
@@ -31,7 +31,6 @@ import Store from './Images/Parth/Store1.png';
 import Warehouse from './Images/Parth/Warehouse1.png';
 import Reports from './Images/Parth/Reports1.png';
 import TaxRatesImage from './Images/Dhruvin/TaxRates.svg'
-import logo from './Images/Parth/Logocircle1.png';
 
 const Header = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -41,6 +40,8 @@ const Header = () => {
 
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState("")
+
 
   const toggleModal = () => setIsDeleteModalOpen(!isDeleteModalOpen);
   const closeModal = () => setIsDeleteModalOpen(false);
@@ -74,6 +75,10 @@ const Header = () => {
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
+
+  useEffect(() => {
+    setActiveItem(window.location.pathname.split('/')[2])
+  }, [window.location.pathname])
 
   return (
     <>
@@ -175,14 +180,17 @@ const Header = () => {
         <div>
           <div className=' overflow-y-auto  V_Offcanvass_height px-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]'>
 
-            <div className='text-white py-3 mt-3 over relative z-[100]'>
+            <div className={`${activeItem === "Dashboard" || activeItem === "Notification" || activeItem === "EditProfile" ? 'bg-white text-d_color' : 'text-white'} py-3 mt-3 over relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/Dashboard'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
-                    <img src={dashboard} className='V_icon_size' />
+                  {activeItem === "Dashboard" || activeItem === "Notification" || activeItem === "EditProfile" ?
+                      <img src={dashboard} className='V_icon_size V_filter' /> :
+                      <img src={dashboard} className='V_icon_size' />
+                    }
                   </div>
                   <h5 className='V_text_size font-fw-lighter'>Dashboard</h5>
                 </div>
@@ -190,14 +198,17 @@ const Header = () => {
             </div>
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "Product" || activeItem === "AddProduct"  || activeItem === "EditProduct"  || activeItem === "ViewProduct" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/Product'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
-                    <img src={Product} className='V_icon_size' />
+                     {activeItem === "Product" || activeItem === "AddProduct" || activeItem === "EditProduct" || activeItem === "ViewProduct" ?
+                         <img src={Product} className=' V_icon_size V_filter' /> :
+                         <img src={Product} className=' V_icon_size filter grayscale brightness-0 invert' />
+                     }
                   </div>
                   <h5 className='V_text_size font-fw-lighter'>Product</h5>
                 </div>
@@ -205,14 +216,17 @@ const Header = () => {
             </div>
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "RawMaterial" || activeItem === "AddRawMaterial" || activeItem === "EditRawMaterial" || activeItem === "ViewRawMaterial" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/RawMaterial'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
-                    <img src={RawMaterial} className='V_icon_size' />
+                      {activeItem === "RawMaterial" || activeItem === "AddRawMaterial" || activeItem === "EditRawMaterial" || activeItem === "ViewRawMaterial" ?
+                          <img src={RawMaterial} className='V_icon_size V_filter' /> :
+                          <img src={RawMaterial} className='V_icon_size filter grayscale brightness-0 invert' />
+                       }
                   </div>
                   <h5 className='V_text_size font-fw-lighter'>RawMaterial</h5>
                 </div>
@@ -220,14 +234,17 @@ const Header = () => {
             </div>
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "ExpiredProduct" || activeItem === "EditExpiredProduct" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/ExpiredProduct'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
-                    <img src={ExpiredProduct} className='V_icon_size' />
+                      {activeItem === "ExpiredProduct" || activeItem === "EditExpiredProduct" ?
+                         <img src={ExpiredProduct} className='V_icon_size V_filter' /> :
+                         <img src={ExpiredProduct} className='V_icon_size filter grayscale brightness-0 invert' />
+                       }
                   </div>
                   <h5 className='V_text_size font-fw-lighter'>ExpiredProduct</h5>
                 </div>
@@ -235,14 +252,17 @@ const Header = () => {
             </div>
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "LowStocks" || activeItem === "EditLowStocks" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/LowStocks'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
-                    <img src={LawStocks} className='V_icon_size' />
+                      {activeItem === "LowStocks" || activeItem === "EditLowStocks" ?
+                        <img src={LawStocks} className='V_icon_size V_filter' /> :
+                        <img src={LawStocks} className='V_icon_size' />
+                      }
                   </div>
                   <h5 className='V_text_size font-fw-lighter'>LawStocks</h5>
                 </div>
@@ -250,14 +270,17 @@ const Header = () => {
             </div>
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "Category" || activeItem === "AddCategory" || activeItem === "EditCategory" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/Category'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
-                    <img src={Catogery} className='V_icon_size' />
+                    {activeItem === "Category" || activeItem === "AddCategory" || activeItem === "EditCategory" ?
+                      <img src={Catogery} className='V_icon_size text-d_color V_filter' /> :
+                      <img src={Catogery} className='V_icon_size' />
+                    }
                   </div>
                   <h5 className='V_text_size font-fw-lighter'>Catogery</h5>
                 </div>
@@ -265,14 +288,17 @@ const Header = () => {
             </div>
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "SubCategory" || activeItem === "AddSubCategory" || activeItem === "EditSubCategory" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/SubCategory'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
-                    <img src={SubCatogery} className='V_icon_size' />
+                     {activeItem === "SubCategory" || activeItem === "AddSubCategory" || activeItem === "EditSubCategory" ?
+                       <img src={SubCatogery} className='V_icon_size text-d_color V_filter' /> :
+                       <img src={SubCatogery} className='V_icon_size' />
+                     }
                   </div>
                   <h5 className='V_text_size font-fw-lighter'>SubCatogery</h5>
                 </div>
@@ -281,14 +307,17 @@ const Header = () => {
 
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "Unit" || activeItem === "AddUnit" || activeItem === "EditUnit" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/Unit'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
-                    <img src={Unit} className='V_icon_size' />
+                    {activeItem === "Unit" || activeItem === "AddUnit" || activeItem === "EditUnit" ?
+                      <img src={Unit} className='V_icon_size text-d_color V_filter' /> :
+                      <img src={Unit} className='V_icon_size' />
+                    }
                   </div>
                   <h5 className='V_text_size font-fw-lighter'>Unit</h5>
                 </div>
@@ -296,14 +325,17 @@ const Header = () => {
             </div>
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "Variant" || activeItem === "AddVariant" || activeItem === "EditVariant" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/Variant'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
-                    <img src={Variant} className='V_icon_size' />
+                      {activeItem === "Variant" || activeItem === "AddVariant" || activeItem === "EditVariant" ?
+                        <img src={Variant} className='V_icon_size text-d_color V_filter' /> :
+                        <img src={Variant} className='V_icon_size' />
+                      }
                   </div>
                   <h5 className='V_text_size font-fw-lighter'>Variant</h5>
                 </div>
@@ -311,74 +343,89 @@ const Header = () => {
             </div>
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "Warranty" || activeItem === "AddWarranty" || activeItem === "EditWarranty" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/Warranty'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
-                    <img src={warranty} className='V_icon_size' />
+                      {activeItem === "Warranty" || activeItem === "AddWarranty" || activeItem === "EditWarranty" ?
+                        <img src={warranty} className='V_icon_size V_filter' /> :
+                        <img src={warranty} className='V_icon_size filter grayscale brightness-0 invert' />
+                      }
                   </div>
-                  <h5 className='V_text_size font-fw-lighter'>warranty</h5>
+                  <h5 className='V_text_size font-fw-lighter'>Warranty</h5>
                 </div>
               </div>
             </div>
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "Sales" || activeItem === "AddSales" || activeItem === "EditSales" || activeItem === "ViewSales" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/Sales'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
-                    <img src={sales} className='V_icon_size' />
+                     {activeItem === "Sales" || activeItem === "AddSales" || activeItem === "EditSales" || activeItem === "ViewSales" ?
+                       <img src={sales} className='V_icon_size text-d_color V_filter' /> :
+                       <img src={sales} className='V_icon_size' />
+                     }
                   </div>
-                  <h5 className='V_text_size font-fw-lighter'>sales</h5>
+                  <h5 className='V_text_size font-fw-lighter'>Sales</h5>
                 </div>
               </div>
             </div>
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "Invoice" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/Invoice'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
-                    <img src={invoice} className='V_icon_size' />
+                     {activeItem === "Invoice" ?
+                       <img src={invoice} className='V_icon_size text-d_color V_filter' /> :
+                       <img src={invoice} className='V_icon_size' />
+                     }
                   </div>
-                  <h5 className='V_text_size font-fw-lighter'>invoice</h5>
+                  <h5 className='V_text_size font-fw-lighter'>Invoice</h5>
                 </div>
               </div>
             </div>
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "SalesReturn" || activeItem === "AddSalesReturn" || activeItem === "EditSalesReturn" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/SalesReturn'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center  gap-5 V_pading_icon' >
                   <div>
-                    <img src={return1} className='V_icon_size' />
+                    {activeItem === "SalesReturn" || activeItem === "AddSalesReturn" || activeItem === "EditSalesReturn" ?
+                      <img src={return1} className='V_icon_size text-d_color V_filter' /> :
+                      <img src={return1} className='V_icon_size' />
+                    }
                   </div>
-                  <h5 className='V_text_size font-fw-lighter'>Sales Order</h5>
+                  <h5 className='V_text_size font-fw-lighter'>Sales Return</h5>
                 </div>
               </div>
             </div>
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "Quotation" || activeItem === "AddQuotation" || activeItem === "EditQuotation" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/Quotation'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center   gap-5 V_pading_icon' >
                   <div>
-                    <img src={Quotation} className='V_icon_size' />
+                    {activeItem === "Quotation" || activeItem === "AddQuotation" || activeItem === "EditQuotation" ?
+                      <img src={Quotation} className='V_icon_size text-d_color V_filter' /> :
+                      <img src={Quotation} className='V_icon_size' />
+                    }
                   </div>
                   <h5 className='V_text_size font-fw-lighter'>Quotation</h5>
                 </div>
@@ -386,34 +433,41 @@ const Header = () => {
             </div>
 
 
-            <div className='text-white py-3 relative z-[100]'>
-              <div
-                className='cursor-pointer ms-3'
-                onClick={() => {
-                  setExpenseOpen(!expenseOpen);
-                }}
-              >
-                <div className='flex items-center V_pading_icon'>
-                  <div className='flex items-center gap-5'>
-                    <div>
-                      <img src={Expense} className='V_icon_size' />
+            <div className={`${(activeItem === "Expense" || activeItem === "AddExpense" || activeItem === "EditExpense" || activeItem === "ExpenseCategory" || activeItem === "AddExpenseCategory" || activeItem === "EditExpenseCategory"  ) ? '' : 'text-white'}  relative z-[100]`}>
+              <div className={`${(activeItem === "Expense" || activeItem === "AddExpense" || activeItem === "EditExpense" || activeItem === "ExpenseCategory" || activeItem === "AddExpenseCategory" || activeItem === "EditExpenseCategory"  ) ? 'bg-white text-d_color' : 'text-white'}`}>
+                <div
+                  className='cursor-pointer ms-3'
+                  onClick={() => {
+                    setExpenseOpen(!expenseOpen);
+                    navigate('/Layout/Expense');
+                  }}
+                >
+                  <div className={`${(activeItem === "Expense" || activeItem === "AddExpense" || activeItem === "EditExpense" || activeItem === "ExpenseCategory" || activeItem === "AddExpenseCategory" || activeItem === "EditExpenseCategory"  ) ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100] flex items-center V_pading_icon`}>
+                    <div className='flex items-center gap-5'>
+                      <div>
+                       {(activeItem === "Expense" || activeItem === "AddExpense" || activeItem === "EditExpense" || activeItem === "ExpenseCategory" || activeItem === "AddExpenseCategory" || activeItem === "EditExpenseCategory" ) ?
+                          <img src={Expense} className='V_icon_size text-d_color V_filter' /> :
+                          <img src={Expense} className='V_icon_size' />
+                        }
+                      </div>
+                      <h5 className='V_text_size font-fw-lighter'>Expense</h5>
                     </div>
-                    <h5 className='V_text_size font-fw-lighter'>Expense</h5>
-                  </div>
-
-                  <div className={`transform transition-transform ms-3 place-items-center duration-200 ${expenseOpen ? 'rotate-180' : ''}`}>
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
+  
+                    <div className={`transform transition-transform ms-3 place-items-center duration-200 ${expenseOpen ? 'rotate-180' : ''}`}>
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
+              </div>
 
 
-                <div className={`transition-all duration-300 ${expenseOpen ? 'block' : 'hidden'}`}>
+                <div className={`transition-all duration-300 ${expenseOpen ? 'block' : 'hidden'} ms-3`}>
                   <ul className="mt-2">
                     <li className="relative pl-8 V_circle_dot1">
                       <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
+                        className={`py-2 cursor-pointer ${activeItem === "Expense" || activeItem === "AddExpense" || activeItem === "EditExpense" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                         onClick={(e) => {
                           e.stopPropagation();
                           navigate('/Layout/Expense');
@@ -425,7 +479,7 @@ const Header = () => {
                     </li>
                     <li className="relative pl-8 V_circle_dot1">
                       <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
+                        className={`py-2 cursor-pointer ${activeItem === "ExpenseCategory" ||  activeItem === "AddExpenseCategory" || activeItem === "EditExpenseCategory" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                         onClick={(e) => {
                           e.stopPropagation();
                           navigate('/Layout/ExpenseCategory');
@@ -437,18 +491,20 @@ const Header = () => {
                     </li>
                   </ul>
                 </div>
-              </div>
             </div>
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "Supplier" || activeItem === "AddSupplier" || activeItem === "EditSupplier" || activeItem === "ViewSupplier" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/Supplier'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center   gap-5 V_pading_icon' >
                   <div>
-                    <img src={Supplier} className='V_icon_size' />
+                    {activeItem === "Supplier" || activeItem === "AddSupplier" || activeItem === "EditSupplier" || activeItem === "ViewSupplier" ?
+                      <img src={Supplier} className='V_icon_size text-d_color V_filter' /> :
+                      <img src={Supplier} className='V_icon_size' />
+                    }
                   </div>
                   <h5 className='V_text_size font-fw-lighter'>Supplier</h5>
                 </div>
@@ -456,14 +512,17 @@ const Header = () => {
             </div>
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "Store" || activeItem === "AddStore" || activeItem === "EditStore" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/Store'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center   gap-5 V_pading_icon' >
                   <div>
-                    <img src={Store} className='V_icon_size' />
+                     {activeItem === "Store" || activeItem === "AddStore" || activeItem === "EditStore" ?
+                       <img src={Store} className='V_icon_size text-d_color V_filter' /> :
+                       <img src={Store} className='V_icon_size' />
+                     }
                   </div>
                   <h5 className='V_text_size font-fw-lighter'>Store</h5>
                 </div>
@@ -472,31 +531,39 @@ const Header = () => {
 
 
 
-            <div className='text-white py-3 over relative z-[100]'>
+            <div className={`${activeItem === "Warehouse" || activeItem === "AddWarehouse" || activeItem === "EditWarehouse" || activeItem === "ViewWarehouse" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => { navigate('/Layout/Warehouse'); setIsDrawerOpen(false) }}
               >
                 <div className='flex items-center   gap-5 V_pading_icon' >
                   <div>
-                    <img src={Warehouse} className='V_icon_size' />
+                     {activeItem === "Warehouse" || activeItem === "AddWarehouse" || activeItem === "EditWarehouse" || activeItem === "ViewWarehouse" ?
+                       <img src={Warehouse} className='V_icon_size text-d_color V_filter' /> :
+                       <img src={Warehouse} className='V_icon_size' />
+                     }
                   </div>
                   <h5 className='V_text_size font-fw-lighter'>Warehouse</h5>
                 </div>
               </div>
             </div>
 
-            <div className='text-white py-3 relative z-[100]'>
+            <div className='text-white  relative z-[100]'>
+              <div className={`${(activeItem === "ReportSalesReport" || activeItem === "ReportPurchaseReport" || activeItem === "ReportInventoryReport" || activeItem === "ReportInvoiceReport" || activeItem === "ReportSupplierPurchase" || activeItem === "ReportSupplierPayment" || activeItem === "ReportSupplierReturn" || activeItem === "ReportCustomerReport" || activeItem === "ReportExpenseReport" || activeItem === "ReportIncomeReport" || activeItem === "ReportTaxReport" || activeItem === "ReportSalesTaxReport" || activeItem === "ReportProfit") ? 'bg-white text-d_color' : 'text-white'} relative z-[100] py-3`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={() => {
                   setReportsOpen(!reportsOpen);
+                  navigate('/Layout/ReportSalesReport');
                 }}
               >
                 <div className='flex items-center V_pading_icon'>
                   <div className='flex items-center gap-5'>
                     <div>
-                      <img src={Reports} className='V_icon_size' />
+                    {(activeItem === "ReportSalesReport" || activeItem === "ReportPurchaseReport" || activeItem === "ReportInventoryReport" || activeItem === "ReportInvoiceReport" || activeItem === "ReportSupplierPurchase" || activeItem === "ReportSupplierPayment" || activeItem === "ReportSupplierReturn" || activeItem === "ReportCustomerReport" || activeItem === "ReportExpenseReport" || activeItem === "ReportIncomeReport" || activeItem === "ReportTaxReport" || activeItem === "ReportSalesTaxReport"  || activeItem === "ReportProfit") ?
+                        <img src={Reports} className=' V_icon_size text-d_color V_filter' /> :
+                        <img src={Reports} className=' V_icon_size' />
+                      }
                     </div>
                     <h5 className='V_text_size font-fw-lighter'>Reports</h5>
                   </div>
@@ -507,13 +574,16 @@ const Header = () => {
                     </svg>
                   </div>
                 </div>
+              </div>
+              </div>
 
 
-                <div className={`transition-all duration-300 ${reportsOpen ? 'block' : 'hidden'}`}>
+
+                <div className={`transition-all duration-300 ${reportsOpen ? 'block' : 'hidden'} ms-4`}>
                   <ul className="mt-2">
                     <li className="relative pl-8 V_circle_dot1">
                       <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
+                         className={`py-2 cursor-pointer ${activeItem === "ReportSalesReport" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                         onClick={(e) => {
                           e.stopPropagation();
                           navigate('/Layout/ReportSalesReport');
@@ -525,7 +595,7 @@ const Header = () => {
                     </li>
                     <li className="relative pl-8 V_circle_dot1">
                       <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
+                        className={`py-2 cursor-pointer ${activeItem === "ReportPurchaseReport" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                         onClick={(e) => {
                           e.stopPropagation();
                           navigate('/Layout/ReportPurchaseReport');
@@ -537,7 +607,7 @@ const Header = () => {
                     </li>
                     <li className="relative pl-8 V_circle_dot1">
                       <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
+                        className={`py-2 cursor-pointer ${activeItem === "ReportInventoryReport" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                         onClick={(e) => {
                           e.stopPropagation();
                           navigate('/Layout/ReportInventoryReport');
@@ -549,7 +619,7 @@ const Header = () => {
                     </li>
                     <li className="relative pl-8 V_circle_dot1">
                       <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
+                        className={`py-2 cursor-pointer ${activeItem === "ReportInvoiceReport" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                         onClick={(e) => {
                           e.stopPropagation();
                           navigate('/Layout/ReportInvoiceReport');
@@ -561,7 +631,7 @@ const Header = () => {
                     </li>
                     <li className="relative pl-8 V_circle_dot1">
                       <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
+                        className={`py-2 cursor-pointer ${activeItem === "ReportSupplierReturn" || activeItem === "ReportSupplierPayment"  || activeItem === "ReportSupplierPurchase"  ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                         onClick={(e) => {
                           e.stopPropagation();
                           navigate('/Layout/ReportSupplierReturn');
@@ -572,7 +642,7 @@ const Header = () => {
                       </div>
                     </li><li className="relative pl-8 V_circle_dot1">
                       <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
+                        className={`py-2 cursor-pointer ${activeItem === "ReportCustomerReport" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                         onClick={(e) => {
                           e.stopPropagation();
                           navigate('/Layout/ReportCustomerReport');
@@ -583,7 +653,7 @@ const Header = () => {
                       </div>
                     </li><li className="relative pl-8 V_circle_dot1">
                       <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
+                        className={`py-2 cursor-pointer ${activeItem === "ReportExpenseReport" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                         onClick={(e) => {
                           e.stopPropagation();
                           navigate('/Layout/ReportExpenseReport');
@@ -594,7 +664,7 @@ const Header = () => {
                       </div>
                     </li><li className="relative pl-8 V_circle_dot1">
                       <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
+                        className={`py-2 cursor-pointer ${activeItem === "ReportIncomeReport" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                         onClick={(e) => {
                           e.stopPropagation();
                           navigate('/Layout/ReportIncomeReport');
@@ -605,7 +675,7 @@ const Header = () => {
                       </div>
                     </li><li className="relative pl-8 V_circle_dot1">
                       <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
+                        className={`py-2 cursor-pointer ${activeItem === "ReportTaxReport" || activeItem === "ReportSalesTaxReport"  ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                         onClick={(e) => {
                           e.stopPropagation();
                           navigate('/Layout/ReportTaxReport');
@@ -616,7 +686,7 @@ const Header = () => {
                       </div>
                     </li><li className="relative pl-8 V_circle_dot1">
                       <div
-                        className='py-2 cursor-pointer text-gray-300 V_text_size'
+                        className={`py-2 cursor-pointer ${activeItem === "ReportProfit" ? 'text-white V_text_size font-semibold' : 'text-gray-300 V_text_size'}`}
                         onClick={(e) => {
                           e.stopPropagation();
                           navigate('/Layout/ReportProfit');
@@ -634,11 +704,10 @@ const Header = () => {
 
 
 
-              </div>
             </div>
 
 
-            <div className='text-white py-3 relative z-[100]'>
+            <div className={`${activeItem === "TaxRated" || activeItem === "AddTaxRate" || activeItem === "EditTaxRate" ? 'bg-white text-d_color' : 'text-white'} py-3 relative z-[100]`}>
               <div
                 className='cursor-pointer ms-3'
                 onClick={(e) => {
@@ -650,7 +719,10 @@ const Header = () => {
                 <div className='flex items-center V_pading_icon'>
                   <div className='flex items-center gap-5'>
                     <div>
-                      <img src={TaxRatesImage} className='V_icon_size' />
+                        {activeItem === "TaxRated" || activeItem === "AddTaxRate" || activeItem === "EditTaxRate" ?
+                          <img src={TaxRatesImage} className='V_icon_size text-d_color V_filter' /> :
+                          <img src={TaxRatesImage} className='V_icon_size' />
+                        }
                     </div>
                     <h5 className='V_text_size font-fw-lighter'>Tax Rates</h5>
                   </div>

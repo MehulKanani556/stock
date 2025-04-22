@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { FaInfoCircle, FaTags, FaListUl } from "react-icons/fa";
+import React, { useState} from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import { FaInfoCircle } from "react-icons/fa";
 import { LiaFileInvoiceDollarSolid } from 'react-icons/lia';
 import { RiUserSearchFill } from 'react-icons/ri';
 
@@ -15,10 +15,8 @@ const AddRawMaterial = () => {
 
     const [currentStep, setCurrentStep] = useState(0);
     const [completedSteps, setCompletedSteps] = useState([]);
-    const [productType, setProductType] = useState('');
 
     const navigate = useNavigate();
-    const location = useLocation();
 
 
     const goNext = () => {
@@ -104,7 +102,7 @@ const AddRawMaterial = () => {
                                                 <div className="flex flex-wrap">
                                                     <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                                         <div>
-                                                            <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Supplier </label>
+                                                            <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Supplier </label>
                                                             <select className='ds_Select'>
                                                                 <option value="">Select Supplier</option>
                                                                 <option value="">supply 1</option>
@@ -114,13 +112,13 @@ const AddRawMaterial = () => {
                                                     </div>
                                                     <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                                         <div>
-                                                            <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact Person Name</label>
+                                                            <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact Person Name</label>
                                                             <input type="text" id="text" className="ds_main_input" placeholder="Enter Contact person Name" required />
                                                         </div>
                                                     </div>
                                                     <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                                         <div>
-                                                            <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact No.</label>
+                                                            <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact No.</label>
                                                             <input type="text" id="text" className="ds_main_input" placeholder="Contact No." required />
                                                         </div>
                                                     </div>
@@ -148,7 +146,7 @@ const AddRawMaterial = () => {
                                             <div className="flex flex-wrap">
                                                 <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                                     <div>
-                                                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Type </label>
+                                                        <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Type </label>
                                                         <select className='ds_Select'>
                                                             <option value="">Select product type</option>
                                                             <option value="">supply 1</option>
@@ -158,13 +156,13 @@ const AddRawMaterial = () => {
                                                 </div>
                                                 <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                                     <div>
-                                                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Name</label>
+                                                        <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Name</label>
                                                         <input type="text" id="text" className="ds_main_input" placeholder="Enter Product Name" required />
                                                     </div>
                                                 </div>
                                                 <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                                     <div>
-                                                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Unit</label>
+                                                        <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Unit</label>
                                                         <select className='ds_Select'>
                                                             <option value="">Select Unit</option>
                                                             <option value="">supply 1</option>
@@ -174,7 +172,7 @@ const AddRawMaterial = () => {
                                                 </div>
                                                 <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                                     <div>
-                                                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Barcode</label>
+                                                        <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Barcode</label>
                                                         <input type="text" id="text" className="ds_main_input" placeholder="Enter Barcode" required />
                                                     </div>
                                                 </div>
@@ -200,19 +198,19 @@ const AddRawMaterial = () => {
                                             <div className="flex flex-wrap">
                                                 <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                                     <div>
-                                                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Quantity</label>
+                                                        <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Quantity</label>
                                                         <input type="text" id="text" className="ds_main_input" placeholder="Enter quantity" required />
                                                     </div>
                                                 </div>
                                                 <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                                     <div>
-                                                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Price</label>
+                                                        <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Price</label>
                                                         <input type="text" id="text" className="ds_main_input" placeholder="$" required />  
                                                     </div>
                                                 </div>
                                                 <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                                     <div>
-                                                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Tax Type</label>
+                                                        <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Tax Type</label>
                                                         <select className='ds_Select'>
                                                             <option value="">Select Tax type</option>
                                                             <option value="">supply 1</option>
@@ -222,7 +220,7 @@ const AddRawMaterial = () => {
                                                 </div>
                                                 <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                                     <div>
-                                                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Discount Type</label>
+                                                        <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Discount Type</label>
                                                         <select className='ds_Select'>
                                                             <option value="">Select discount type</option>
                                                             <option value="">supply 1</option>
@@ -232,13 +230,13 @@ const AddRawMaterial = () => {
                                                 </div>
                                                 <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                                     <div>
-                                                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Discount</label>
+                                                        <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Discount</label>
                                                         <input type="text" id="text" className="ds_main_input" placeholder="Enter Discount" required />  
                                                     </div>
                                                 </div>
                                                 <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                                     <div>
-                                                        <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Qty. Alert</label>
+                                                        <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Qty. Alert</label>
                                                         <input type="text" id="text" className="ds_main_input" placeholder="Enter quantity alert" required />
                                                     </div>
                                                 </div>

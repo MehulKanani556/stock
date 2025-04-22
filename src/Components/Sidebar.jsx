@@ -19,9 +19,7 @@ import Expense from './Images/Parth/Expense1.png';
 import Supplier from './Images/Parth/Supplier1.png';
 import Store from './Images/Parth/Store1.png';
 import Warehouse from './Images/Parth/Warehouse1.png';
-import Payment from './Images/Parth/Payment1.png';
 import Reports from './Images/Parth/Reports1.png';
-import Financial from './Images/Parth/Financialsetting1.png';
 import logo from './Images/Parth/Logocircle1.png';
 import { MdKeyboardDoubleArrowLeft } from 'react-icons/md';
 import TaxRatesImage from './Images/Dhruvin/TaxRates.svg'
@@ -31,7 +29,6 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
   const [expenseOpen, setExpenseOpen] = useState(false);
   const [reportsOpen, setReportsOpen] = useState(false);
   const [financialOpen, setFinancialOpen] = useState(false);
-  const [icon, setIcon] = useState(false);
   // const [isRotated, setIsRotated] = useState(false);
   const navigate = useNavigate();
 
@@ -112,7 +109,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  navigate('/layout/RawMaterial');
+                  navigate('/Layout/RawMaterial');
                   setActiveItem("RawMaterial");
                 }}
               >
@@ -134,7 +131,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {
-                  navigate('/layout/ExpiredProduct');
+                  navigate('/Layout/ExpiredProduct');
                   setActiveItem("ExpiredProduct");
                 }}
               >
@@ -301,7 +298,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }) => {
             </div>
 
             {/* Invoice */}
-            <div className={`${activeItem === "Invoice" ? 'bg-white text-d_color' : 'text-white'} py-3`}>
+            <div className={`${activeItem === "Invoice" ? 'bg-white text-d_color' : 'text-white'} py-3 `}>
               <div
                 className={` cursor-pointer ${isCollapsed ? 'flex justify-center' : 'ms-3'}`}
                 onClick={() => {

@@ -1,8 +1,5 @@
 import React from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import BigPen from '../Images/Parth/ViewProduct.png'
-import barcode from '../Images/Parth/barcode.svg';
-import print from '../Images/Parth/print_icon.svg';
 
 const ViewRawMaterial = () => {
     const navigate = useNavigate()

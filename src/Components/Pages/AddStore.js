@@ -1,5 +1,4 @@
-import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const AddStore = () => {
@@ -21,31 +20,31 @@ const AddStore = () => {
                   <div className="flex flex-wrap">
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Store Name</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Store Name</label>
                                <input type="email" id="text" className="ds_main_input" placeholder="Enter Store Name" required />
                           </div>
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact Person Name</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact Person Name</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Enter Contact Person Name" required />
                           </div>
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact No.</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Contact No.</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Enter Contact No." required />
                           </div>
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Email</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Email</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Enter Email" required />
                           </div>
                       </div>
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Status</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Status</label>
                                <select className='ds_Select'>
                                  <option value="">Select Status</option>
                                  <option value="">Active</option>

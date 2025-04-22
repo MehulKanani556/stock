@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import laptop from '../Images/Dhruvin/laptop.png'
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
-import lock from '../Images/Dhruvin/lock.svg'
 
 const Login = () => {
 const navigate = useNavigate();
@@ -74,10 +73,10 @@ const handleLogin = (e) => {
                          <p className='text-center text-[#727272] text-[14px]'>OTP has been sent to <a href="" className='text-d_color underline '>example@gmail.com</a></p>
                          <form action="" className='mt-5'>
                            <div className='flex justify-center items-center pt-4'>
-                              <input type="text" className='lg:h-[50px] lg:w-[50px] md:h-[40px] md:w-[40px] text-center text-[20px] border border-d_color rounded-[5px] me-5'/>
-                              <input type="text" className='lg:h-[50px] lg:w-[50px] md:h-[40px] md:w-[40px] text-center text-[20px] border border-d_color rounded-[5px] me-5'/>
-                              <input type="text" className='lg:h-[50px] lg:w-[50px] md:h-[40px] md:w-[40px] text-center text-[20px] border border-d_color rounded-[5px] me-5'/>
-                              <input type="text" className='lg:h-[50px] lg:w-[50px] md:h-[40px] md:w-[40px] text-center text-[20px] border border-d_color rounded-[5px]'/>
+                              <input type="text" className='lg:h-[50px] lg:w-[50px] md:h-[40px] md:w-[40px] sm:w-[40px] sm:h-[40px] w-[40px] h-[40px] text-center text-[20px] border border-d_color rounded-[5px] me-5'/>
+                              <input type="text" className='lg:h-[50px] lg:w-[50px] md:h-[40px] md:w-[40px] sm:w-[40px] sm:h-[40px] w-[40px] h-[40px] text-center text-[20px] border border-d_color rounded-[5px] me-5'/>
+                              <input type="text" className='lg:h-[50px] lg:w-[50px] md:h-[40px] md:w-[40px] sm:w-[40px] sm:h-[40px] w-[40px] h-[40px] text-center text-[20px] border border-d_color rounded-[5px] me-5'/>
+                              <input type="text" className='lg:h-[50px] lg:w-[50px] md:h-[40px] md:w-[40px] sm:w-[40px] sm:h-[40px] w-[40px] h-[40px] text-center text-[20px] border border-d_color rounded-[5px]'/>
                            </div> 
                            <button onClick={()=> setPage("reset")} className='w-full bg-d_color transition duration-300 ease-in-out text-white h-[40px] rounded-[5px] hover:bg-white hover:border hover:border-d_color hover:text-d_color mt-12'>Verify</button>
                            <p className='text-center text-[#727272] mt-3'>Didn't receive code yet? <span className='text-d_color underline'>Resend</span></p>

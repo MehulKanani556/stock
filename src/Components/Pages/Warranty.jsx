@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, {  useState } from 'react'
 import { IoIosArrowBack, IoIosArrowDown, IoIosArrowForward, IoMdClose } from 'react-icons/io'
 import Bar from '../Images/Dhruvin/bar.svg'
 import Trash from '../Images/Dhruvin/trash.svg'
@@ -22,7 +22,6 @@ const Warranty = () => {
     const itemsPerPage = 10;
     const totalPages = Math.ceil(totalItems / itemsPerPage);
     const [currentPage, setCurrentPage] = useState(1);
-    const [sort, setSort] = useState(false);
 
     const goToPage = (page) => {
         if (page < 1 || page > totalPages) return;
@@ -161,37 +160,37 @@ const Warranty = () => {
                                 {column && <div className='ds_column_box z-[2] ds_warranty_box'>
                                     <div className='flex justify-between items-center mb-2'>
                                         <h6 className='text-d_color'>Name</h6>
-                                        <label class="inline-flex items-center cursor-pointer">
-                                            <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                            <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                                        <label className="inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                            <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                                         </label>
                                     </div>
                                     <div className='flex justify-between items-center mb-2'>
                                         <h6 className='text-d_color'>Description</h6>
-                                        <label class="inline-flex items-center cursor-pointer">
-                                            <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                            <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                                        <label className="inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                            <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                                         </label>
                                     </div>
                                     <div className='flex justify-between items-center mb-2'>
                                         <h6 className='text-d_color'>Duration</h6>
-                                        <label class="inline-flex items-center cursor-pointer">
-                                            <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                            <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                                        <label className="inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                            <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                                         </label>
                                     </div>
                                     <div className='flex justify-between items-center mb-2'>
                                         <h6 className='text-d_color'>Status</h6>
-                                        <label class="inline-flex items-center cursor-pointer">
-                                            <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                            <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                                        <label className="inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                            <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                                         </label>
                                     </div>
                                     <div className='flex justify-between items-center mb-2'>
                                         <h6 className='text-d_color'>Action</h6>
-                                        <label class="inline-flex items-center cursor-pointer">
-                                            <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                            <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
+                                        <label className="inline-flex items-center cursor-pointer">
+                                            <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                            <div className="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
                                         </label>
                                     </div>
                                 </div>}
@@ -225,10 +224,10 @@ const Warranty = () => {
                                             <td>Sagittis eros odio et interdum malesuada purus magnis adipiscing. Nec tincidunt et </td>
                                             <td>3 Months</td>
                                             <td>
-                                                <label class="inline-flex items-center cursor-pointer">
-                                                    <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                                    <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
-                                                </label>
+                                               <label className="inline-flex items-center me-5 cursor-pointer">
+                                                  <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                                  <div className="relative w-10 h-5 bg-[#727272] rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white peer-checked:after:start-[6px] after:content-[''] after:absolute after:top-0.5  after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all  peer-checked:bg-d_color dark:peer-checked:bg-red-600"></div>
+                                               </label>
                                             </td>
                                             <td>
                                                 <div>
@@ -246,10 +245,10 @@ const Warranty = () => {
                                             <td>Sagittis eros odio et interdum malesuada purus magnis adipiscing. Nec tincidunt et </td>
                                             <td>6 Months</td>
                                             <td>
-                                                <label class="inline-flex items-center cursor-pointer">
-                                                    <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                                    <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
-                                                </label>
+                                               <label className="inline-flex items-center me-5 cursor-pointer">
+                                                  <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                                  <div className="relative w-10 h-5 bg-[#727272] rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white peer-checked:after:start-[6px] after:content-[''] after:absolute after:top-0.5  after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all  peer-checked:bg-d_color dark:peer-checked:bg-red-600"></div>
+                                               </label>
                                             </td>
                                             <td>
                                                 <div>
@@ -267,10 +266,10 @@ const Warranty = () => {
                                             <td>Sagittis eros odio et interdum malesuada purus magnis adipiscing. Nec tincidunt et </td>
                                             <td>1 Year</td>
                                             <td>
-                                                <label class="inline-flex items-center cursor-pointer">
-                                                    <input type="checkbox" value="" class="sr-only peer" defaultChecked />
-                                                    <div class="relative w-8 h-4 bg-[#727272] peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white peer-checked:after:start-[6px] after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-d_color dark:peer-checked:bg-blue-600"></div>
-                                                </label>
+                                              <label className="inline-flex items-center me-5 cursor-pointer">
+                                                  <input type="checkbox" value="" className="sr-only peer" defaultChecked />
+                                                  <div className="relative w-10 h-5 bg-[#727272] rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white peer-checked:after:start-[6px] after:content-[''] after:absolute after:top-0.5  after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all  peer-checked:bg-d_color dark:peer-checked:bg-red-600"></div>
+                                               </label>
                                             </td>
                                             <td>
                                                 <div>

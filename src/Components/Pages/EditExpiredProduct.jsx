@@ -1,8 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { FaInfoCircle, FaTags, FaListUl } from "react-icons/fa";
-import { LiaFileInvoiceDollarSolid } from 'react-icons/lia';
-import { RiUserSearchFill } from 'react-icons/ri';
+import React, { useState, useRef } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import { FaCalendarAlt } from 'react-icons/fa';
 import Toast from './Toast';
 
@@ -62,12 +59,12 @@ const EditExpiredProduct = () => {
                                     <div className="flex flex-wrap">
                                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                             <div>
-                                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">SKU</label>
+                                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">SKU</label>
                                                 <input type="text" id="text" className="ds_main_input" placeholder="P1234" required />
                                             </div>
                                         </div>
                                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
-                                            <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Image</label>
+                                            <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Image</label>
                                             <div className="relative">
                                                 <input
                                                     type="text"
@@ -102,7 +99,7 @@ const EditExpiredProduct = () => {
 
                                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                             <div>
-                                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Name</label>
+                                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Name</label>
                                                 <input type="text" id="text" className="ds_main_input" placeholder="Pen" required />
                                             </div>
                                         </div>

@@ -19,13 +19,13 @@ const navigate = useNavigate()
                   <div className="flex flex-wrap">
                       <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Expense Category</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Expense Category</label>
                                <input type="email" id="text" className="ds_main_input" placeholder="Enter Expense Category" required />
                           </div>
                       </div>
                       <div className="lg:w-2/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                               <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Description</label>
+                               <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Description</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Enter Description" required />
                           </div>
                       </div>

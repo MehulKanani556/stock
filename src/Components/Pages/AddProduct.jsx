@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { FaInfoCircle, FaTags, FaListUl, FaCalendarAlt } from "react-icons/fa";
+import { FaInfoCircle,  FaListUl, FaCalendarAlt } from "react-icons/fa";
 import { LiaFileInvoiceDollarSolid } from 'react-icons/lia';
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, TransitionChild } from '@headlessui/react'
-import Trash from '../Images/Dhruvin/trash.svg'
+import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
 import Red from '../Images/Dhruvin/trash_red.svg';
 import plus from '../Images/Parth/Plus.svg';
 import '../CSS/Parth/Product.css';
@@ -187,19 +186,19 @@ const AddProduct = () => {
                       <div className="flex flex-wrap">
                         <div className="lg:w-1/2 md:1/2 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                            <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">SKU</label>
+                            <label ht="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">SKU</label>
                             <input type="email" id="text" className="ds_main_input" placeholder="P1234" required />
                           </div>
                         </div>
                         <div className="lg:w-1/2 md:1/2 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                            <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Warehouse</label>
+                            <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Warehouse</label>
                             <input type="text" id="text" className="ds_main_input" placeholder="Select Warehouse" required />
                           </div>
                         </div>
                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                            <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Category</label>
+                            <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Category</label>
                             <select className='ds_Select'>
                               <option value="">Select category</option>
                               <option value="">category1</option>
@@ -209,7 +208,7 @@ const AddProduct = () => {
                         </div>
                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                            <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Sub Category</label>
+                            <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Sub Category</label>
                             <select className='ds_Select'>
                               <option value="">Select sub category</option>
                               <option value="">Sub Category1</option>
@@ -219,7 +218,7 @@ const AddProduct = () => {
                         </div>
                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                            <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Type</label>
+                            <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Type</label>
                             <select
                               className='ds_Select'
                               value={productType}
@@ -233,13 +232,13 @@ const AddProduct = () => {
                         </div>
                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                            <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Name</label>
+                            <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Name</label>
                             <input type="text" id="text" className="ds_main_input" placeholder="Enter product name" required />
                           </div>
                         </div>
                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                            <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Image</label>
+                            <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Image</label>
                             <div className='flex justify-between V_image_input1'>
                               <input
                                 type="text"
@@ -270,7 +269,7 @@ const AddProduct = () => {
                         </div>
                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                            <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Unit</label>
+                            <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Unit</label>
                             <select className='ds_Select'>
                               <option value="">Select Unit</option>
                               <option value="">Unit1</option>
@@ -280,7 +279,7 @@ const AddProduct = () => {
                         </div>
                         <div className=" w-full  mb-5 px-4 pt-1">
                           <div>
-                            <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Description</label>
+                            <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Description</label>
                             <textarea type="text" id="text" className="ds_main_input h-[100px]" placeholder="Enter product description" required />
                           </div>
                         </div>
@@ -315,25 +314,25 @@ const AddProduct = () => {
                             <div className="flex flex-wrap">
                               <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                 <div>
-                                  <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Quantity</label>
+                                  <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Quantity</label>
                                   <input type="email" id="text" className="ds_main_input" placeholder="Enter quantity" required />
                                 </div>
                               </div>
                               <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                 <div>
-                                  <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Price</label>
+                                  <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Price</label>
                                   <input type="text" id="text" className="ds_main_input" placeholder="$" required />
                                 </div>
                               </div>
                               <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                 <div>
-                                  <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Tax </label>
+                                  <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Tax </label>
                                   <input type="text" id="text" className="ds_main_input" placeholder="Enter Tax" required />
                                 </div>
                               </div>
                               <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                 <div>
-                                  <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Discount Type</label>
+                                  <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Discount Type</label>
                                   <select className='ds_Select'>
                                     <option value="">Select discount type</option>
                                     <option value="">weekly</option>
@@ -343,7 +342,7 @@ const AddProduct = () => {
                               </div>
                               <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                                 <div>
-                                  <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Qty. Alert</label>
+                                  <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Qty. Alert</label>
                                   <input type="text" id="text" className="ds_main_input" placeholder="Enter quantity alert" required />
                                 </div>
                               </div>
@@ -371,7 +370,7 @@ const AddProduct = () => {
                             <div className="flex flex-wrap justify-between items-center p-2 sm:p-5">
                               <div className="lg:w-1/3 md:w-1/2  sm:w-1/3 w-full mb-5 px-4 pt-10">
                                 <div>
-                                  <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Variant Attributes</label>
+                                  <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Variant Attributes</label>
                                   <select className='ds_Select'>
                                     <option value="">Select variant attributes</option>
                                     <option value="">weekly</option>
@@ -463,7 +462,7 @@ const AddProduct = () => {
                             <div className="flex flex-wrap justify-between items-center pt-10 p-5">
                               <div className="lg:w-1/3 md:w-2/3  sm:w-1/3 w-full mb-5 px-4 pt-10">
                                 <div>
-                                  <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Variant Attributes</label>
+                                  <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Variant Attributes</label>
                                   <select className='ds_Select'>
                                     <option value="">Select variant attributes</option>
                                     <option value="">weekly</option>
@@ -578,7 +577,7 @@ const AddProduct = () => {
                       <div className="flex flex-wrap">
                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                            <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Warranty Type</label>
+                            <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Warranty Type</label>
                             <select className='ds_Select'>
                               <option value="">Select warranty type</option>
                               <option value="">category1</option>
@@ -606,7 +605,7 @@ const AddProduct = () => {
                         </div>
                         <div className="lg:w-1/3 md:1/3 sm:w-full w-full mb-5 px-4 pt-1">
                           <div>
-                            <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Image</label>
+                            <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Product Image</label>
                             <div className='flex justify-between V_image_input1'>
                               <input
                                 type="text"
@@ -730,7 +729,7 @@ const AddProduct = () => {
                           <form className="">
                             <div className="w-full mb-3">
                               <div>
-                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Variant Thumbnail</label>
+                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Variant Thumbnail</label>
                                 <div className='flex justify-between V_image_input1'>
                                   <input
                                     type="text"
@@ -758,7 +757,7 @@ const AddProduct = () => {
                             </div>
                             <div className="w-full mb-3">
                               <div>
-                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Variant Thumbnail</label>
+                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Variant Thumbnail</label>
                                 <div className='flex justify-between V_image_input1'>
                                   <input
                                     type="text"
@@ -809,25 +808,25 @@ const AddProduct = () => {
                             )}
                             <div className="w-full mb-3">
                               <div>
-                                <label for="barcode" className="block mb-1 text-md font-medium text-d_color dark:text-white">Barcode</label>
+                                <label htmlFor="barcode" className="block mb-1 text-md font-medium text-d_color dark:text-white">Barcode</label>
                                 <input type="text" id="text" className="ds_main_input" placeholder="Enter Barcode" required />
                               </div>
                             </div>
                             <div className="w-full mb-3">
                               <div>
-                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Quantity</label>
+                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Quantity</label>
                                 <input type="email" id="text" className="ds_main_input" placeholder="Enter quantity" required />
                               </div>
                             </div>
                             <div className="w-full mb-3">
                               <div>
-                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Alert Quantity</label>
+                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Alert Quantity</label>
                                 <input type="email" id="text" className="ds_main_input" placeholder="Enter alert quantity" required />
                               </div>
                             </div>
                             <div className="w-full mb-3">
                               <div>
-                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Tax</label>
+                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Tax</label>
                                 <select className='ds_Select'>
                                   <option value="">Select tax</option>
                                   <option value="">weekly</option>
@@ -837,7 +836,7 @@ const AddProduct = () => {
                             </div>
                             <div className="w-full mb-3">
                               <div>
-                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Discount Type</label>
+                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Discount Type</label>
                                 <select className='ds_Select'>
                                   <option value="">Select discount type</option>
                                   <option value="">weekly</option>
@@ -847,7 +846,7 @@ const AddProduct = () => {
                             </div>
                             <div className="w-full mb-3">
                               <div>
-                                <label for="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Discount Value</label>
+                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Discount Value</label>
                                 <input type="email" id="text" className="ds_main_input" placeholder="Enter discount value" required />
                               </div>
                             </div>
