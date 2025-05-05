@@ -87,9 +87,9 @@ const data = [
 ];
 
 const pieData = [
-  { name: "Product 1", color: "#1E2A5E", value: 45 },
-  { name: "Product 2", color: "#55679C", value: 25 },
-  { name: "Product 3", color: "#7C93C3", value: 30 },
+  { name: "Product 1", color: "#517889", value: 45 },
+  { name: "Product 2", color: "#6C93A4", value: 25 },
+  { name: "Product 3", color: "#36454F", value: 30 },
 ];
 
 const COLORS = ["#1E2A5E", "#55679C", "#7C93C3", "#CCD6EB"];
@@ -241,12 +241,12 @@ const Dashboard = () => {
                         <Legend iconType="circle" />
                         <Bar
                           dataKey="Purchase"
-                          fill="#1958B4"
+                          fill="#6C93A4"
                           barSize={10}
                         />
                         <Bar
                           dataKey="Sales"
-                          fill="#16325B"
+                          fill="#36454F"
                           barSize={10}
                         />
                       </BarChart>

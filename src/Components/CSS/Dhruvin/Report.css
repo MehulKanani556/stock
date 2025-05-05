@@ -99,6 +99,9 @@
 .ds_report_date::-webkit-calendar-picker-indicator{
     display: none;
 }
+option:hover {
+    background-color: yellow !important;
+  }
 .ds_report_cancel{
     border: 1px solid #36454F;
     padding: 7px 65px;

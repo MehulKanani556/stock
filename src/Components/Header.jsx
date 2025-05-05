@@ -4,8 +4,8 @@ import './CSS/Parth/Header.css';
 import Userimage from './Images/Parth/Userimage.png';
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/react';
 import notback from './Images/Parth/notification_back_image.png';
-import notbackicon from './Images/Parth/notification_icon.png';
-import notbacknumber from './Images/Parth/notification_number_back_image.png';
+import notbackicon from './Images/Parth/bell.svg';
+import notbacknumber from './Images/Parth/round-num.svg';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { Link, useNavigate } from 'react-router-dom';
 

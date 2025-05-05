@@ -115,7 +115,7 @@ const Quotation = () => {
                                                </select>
                                           </div>
                                        </div>
-                                       <div className='px-6 mt-auto'>
+                                       <div className='px-6 mt-auto sm:text-start text-center'>
                                            <button className='ds_report_cancel me-4' onClick={()=> setOpen(false)}>Cancel</button>
                                            <button className='ds_report_apply'>Apply</button>
                                        </div>

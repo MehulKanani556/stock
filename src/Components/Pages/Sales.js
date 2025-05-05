@@ -16,6 +16,7 @@ import Plus from '../Images/Dhruvin/plus_round.svg'
 import { IoClose } from 'react-icons/io5'
 import Print from '../Images/Dhruvin/print.svg'
 import '../CSS/Dhruvin/Sales.css'
+import '../CSS/Dhruvin/Report.css'
 
 
 const Sales = () => {
@@ -131,9 +132,15 @@ const Sales = () => {
                                                  <option value="">Paid</option>
                                                  <option value="">Due</option>
                                                </select>
+                                               <select onfocus='this.size=10;' onblur='this.size=0;' onchange='this.size=1; this.blur();'>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="opel">Opel</option>
+  <option value="audi">Audi</option>
+</select>
                                           </div>
                                        </div>
-                                       <div className='px-6 mt-auto'>
+                                       <div className='px-6 mt-auto sm:text-start text-center'>
                                            <button className='ds_report_cancel me-4' onClick={()=> setOpen(false)}>Cancel</button>
                                            <button className='ds_report_apply'>Apply</button>
                                        </div>

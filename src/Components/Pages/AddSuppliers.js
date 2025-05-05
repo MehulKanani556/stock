@@ -82,7 +82,7 @@ const handleButtonClick = () => {
                                <label htmlFor="email" className="block mb-1 text-md font-medium text-d_color dark:text-white">Image</label>
                                <input type="text" id="text" className="ds_main_input" placeholder="Select Image" required />
                                <input type="file" ref={fileInputRef} style={{ display: 'none' }} onChange={handleFileChange}/>
-                               <div onClick={handleButtonClick} className='absolute top-[36px] right-[14px] bg-[#16325B] text-white rounded-[4px] px-3 text-[14px]'>
+                               <div onClick={handleButtonClick} className='absolute top-[36px] right-[14px] bg-[#36454F] text-white rounded-[4px] px-3 text-[14px]'>
                                   Browse
                                </div>
                           </div>
